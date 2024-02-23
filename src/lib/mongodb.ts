@@ -1,6 +1,6 @@
 //src/lib/mongodb.ts
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://sky:vbHcM2rClT1crAks@cluster0.nah7cdq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.NEXT_APP_MONGO_URI;
 const client = new MongoClient(uri);
 
 export const connectToDB = async (type: string, body: any) => {
@@ -10,8 +10,8 @@ export const connectToDB = async (type: string, body: any) => {
 
     // 접속
     await client.connect();
-    db = client.db('Next');
-    collection = db.collection('mongos');
+    db = client.db('choding');
+    collection = db.collection('user');
 
     switch (type) {
         case 'post': await collection.insertOne(body);
