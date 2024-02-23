@@ -1,8 +1,8 @@
-//src/app/page.tsx
+//              src/app/page.tsx
 "use client";
 
 import axios, { AxiosResponse } from "axios";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { myProjectPostType } from '@/types/datatype';
 
 export default function Home() {
@@ -66,7 +66,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="bodyContainer">
       <article>
         <h2>게시판</h2>
       </article>
@@ -94,6 +94,6 @@ export default function Home() {
         })
       }
 
-    </>
+    </div>
   );
 }
