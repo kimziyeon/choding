@@ -8,9 +8,8 @@ export default function Header() {
         <header id="mainHeader">
             <div className='headerTOP'>
                 <div className='leftSide'>
-                    <Link href='/'><p className='mainActiveTopMenu'>교육</p>
-                    </Link>
-                    <Link href='/community'><p>커뮤니티</p></Link>
+                    <Link href='/' className='mainActiveTopMenu'>교육</Link>
+                    <Link href='/community'>커뮤니티</Link>
                 </div>
                 <h1 className='titleLogo'>
                     <Link href='/' className='logo'>
@@ -18,8 +17,8 @@ export default function Header() {
                     </Link>
                 </h1>
                 <div className='rightSide'>
-                    <p className='signUp'>회원가입</p>
-                    <p className='login'>로그인</p>
+                    <Link href='/signUp' className='signUp'>회원가입</Link>
+                    <Link href='/login' className='login'>로그인</Link>
                 </div>
             </div>
             <nav className='headerGNB'>
