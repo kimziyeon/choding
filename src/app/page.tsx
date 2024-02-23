@@ -1,9 +1,16 @@
 //              src/app/page.tsx
 //              메인 교육
+
+import './home.scss';
+
 export default function Home() {
   return (
    <main className="mainContainer">
-      교육 메인
+      <div className="mainSection">메인/교육</div>
+      <div className="mainSection"></div>
+      <div className="mainSection"></div>
+      <div className="mainSection"></div>
+      <div className="mainSection"></div>
    </main>
   );
 }

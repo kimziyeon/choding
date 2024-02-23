@@ -1,10 +1,10 @@
 $flex-map: (
-  start: flex-start,
-  end: flex-end,
-  between: space-between,
-  around: space-around,
-  stretch: stretch,
-  center: center,
+  s: flex-start,
+  e: flex-end,
+  sb: space-between,
+  sa: space-around,
+  st: stretch,
+  c: center,
 );
 
 @function _get-flex-value($key) {

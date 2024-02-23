@@ -1,3 +1,5 @@
+import './footer.scss';
+
 export default function Header() {
     return (
         <footer>
