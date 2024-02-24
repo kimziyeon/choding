@@ -1,0 +1,29 @@
+@use '../../../styles/main' as *;
+
+#myProjectFilter {
+    .myProjectFilterHeader {
+        border-bottom: 1px solid $grayLight;
+        @include flexbox(sb, c);
+        margin-bottom: 1rem;
+
+        .filterTitle {
+            font-size: $b;
+        }
+    }
+
+    .containerContents {
+        @include flexbox();
+
+        ul {
+            @include flexbox();
+        }
+
+        li button {
+            @include btnBase();
+        }
+
+        .filterTotalMember {}
+
+        .filterSkills {}
+    }
+}
