@@ -49,12 +49,6 @@ export default function myProjectFilter() {
               <li>
                 <button>Git</button>
               </li>
-              <li>
-                <button>CSS</button>
-              </li>
-              <li>
-                <button>CSS</button>
-              </li>
             </ul>
           </div>
         </div>

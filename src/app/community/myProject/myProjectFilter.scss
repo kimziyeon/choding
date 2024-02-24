@@ -13,13 +13,28 @@
 
     .containerContents {
         @include flexbox();
+        gap: 2rem;
+
+        div b {
+            display: block;
+            color: $gray;
+            margin-bottom: 0.5rem;
+        }
 
         ul {
             @include flexbox();
-        }
+            gap: 0.5rem;
 
-        li button {
-            @include btnBase();
+            li {
+                button {
+                    @include btnBase();
+                    text-wrap: nowrap;
+                }
+
+                .active {
+                    @include btnActive();
+                }
+            }
         }
 
         .filterTotalMember {}
