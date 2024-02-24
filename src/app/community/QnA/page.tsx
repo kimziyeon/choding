@@ -1,7 +1,5 @@
 export default function QnA() {
     return (
-    <>
-    <section>Q&A 메인</section>
-    </>
+    <section id="QnAMain" className="contPadding">Q&A 메인</section>
     );
 }
