@@ -37,7 +37,10 @@ export default function MyProjectFilter() {
             <b>인원</b>
             <ul className="member">
               <li>
-                <button className="active">개인</button>
+                <button>전체</button>
+              </li>
+              <li>
+                <button>개인</button>
               </li>
               <li>
                 <button>팀</button>
@@ -48,7 +51,10 @@ export default function MyProjectFilter() {
             <b>사용 기술</b>
             <ul className="skills">
               <li>
-                <button className="active">HTML</button>
+                <button>전체</button>
+              </li>
+              <li>
+                <button>HTML</button>
               </li>
               <li>
                 <button>CSS</button>
