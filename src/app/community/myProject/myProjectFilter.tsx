@@ -1,6 +1,6 @@
 //src/app/community/myProject/MyProjectFilter.tsx
 "use client";
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SearchInputSub from "@/components/searchSub/SearchInputSub";
 import './myProjectFilter.scss'
 
@@ -11,6 +11,17 @@ export default function MyProjectFilter() {
     filterRef.current?.classList.toggle("filterActive");
     setIsOnFilterActive(!isOnFilterActive);
   }
+
+  useEffect(()=>{
+    const buttonElements = filterRef.current?.getElementsByTagName('button');
+    if(buttonElements){
+      for (let i = 0; i < buttonElements.length; i++) {
+        buttonElements[i].addEventListener('click', () => {
+          buttonElements[i].classList.toggle('active');
+        })
+      }
+    }
+  }, [])
   
 
     return (

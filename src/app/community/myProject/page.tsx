@@ -1,5 +1,5 @@
-import MyProjectFilter from './myProjectFilter';
-import MyProjectTotal from './myProjectTotal';
+import MyProjectFilter from './MyProjectFilter';
+import MyProjectTotal from './MyProjectTotal';
 
 export default function MyProjectMain() {
     return (
