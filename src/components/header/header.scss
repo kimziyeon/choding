@@ -6,15 +6,12 @@
 
     .headerTOP {
         @include flexbox(sb, c);
+        padding: 1rem 0;
 
         .leftSide {
             .mainActiveTopMenu {
                 font-weight: 900;
             }
-        }
-
-        .titleLogo {
-            margin: 2rem 0;
         }
 
         .rightSide {
@@ -43,6 +40,7 @@
     .headerGNB {
         @include flexbox(c, c);
         gap: 2rem;
+        padding: 1rem 0;
     }
 
     .subMenuBar {
