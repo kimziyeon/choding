@@ -1,5 +1,6 @@
 //src/app/community/myProject/myProjectFilter.tsx
 // "use client";
+import './myProjectTotal.scss'
 
 export default function myProjectTotal() {
     return (

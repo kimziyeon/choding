@@ -1,6 +1,8 @@
 @use '../../../styles/main' as *;
 
 #myProjectFilter {
+    overflow: hidden;
+
     .myProjectFilterHeader {
         border-bottom: 1px solid $grayLight;
         @include flexbox(sb, c);
