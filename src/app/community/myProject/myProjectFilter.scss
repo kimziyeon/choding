@@ -1,0 +1,46 @@
+@use '../../../styles/main' as *;
+
+#myProjectFilter {
+    overflow: hidden;
+
+    .myProjectFilterHeader {
+        border-bottom: 1px solid $grayLight;
+        @include flexbox(sb, c);
+        margin-bottom: 1rem;
+
+        .filterTitle {
+            font-size: $b;
+        }
+    }
+
+    .containerContents {
+        @include flexbox();
+        gap: 2rem;
+
+        div b {
+            display: block;
+            color: $gray;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            @include flexbox();
+            gap: 0.5rem;
+
+            li {
+                button {
+                    @include btnBase();
+                    text-wrap: nowrap;
+                }
+
+                .active {
+                    @include btnActive();
+                }
+            }
+        }
+
+        .filterTotalMember {}
+
+        .filterSkills {}
+    }
+}

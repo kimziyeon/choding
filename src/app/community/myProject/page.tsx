@@ -1,7 +1,11 @@
-export default function MyProject() {
+import MyProjectFilter from './myProjectFilter';
+import MyProjectTotal from './myProjectTotal';
+
+export default function MyProjectMain() {
     return (
-    <>
-    <section>내 프로젝트 메인</section>
-    </>
+    <section id="myProjectMain" className='contPadding'>
+        <MyProjectFilter />
+        <MyProjectTotal/>
+    </section>
     );
 }

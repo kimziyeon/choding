@@ -1,11 +1,13 @@
 //src/app/community.tsx
 // "use client";
+import QnABest from './QnABest';
+import MyProjectBest from './myProjectBest';
+
 export default function Community() {
-    return (
-    <>
-    <section>Q&A 베스트</section>
-    <br></br>
-    <section>내 프로젝트 베스트</section>
-    </>
+  return (
+      <section id="communityHome" className='contPadding'>
+        <QnABest/>
+        <MyProjectBest />
+      </section>
     );
-}
+  }

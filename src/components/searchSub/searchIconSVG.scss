@@ -1,0 +1,12 @@
+@use '../../styles/main' as *;
+
+#searchInputSub {
+    padding: 0.5rem;
+    @include flexbox();
+    gap: 0.5rem;
+
+    input::placeholder {
+        font-size: $s;
+        color: $grayLight;
+    }
+}
