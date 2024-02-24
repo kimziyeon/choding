@@ -1,0 +1,11 @@
+@use '../styles/main' as *;
+
+.mainContainer {
+    padding: 2rem;
+
+    .mainSection {
+        width: 100%;
+        height: 50vh;
+        background-color: $grayLight;
+    }
+}
