@@ -11,7 +11,9 @@ export default function SearchInputSub() {
                 width={20}
                 height={20}
                 />
-        <input placeholder="검색어를 입력해주세요"/>
+            <input 
+            name="search input form"
+            placeholder="검색어를 입력해주세요"/>
         </div>
     )
 }

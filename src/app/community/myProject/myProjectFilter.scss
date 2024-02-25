@@ -1,23 +1,29 @@
 @use '../../../styles/main' as *;
 
+.filterActive {
+    max-height: 2.5rem !important;
+}
+
 #myProjectFilter {
+    transition: 0.3s;
+    max-height: 20rem;
     overflow: hidden;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $grayLight;
 
     .myProjectFilterHeader {
-        border-bottom: 1px solid $grayLight;
         @include flexbox(sb, c);
         margin-bottom: 1rem;
 
         .filterTitle {
+            cursor: pointer;
             font-size: $b;
         }
     }
 
     .containerContents {
-        @include flexbox();
-        gap: 2rem;
-
         div b {
+            font-size: $s;
             display: block;
             color: $gray;
             margin-bottom: 0.5rem;
@@ -26,6 +32,7 @@
         ul {
             @include flexbox();
             gap: 0.5rem;
+            flex-wrap: wrap;
 
             li {
                 button {
@@ -41,6 +48,8 @@
 
         .filterTotalMember {}
 
-        .filterSkills {}
+        .filterSkills {
+            margin-top: 1rem;
+        }
     }
 }
