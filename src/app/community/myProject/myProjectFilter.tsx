@@ -5,30 +5,41 @@ import SearchInputSub from "@/components/searchSub/SearchInputSub";
 import './myProjectFilter.scss'
 
 export default function MyProjectFilter() {
-  const [isOnFilterActive, setIsOnFilterActive] = useState(false);
+  const [isOnButtonActive, setisOnButtonActive] = useState(false);
   const filterRef = useRef<HTMLHeadingElement | null>(null);
   const filterToggleBtn:React.MouseEventHandler<HTMLHeadingElement> = () => {
     filterRef.current?.classList.toggle("filterActive");
-    setIsOnFilterActive(!isOnFilterActive);
+    setisOnButtonActive(!isOnButtonActive);
   }
 
-  useEffect(()=>{
-    const buttonElements = filterRef.current?.getElementsByTagName('button');
-    if(buttonElements){
-      for (let i = 0; i < buttonElements.length; i++) {
-        buttonElements[i].addEventListener('click', () => {
-          buttonElements[i].classList.toggle('active');
-        })
-      }
-    }
-  }, [])
-  
+useEffect(() => {
+  const filterElement = filterRef.current;
+  if (filterElement) {
+    const buttonElements = filterElement.getElementsByTagName('button');
+
+    const toggleActiveClass = (e) => {
+      e.target.classList.toggle('active');
+    };
+
+    Array.from(buttonElements).forEach((buttonElement) => {
+      buttonElement.addEventListener('click', toggleActiveClass);
+    });
+
+    return () => { //클린업
+      Array.from(buttonElements).forEach((buttonElement) => {
+        buttonElement.removeEventListener('click', toggleActiveClass);
+      });
+    };
+  }
+
+  return () => {};
+}, [])
 
     return (
       <section id="myProjectFilter" className="communityContainer" ref={filterRef}>
         <div className="myProjectFilterHeader">
           <h3 className="filterTitle" onClick={filterToggleBtn}>
-            {isOnFilterActive ? '검색필터 ∨' : '검색필터 ∧'}
+            {isOnButtonActive ? '검색필터 ∨' : '검색필터 ∧'}
             </h3>
           <SearchInputSub />
         </div>
