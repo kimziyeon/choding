@@ -9,28 +9,35 @@ import { useEffect, useState } from 'react';
 
 export default function Home({ subtext, title, option }) {
     const [result, setResult] = useState([]);
+    const [subtitle, setSubtitle] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
+            let dataResult;
             switch (option) {
                 case 0:
-                    await setResult(data.youtube);
+                    dataResult = data.youtube;
                     break;
                 case 1:
-                    await setResult(data.google);
+                    dataResult = data.google;
                     break;
                 case 2:
-                    await setResult(data.naver);
+                    dataResult = data.naver;
                     break;
                 case 3:
-                    await setResult(data.popular);
+                    dataResult = data.popular;
+                    break;
+                case 4:
+                dataResult = data.community;
                     break;
                 default:
+                    dataResult = data.youtube;
                     break;
             }
+            await setResult(dataResult);
+            console.log(option, '의 데이터는', dataResult);
         }
         fetchData();
-        console.log(option, '의 데이터는', result)
     }, [option])
 
     const classname = `num${option}`;
@@ -39,7 +46,11 @@ export default function Home({ subtext, title, option }) {
         <section className={`contentsBox ${classname}`}>
             <div className='contLeft'>
                 <p className='subtext'>{subtext}</p>
-                <h3 className='title'><span>{title}</span> 강의</h3>
+                <h3 className='title'>
+                  {option === 4 ? '초보들의 ' : null}
+                  <span>{title}</span>
+                  {option === 4 ? null : ' 강의'}
+                </h3>
                 <span className='more'>더보기
                     <Image
                         src={ArrowRight}
