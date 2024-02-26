@@ -12,25 +12,28 @@ export default function Home({ subtext, title, option }) {
 
     useEffect(() => {
         const fetchData = async () => {
+            let dataResult;
             switch (option) {
                 case 0:
-                    await setResult(data.youtube);
+                    dataResult = data.youtube;
                     break;
                 case 1:
-                    await setResult(data.google);
+                    dataResult = data.google;
                     break;
                 case 2:
-                    await setResult(data.naver);
+                    dataResult = data.naver;
                     break;
                 case 3:
-                    await setResult(data.popular);
+                    dataResult = data.popular;
                     break;
                 default:
+                    dataResult = data.google;
                     break;
             }
+            await setResult(dataResult);
+            console.log(option, '의 데이터는', dataResult);
         }
         fetchData();
-        console.log(option, '의 데이터는', result)
     }, [option])
 
     const classname = `num${option}`;
