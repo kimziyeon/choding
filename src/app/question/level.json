@@ -1,0 +1,22 @@
+{
+    "oxQuiz":[
+        {
+            "id":0,
+            "number" :1,
+            "question" : "변수를 선언할 때 재선언이 불가능한 키워드는 'const'이다.",
+            "answer": true
+        },
+        {
+            "id":1,
+            "number" :2,
+            "question" : "' == ' 연산자는 값과 데이터 유형까지 모두 일치하는지 확인한다.",
+            "answer": false
+        },
+        {
+            "id":2,
+            "number" :3,
+            "question" : "Next.js에서 동적 라우팅을 구현하기 위해 사용되는 파일이름은 [id]이다.",
+            "answer": true
+        }
+    ]
+}
