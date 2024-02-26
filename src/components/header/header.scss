@@ -23,15 +23,6 @@
 
         div {
             @include flexbox(sb, c);
-
-            // between line
-            &>a:first-child::after {
-                display: inline;
-                content: '|';
-                color: $grayLight;
-                font-weight: 400;
-                margin: 0.5rem;
-            }
         }
 
 
