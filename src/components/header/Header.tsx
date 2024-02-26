@@ -11,15 +11,15 @@ import HeaderMenu from './components/HeaderMenu';
 import './header.scss';
 
 export default function Header() {
-    const [isOnHeaderMenu, setIsOnHeaderMenu] = useState(false);
+    const [active, setActive] = useState(false);
 
-    const onClickMenu = () => {
-        setIsOnHeaderMenu(true);
+    const onClickMenu: React.MouseEventHandler<HTMLImageElement> | undefined = () => {
+        setActive(!active);
     }
 
     return (
         <header id="mainHeader">
-            <HeaderMenu />
+            <HeaderMenu setActive={setActive} active={active} onClickMenu={onClickMenu} />
             <div className='headerTOP'>
                 <div className='leftSide'>
                     <Image src={Menu}
