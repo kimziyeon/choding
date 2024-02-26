@@ -1,12 +1,22 @@
+$s-breakpoint: 430px;
+$m-breakpoint: 600px;
+$l-breakpoint: 768px;
+
 @mixin responsive($screen) {
-  @if ($screen == 'T') {
-    @media screen and (min-width: $md-breakpoint) {
+  @if ($screen =='s') {
+    @media screen and (max-width: $s-breakpoint) {
       @content;
     }
   }
 
-  @if ($screen == 'D') {
-    @media screen and (min-width: $lg-breakpoint) {
+  @if ($screen =='m') {
+    @media screen and (max-width: $m-breakpoint) {
+      @content;
+    }
+  }
+
+  @if ($screen =='l') {
+    @media screen and (max-width: $l-breakpoint) {
       @content;
     }
   }
