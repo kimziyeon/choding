@@ -5,15 +5,15 @@ import './searchIconSVG.scss'
 export default function SearchInputSub() {
     return (
         <div id="searchInputSub">
-                <Image
+            <Image
                 src={SearchIconSVG}
                 alt="검색 아이콘"
                 width={20}
                 height={20}
-                />
-            <input 
-            name="search input form"
-            placeholder="검색어를 입력해주세요"/>
+            />
+            <input
+                name="search input form"
+                placeholder="검색어를 입력해주세요" />
         </div>
     )
 }

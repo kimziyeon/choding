@@ -1,0 +1,206 @@
+{
+    "youtube": [
+        {
+            "title": "유튜브 검색결과 예시",
+            "link": "https://ko.legacy.reactjs.org/",
+            "displayLink": "ko.legacy.reactjs.org",
+            "snippet": "선언형. React는 상호작용이 많은 UI를 만들 때 생기는 어려움을 줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요. 그럼 React는 데이터가 변경됨에 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "시작하기 – React",
+            "link": "https://ko.legacy.reactjs.org/docs/getting-started.html",
+            "displayLink": "ko.legacy.reactjs.org",
+            "snippet": "새 React 앱 만들기. React 프로젝트를 시작한다면 스크립트 태그를 사용한 간단한 HTML 페이지를 만드는 것이 최고의 방법일 것입니다. 설치하는 데 1분밖에 걸리지 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기",
+            "link": "https://velog.io/@eunbinn/modularizing-react-apps",
+            "displayLink": "velog.io",
+            "snippet": "Feb 22, 2023 ... [번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기 · 리액트는 뷰를 구축하기 위한 소박한 라이브러리입니다. · 현실 세계의 리액트 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFLlEj0lHkWn_FJcROHoiwnu7AU0-c_BHBjTtHjAZUJfWVaC4u77TMA_s",
+                        "width": "297",
+                        "height": "170"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "기존에 잘 알려진 UI 패턴을 프런트엔드 개발에 적용하는 과정을 적은 글입니다. 리팩토링하는 과정을 단계별로 쫓아가며 UI 패턴을 실제 리액트 사례에 적용하는 방법을 살펴보고 그 이점을 확인할 수 있습니다 :)"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[번역] 리액트는 언제 컴포넌트를 렌더링 하나요?",
+            "link": "https://velog.io/@eunbinn/when-does-react-render-your-component",
+            "displayLink": "velog.io",
+            "snippet": "Apr 16, 2022 ... 렌더 단계에서 리액트는 재귀적으로 컴포넌트 트리를 탐색하여 컴포넌트를 렌더링 합니다. 따라서 만약 자식 컴포넌트 에게 또 다른 자식 컴포넌트가 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSrY4T4Dtyjpq1ijTHlFLmzQpVSUT02hdgCTXedTyPRy5_b0Xh7U8_4aCcY",
+                        "width": "275",
+                        "height": "183"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "정확히 언제 그리고 왜 리액트는 컴포넌트를 렌더링 하는 것일까요? 이 글에서는 리액트 커뮤니티에서 가장 자주 묻는 질문 중 하나인 \"리액트는 언제 또는 왜 컴포넌트를 렌더링 하나요?\"에 대해 조금의 리액트 소스 코드를 사용하여 답하고 있습니다."
+                    }
+                ]
+            }
+        }
+    ],
+    "google": [
+        {
+            "title": "React – 사용자 인터페이스를 만들기 위한 JavaScript 라이브러리",
+            "link": "https://ko.legacy.reactjs.org/",
+            "displayLink": "ko.legacy.reactjs.org",
+            "snippet": "선언형. React는 상호작용이 많은 UI를 만들 때 생기는 어려움을 줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요. 그럼 React는 데이터가 변경됨에 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "시작하기 – React",
+            "link": "https://ko.legacy.reactjs.org/docs/getting-started.html",
+            "displayLink": "ko.legacy.reactjs.org",
+            "snippet": "새 React 앱 만들기. React 프로젝트를 시작한다면 스크립트 태그를 사용한 간단한 HTML 페이지를 만드는 것이 최고의 방법일 것입니다. 설치하는 데 1분밖에 걸리지 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기",
+            "link": "https://velog.io/@eunbinn/modularizing-react-apps",
+            "displayLink": "velog.io",
+            "snippet": "Feb 22, 2023 ... [번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기 · 리액트는 뷰를 구축하기 위한 소박한 라이브러리입니다. · 현실 세계의 리액트 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFLlEj0lHkWn_FJcROHoiwnu7AU0-c_BHBjTtHjAZUJfWVaC4u77TMA_s",
+                        "width": "297",
+                        "height": "170"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "기존에 잘 알려진 UI 패턴을 프런트엔드 개발에 적용하는 과정을 적은 글입니다. 리팩토링하는 과정을 단계별로 쫓아가며 UI 패턴을 실제 리액트 사례에 적용하는 방법을 살펴보고 그 이점을 확인할 수 있습니다 :)"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[번역] 리액트는 언제 컴포넌트를 렌더링 하나요?",
+            "link": "https://velog.io/@eunbinn/when-does-react-render-your-component",
+            "displayLink": "velog.io",
+            "snippet": "Apr 16, 2022 ... 렌더 단계에서 리액트는 재귀적으로 컴포넌트 트리를 탐색하여 컴포넌트를 렌더링 합니다. 따라서 만약 자식 컴포넌트 에게 또 다른 자식 컴포넌트가 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSrY4T4Dtyjpq1ijTHlFLmzQpVSUT02hdgCTXedTyPRy5_b0Xh7U8_4aCcY",
+                        "width": "275",
+                        "height": "183"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "정확히 언제 그리고 왜 리액트는 컴포넌트를 렌더링 하는 것일까요? 이 글에서는 리액트 커뮤니티에서 가장 자주 묻는 질문 중 하나인 \"리액트는 언제 또는 왜 컴포넌트를 렌더링 하나요?\"에 대해 조금의 리액트 소스 코드를 사용하여 답하고 있습니다."
+                    }
+                ]
+            }
+        }
+    ],
+    "naver": [
+        {
+            "title": "[넥스트 JS] - 신규프로젝트 수정 에러",
+            "link": "https://blog.naver.com/wormsbrother/223053260427",
+            "description": "위와같이 index.js 파일의 내용을 리액트로 적어주면 바로 해결된다. 감사합니다. #NextJS #신규파일수정 #에러 #에러해결 #메인페이지수정방법 #넥스트JS기초",
+            "bloggername": "꿈틀거리는 개발블로그",
+            "bloggerlink": "blog.naver.com/wormsbrother",
+            "postdate": "20230323"
+        },
+        {
+            "title": "NEXT.JS 기초개념",
+            "link": "https://blog.naver.com/qpxmaks/223231310244",
+            "description": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
+            "bloggername": "정보보안전문가",
+            "bloggerlink": "blog.naver.com/qpxmaks",
+            "postdate": "20231008"
+        },
+        {
+            "title": "node.js(다운로드, 기초 설명)",
+            "link": "https://blog.naver.com/ssora-/223021701469",
+            "description": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
+            "bloggername": "이모저모",
+            "bloggerlink": "blog.naver.com/ssora-",
+            "postdate": "20230220"
+        },
+        {
+            "title": "[넥스트 JS] 중첩 동적 라우트 세그먼트 한번에 잡기",
+            "link": "https://blog.naver.com/wormsbrother/223063036862",
+            "description": "#프론트엔드 #프론트엔드공부 #프론트엔드학습 #프론트엔드실습 #넥스트JS ＃넥스트기초학습 #넥스트기초실습 #넥스트기초공부 #넥스트기초 #중첩라우팅세그먼트 #동적라우팅 #중첩라우팅... ",
+            "bloggername": "꿈틀거리는 개발블로그",
+            "bloggerlink": "blog.naver.com/wormsbrother",
+            "postdate": "20230403"
+        }
+    ],
+    "popular": [
+        {
+            "title": "인기1",
+            "link": "https://blog.naver.com/wormsbrother/223053260427",
+            "snippet": "한 줄이면 이렇게",
+            "author": "꿈틀거리는 개발블로그",
+            "bloggerlink": "blog.naver.com/wormsbrother",
+            "postdate": "20230323"
+        },
+        {
+            "title": "인기2",
+            "link": "https://blog.naver.com/qpxmaks/223231310244",
+            "snippet": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
+            "author": "정보보안전문가",
+            "bloggerlink": "blog.naver.com/qpxmaks",
+            "postdate": "20231008"
+        },
+        {
+            "title": "인기3",
+            "link": "https://blog.naver.com/ssora-/223021701469",
+            "snippet": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
+            "author": "이모저모",
+            "bloggerlink": "blog.naver.com/ssora-",
+            "postdate": "20230220"
+        }
+    ]
+}
