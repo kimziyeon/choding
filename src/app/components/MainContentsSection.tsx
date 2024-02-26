@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 
 export default function Home({ subtext, title, option }) {
     const [result, setResult] = useState([]);
+    const [subtitle, setSubtitle] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,8 +27,11 @@ export default function Home({ subtext, title, option }) {
                 case 3:
                     dataResult = data.popular;
                     break;
+                case 4:
+                dataResult = data.community;
+                    break;
                 default:
-                    dataResult = data.google;
+                    dataResult = data.youtube;
                     break;
             }
             await setResult(dataResult);
@@ -42,7 +46,11 @@ export default function Home({ subtext, title, option }) {
         <section className={`contentsBox ${classname}`}>
             <div className='contLeft'>
                 <p className='subtext'>{subtext}</p>
-                <h3 className='title'><span>{title}</span> 강의</h3>
+                <h3 className='title'>
+                  {option === 4 ? '초보들의 ' : null}
+                  <span>{title}</span>
+                  {option === 4 ? null : ' 강의'}
+                </h3>
                 <span className='more'>더보기
                     <Image
                         src={ArrowRight}

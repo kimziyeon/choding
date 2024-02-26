@@ -18,6 +18,7 @@
         .title {
             font-size: $m;
             margin-bottom: 2rem;
+            white-space: nowrap;
 
             span {
                 color: $main;
@@ -29,35 +30,52 @@
 
             img {}
         }
+
+        .more {
+            width: 100%;
+            font-size: $s;
+        }
     }
 
     .contRight {
-        overflow: hidden;
+        // overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
 
         figure {
+            img {
+                height: 105px;
+                object-fit: cover;
+                width: 100%;
+                border-radius: 0.5rem;
+            }
+
             figcaption {
+                padding-top: 0.5rem;
                 @include column-flexbox(sb, s);
 
                 .top {
                     height: 4rem;
 
-                    .title {
-                        font-weight: 700;
-                    }
-
-                    .description {
-                        margin: 0.5rem 0;
-                        color: $gray;
-                        font-size: $s;
+                    * {
+                        width: 100%;
                         overflow: hidden;
                         text-overflow: ellipsis;
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
                         line-height: 140%;
+                    }
+
+                    .title {
+                        height: 1.2rem;
+                    }
+
+                    .description {
+                        margin: 0.5rem 0;
+                        color: $gray;
+                        font-size: $s;
                     }
                 }
             }
@@ -69,7 +87,7 @@
     }
 }
 
-// 요즘 인기있는 강의
+// 요즘 인기있는 강의(3)
 .contentsBox.num3 {
     @include column-flexbox(c, c);
 
@@ -126,7 +144,7 @@
                     content: '';
                     margin-bottom: 1rem;
                     width: 100%;
-                    height: 5rem;
+                    height: 4.5rem;
                 }
             }
         }
@@ -144,16 +162,237 @@
     }
 }
 
-@include responsive(m) {
-    .contentsBox.num3 .contRight {
-        flex-direction: column;
+// 유튜브(0)
+.contentsBox.num0 {
+    @include column-flexbox(c, c);
+    background-color: $wGray;
+
+    .contLeft {
+        width: 100%;
+        text-align: center;
+
+        .title {
+            margin-bottom: 0;
+        }
+
+        .more {
+            justify-content: flex-end;
+        }
+    }
+
+    .contRight {
+        max-width: 100%;
+        @include flexbox();
+        gap: 1rem;
 
         figure {
-            height: 140px;
-            background-position: 0;
+            @include column-flexbox(s, s);
+            width: 100%;
+            border-radius: 1rem;
+            padding: 1rem;
+            height: 240px;
+            box-shadow: 0 0 10px 0 $grayLight;
 
             figcaption {
-                flex-direction: row;
+                width: 100%;
+                @include column-flexbox(sb, s);
+
+                .figcaption {
+                    width: 100%;
+
+                    .top {
+                        .title {
+                            font-weight: 700;
+                        }
+                    }
+
+                    .author {
+                        font-size: $s;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .contentsBox.num1,
+    .contentsBox.num2 {
+
+        .contLeft {}
+
+        .contRight {
+            // width: calc((100% - 4rem) / 3 * 2);
+        }
+    }
+}
+
+// 구글(1)
+// 네이버(2)
+.contentsBox.num1,
+.contentsBox.num2 {
+    .contRight {
+        width: 100%;
+        @include flexbox();
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        .contentsFigure {
+            width: calc((100% - 1rem) / 2);
+        }
+    }
+}
+
+.contentsBox.num2 {
+    .contentsFigure {
+        border: 1px solid $main;
+        border-radius: 1rem;
+        padding: 1rem;
+    }
+
+    .contentsFigure:nth-child(2) {
+        border-color: $sub2;
+    }
+
+    .contentsFigure:nth-child(3) {
+        border-color: $grayLight;
+    }
+}
+
+// 하단
+// 커뮤니티(4) 퀴즈(5)
+.bottomContents {
+    @include flexbox();
+
+    .contentsBox.num4 {
+        flex-direction: column;
+        width: calc((100% - 2rem) / 3 * 2);
+
+        .contLeft {
+            width: 100%;
+
+            .title {
+                margin: 0;
+            }
+
+            .more {
+                justify-content: flex-end;
+            }
+        }
+
+        .contRight {
+            @include flexbox();
+            gap: 1rem;
+
+            figure {}
+        }
+    }
+
+    #mainTodayQuiz {
+        padding: 2rem 0;
+        width: calc((100% - 2rem) / 3);
+
+        @include column-flexbox(sb, s);
+
+        .contLeft {
+            .subtext {
+                font-size: $s;
+                color: $gray;
+                margin-bottom: 0.5rem;
+            }
+
+            .title {
+                span {
+                    color: $main;
+                }
+            }
+        }
+
+        .contRight {
+            width: 100%;
+            height: 211px;
+            background-color: aqua;
+            border-radius: 0.5rem;
+            background: url('https://cdn.pixabay.com/photo/2020/12/25/09/11/quiz-5858939_1280.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+// 600px
+@include responsive(m) {
+
+    // 인기
+    .contentsBox.num3 {
+        .contRight {
+            flex-direction: column;
+
+            figure {
+                height: 140px;
+                background-position: 0;
+
+                figcaption {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    // youtube
+    .contentsBox.num0 {
+        .contRight {
+            flex-direction: column;
+        }
+    }
+
+    // google
+    .contentsBox.num1 {
+        flex-direction: column;
+    }
+
+    // naver
+    .contentsBox.num2 {
+        flex-direction: column;
+    }
+
+
+    // more
+    .contentsBox.num1,
+    .contentsBox.num2 {
+        .contLeft {
+            width: 100%;
+
+            .title {
+                margin: 0;
+            }
+
+            .more {
+                width: 100%;
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+@include responsive(s) {
+    .contentsBox {
+        padding: 1rem;
+    }
+
+    .bottomContents {
+        flex-direction: column;
+
+        .contentsBox.num4 {
+            width: 100%;
+        }
+
+        #mainTodayQuiz {
+            width: 100%;
+            padding: 1rem;
+
+            .contRight {
+                margin-top: 1rem;
+                height: 105px;
             }
         }
     }

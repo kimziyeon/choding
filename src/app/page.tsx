@@ -30,9 +30,20 @@ export default function Home() {
         subtext={'네이버가 들어와용'}
         title={'넥스트 기초'} />
 
-      <section className="padding bottomContents">
-        <div className='community'>커뮤니티</div>
-        <div className='quiz'>퀴즈</div>
+      <section className="bottomContents">
+        <MainContentsSection
+        option={4}
+        subtext={'모두와 공유해요'}
+        title={'커뮤니티'} />
+        <section id="mainTodayQuiz" className="num5">
+            <div className='contLeft'>
+                <p className='subtext'>열심히 공부했다면?</p>
+                <h3 className='title'>오늘의
+                  <span>&nbsp;퀴즈</span>
+                </h3>
+            </div>
+            <div className="contRight"></div>
+       </section>
       </section>
     </main>
   );

@@ -1,25 +1,11 @@
 import Image from 'next/image';
 
 export default function ContentsFigure({ result, option }) {
-    let imgSrc = '';
-
-    switch (option) {
-        case 0:
-            imgSrc = 'pagemap.cse_thumbnail[0].src';
-            break;
-        case 1:
-            imgSrc = 'pagemap.cse_thumbnail[0].src';
-            break;
-
-        default:
-            break;
-    }
-
     return (
         result.map((item, i) => (
             <figure className='contentsFigure' key={item.title + i}>
                 {
-                    option == 2 || 3 ? <></> : <img src={item.image} alt={item.title} />
+                    option == 2 || option == 3 ? <></> : <img src={item.pagemap.cse_thumbnail[0].src} alt={item.title} />
                 }
                 <figcaption>
                     <div className='figcaption'>
