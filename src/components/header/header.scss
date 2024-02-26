@@ -9,12 +9,22 @@
         padding: 1rem 0;
 
         .leftSide {
+            width: 20%;
+
             .mainActiveTopMenu {
                 font-weight: 900;
             }
         }
 
+        .titleLogo {
+            @include flexbox(c, c);
+            width: 60%;
+        }
+
         .rightSide {
+            @include flexbox(e, c);
+            width: 20%;
+
             .signUp {
                 color: $main;
                 font-weight: 700;

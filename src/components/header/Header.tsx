@@ -11,16 +11,21 @@ import User from '@/essets/user.svg';
 import './header.scss';
 
 export default function Header() {
-    const [isOnHeaderMenu, setIsOnHeaderMenu] = useState(false);
+    const [active, setActive] = useState(false);
 
-    const onClickMenu = () => {
-        setIsOnHeaderMenu(true);
+    const onClickMenu: React.MouseEventHandler<HTMLImageElement> | undefined = () => {
+        setActive(!active);
     }
 
     return (
         <header id="mainHeader">
+<<<<<<< HEAD
             {/* <HeaderMenu /> */}
             {/* <div className='headerTOP'>
+=======
+            <HeaderMenu setActive={setActive} active={active} onClickMenu={onClickMenu} />
+            <div className='headerTOP'>
+>>>>>>> dev
                 <div className='leftSide'>
                     <Image src={Menu}
                         alt='Logo'
