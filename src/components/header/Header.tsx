@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Logo from '@/essets/LOGO.svg';
 import Menu from '@/essets/menu.svg';
 import User from '@/essets/user.svg';
-import HeaderMenu from './components/HeaderMenu';
+// import HeaderMenu from './components/HeaderMenu';
 
 import './header.scss';
 
@@ -19,8 +19,8 @@ export default function Header() {
 
     return (
         <header id="mainHeader">
-            <HeaderMenu />
-            <div className='headerTOP'>
+            {/* <HeaderMenu /> */}
+            {/* <div className='headerTOP'>
                 <div className='leftSide'>
                     <Image src={Menu}
                         alt='Logo'
@@ -32,13 +32,13 @@ export default function Header() {
                     <Link href='/' className='logo'>
                         <Image src={Logo} alt='Logo' width={50} height={25}></Image>
                     </Link>
-                </h1>
+                </h1> */}
                 <div className='rightSide'>
                     <Link href='/question' className='signUp'>
                         <Image src={User} alt='Logo' width={50} height={25}></Image>
                     </Link>
                 </div>
-            </div>
+            {/* </div> */}
             {/* <nav className='headerGNB'>
                 <Link href='/community'>커뮤니티 홈</Link>
                 <Link href='/community/QnA'>Q&A</Link>
