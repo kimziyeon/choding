@@ -22,6 +22,9 @@ export default function Home({ subtext, title, option }) {
                 case 2:
                     await setResult(data.naver);
                     break;
+                case 3:
+                    await setResult(data.popular);
+                    break;
                 default:
                     break;
             }
@@ -30,12 +33,14 @@ export default function Home({ subtext, title, option }) {
         console.log(option, '의 데이터는', result)
     }, [option])
 
+    const classname = `num${option}`;
+
     return (
-        <section className="padding googleContents contentsBox">
+        <section className={`contentsBox ${classname}`}>
             <div className='contLeft'>
-                <p>{subtext}</p>
-                <h3>{title}</h3>
-                <span>더보기
+                <p className='subtext'>{subtext}</p>
+                <h3 className='title'><span>{title}</span> 강의</h3>
+                <span className='more'>더보기
                     <Image
                         src={ArrowRight}
                         alt='arrow image'
