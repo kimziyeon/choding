@@ -14,7 +14,7 @@ export default function MyProjectWrite() {
     }
 
     const handleOptionClick = (option: string, title: string) => {
-        console.log(title, '<-----------title');
+        console.log('title: ', title, ',   option: ', option);
         setActiveOptions(prevState => {
             if (prevState.includes(option)) {
                 // 이미 상태에 포함되어 있다면 제거
@@ -42,70 +42,51 @@ export default function MyProjectWrite() {
                     <input placeholder='제목을 입력해주세요'></input>
                 </section>
                 <section id="writeStep1">
-                    <div className='top'>
-                        <h5><span>STEP.1</span> 어떤 프로젝트를 하셨나요?</h5>
-                    </div>
                     <InputSection
+                        num={1}
+                        titleGuide={'어떤 프로젝트를 하셨나요?'}
                         classname={'overview'}
                         title={'개요'}
                     />
-                    <div>
-                        <div className='member'>
-                            <FilterComponent
-                                title={'개발 인원'}
-                                type={'member'}
-                                options={['개인', '팀']}
-                                handleOptionClick={handleOptionClick}
-                                activeOptions={activeOptions}
-                            />
-                        </div>
-                        <div className='myPosition'>
-                            <FilterComponent
-                                title={'내 포지션'}
-                                type={'position'}
-                                options={['리드 개발자', '서브 개발자']}
-                                handleOptionClick={handleOptionClick}
-                                activeOptions={activeOptions}
-                            />
-                        </div>
-                    </div>
+                    <FilterComponent
+                        title={'개발 인원'}
+                        type={'member'}
+                        options={['개인', '팀']}
+                        handleOptionClick={handleOptionClick}
+                        activeOptions={activeOptions}
+                    />
+                    <FilterComponent
+                        title={'내 포지션'}
+                        type={'position'}
+                        options={['리드 개발자', '서브 개발자']}
+                        handleOptionClick={handleOptionClick}
+                        activeOptions={activeOptions}
+                    />
                 </section>
                 <section id="writeStep2">
-                    <div className='top'>
-                        <h5><span>STEP.2</span> 프로젝트를 소개해주세요!</h5>
-                    </div>
                     <InputSection
+                        num={2}
+                        titleGuide={'프로젝트를 소개해주세요!'}
                         classname={'goal'}
                         title={'프로젝트 목표'}
                     />
-                    <div className="stack">
-                        <FilterComponent
-                            title={'사용 기술'}
-                            type={'stack'}
-                            options={['HTML', 'CSS', 'JS', 'TS', 'React', 'Vue', 'Nextjs', 'GIT']}
-                            handleOptionClick={handleOptionClick}
-                            activeOptions={activeOptions}
-                        />
-                    </div>
-
+                    <FilterComponent
+                        title={'사용 기술'}
+                        type={'stack'}
+                        options={['HTML', 'CSS', 'JS', 'TS', 'React', 'Vue', 'Nextjs', 'GIT']}
+                        handleOptionClick={handleOptionClick}
+                        activeOptions={activeOptions}
+                    />
                 </section>
                 <section id="writeStep3">
-                    <div className='top'>
-                        <h5><span>STEP.3</span> 링크를 입력해주세요!</h5>
-                    </div>
-                    <div className='link'>
-                        <section className='linkCont'>
-                            <div className='inputCont'>
-                                <img className='linkIcon' />
-                                <div>
-                                    <input placeholder='링크 제목을 입력해주세요' name='linkTitle' />
-                                    <input placeholder='http://, https://를 포함해 작성해주세요' name='linkSrc' />
-                                </div>
-                            </div>
-                            <button type="button" className='smallBoldMain'>+ 링크 추가</button>
-                        </section>
-                    </div>
+                <InputSection
+                        num={3}
+                        titleGuide={'링크를 입력해주세요.'}
+                        classname={'link'}
+                        title={''}
+                    />
                 </section>
+                
                 <section className='submit'>
                     <button type="button" className='back'>취소</button>
                     <button type="submit" className='confirm'>등록</button>

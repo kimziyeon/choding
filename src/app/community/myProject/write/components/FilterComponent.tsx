@@ -2,7 +2,6 @@
 import ButtonComponent from './ButtonComponent';
 
 type FilterComponentType = {
-  sectionName: string,
   type: string,
   title: string,
   options: string[],
@@ -10,9 +9,9 @@ type FilterComponentType = {
   activeOptions: string[]
 }
 
-export default function FilterComponent({ sectionName, type, title, options, handleOptionClick, activeOptions }:FilterComponentType) {
+export default function FilterComponent({ type, title, options, handleOptionClick, activeOptions }:FilterComponentType) {
   return (
-    <div className={sectionName}>
+    <div className={type}>
       <b className='titleBoldGray'>{title}</b>
       <ul>
         {options.map((option, index) => (
