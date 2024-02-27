@@ -9,7 +9,17 @@ import InputSection from './components/InputSection';
 
 export default function MyProjectWrite() {
     const router = useRouter();
-    const { register, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>();
+    const { register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
+        defaultValues: {
+        title: '',
+        goal: '',
+        overview: '',
+        link: [],
+        position: [],
+        member: [],
+        stack: []
+      },
+    });
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
     const [isOnButtonActive, setisOnButtonActive] = useState(false);
     const filterRef = useRef<HTMLHeadingElement | null>(null);
@@ -63,6 +73,8 @@ export default function MyProjectWrite() {
                         title={'개요'}
                     />
                     <FilterComponent
+                        setValue={setValue}
+                        watch={watch}
                         register={register}
                         title={'개발 인원'}
                         type={'member'}
@@ -71,6 +83,8 @@ export default function MyProjectWrite() {
                         activeOptions={activeOptions}
                     />
                     <FilterComponent
+                        setValue={setValue}
+                        watch={watch}
                         register={register}
                         title={'내 포지션'}
                         type={'position'}
@@ -88,6 +102,8 @@ export default function MyProjectWrite() {
                         title={'프로젝트 목표'}
                     />
                     <FilterComponent
+                        setValue={setValue}
+                        watch={watch}
                         register={register}
                         title={'사용 기술'}
                         type={'stack'}
