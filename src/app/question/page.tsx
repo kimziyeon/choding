@@ -1,14 +1,24 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import Quizdata from './level.json';
+import QuizData from './level.json';
 
 export default function UserQuestion() {
     const [score, setScore] = useState(0);
     const [ingId, setIngId] = useState(0);
-    const [ques, setQues] = useState(Quizdata.oxQuiz);
+    const [timer, setTimer] = useState(10);
+    const [ques, setQues] = useState(QuizData.oxQuiz);
     const ingQues = ques[ingId];
 
+    useEffect(()=>{
+        const intervalId = setInterval(()=>{
+            if(timer>0){
+                setTimer(timer -1);
+            }
+        }, 1000);
+            return()=>clearInterval(intervalId);
+        }, [timer]);
+    
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -29,14 +39,15 @@ export default function UserQuestion() {
     const nextQuestion = ()=>{
         const nextId = ingId+1;
         if(ingId < ques.length){
-            setIngId(nextId)
+            setIngId(nextId);
+            setTimer(10);
     }else{
         {}
-    }
-        
-    }
+    }}
 
-
+    const formatTime = (time) => {
+        return time < 10 ? '0' + time : time;
+    };
 
     return (
         <>
@@ -47,6 +58,7 @@ export default function UserQuestion() {
                 <button onClick={()=>{btnHandler(true)}}>O</button>
                 <button onClick={()=>{btnHandler(false)}}>X</button>
                 <div>점수는 {score}</div>
+                <div className='timer'>00:{formatTime(timer)}</div>
             </div>
         </>
     );
