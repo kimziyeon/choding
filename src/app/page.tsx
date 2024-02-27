@@ -8,7 +8,7 @@ import MainContentsSection from './components/MainContentsSection';
 
 export default function Home() {
   return (
-    <main className="mainContainer contPadding">
+    <main className="mainContainer">
       <MainBanner />
       <MainContentsSection
         option={3}
