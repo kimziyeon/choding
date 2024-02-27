@@ -12,6 +12,8 @@ import ListComponent from './List';
 import './headerMenu.scss';
 
 export default function HeaderMenu({ active, setActive, onClickMenu }: { active: boolean; setActive: (value: boolean) => void, onClickMenu: (value: boolean) => void }) {
+    
+    
     return (
         <div id="HeaderMenu" className={active ? 'active' : ''}>
             <div className='headerBG'>
