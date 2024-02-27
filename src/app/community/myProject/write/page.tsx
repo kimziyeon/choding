@@ -1,6 +1,6 @@
 "use client";
 import './MyProjectWrite.scss';
-import FilterComponent from '../components/FilterComponent';
+import FilterComponent from './components/FilterComponent';
 import { useEffect, useRef, useState } from 'react';
 import InputSection from './components/InputSection';
 
@@ -13,7 +13,8 @@ export default function MyProjectWrite() {
         setisOnButtonActive(!isOnButtonActive);
     }
 
-    const handleOptionClick = (option: string) => {
+    const handleOptionClick = (option: string, title: string) => {
+        console.log(title, '<-----------title');
         setActiveOptions(prevState => {
             if (prevState.includes(option)) {
                 // 이미 상태에 포함되어 있다면 제거
@@ -25,10 +26,10 @@ export default function MyProjectWrite() {
         });
     }
 
-    useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
-        console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
-        console.log('클릭한 옵션 -->', activeOptions);
-    }, [activeOptions])
+    // useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
+    //     console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
+    //     console.log('클릭한 옵션 -->', activeOptions);
+    // }, [activeOptions])
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -50,16 +51,18 @@ export default function MyProjectWrite() {
                     />
                     <div>
                         <div className='member'>
-                            <b className='titleBoldGray'>인원</b>
                             <FilterComponent
+                                title={'개발 인원'}
+                                type={'member'}
                                 options={['개인', '팀']}
                                 handleOptionClick={handleOptionClick}
                                 activeOptions={activeOptions}
                             />
                         </div>
                         <div className='myPosition'>
-                            <b className='titleBoldGray'>내 포지션</b>
                             <FilterComponent
+                                title={'내 포지션'}
+                                type={'position'}
                                 options={['리드 개발자', '서브 개발자']}
                                 handleOptionClick={handleOptionClick}
                                 activeOptions={activeOptions}
@@ -77,6 +80,8 @@ export default function MyProjectWrite() {
                     />
                     <div className="stack">
                         <FilterComponent
+                            title={'사용 기술'}
+                            type={'stack'}
                             options={['HTML', 'CSS', 'JS', 'TS', 'React', 'Vue', 'Nextjs', 'GIT']}
                             handleOptionClick={handleOptionClick}
                             activeOptions={activeOptions}
