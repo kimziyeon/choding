@@ -1,0 +1,87 @@
+@use '../../../../styles/main' as *;
+
+
+#MyProjectTotal {
+    a {
+        width: calc((100% - 2rem)/3);
+
+        .contentsFigure {
+            width: 100%;
+
+            .noImage,
+            img {
+                width: 100%;
+                height: 110px;
+                border-radius: 0.5rem;
+                object-fit: cover;
+            }
+
+            .noImage {
+                background: url('../../../../essets/noImage2.png');
+                background-position: center center;
+            }
+
+            figcaption {
+                padding-top: 1rem;
+
+                .figcaption {
+                    .top {
+                        height: 8rem;
+
+                        .goal {
+                            font-size: $s;
+                            color: $gray;
+                            font-weight: 700;
+                            position: relative;
+                            z-index: 0;
+
+                            &::after {
+                                content: '';
+                                width: 100%;
+                                height: 0.5rem;
+                                background-color: $sub1;
+
+                                position: absolute;
+                                z-index: -1;
+                                top: 0.5rem;
+                                left: 0;
+                            }
+                        }
+
+                        .title {
+                            padding-top: 1rem;
+                            font-size: $b;
+                            font-weight: 700;
+                        }
+
+                        .overview {
+                            font-size: $s;
+                            padding-top: 0.5rem;
+                            color: $gray;
+                            line-height: 140%;
+                        }
+                    }
+
+                    .bottom {
+                        font-size: $s;
+                        color: $gray;
+
+                        .date {}
+
+                        .userId {
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive(m) {
+    #MyProjectTotal {
+        a {
+            width: calc((100% - 1rem)/2);
+        }
+    }
+}
