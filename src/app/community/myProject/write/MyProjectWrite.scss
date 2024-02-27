@@ -1,8 +1,92 @@
 // 커뮤니티 > 내 프로젝트 > 글쓰기
 // src\app\community\myProject\write\MyProjectWrite.scss
 
+@use '../../../../styles/main' as *;
+
 #MyProjectWrite {
+    color: $grayDark;
     padding: 2rem;
-    padding-top: calc(79px + 2rem);
+    padding-top: calc(79px + 1rem);
     min-height: calc(100svh);
+
+    #writeHeader {
+        h4 {
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            width: 100%;
+            font-size: $l;
+            font-weight: 700;
+        }
+    }
+
+    .mainBold {
+        color: $main;
+        font-weight: 700;
+    }
+
+    .titleBoldGray {
+        color: $gray;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+
+    section {
+        padding: 1rem 0;
+
+        ul {
+            @include flexbox();
+            gap: 0.5rem;
+            flex-wrap: wrap;
+
+            li {
+                button {
+                    @include btnBase;
+                }
+
+                button.active {
+                    @include btnActive;
+                }
+            }
+        }
+    }
+
+    // 문항 공통
+    .writeStep {
+        .top {
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid $gray;
+            margin-bottom: 1rem;
+
+            h5 {
+                font-size: $b;
+            }
+        }
+
+        input {
+            width: 100%;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            background-color: $wGray;
+        }
+    }
+
+    // --------- submit ---------
+    .submit {
+        button {
+            font-size: $b;
+            width: calc(50% - 0.5rem);
+            padding: 1rem 0;
+            border: 1px solid $main;
+        }
+
+        .confirm {
+            font-weight: 700;
+            color: #fff;
+            margin-left: 1rem;
+            background-color: $main;
+        }
+    }
 }

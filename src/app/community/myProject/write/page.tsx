@@ -41,7 +41,7 @@ export default function MyProjectWrite() {
                     <h4>새 프로젝트 작성</h4>
                     <input placeholder='제목을 입력해주세요'></input>
                 </section>
-                <section id="writeStep1">
+                <section id="writeStep1" className='writeStep'>
                     <InputSection
                         num={1}
                         titleGuide={'어떤 프로젝트를 하셨나요?'}
@@ -63,7 +63,7 @@ export default function MyProjectWrite() {
                         activeOptions={activeOptions}
                     />
                 </section>
-                <section id="writeStep2">
+                <section id="writeStep2" className='writeStep'>
                     <InputSection
                         num={2}
                         titleGuide={'프로젝트를 소개해주세요!'}
@@ -78,7 +78,7 @@ export default function MyProjectWrite() {
                         activeOptions={activeOptions}
                     />
                 </section>
-                <section id="writeStep3">
+                <section id="writeStep3" className='writeStep'>
                 <InputSection
                         num={3}
                         titleGuide={'링크를 입력해주세요.'}
@@ -86,7 +86,6 @@ export default function MyProjectWrite() {
                         title={''}
                     />
                 </section>
-                
                 <section className='submit'>
                     <button type="button" className='back'>취소</button>
                     <button type="submit" className='confirm'>등록</button>

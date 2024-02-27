@@ -1,6 +1,3 @@
-import Image from 'next/image';
-import linkIcon from '@/essets/linkIcon.png';
-
 type InputSectionType = {
     num : number,
     classname: string,
@@ -28,12 +25,12 @@ export default function InputSection({ num, classname, titleGuide, title }: Inpu
     return (
         <section className={classname}>
             <div className='top'>
-                <h5><span>STEP.{num}</span>&nbsp;{titleGuide}</h5>
+                <h5><span className='mainBold'>STEP.{num}</span>&nbsp;{titleGuide}</h5>
             </div>
             <div className='topCont'>
-                <b className='titleBoldGray'>{title}</b>
+                <p className='titleBoldGray'>{title}</p>
             </div>
-            {classname === 'link' ? <Image src={linkIcon} alt="icon" width={40} height={40} /> : null}
+            {classname === 'link' ? <button type="button" className="mainBold">+ 링크 추가</button> : null}
             <input type="text" name={title} placeholder={placetext} />
         </section>
     )

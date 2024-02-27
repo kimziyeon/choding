@@ -11,8 +11,8 @@ type FilterComponentType = {
 
 export default function FilterComponent({ type, title, options, handleOptionClick, activeOptions }:FilterComponentType) {
   return (
-    <div className={type}>
-      <b className='titleBoldGray'>{title}</b>
+    <section className={type}>
+      <p className='titleBoldGray'>{title}</p>
       <ul>
         {options.map((option, index) => (
           <li key={index}>
@@ -24,6 +24,6 @@ export default function FilterComponent({ type, title, options, handleOptionClic
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
