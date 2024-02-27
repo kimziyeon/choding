@@ -11,7 +11,7 @@ export const connectToDB = async (type: string, body: any) => {
     // 접속
     await client.connect();
     db = client.db('choding');
-    collection = db.collection('user');
+    collection = db.collection('myProject');
 
     switch (type) {
         case 'post': await collection.insertOne(body);
