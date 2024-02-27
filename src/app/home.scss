@@ -1,0 +1,9 @@
+@use '../styles/main' as *;
+
+.mainContainer {
+    .padding {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 2rem;
+    }
+}
