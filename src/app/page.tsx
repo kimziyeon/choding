@@ -8,7 +8,7 @@ import MainContentsSection from './components/MainContentsSection';
 
 export default function Home() {
   return (
-    <main className="mainContainer">
+    <main className="mainContainer contPadding">
       <MainBanner />
       <MainContentsSection
         option={3}
@@ -32,18 +32,18 @@ export default function Home() {
 
       <section className="bottomContents">
         <MainContentsSection
-        option={4}
-        subtext={'모두와 공유해요'}
-        title={'커뮤니티'} />
+          option={4}
+          subtext={'모두와 공유해요'}
+          title={'커뮤니티'} />
         <section id="mainTodayQuiz" className="num5">
-            <div className='contLeft'>
-                <p className='subtext'>열심히 공부했다면?</p>
-                <h3 className='title'>오늘의
-                  <span>&nbsp;퀴즈</span>
-                </h3>
-            </div>
-            <div className="contRight"></div>
-       </section>
+          <div className='contLeft'>
+            <p className='subtext'>열심히 공부했다면?</p>
+            <h3 className='title'>오늘의
+              <span>&nbsp;퀴즈</span>
+            </h3>
+          </div>
+          <div className="contRight"></div>
+        </section>
       </section>
     </main>
   );

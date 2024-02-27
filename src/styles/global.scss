@@ -28,11 +28,13 @@ li {
 }
 
 .contPadding {
-    padding: 2rem;
+    padding: 6rem 2rem 2rem 2rem;
 }
 
-@media (max-width:$s-breakpoint) {
+@media (max-width:$m-breakpoint) {
     .contPadding {
-        padding: 2rem 1rem;
+        padding: 5rem 1rem;
     }
 }
+
+@media (max-width:$s-breakpoint) {}
