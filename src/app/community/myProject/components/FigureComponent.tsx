@@ -5,24 +5,24 @@ import Link from 'next/link';
 import { myProjectStore } from '@/app/community/myProject/context/myProject';
 import { myProjectPostType } from '@/types/datatype';
 import './figureComponent.scss';
+import { useEffect } from 'react';
 
-interface FigureComponentProps {
-    result: myProjectPostType[];
-}
-
-export default function FigureComponent({ result }: FigureComponentProps) {
+export default function FigureComponent() {
     const router = useRouter();
-    const { setSelectItem, selectItem } = myProjectStore();
+    const { setResult, result } = myProjectStore();
 
-    const onClickHandler = async (item) => {
-        await setSelectItem(item);
-        router.push(`/community/myProject/${item.postId}`)
+    const onClickHandler = async (num: number) => {
+        router.push(`/community/myProject/${num}`)
     }
+
+    useEffect(() => {
+        console.log(result)
+    }, [result])
 
     return (
         result.map((item) => (
             <figure className='contentsFigure'
-                onClick={() => { onClickHandler(item) }}
+                onClick={() => { onClickHandler(item.postId) }}
                 key={item.postId}>
                 {
                     item.imgSrc === null ? <div className='noImage'></div> : <img src={item.imgSrc} alt={item.title} />
