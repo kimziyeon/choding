@@ -6,16 +6,24 @@ import './question.scss';
 import LevelTestStart from './components/LevelTestStart';
 import LevelTest from './components/LevelTest';
 import LevelTestEnd from './components/LevelTestEnd';
+import { useState } from 'react';
 
 
 export default function UserQuestion() {
-    
+
+    const [isOpen, setIsOpen] = useState(true);
+    const handleClose = () => {
+        setIsOpen(false);
+    };
 
     return (
-        
         <section className='question'>
-            <div className='popUpBg'>
-                        <button className='popUpX'>
+            {isOpen && (
+
+                <div className='popUpQues'>
+                    <div className='popUpBg'>
+                        <button className='popUpX'
+                            onClick={handleClose}>
                             <Image
                                 className='close'
                                 src={Close}
@@ -24,10 +32,14 @@ export default function UserQuestion() {
                             ></Image>
                         </button>
 
-                        {/* <LevelTestStart/> */}
-                        <LevelTest/>
-                        {/* <LevelTestEnd/> */}
-            </div>
+                        {/* <LevelTestStart /> */}
+                        {/* <LevelTest /> */}
+                        <LevelTestEnd />
+                    </div>
+                </div>
+
+            )}
+
         </section>
     );
 }
