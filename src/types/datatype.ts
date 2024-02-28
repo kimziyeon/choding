@@ -6,7 +6,7 @@ export type myProjectPostType = {
     title: string,
     userId: string,
     goal: string,
-    link: string[],
+    link: string,
     member: string[],
     stack: string[],
     imgSrc: string,

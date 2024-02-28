@@ -6,6 +6,7 @@ import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
+import serverStore from '@/lib/server/serverStore';
 
 export default function MyProjectWrite() {
     const router = useRouter();
@@ -31,6 +32,8 @@ export default function MyProjectWrite() {
     // 폼 전송
     const onSubmit = (data: myProjectPostType) => {
         console.log(data);
+        serverStore('post', 'myProject', data);
+        router.push('/community/myProject');
     };
 
     // 뒤로가기

@@ -8,11 +8,10 @@ import { myProjectPostType } from '@/types/datatype';
 import './myProjectTotal.scss';
 import FigureComponent from "./components/FigureComponent";
 import WriteMyProject from './components/WriteButton/WriteMyProject';
+import { myProjectStore } from "./context/myProject";
 
 export default function MyProjectTotal() {
-  const [result, setResult] = useState([]);
-  const [postData, setPostData] = useState<myProjectPostType | null>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const { setResult, result } = myProjectStore();
 
   async function dataCrl(type: string, idx?: number) {
     const res = await serverStore(type, 'myProject');
@@ -26,39 +25,14 @@ export default function MyProjectTotal() {
     dataCrl('get')
   }, [])
 
-  useEffect(() => {
-    if (submitting && postData !== null) {
-      dataCrl('post');
-      setSubmitting(false);
-    }
-  }, [postData, submitting]);
-
-  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formdata = new FormData(e.currentTarget);
-    let writeData: any = Object.fromEntries(formdata.entries());
-
-    {/* 
-    const newData: myProjectPostType = {
-      postId: Date.now(),
-      title: writeData.title,
-      content: writeData.content,
-      authorId: writeData.authorId,
-      token: 'token',
-      date: '2024년 2월 28일',
-      comments: []
-    };
-    */}
-
-    await setPostData(newData);
-    setSubmitting(true);
-    dataCrl('insert');
+  if (!Array.isArray(result)) {
+    dataCrl('get');
+    return <div id="Loading">~ 로딩중입니다 ~</div>;
   }
 
   return (
     <section id="MyProjectTotal">
-      <FigureComponent result={result} />
-
+      <FigureComponent />
     </section>
   );
 }
