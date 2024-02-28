@@ -11,13 +11,15 @@ type ButtonComponentType = {
   register: UseFormRegister<myProjectPostType>;
 };
 
-
 export default function FilterComponent({ setValue, watch, type, title, options, handleOptionClick, activeOptions }: FilterComponentType) {
-
   const handleClick = (option: string, type: string) => {
     handleOptionClick(option, type);
-    const currentValues = watch(type);
-    setValue(type, [...currentValues, option]);
+    const currentValues = watch(type) || [];
+    if (currentValues.includes(option)) {
+      setValue(type, currentValues.filter(item => item !== option));
+    } else {
+      setValue(type, [...currentValues, option]);
+    }
   };
 
   return (
