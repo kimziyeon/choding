@@ -1,20 +1,26 @@
 "use client";
 
+import { useState } from 'react';
 import Image from 'next/image';
 import Close from '@/essets/close.svg';
 import './question.scss';
 import LevelTestStart from './components/LevelTestStart';
 import LevelTest from './components/LevelTest';
 import LevelTestEnd from './components/LevelTestEnd';
-import { useState } from 'react';
 
 
 export default function UserQuestion() {
 
     const [isOpen, setIsOpen] = useState(true);
+    const [isTest, setIsTest] = useState(false);
+
     const handleClose = () => {
         setIsOpen(false);
     };
+
+    const handleTestStart = () => {
+        setIsTest(true)
+    }
 
     return (
         <section className='question'>
@@ -34,7 +40,9 @@ export default function UserQuestion() {
 
                         {/* <LevelTestStart /> */}
                         {/* <LevelTest /> */}
-                        <LevelTestEnd />
+                        {/* <LevelTestEnd /> */}
+
+                        {isTest ? <LevelTest /> : <LevelTestStart startTest={handleTestStart} />}
                     </div>
                 </div>
 
