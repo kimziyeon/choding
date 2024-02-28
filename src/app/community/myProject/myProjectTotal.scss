@@ -1,3 +1,9 @@
-#myProjectTotal {
+@use '../../../styles/main' as *;
+
+#MyProjectTotal {
     margin-top: 2rem;
+
+    @include flexbox();
+    gap: 1rem;
+    flex-wrap: wrap;
 }

@@ -1,15 +1,20 @@
 export type myProjectPostType = {
+    date: string,
+    overview: string,
+    position: string[],
     postId: number,
     title: string,
-    content: string,
-    authorId: string,
-    token: string,
-    date: number,
+    userId: string,
+    goal: string,
+    link: string[],
+    member: string[],
+    stack: string[],
+    imgSrc: string,
     comments: myProjectCommentType[]
 }
 
 export type myProjectCommentType = {
-    name: string,
-    content: string,
-    date: number
+    userId: string,
+    comment: string,
+    date: string
 }
