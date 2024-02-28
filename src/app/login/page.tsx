@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { signIn, useSession, signOut } from 'next-auth/react';
 import axios from "axios";
-
 import './login.scss'
 
 export default function Login() {
@@ -44,23 +43,18 @@ export default function Login() {
             callbackUrl: "/login",
         });
     }
-
     //next auth
     const { data: session, status } = useSession();
     console.log(status)
 
     if (status === 'authenticated') {
-        return <div>
+        return <section>
             <p>Signed in as {session.user?.email}</p>
             <button onClick={() => { signOut() }}>logout</button>
-        </div>
+        </section>
     }
-
-
-
-
     return (
-        <div>
+        <section>
             <div className="loginMain">
                 <h2>로그인</h2>
                 <form action="">
@@ -74,6 +68,7 @@ export default function Login() {
                     </div>
                     <button type="submit">로그인</button>
                 </form>
+
                 <div className="centerLine">
                     <span>소셜 로그인</span>
                 </div>
@@ -82,14 +77,14 @@ export default function Login() {
                     <button className="GitBtn" onClick={loginGit}></button>
                 </div>
                 <div className="joinMembership">
-                    <a href="">아직 회원이 아니십니까? <span>회원가입하기</span></a>
+                    <a href="/signUp">아직 회원이 아니십니까? <span>회원가입하기</span></a>
                 </div>
             </div>
             <div className="backgroundCharactor">
                 <div className="cho"></div>
                 <div className="ding"></div>
             </div>
-        </div>
+        </section>
 
     );
 }

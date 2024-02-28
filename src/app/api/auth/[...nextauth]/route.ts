@@ -3,7 +3,7 @@ import NextAuth from 'next-auth/next';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GitHubProvider from "next-auth/providers/github";
 import NaverProvider from "next-auth/providers/naver";
-
+import { MongoClient } from 'mongodb';
 
 export const option = {
     providers: [
@@ -29,9 +29,8 @@ export const option = {
         })
     ], callbacks: {
         async jwt({ token, user }:any) {
-
-            console.log(user)
-            
+            // MongoDB에 사용자 정보 저장
+            await saveUserToMongoDB(user);
             return { ...token, ...user };
         },
         async session({ session, token }:any) {
@@ -43,7 +42,20 @@ export const option = {
         signIn: "/login",
     },
 }
+
+async function saveUserToMongoDB(user: any) {
+    try {
+        const client = new MongoClient(process.env.MONGODB_URI as string);
+        await client.connect();
+        const database = client.db('choding');
+        const collection = database.collection('LoginData');
+        await collection.insertOne(user);
+        await client.close();
+    } catch (error) {
+        console.error('Error saving user to MongoDB:', error);
+    }
+}
+
 const handler = NextAuth(option)
 
 export { handler as GET, handler as POST }
-
