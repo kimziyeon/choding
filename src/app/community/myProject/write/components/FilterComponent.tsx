@@ -26,10 +26,10 @@ export default function FilterComponent({ setValue, watch, type, title, options,
       <ul>
         {options.map((option, index) => (
           <li key={index}>
-            <ButtonComponent 
-            label={option} 
-            onClick={() => handleClick(option, type)}
-            isActive={activeOptions.includes(option)} 
+            <ButtonComponent
+              label={option}
+              onClick={() => handleClick(option, type)}
+              isActive={activeOptions.includes(option)}
             />
           </li>
         ))}
