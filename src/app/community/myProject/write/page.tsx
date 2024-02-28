@@ -11,14 +11,14 @@ export default function MyProjectWrite() {
     const router = useRouter();
     const { register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
         defaultValues: {
-        title: '',
-        goal: '',
-        overview: '',
-        link: [],
-        position: [],
-        member: [],
-        stack: []
-      },
+            title: '',
+            goal: '',
+            overview: '',
+            link: [],
+            position: [],
+            member: [],
+            stack: []
+        },
     });
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
     const [isOnButtonActive, setisOnButtonActive] = useState(false);
@@ -39,8 +39,7 @@ export default function MyProjectWrite() {
     }
 
     // 버튼(옵션)을 선택했을때
-    const handleOptionClick = (option: string, title: string) => {
-        console.log('title: ', title, ',   option: ', option);
+    const handleOptionClick = (option: string, type: string) => {
         setActiveOptions(prevState => {
             if (prevState.includes(option)) {
                 // 이미 상태에 포함되어 있다면 제거
@@ -52,10 +51,10 @@ export default function MyProjectWrite() {
         });
     }
 
-    // useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
-    //     console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
-    //     console.log('클릭한 옵션 -->', activeOptions);
-    // }, [activeOptions])
+    useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
+        console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
+        console.log('클릭한 옵션 -->', activeOptions);
+    }, [activeOptions])
 
     return (
         <section id="MyProjectWrite">
