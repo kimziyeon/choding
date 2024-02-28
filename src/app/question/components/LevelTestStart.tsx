@@ -1,7 +1,7 @@
 "use client";
 
 
-export default function LevelTestStart() {
+export default function LevelTestStart({ startTest }) {
     return (
         <div>
             <div className='popUp01'>
@@ -15,7 +15,9 @@ export default function LevelTestStart() {
                             <span>#OX퀴즈</span>
                         </div>
                     </div>
-                    <button className='popUpBtn' >테스트 시작하기</button>
+                    <button className='popUpBtn'
+                        onClick={startTest}
+                    >테스트 시작하기</button>
                 </div>
             </div>
         </div>
