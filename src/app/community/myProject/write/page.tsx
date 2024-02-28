@@ -1,10 +1,25 @@
 "use client";
-import './MyProjectWrite.scss';
-import FilterComponent from '../components/FilterComponent';
+import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { myProjectPostType } from '@/types/datatype';
+import './MyProjectWrite.scss';
+import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
 
 export default function MyProjectWrite() {
+    const router = useRouter();
+    const { register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
+        defaultValues: {
+        title: '',
+        goal: '',
+        overview: '',
+        link: [],
+        position: [],
+        member: [],
+        stack: []
+      },
+    });
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
     const [isOnButtonActive, setisOnButtonActive] = useState(false);
     const filterRef = useRef<HTMLHeadingElement | null>(null);
@@ -13,7 +28,19 @@ export default function MyProjectWrite() {
         setisOnButtonActive(!isOnButtonActive);
     }
 
-    const handleOptionClick = (option: string) => {
+    // 폼 전송
+    const onSubmit = (data: myProjectPostType) => {
+        console.log(data);
+    };
+
+    // 뒤로가기
+    const onClickBackHandler = () => {
+        router.back();
+    }
+
+    // 버튼(옵션)을 선택했을때
+    const handleOptionClick = (option: string, title: string) => {
+        console.log('title: ', title, ',   option: ', option);
         setActiveOptions(prevState => {
             if (prevState.includes(option)) {
                 // 이미 상태에 포함되어 있다면 제거
@@ -25,84 +52,77 @@ export default function MyProjectWrite() {
         });
     }
 
-    useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
-        console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
-        console.log('클릭한 옵션 -->', activeOptions);
-    }, [activeOptions])
+    // useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
+    //     console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
+    //     console.log('클릭한 옵션 -->', activeOptions);
+    // }, [activeOptions])
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    }
     return (
         <section id="MyProjectWrite">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleFormSubmit(onSubmit)}>
                 <section id="writeHeader">
                     <h4>새 프로젝트 작성</h4>
-                    <input placeholder='제목을 입력해주세요'></input>
+                    <input {...register('title')} placeholder='제목을 입력해주세요'></input>
                 </section>
-                <section id="writeStep1">
-                    <div className='top'>
-                        <h5><span>STEP.1</span> 어떤 프로젝트를 하셨나요?</h5>
-                    </div>
+                <section id="writeStep1" className='writeStep'>
                     <InputSection
+                        register={register}
+                        num={1}
+                        titleGuide={'어떤 프로젝트를 하셨나요?'}
                         classname={'overview'}
                         title={'개요'}
                     />
-                    <div>
-                        <div className='member'>
-                            <b className='titleBoldGray'>인원</b>
-                            <FilterComponent
-                                options={['개인', '팀']}
-                                handleOptionClick={handleOptionClick}
-                                activeOptions={activeOptions}
-                            />
-                        </div>
-                        <div className='myPosition'>
-                            <b className='titleBoldGray'>내 포지션</b>
-                            <FilterComponent
-                                options={['리드 개발자', '서브 개발자']}
-                                handleOptionClick={handleOptionClick}
-                                activeOptions={activeOptions}
-                            />
-                        </div>
-                    </div>
+                    <FilterComponent
+                        setValue={setValue}
+                        watch={watch}
+                        register={register}
+                        title={'개발 인원'}
+                        type={'member'}
+                        options={['개인', '팀']}
+                        handleOptionClick={handleOptionClick}
+                        activeOptions={activeOptions}
+                    />
+                    <FilterComponent
+                        setValue={setValue}
+                        watch={watch}
+                        register={register}
+                        title={'내 포지션'}
+                        type={'position'}
+                        options={['리드 개발자', '서브 개발자']}
+                        handleOptionClick={handleOptionClick}
+                        activeOptions={activeOptions}
+                    />
                 </section>
-                <section id="writeStep2">
-                    <div className='top'>
-                        <h5><span>STEP.2</span> 프로젝트를 소개해주세요!</h5>
-                    </div>
+                <section id="writeStep2" className='writeStep'>
                     <InputSection
+                        register={register}
+                        num={2}
+                        titleGuide={'프로젝트를 소개해주세요!'}
                         classname={'goal'}
                         title={'프로젝트 목표'}
                     />
-                    <div className="stack">
-                        <FilterComponent
-                            options={['HTML', 'CSS', 'JS', 'TS', 'React', 'Vue', 'Nextjs', 'GIT']}
-                            handleOptionClick={handleOptionClick}
-                            activeOptions={activeOptions}
-                        />
-                    </div>
-
+                    <FilterComponent
+                        setValue={setValue}
+                        watch={watch}
+                        register={register}
+                        title={'사용 기술'}
+                        type={'stack'}
+                        options={['HTML', 'CSS', 'JS', 'TS', 'React', 'Vue', 'Nextjs', 'GIT']}
+                        handleOptionClick={handleOptionClick}
+                        activeOptions={activeOptions}
+                    />
                 </section>
-                <section id="writeStep3">
-                    <div className='top'>
-                        <h5><span>STEP.3</span> 링크를 입력해주세요!</h5>
-                    </div>
-                    <div className='link'>
-                        <section className='linkCont'>
-                            <div className='inputCont'>
-                                <img className='linkIcon' />
-                                <div>
-                                    <input placeholder='링크 제목을 입력해주세요' name='linkTitle' />
-                                    <input placeholder='http://, https://를 포함해 작성해주세요' name='linkSrc' />
-                                </div>
-                            </div>
-                            <button type="button" className='smallBoldMain'>+ 링크 추가</button>
-                        </section>
-                    </div>
+                <section id="writeStep3" className='writeStep'>
+                    <InputSection
+                        register={register}
+                        num={3}
+                        titleGuide={'링크를 입력해주세요.'}
+                        classname={'link'}
+                        title={''}
+                    />
                 </section>
                 <section className='submit'>
-                    <button type="button" className='back'>취소</button>
+                    <button type="button" className='back' onClick={onClickBackHandler}>취소</button>
                     <button type="submit" className='confirm'>등록</button>
                 </section>
             </form>
