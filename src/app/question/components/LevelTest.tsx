@@ -61,7 +61,7 @@ export default function LevelTest() {
                     <button onClick={()=>{btnHandler(true)}}>O</button>
                     <button onClick={()=>{btnHandler(false)}}>X</button>
                 </div>
-                <p>점수는 {score}</p>
+                {/* <p>점수는 {score}</p> */}
                 <p className='timer'>00:{formatTime(timer)}</p>
                 <button className='popUpBtn'>제출하기</button>
             </div>
