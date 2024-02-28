@@ -1,0 +1,43 @@
+@use '../../../../styles/main' as *;
+
+section{
+    padding-top: 6rem;
+    margin: 0 $b;
+    form{
+        .QnAWriteTitle{
+            text-align: center;
+            width: 100%;
+            height: $l;
+            font-weight: bold;
+            &::placeholder{
+                color: $main;
+                font-size: $m;
+            }
+        }
+        .BtnBox{
+            display: flex;
+            justify-content: flex-end;
+            button{
+                border-radius: 100px;
+                padding: 4px 18px;
+                margin-left: 9px;
+            }
+            .save{
+                background-color: $main;
+                color: white;
+            }
+            .delete{
+                background-color: $grayLight;
+            }  
+        }
+        
+        .quill{
+            margin:0 !important;
+            margin-top: $b !important;
+            margin-bottom: $b !important;
+            .ql-container{
+                height: 92% !important;
+            }
+        }
+    }
+}
