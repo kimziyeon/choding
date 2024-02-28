@@ -28,6 +28,7 @@
         .popUp01,
         .popUp02,
         .popUp03 {
+            display: block;
             @include pos-center();
             width: 400px;
             height: 480px;
@@ -119,7 +120,10 @@
             top: 30%;
             left: 0;
             z-index: -1;
-
         }
     }
+}
+
+.hidden {
+    display: none;
 }

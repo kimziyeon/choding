@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import QuizData from '../level.json';
+import LevelTestEnd from './LevelTestEnd';
 
 export default function LevelTest({ finishTest }) {
 
@@ -10,6 +11,7 @@ export default function LevelTest({ finishTest }) {
     const [timer, setTimer] = useState(10);
     const [ques, setQues] = useState(QuizData.oxQuiz);
     const ingQues = ques[ingId];
+    const [testValue, setTestValue] = useState(false);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -39,11 +41,11 @@ export default function LevelTest({ finishTest }) {
 
     const nextQuestion = () => {
         const nextId = ingId + 1;
-        if (ingId < ques.length) {
+        if (ingId < ques.length - 1) {
             setIngId(nextId);
             setTimer(10);
         } else {
-            { }
+            setTestValue(true);
         }
     }
 
@@ -66,6 +68,7 @@ export default function LevelTest({ finishTest }) {
                 <p className='timer'>00:{formatTime(timer)}</p>
                 <button className='popUpBtn'
                     onClick={finishTest}>제출하기</button>
+                {testValue && <LevelTestEnd />}
             </div>
 
         </div>
