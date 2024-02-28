@@ -3,15 +3,12 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.NEXT_APP_MONGO_URI;
 const client = new MongoClient(uri);
 
-export const connectToDB = async (type: string, body: any) => {
+export const connectToDB = async (type: string, body: any, colName: string) => {
     let db, collection, data;
-    console.log(type, '<---type')
-    console.log(body, '<---body')
 
-    // 접속
-    await client.connect();
+    await client.connect(); // 접속
     db = client.db('choding');
-    collection = db.collection('myProject');
+    collection = db.collection(colName);
 
     switch (type) {
         case 'post': await collection.insertOne(body);
