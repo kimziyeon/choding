@@ -24,9 +24,7 @@ export const connectToDB = async (type: string, body: any, colName: string) => {
             break;
     }
 
-    if (type != 'detail') data = await collection.find({}).toArray();
+    if (type != 'detail') data = await collection.find({}).sort({ _id: -1 }).toArray();
 
-    // 접속끊기
-    client.close();
     return data;
 }

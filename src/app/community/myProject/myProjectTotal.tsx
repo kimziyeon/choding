@@ -19,41 +19,13 @@ export default function MyProjectTotal() {
 
     if (res !== null) {
       setResult(res.data);
+      console.log(result)
     }
   }
 
   useEffect(() => {
     dataCrl('get')
   }, [])
-
-  useEffect(() => {
-    if (submitting && postData !== null) {
-      dataCrl('post');
-      setSubmitting(false);
-    }
-  }, [postData, submitting]);
-
-  const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formdata = new FormData(e.currentTarget);
-    let writeData: any = Object.fromEntries(formdata.entries());
-
-    {/* 
-    const newData: myProjectPostType = {
-      postId: Date.now(),
-      title: writeData.title,
-      content: writeData.content,
-      authorId: writeData.authorId,
-      token: 'token',
-      date: '2024년 2월 28일',
-      comments: []
-    };
-    */}
-
-    await setPostData(newData);
-    setSubmitting(true);
-    dataCrl('insert');
-  }
 
   return (
     <section id="MyProjectTotal">
