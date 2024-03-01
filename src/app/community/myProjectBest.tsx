@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ArrowRight from '@/essets/arrowRight.svg';
 import './myProjectBest.scss';
+import HTML from '@/essets/myProjectBG/HTML.png';
 
 export default function myProjectBest() {
     return (
