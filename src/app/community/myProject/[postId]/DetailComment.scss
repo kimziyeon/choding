@@ -42,14 +42,24 @@
 
             .top {
                 font-size: $s;
-                @include flexbox();
+                @include flexbox(s, c);
+                gap: 0.5rem;
+
+                .mydUserPic {
+
+                    img {
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 1px solid $main;
+                    }
+                }
 
                 .mydCommentDate {
                     @include flexbox(c, c);
                     color: $grayLight;
 
                     &::before {
-                        margin: 0 0.5rem;
+                        margin-right: 0.5rem;
                         width: 1px;
                         height: 0.7rem;
                         background-color: $grayLight;
