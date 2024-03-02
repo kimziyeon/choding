@@ -1,9 +1,22 @@
+"use client";
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import MainCharactor from '@/essets/mainCharactor.png';
+import SearchIconSVG from '@/essets/searchSub.svg'
 import './mainBanner.scss';
-import SearchInputSub from '@/components/searchSub/SearchInputSub';
 
 export default function MainBanner() {
+    const router = useRouter();
+    const [query, setQuery] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (query.length > 1) {
+            router.push(`/search?key=${query}`);
+        }
+    }
+
     return (
         <section className="mainBanner">
             <div className="contents">
@@ -16,7 +29,21 @@ export default function MainBanner() {
                         을<br></br>공부해볼까요?
                     </p>
                 </div>
-                <SearchInputSub />
+                <form onSubmit={handleSubmit}>
+                    <Image
+                        src={SearchIconSVG}
+                        alt="검색 아이콘"
+                        width={20}
+                        height={20}
+                    />
+                    <input
+                        name="search input form"
+                        placeholder="2글자 이상 검색해주세요"
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                </form>
             </div>
             <Image
                 className='bg'

@@ -1,6 +1,6 @@
 export default function Naver() {
-    return (
-        <section id="totalSearchNaverSection">
+    return (// className="innerResults" == 공통 스타일(search.scss)
+        <section id="totalSearchNaverSection" className="innerResults">
 Naver
         </section>
     )

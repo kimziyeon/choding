@@ -13,6 +13,11 @@
             min-width: 10rem;
             max-width: calc(430px - 2rem);
             background: linear-gradient(to right, $sub1, $mainLight);
+            opacity: 0.5;
+        }
+
+        input::placeholder {
+            color: #000;
         }
 
         p {
@@ -34,6 +39,17 @@
             font-weight: 700;
             color: $gray;
             font-size: $s;
+            margin-bottom: 1rem;
+        }
+
+        .innerResults {
+            @include flexbox();
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .contentsFigure {
+                width: calc((100% - 2rem)/3);
+            }
         }
     }
 
