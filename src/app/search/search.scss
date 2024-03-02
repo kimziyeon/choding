@@ -1,0 +1,40 @@
+@use '../../styles/main' as *;
+
+#totalSearch {
+    padding: 2rem;
+    padding-top: calc(79px + 2rem);
+    color: $grayDark;
+
+    .totalSearchHeader {
+        @include column-flexbox(c, c);
+
+        #searchInputSub {
+            width: 100%;
+            min-width: 10rem;
+            max-width: calc(430px - 2rem);
+            background: linear-gradient(to right, $sub1, $mainLight);
+        }
+
+        p {
+            margin-top: 2rem;
+            color: $gray;
+
+            span {
+                color: $grayDark;
+                font-weight: 700;
+            }
+        }
+    }
+
+    .totalSearchSection {
+        width: 100%;
+        padding-top: 2rem;
+
+        .subheading {
+            font-weight: 700;
+            color: $gray;
+            font-size: $s;
+        }
+    }
+
+}
