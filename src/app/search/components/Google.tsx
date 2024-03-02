@@ -15,9 +15,11 @@ export default function Google({query}:googleSearchType) {
   const [result, setResult] = useState<googleSearchItem[] | null>(null);
   
   useEffect(() => {
-    const queryTrim = query.trim();
-    if (queryTrim !== '' || queryTrim.length > 2) {
-      search();
+    if (query !== null) {
+      const queryTrim = query.trim();
+      if (queryTrim !== '' || queryTrim.length > 2) {
+        search();
+      }
     }
   }, [query])
 

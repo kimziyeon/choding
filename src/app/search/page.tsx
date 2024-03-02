@@ -18,12 +18,6 @@ export default function Search() {
         const q = searchParams.get('key');
         setQuery(q)
     }, [pathname, searchParams]);
-    
-    // useEffect(() => {
-    //     console.log(query, '<---q??');
-    //   }, [query]);
-      
-      
 
     const totalSearchFunc = (q: string) => { 
         if (q.length > 2) {
