@@ -15,7 +15,7 @@ export default function MyProjectFilter() {
   const filterRef = useRef<HTMLHeadingElement | null>(null);
 
 
-  
+
   // ----------- 필터 클릭 ------------
   const filterToggleBtn: React.MouseEventHandler<HTMLHeadingElement> = () => {
     filterRef.current?.classList.toggle("filterActive");
@@ -64,9 +64,8 @@ export default function MyProjectFilter() {
     <section id="myProjectFilter" className="communityContainer" ref={filterRef}>
       <div className="myProjectFilterHeader">
         <h3 className="filterTitle" onClick={filterToggleBtn}>
-          {isOnButtonActive ? '검색필터 ∨' : '검색필터 ∧'}
+          {isOnButtonActive ? '필터 정렬 ∨' : '필터 정렬 ∧'}
         </h3>
-        <SearchInputSub />
       </div>
       <div className="containerContents">
         <FilterComponent
