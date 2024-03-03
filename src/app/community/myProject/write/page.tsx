@@ -1,16 +1,19 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import { storage } from '@/firebase/firebase-sdk';
 import { useEffect, useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
+import { getStorage, ref as storageRef, uploadBytes } from 'firebase/storage';
 import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
+import ImageInput from './components/ImageInput';
 import serverStore from '@/lib/server/serverStore';
 
 export default function MyProjectWrite() {
     const router = useRouter();
-    const { register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
+    const { control, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
         defaultValues: {
             title: '',
             goal: '',
@@ -29,11 +32,42 @@ export default function MyProjectWrite() {
         setisOnButtonActive(!isOnButtonActive);
     }
 
+
+    // 이미지 주소 저장
+    const imageSubmit = async (event) => {
+        event.preventDefault();
+
+        if (event.target.files.length > 0) {
+            const file = event.target.files[0];
+            const storageReference = storageRef(storage, 'writeImg/' + file.name);
+
+            try {
+                await uploadBytes(storageReference, file);
+                console.log('이미지가 성공적으로 업로드되었습니다.');
+            } catch (error) {
+                console.error('업로드 중 에러가 발생했습니다:', error);
+            }
+        }
+    };
+
+
+
     // 폼 전송
-    const onSubmit = (data: myProjectPostType) => {
-        console.log(data);
-        serverStore('post', 'myProject', data);
-        router.push('/community/myProject');
+    const onSubmit = async (data: myProjectPostType) => {
+        const file = data.file[0];
+        const storage = getStorage();
+        const storageReference = storageRef(storage, 'uploads/' + file.name);
+        try {
+            await uploadBytes(storageReference, file);
+            console.log('파일이 성공적으로 업로드되었습니다.');
+          } catch (error) {
+            console.error('업로드 중 에러가 발생했습니다:', error);
+        }
+        
+        console.log('------------data-----------')
+        console.log(data)
+        // serverStore('post', 'myProject', data);
+        // router.push('/community/myProject');
     };
 
     // 뒤로가기
@@ -54,6 +88,8 @@ export default function MyProjectWrite() {
         });
     }
 
+    
+
     useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
         console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
         console.log('클릭한 옵션 -->', activeOptions);
@@ -65,6 +101,9 @@ export default function MyProjectWrite() {
                 <section id="writeHeader">
                     <h4>새 프로젝트 작성</h4>
                     <input {...register('title')} placeholder='제목을 입력해주세요'></input>
+                </section>
+                <section id="myProjectWriteImage">
+                    <input type="file" onChange={imageSubmit} />
                 </section>
                 <section id="writeStep1" className='writeStep'>
                     <InputSection

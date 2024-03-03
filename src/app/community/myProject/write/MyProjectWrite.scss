@@ -22,6 +22,37 @@
         }
     }
 
+    #myProjectWriteImage {
+        width: 100%;
+        @include column-flexbox(c, c);
+
+        input {
+            width: 100%;
+            border: 2px dashed $main;
+            height: 6rem;
+            border-radius: 0.5rem;
+        }
+
+        .custom-file-upload {
+            border: 1px solid #aaa;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        input[type='file']::file-selector-button {
+            border: 1px solid #aaa;
+            padding: 6px 12px;
+            background-color: #ddd;
+        }
+
+        input#file-upload-button {
+            background-color: $main;
+        }
+
+
+    }
+
     .mainBold {
         color: $main;
         font-weight: 700;
