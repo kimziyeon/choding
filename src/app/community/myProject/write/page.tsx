@@ -3,13 +3,15 @@ import { useRouter } from 'next/navigation';
 import { storage } from '@/firebase/firebase-sdk';
 import { useEffect, useRef, useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { getStorage, ref as storageRef, uploadBytes } from 'firebase/storage';
+import {ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
 import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
 import ImageInput from './components/ImageInput';
 import serverStore from '@/lib/server/serverStore';
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
 
 export default function MyProjectWrite() {
     const router = useRouter();
@@ -32,6 +34,10 @@ export default function MyProjectWrite() {
         setisOnButtonActive(!isOnButtonActive);
     }
 
+    dayjs.locale('ko');
+    const today = dayjs().format("YYYY년 MM월 DD일");
+    
+
 
     // 이미지 주소 저장
     const imageSubmit = async (event) => {
@@ -39,10 +45,14 @@ export default function MyProjectWrite() {
 
         if (event.target.files.length > 0) {
             const file = event.target.files[0];
-            const storageReference = storageRef(storage, 'writeImg/' + file.name);
+            const storageRef = ref(storage, 'writeImg/' + file.name);
 
             try {
-                await uploadBytes(storageReference, file);
+                await uploadBytes(storageRef, file)
+                .then(async snapshot => {
+                    const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
+                    setValue('imgSrc', url, { shouldValidate: true });
+                  })
                 console.log('이미지가 성공적으로 업로드되었습니다.');
             } catch (error) {
                 console.error('업로드 중 에러가 발생했습니다:', error);
@@ -54,20 +64,11 @@ export default function MyProjectWrite() {
 
     // 폼 전송
     const onSubmit = async (data: myProjectPostType) => {
-        const file = data.file[0];
-        const storage = getStorage();
-        const storageReference = storageRef(storage, 'uploads/' + file.name);
-        try {
-            await uploadBytes(storageReference, file);
-            console.log('파일이 성공적으로 업로드되었습니다.');
-          } catch (error) {
-            console.error('업로드 중 에러가 발생했습니다:', error);
-        }
+        setValue('date', today, { shouldValidate: true });
+        setValue('postId', Number(6), { shouldValidate: true });
         
-        console.log('------------data-----------')
-        console.log(data)
-        // serverStore('post', 'myProject', data);
-        // router.push('/community/myProject');
+        serverStore('post', 'myProject', data);
+        router.push('/community/myProject');
     };
 
     // 뒤로가기
