@@ -45,9 +45,14 @@
         }
 
         input[type='file']::file-selector-button {
-            border: 1px solid #aaa;
-            padding: 6px 12px;
-            background-color: #ddd;
+            color: $main;
+            font-size: $b;
+            font-weight: 700;
+            width: 100%;
+            height: 100%;
+            outline: 0;
+            border: 0;
+            background-color: #fff;
         }
 
         input#file-upload-button {
