@@ -29,7 +29,7 @@ export default function MainBanner() {
                         을<br></br>공부해볼까요?
                     </p>
                 </div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} id="searchInputSub">
                     <Image
                         src={SearchIconSVG}
                         alt="검색 아이콘"
