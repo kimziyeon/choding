@@ -13,7 +13,7 @@ import { myProjectStore } from "./context/myProject";
 export default function MyProjectMain() {
     const { setResult, result, originalData, setOriginalData } = myProjectStore();
 
-    async function dataCrl(type: string, idx?: number) {
+    async function dataCrl(type: string) {
         // 데이터 가져오기 :)
       const res = await serverStore(type, 'myProject');
       if (res !== null) { setResult(res.data);}

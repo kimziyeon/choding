@@ -2,28 +2,31 @@
 import { useRouter } from 'next/navigation';
 import { storage } from '@/firebase/firebase-sdk';
 import { useEffect, useRef, useState } from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import {ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
 import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
-import ImageInput from './components/ImageInput';
 import serverStore from '@/lib/server/serverStore';
+import { myProjectStore } from '@/app/community/myProject/context/myProject';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
 export default function MyProjectWrite() {
+    const { totalPostId, setTotalPostId } = myProjectStore();
     const router = useRouter();
-    const { control, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
+    const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
         defaultValues: {
             title: '',
+            postId: 0,
             goal: '',
             overview: '',
-            link: [],
+            link: '',
             position: [],
             member: [],
-            stack: []
+            stack: [],
+            imgSrc: ''
         },
     });
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
@@ -33,9 +36,6 @@ export default function MyProjectWrite() {
         filterRef.current?.classList.toggle("filterActive");
         setisOnButtonActive(!isOnButtonActive);
     }
-
-    dayjs.locale('ko');
-    const today = dayjs().format("YYYY년 MM월 DD일");
     
 
 
@@ -63,9 +63,13 @@ export default function MyProjectWrite() {
 
 
     // 폼 전송
-    const onSubmit = async (data: myProjectPostType) => {
+    const onSubmit = (data: myProjectPostType) => {
+        dayjs.locale('ko');
+        const today = dayjs().format("YYYY년 MM월 DD일");
+
+        setTotalPostId(Number(totalPostId + 1))
         setValue('date', today, { shouldValidate: true });
-        setValue('postId', Number(6), { shouldValidate: true });
+        setValue('postId', totalPostId, { shouldValidate: true });
         
         serverStore('post', 'myProject', data);
         router.push('/community/myProject');
@@ -113,6 +117,7 @@ export default function MyProjectWrite() {
                         titleGuide={'어떤 프로젝트를 하셨나요?'}
                         classname={'overview'}
                         title={'개요'}
+                        errors={errors}
                     />
                     <FilterComponent
                         setValue={setValue}
@@ -142,6 +147,7 @@ export default function MyProjectWrite() {
                         titleGuide={'프로젝트를 소개해주세요!'}
                         classname={'goal'}
                         title={'프로젝트 목표'}
+                        errors={errors}
                     />
                     <FilterComponent
                         setValue={setValue}
@@ -161,6 +167,7 @@ export default function MyProjectWrite() {
                         titleGuide={'링크를 입력해주세요.'}
                         classname={'link'}
                         title={''}
+                        errors={errors}
                     />
                 </section>
                 <section className='submit'>

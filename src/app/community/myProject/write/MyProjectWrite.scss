@@ -9,6 +9,11 @@
     padding-top: calc(79px + 1rem);
     min-height: calc(100svh);
 
+    input:focus {
+        border-color: $main !important;
+        box-shadow: 0 0 10px 0 $main;
+    }
+
     #writeHeader {
         h4 {
             font-weight: 400;
@@ -30,7 +35,6 @@
             width: 100%;
             border: 2px dashed $main;
             height: 6rem;
-            border-radius: 0.5rem;
         }
 
         .custom-file-upload {
@@ -101,6 +105,8 @@
             padding: 1rem;
             margin-top: 0.5rem;
             background-color: $wGray;
+            border-radius: 0.5rem;
+            border: 2px solid transparent;
         }
     }
 
@@ -119,5 +125,13 @@
             margin-left: 1rem;
             background-color: $main;
         }
+    }
+}
+
+.errorMsg {
+    font-size: $s;
+
+    &.On {
+        color: red;
     }
 }

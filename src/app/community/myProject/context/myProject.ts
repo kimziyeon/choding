@@ -6,10 +6,14 @@ interface MyProjectStore {
     setResult: (item: object) => void;
     originalData: myProjectPostType[];
     setOriginalData: (item: object) => void;
+    totalPostId: number;
+    setTotalPostId: (item: number) => void;
 }
 export const myProjectStore = create<MyProjectStore>(set => ({
     result: [],
     setResult: (result) => set({ result }),
     originalData: [],
-    setOriginalData: (originalData) => set({ originalData })
+    setOriginalData: (originalData) => set({ originalData }),
+    totalPostId: 6,
+    setTotalPostId: (totalPostId) => set({totalPostId})
 }));
