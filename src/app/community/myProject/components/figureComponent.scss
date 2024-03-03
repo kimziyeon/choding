@@ -2,7 +2,7 @@
 
 
 #MyProjectTotal {
-    .contentsFigure {
+    .communityFigure {
         margin: 1rem 0;
         width: calc((100% - 2rem)/3);
 
@@ -84,7 +84,7 @@
 
 @include responsive(m) {
     #MyProjectTotal {
-        .contentsFigure {
+        .communityFigure {
             width: calc((100% - 1rem)/2);
         }
     }

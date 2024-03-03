@@ -7,7 +7,6 @@ import serverStore from '@/lib/server/serverStore';
 import { myProjectPostType } from '@/types/datatype';
 import './myProjectTotal.scss';
 import FigureComponent from "./components/FigureComponent";
-import WriteMyProject from './components/WriteButton/WriteMyProject';
 import { myProjectStore } from "./context/myProject";
 
 export default function MyProjectTotal() {

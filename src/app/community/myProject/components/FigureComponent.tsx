@@ -21,7 +21,7 @@ export default function FigureComponent() {
 
     return (
         result.map((item) => (
-            <figure className='contentsFigure'
+            <figure className='communityFigure'
                 onClick={() => { onClickHandler(item.postId) }}
                 key={item.postId}>
                 {
