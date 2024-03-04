@@ -1,9 +1,16 @@
 import Image from 'next/image';
+import { googleSearchItem, myProjectPostType } from '@/types/datatype'; 
+import './contentsFigure.scss'
 
-export default function ContentsFigure({ result, option }) {
+interface contentsFigureType {
+    result: googleSearchItem[] | null;
+    option: number;
+}
+export default function ContentsFigure({ result, option }:contentsFigureType) {
     return (
-        result.map((item, i) => (
+        result && result.map((item, i) => (
             <figure className='contentsFigure' key={item.title + i}>
+                <a href={item.link} target='_blank'>
                 {
                     option == 2 || option == 3 ? null : <img src={item.pagemap.cse_thumbnail[0].src} alt={item.title} />
                 }
@@ -11,11 +18,12 @@ export default function ContentsFigure({ result, option }) {
                     <div className='figcaption'>
                         <div className='top'>
                             <p className='title'>{item.title}</p>
-                            <p className='description'>{option === 2 || option === 10 ? item.description : item.snippet}</p>
+                            <p className='description'>{option === 2 || option === 10 || item.description ? item.description : item.snippet}</p>
                         </div>
                         <span className='author'>글쓴이</span>
                     </div>
-                </figcaption>
+                    </figcaption>
+                    </a>
             </figure>
         ))
     );

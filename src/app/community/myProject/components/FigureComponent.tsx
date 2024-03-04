@@ -9,19 +9,15 @@ import { useEffect } from 'react';
 
 export default function FigureComponent() {
     const router = useRouter();
-    const { setResult, result } = myProjectStore();
+    const { originalData, setOriginalData } = myProjectStore();
 
     const onClickHandler = async (num: number) => {
         router.push(`/community/myProject/${num}`)
     }
-
-    useEffect(() => {
-        console.log(result)
-    }, [result])
-
+    
     return (
-        result.map((item) => (
-            <figure className='contentsFigure'
+        originalData.map((item) => (
+            <figure className='communityFigure'
                 onClick={() => { onClickHandler(item.postId) }}
                 key={item.postId}>
                 {
