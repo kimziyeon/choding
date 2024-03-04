@@ -1,7 +1,27 @@
+"use client";
+
+import '../mypage.scss';
+import Image from 'next/image';
+import Link from 'next/link';
+import arrowLeftGrayDark from '@/essets/arrowLeftGrayDark.svg';
+import MyCommunityEmpty from './commponents/empty';
+import MyCommunityContents from './commponents/contents';
+
 export default function MyCommunity() {
     return (
-        <>
-            <section>마이페이지 / 커뮤니티</section>
-        </>
+
+        <section className='commuPage'>
+            {/* 마이페이지 / 커뮤니티 */}
+
+            <div className='commuTitle'>
+                <p>
+                    <Image src={arrowLeftGrayDark} alt='arrowRight' />
+                </p>
+                <h3>커뮤니티</h3>
+            </div>
+            <MyCommunityEmpty />
+            {/* <MyCommunityContents /> */}
+        </section>
+
     );
 }
