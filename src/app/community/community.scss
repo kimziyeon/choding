@@ -1,0 +1,26 @@
+// 커뮤니티 홈 공통
+@use '../../styles/main' as *;
+
+#communityHome {
+    .communityContHeader {
+        .containerTitle {
+            font-size: $m;
+            text-align: center;
+
+            span {
+                color: $main;
+            }
+        }
+
+        div {
+            @include flexbox(e, c);
+            margin: 1rem 0;
+
+            .more {
+                font-size: $s;
+                color: $gray;
+                @include flexbox(e, c);
+            }
+        }
+    }
+}

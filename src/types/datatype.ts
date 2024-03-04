@@ -6,7 +6,7 @@ export type myProjectPostType = {
     title: string,
     userId: string,
     goal: string,
-    link: string[],
+    link: string,
     member: string[],
     stack: string[],
     imgSrc: string,
@@ -37,3 +37,24 @@ export type ButtonComponentType = {
     onClick: () => void,
     isActive: boolean,
 };
+
+export type googleSearchItem = {
+    "title": string,
+    "link": string
+    "displayLink": string,
+    "snippet": string,
+    "pagemap": {
+        "cse_thumbnail": [
+            {
+                "src": string,
+                "width": string,
+                "height": string
+            }
+        ],
+        "metatags": [
+            {
+                "twitter:description": string
+            }
+        ]
+    }
+}

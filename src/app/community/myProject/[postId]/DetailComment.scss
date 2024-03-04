@@ -1,0 +1,76 @@
+@use '../../../../styles/main' as *;
+
+#myProjectDetailComment {
+    padding: 1rem 0;
+
+    .mpdInputComment {
+        @include column-flexbox();
+        gap: 0.5rem;
+
+        p {
+            b {}
+        }
+
+        textarea {
+            width: 100%;
+            padding: 1rem 1rem 1.5rem;
+            resize: none;
+            outline: none;
+            line-height: 180%;
+            border: 1px solid $grayLight;
+            border-radius: 0.25rem;
+        }
+
+        .btnCont {
+            @include flexbox(e, e);
+
+            button {
+                background-color: $main;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                color: #fff;
+            }
+        }
+    }
+
+    #DetailComment {
+        padding: 1rem 0;
+
+        .mpdComment {
+            padding: 1rem 0;
+            border-bottom: 1px solid $wGray;
+
+            .top {
+                font-size: $s;
+                @include flexbox(s, c);
+                gap: 0.5rem;
+
+                .mydUserPic {
+
+                    img {
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 1px solid $main;
+                    }
+                }
+
+                .mydCommentDate {
+                    @include flexbox(c, c);
+                    color: $grayLight;
+
+                    &::before {
+                        margin-right: 0.5rem;
+                        width: 1px;
+                        height: 0.7rem;
+                        background-color: $grayLight;
+                        content: '';
+                    }
+                }
+            }
+
+            .commentText {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
