@@ -8,14 +8,13 @@ import { myProjectCommentType } from '@/types/datatype';
 import detailStore from '@/lib/server/detailStore';
 import './DetailComment.scss'
 
-export default function DetailComment({ result }) {
+export default function DetailComment({ result, fetchData }) {
   // 작성일 차이 계산
   dayjs.extend(customParseFormat);
   const now = dayjs();
   dayjs.locale('ko');
   const today = dayjs().format("YYYY년 MM월 DD일");
 
-  const [newComment, setNewComment] = useState();
   const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectCommentType>({
     defaultValues: {
       updateKey: 'postId',
@@ -30,12 +29,20 @@ export default function DetailComment({ result }) {
     },
   });
 
-  const onSubmit = (data: myProjectCommentType) => {
+  const onSubmit = async (data: myProjectCommentType) => {
     console.log('-----------댓글 데이터------------')
     console.log(data)
     console.log('-------------------------------')
     
-    detailStore('put', 'myProject', data, result.postId);
+    const res = await detailStore('put', 'myProject', data, result.postId);
+
+    if (res && res.status === 200) { 
+      await fetchData(); // 데이터 업데이트 !!
+    } else {
+      console.error('DetailComment 41 업데이트 실패...', res);
+    }
+
+    setValue('value.comment', '');
   }
 
   return <section id="myProjectDetailComment">
@@ -44,7 +51,6 @@ export default function DetailComment({ result }) {
       <form onSubmit={handleFormSubmit(onSubmit)}>
         <textarea
           placeholder='댓글을 작성해주세요'
-          value={newComment}
           {...register('value.comment', {
             minLength: {
               value: 2,

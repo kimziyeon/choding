@@ -17,13 +17,14 @@ export default function MyProjectDetail({ params }: any) {
     console.log(result);
   }, [result]);
 
-  useEffect(() => {
-    async function fetchData() {
-      const res = await detailStore('get', 'myProject', null, params.postId);
-      if (res !== null) {
-        setResult(res.data);
-      }
+  async function fetchData() {
+    const res = await detailStore('get', 'myProject', null, params.postId);
+    if (res !== null) {
+      setResult(res.data);
     }
+  }
+
+  useEffect(() => {
     fetchData();
   }, []);
 
@@ -108,7 +109,7 @@ export default function MyProjectDetail({ params }: any) {
               </Link>
             </div>
           </section>
-          <DetailComment result={result} />
+          <DetailComment result={result} fetchData={fetchData} />
         </section >
       }
     </>
