@@ -1,0 +1,28 @@
+{
+    "dailyQuiz": [
+        {
+            "id": 0,
+            "number": 1,
+            "question": "자바스크립트의 데이터 타입으로 올바르지 않은 것은 무엇인가요?",
+            "choice": [
+                "string",
+                "array",
+                "tuple",
+                "boolean"
+            ],
+            "answer": "2"
+        },
+        {
+            "id": 1,
+            "number": 2,
+            "question": "리액트에서 JSX는 무엇의 약자일까요?",
+            "choice": [
+                "JavaScript XML",
+                "JSON Extension",
+                "JavaScript Extension",
+                "Java XML"
+            ],
+            "answer": "1"
+        }
+    ]
+}
