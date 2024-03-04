@@ -78,9 +78,9 @@ export default function Search() {
             </section>
             <section id="totalSearch2" className='totalSearchSection'>
                 <p className='subheading'>웹문서</p>
-                <Google
+                {/* <Google
                     query={query}
-                />
+                /> */}
             </section>
             <section id="totalSearch3" className='totalSearchSection'>
                 <p className='subheading'>블로그</p>
