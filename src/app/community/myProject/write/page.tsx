@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { storage } from '@/firebase/firebase-sdk';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import {ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
+import { ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
 import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
@@ -36,7 +36,7 @@ export default function MyProjectWrite() {
         filterRef.current?.classList.toggle("filterActive");
         setisOnButtonActive(!isOnButtonActive);
     }
-    
+
 
 
     // 이미지 주소 저장
@@ -49,10 +49,10 @@ export default function MyProjectWrite() {
 
             try {
                 await uploadBytes(storageRef, file)
-                .then(async snapshot => {
-                    const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
-                    setValue('imgSrc', url, { shouldValidate: true });
-                  })
+                    .then(async snapshot => {
+                        const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
+                        setValue('imgSrc', url, { shouldValidate: true });
+                    })
                 console.log('이미지가 성공적으로 업로드되었습니다.');
             } catch (error) {
                 console.error('업로드 중 에러가 발생했습니다:', error);
@@ -63,17 +63,24 @@ export default function MyProjectWrite() {
 
 
     // 폼 전송
-    const onSubmit = (data: myProjectPostType) => {
+    const onSubmit = async (data: myProjectPostType) => {
         dayjs.locale('ko');
         const today = dayjs().format("YYYY년 MM월 DD일");
 
-        setTotalPostId(Number(totalPostId + 1))
-        setValue('date', today, { shouldValidate: true });
-        setValue('postId', totalPostId, { shouldValidate: true });
-        
-        serverStore('post', 'myProject', data);
-        router.push('/community/myProject');
+        setTotalPostId(Number(totalPostId + 1));
+        await setValue('date', today);
+        await setValue('postId', totalPostId);
+
+        console.log('-----------data------------')
+        console.log('date = ', data.date)
+        console.log('postId = ', data.postId)
+        console.log('---------------------------')
+
+        // await serverStore('post', 'myProject', data);
+        // router.push('/community/myProject');
     };
+
+
 
     // 뒤로가기
     const onClickBackHandler = () => {
@@ -93,7 +100,7 @@ export default function MyProjectWrite() {
         });
     }
 
-    
+
 
     useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
         console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
