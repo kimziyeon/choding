@@ -1,0 +1,74 @@
+@use '../../styles/main' as *;
+
+#communityMyProjectContainer {
+    .containerContents {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 100px);
+        grid-template-areas:
+            "a b c"
+            "a d e"
+            "f g e"
+        ;
+
+        div::after {
+            content: '';
+            background-size: cover;
+            background-image: url('../../essets/myProjectBG/HTML.png');
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.2;
+            border-radius: 0.5rem;
+        }
+
+        div {
+            background-color: $grayDark;
+            border-radius: 0.5rem;
+            @include flexbox(c, c);
+            position: relative;
+            transition: 0.2s;
+            color: #fff;
+
+            &:nth-child(2)::after {
+                background-image: url('../../essets/myProjectBG/CSS.png');
+            }
+
+            &:nth-child(3)::after {
+                background-image: url('../../essets/myProjectBG/JS.jpg');
+            }
+
+            &:nth-child(4)::after {
+                background-image: url('../../essets/myProjectBG/TS.png');
+            }
+
+            &:nth-child(5)::after {
+                background-image: url('../../essets/myProjectBG/React.png');
+            }
+
+            &:nth-child(6)::after {
+                background-image: url('../../essets/myProjectBG/Vue.png');
+            }
+
+            &:nth-child(7)::after {
+                background-image: url('../../essets/myProjectBG/Nextjs.jpg');
+            }
+        }
+
+        div:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .item1 {
+            grid-area: a;
+        }
+
+        .item5 {
+            grid-area: e;
+        }
+    }
+}
