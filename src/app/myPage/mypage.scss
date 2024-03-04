@@ -1,0 +1,214 @@
+@use '../../styles/main' as *;
+
+.myPageMain {
+    padding-top: 6rem;
+    color: $grayDark;
+
+    .myPageTitle {
+        height: 290px;
+        background-color: $main;
+        color: #fff;
+        padding: 3rem 0 0 190px;
+        margin-bottom: 4rem;
+
+        .myTitle1 {
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .myTitle2 {
+            font-size: x-large;
+            line-height: 130%;
+            padding: 10px 0 60px 0;
+            font-weight: 500;
+
+
+            span {
+                color: $sub1;
+            }
+
+        }
+
+        .myInfo {
+            @include flexbox();
+            gap: 10px;
+            text-align: center;
+            position: relative;
+
+            p {
+                font-size: 14px;
+                margin: 0.5rem;
+            }
+
+
+            .myLv {
+                >b {
+                    color: $main;
+                    background-color: #fff;
+                    padding: 5px 15px;
+                    border-radius: 15px;
+                }
+            }
+
+            .myAct {
+                b {}
+            }
+        }
+
+        .myImg {
+            @include pos-center();
+            top: 47%;
+            left: calc(60% + 40px);
+
+            >div {
+                width: 160px;
+                height: 160px;
+                background: #fff url(../../essets/charactor/CHO.svg) center center no-repeat;
+                background-size: contain;
+                border-radius: 50%;
+
+            }
+        }
+    }
+
+
+    .myPageContents {
+        margin: 2rem 190px;
+
+        .myTitleFlex {
+            @include flexbox(sb, c);
+            margin: 0.5rem 0;
+
+            h4 {}
+
+            span {
+                font-size: $s;
+                @include flexbox(c, c);
+            }
+        }
+    }
+
+    .likeThumb {
+        @include flexbox();
+        overflow: hidden;
+
+        figure {
+
+            >div {
+                width: 170px;
+                height: 130px;
+                margin-right: 10px;
+                flex-shrink: 0;
+                background: $grayLight;
+                border-radius: 9px;
+            }
+
+            figcaption {
+                padding: 5px 0;
+                font-size: $s;
+            }
+
+
+        }
+    }
+
+
+
+    .myCheck {
+        text-align: center;
+        padding: 20px;
+        border: 1px solid $grayLight;
+        border-radius: 9px;
+
+    }
+}
+
+.commuThumb,
+.commuContents {
+
+    figure {
+        @include flexbox(s, c);
+        gap: 10px;
+
+        >div {
+            width: 90px;
+            height: 76px;
+            background: $grayLight;
+            margin: 0.5rem 0;
+            border-radius: 9px;
+        }
+
+        figcaption {
+            width: 50%;
+
+            >div {
+                display: inline-block;
+                font-size: $s;
+                background: $grayLight;
+                padding: 1px 10px;
+                border-radius: 10px;
+                color: #fff;
+            }
+
+            b {
+                display: block;
+                padding: 3px 0px;
+            }
+
+            p {
+                color: $grayLight;
+                font-size: $s
+            }
+        }
+
+        .heart {
+            @include flexbox(sb, c);
+            gap: 2px;
+
+            span {}
+        }
+    }
+}
+
+
+
+
+
+
+
+
+//마이페이지 / 책갈피,커뮤니티
+
+.likePage,
+.commuPage,
+.checkPage {
+    padding-top: 6rem;
+    color: $grayDark;
+
+    .likeTitle,
+    .commuTitle,
+    .checkTitle {
+        @include flexbox();
+
+        p {
+            margin-left: 2rem;
+        }
+
+        h3 {
+            text-align: center;
+            margin-left: 39%;
+        }
+    }
+
+    .commuContents {
+        margin: 2rem 0;
+
+        figure {
+            @include flexbox(c);
+            padding: 0 160px;
+        }
+    }
+
+    .commuEmpty {}
+}
