@@ -10,6 +10,7 @@ export type myProjectPostType = {
     member: string[],
     stack: string[],
     imgSrc: string,
+    like: number,
     comments: myProjectCommentType[]
 }
 
