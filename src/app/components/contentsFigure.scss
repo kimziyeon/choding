@@ -1,6 +1,10 @@
 @use '../../styles/main' as *;
 
 .contentsFigure {
+    a {
+        width: 100%;
+    }
+
     img {
         height: 105px;
         object-fit: cover;
