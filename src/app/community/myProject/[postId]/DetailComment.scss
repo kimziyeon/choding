@@ -7,10 +7,6 @@
         @include column-flexbox();
         gap: 0.5rem;
 
-        p {
-            b {}
-        }
-
         textarea {
             width: 100%;
             padding: 1rem 1rem 1.5rem;

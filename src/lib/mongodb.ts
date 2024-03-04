@@ -3,10 +3,10 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.NEXT_APP_MONGO_URI;
 const client = new MongoClient(uri);
 
-export const connectToDB = async (type: string, body: any, colName: string|null) => {
+export const connectToDB = async (type: string, body: any, colName: string | null) => {
     let db, collection, data;
 
-    
+
     await client.connect(); // 접속
     db = client.db('choding');
     collection = db.collection(colName);

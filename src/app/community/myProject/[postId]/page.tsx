@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { myProjectStore } from '@/app/community/myProject/context/myProject';
-import serverStore from '@/lib/server/serverStore';
+import detailStore from '@/lib/server/detailStore';
 import { myProjectPostType } from '@/types/datatype';
 import DetailComment from './DetailComment';
 import Share from '@/essets/share.svg';
@@ -19,7 +19,7 @@ export default function MyProjectDetail({ params }: any) {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await serverStore('detail', 'myProject', null, params.postId);
+      const res = await detailStore('get', 'myProject', null, params.postId);
       if (res !== null) {
         setResult(res.data);
       }
