@@ -1,13 +1,13 @@
 'use client'
 
 import { useRef, useState } from 'react';
-import "./QnA.scss";
+import Link from 'next/link';
 
 export default function allPage() {
     return (
     <section id="QnAMain" className="contPadding">
         <div className='QnAContentContainer'>
-            <div className='QuestionBox'>
+            <Link href='./QnA/postid' className='QuestionBox'>
                 <div className='QuestionText'>
                     <h2>[제목]농담농담[제목]</h2>
                     <p>질문 내용질문 내용질문 내용질문 질문 내용질문 내용질문 내용질문 질문 내용질문 내용질문 내용질문 질문 내용질문 내용질문 내용질문 질문 내용질문 내용질문 내용질문 질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용질문 내용</p>
@@ -19,7 +19,7 @@ export default function allPage() {
                 <div className='QuestionImg'>
                     <img src="" alt="" />
                 </div>
-            </div>
+            </Link>
         </div>
     </section>
     );
