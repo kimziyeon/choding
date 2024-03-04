@@ -5,14 +5,10 @@ import 'dayjs/locale/ko';
 import Image from 'next/image';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import { myProjectCommentType } from '@/types/datatype';
-import serverStore from '@/lib/server/serverStore';
+import detailStore from '@/lib/server/detailStore';
 import './DetailComment.scss'
 
-interface DetailCommentProps {
-  result: myProjectPostType;
-}
-
-export default function DetailComment({ result }: DetailCommentProps) {
+export default function DetailComment({ result }) {
   // 작성일 차이 계산
   dayjs.extend(customParseFormat);
   const now = dayjs();
@@ -22,16 +18,24 @@ export default function DetailComment({ result }: DetailCommentProps) {
   const [newComment, setNewComment] = useState();
   const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectCommentType>({
     defaultValues: {
-      userId: '비회원',
-      comment: '',
-      date: today,
+      updateKey: 'postId',
+      updateValue: result.postId,
+      updateType: 'push',
+      field: 'comments',
+      value: {
+          userId: '비회원',
+          comment: '',
+          date: today
+      }
     },
   });
 
   const onSubmit = (data: myProjectCommentType) => {
-    // console.log(data)
-    setValue('comment', '');
-    serverStore('post', 'myProject', data);
+    console.log('-----------댓글 데이터------------')
+    console.log(data)
+    console.log('-------------------------------')
+    
+    detailStore('put', 'myProject', data, result.postId);
   }
 
   return <section id="myProjectDetailComment">
@@ -41,7 +45,7 @@ export default function DetailComment({ result }: DetailCommentProps) {
         <textarea
           placeholder='댓글을 작성해주세요'
           value={newComment}
-          {...register('comment', {
+          {...register('value.comment', {
             minLength: {
               value: 2,
               message: ''

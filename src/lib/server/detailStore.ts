@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-export default async function serverStore(type: string, colName: string, postData?: any, idx?: any) {
+export default async function detailStore(type: string, colName: string, postData?: any, idx?: number) {
     let res: AxiosResponse | null = null;
 
     console.log(type, colName, idx)
@@ -13,23 +13,21 @@ export default async function serverStore(type: string, colName: string, postDat
             break;
 
         case 'post':
-            res = await axios.get(`/api/mongodb/${idx}`, {
+            res = await axios.post(`/api/mongodb/${idx}`, {
                 params: { colName }
             });
             break;
 
         case 'delete':
-            console.log('진입~~')
-            res = await axios.get(`/api/mongodb/${idx}`, {
+            res = await axios.delete(`/api/mongodb/${idx}`, {
                 params: { colName }
             });
             break;
 
         case 'put':
-            console.log('진입~~')
-            res = await axios.get(`/api/mongodb/${idx}`, {
-                params: { colName }
-            });
+            console.log('put 진입~~')
+            res = await axios.put(`/api/mongodb/${idx}?colName=${colName}`, postData);
+
             break;
     }
 

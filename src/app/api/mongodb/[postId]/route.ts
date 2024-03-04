@@ -31,6 +31,15 @@ export async function DELETE(req: NextRequest, { params, query }: any) {
 }
 
 export async function PUT(req: NextRequest, res: NextResponse) {
-  const data = await connectToDB('put', await req.json());
-  return NextResponse.json(data);
+  const { nextUrl } = req;
+  const { pathname } = nextUrl;
+  const idx = pathname.split('/').pop();
+  const collection: any = req.nextUrl.searchParams.get('colName');
+  const data = await req.json();
+
+  console.log('----------------------')
+  console.log(idx, collection, data)
+  console.log('----------------------')
+
+  return NextResponse.json(await connectToDB('put', data, collection, idx));
 }
