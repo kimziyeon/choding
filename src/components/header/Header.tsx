@@ -34,7 +34,7 @@ export default function Header() {
                     </Link>
                 </h1>
                 <div className='rightSide'>
-                    <Link href='/question' className='signUp'>
+                    <Link href='/myPage' className='signUp'>
                         <Image src={User} alt='Logo' width={50} height={25}></Image>
                     </Link>
                 </div>

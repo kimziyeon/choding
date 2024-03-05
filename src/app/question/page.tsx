@@ -7,6 +7,9 @@ import './question.scss';
 import LevelTestStart from './components/LevelTestStart';
 import LevelTest from './components/LevelTest';
 import LevelTestEnd from './components/LevelTestEnd';
+import DailyquizStart from './components/DailyquizStart';
+import Dailyquiz from './components/Dailyquiz';
+import DailyquizEnd from './components/DailyquizEnd';
 
 
 export default function UserQuestion() {
@@ -42,7 +45,11 @@ export default function UserQuestion() {
                         {/* <LevelTest /> */}
                         {/* <LevelTestEnd /> */}
 
-                        {isTest ? <LevelTest /> : <LevelTestStart startTest={handleTestStart} />}
+                        {/* {isTest ? <LevelTest /> : <LevelTestStart startTest={handleTestStart} />} */}
+
+                        {/* <DailyquizStart /> */}
+                        <Dailyquiz />
+                        {/* <DailyquizEnd /> */}
                     </div>
                 </div>
 

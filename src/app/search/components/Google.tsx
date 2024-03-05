@@ -2,18 +2,18 @@
 "use client";
 
 import Image from 'next/image'
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { googleSearchItem } from '@/types/datatype';
 import ContentsFigure from '@/app/components/ContentsFigure';
 
 interface googleSearchType {
-    query : string
+  query: string
 }
 
-export default function Google({query}:googleSearchType) {
+export default function Google({ query }: googleSearchType) {
   const [result, setResult] = useState<googleSearchItem[] | null>(null);
-  
+
   useEffect(() => {
     if (query !== null) {
       const queryTrim = query.trim();
@@ -23,26 +23,26 @@ export default function Google({query}:googleSearchType) {
     }
   }, [query])
 
-    const search = async () => {
-      await axios.get('/api/google', { params: { q: query } })
-      .then(response =>{
+  const search = async () => {
+    await axios.get('/api/google', { params: { q: query } })
+      .then(response => {
         setResult(response.data.items);
       })
       .catch(error => {
         console.error('Error fetching data', error);
       })
-    };
-  
-    useEffect(() => { //검색결과 콘솔
-      console.log(result);
-    }, [result]);    
-  
-    return (
-      <section id="totalSearchGoogleSection" className='innerResults'>
-          <ContentsFigure
-            result={result}
-            option={1}
-          />
-      </section>
-    );
+  };
+
+  useEffect(() => { //검색결과 콘솔
+    console.log(result);
+  }, [result]);
+
+  return (
+    <section id="totalSearchGoogleSection" className='innerResults'>
+      <ContentsFigure
+        result={result}
+        option={1}
+      />
+    </section>
+  );
 }

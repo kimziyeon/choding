@@ -27,7 +27,8 @@
 
         .popUp01,
         .popUp02,
-        .popUp03 {
+        .popUp03,
+        .popUp04 {
             display: block;
             @include pos-center();
             width: 400px;
@@ -53,12 +54,25 @@
 
                 }
 
+                .dailyQuestion {}
+
                 .tagBox {
                     span {
                         @include btnBase();
                         font-size: $s;
                         padding: 1px 1rem;
                         margin: 18px 5px;
+                    }
+                }
+
+                .tagBoxOX {
+                    span {
+                        @include btnBase();
+                        font-size: $s;
+                        padding: 1px 1rem;
+                        margin: 18px 5px;
+                        color: $main;
+                        border: 1px solid $main;
                     }
                 }
             }
@@ -78,7 +92,7 @@
             background: #fff;
 
             .qQuestion {
-                height: 5rem;
+                // height: 5rem;
                 padding: 0 1.5rem;
                 line-height: 160%;
                 word-break: keep-all;
@@ -97,6 +111,26 @@
                     color: #fff;
                 }
 
+                form {
+                    >p {
+                        padding: 6px 100px;
+                        border: 1px solid $main;
+                        border-radius: 1rem;
+                        margin-bottom: 5px;
+
+                        // .radio_cus input[type="radio"] {
+                        //     overflow: hidden;
+                        //     position: absolute;
+                        //     width: 1px;
+                        //     height: 1px;
+                        //     margin: -1px;
+                        //     font-size: initial;
+                        //     clip: rect(0 0 0 0);
+
+                        // }
+                    }
+
+                }
             }
 
             .timer {
@@ -108,6 +142,21 @@
         .popUp03 {
 
             background: transparent;
+
+            .popUpSubTitle {
+                .valueOOO {
+                    display: block;
+                    font-size: 4rem;
+                    color: $main;
+                    padding-bottom: 2rem;
+                }
+
+                .valueXXX {
+                    display: none;
+                    color: $grayLight;
+                    padding-bottom: 2rem;
+                }
+            }
         }
 
         .popUp03::after {
@@ -121,9 +170,9 @@
             left: 0;
             z-index: -1;
         }
-    }
-}
 
-.hidden {
-    display: none;
+        .popUp04 {
+            background: #fff url(../../essets/oxPopupCharactor02.png) 100% 85% no-repeat;
+        }
+    }
 }
