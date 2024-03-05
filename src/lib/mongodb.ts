@@ -3,15 +3,15 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.NEXT_APP_MONGO_URI;
 const client = new MongoClient(uri);
 
-export const connectToDB = async (type: string, body: any, colName: string|null) => {
+export const connectToDB = async (type: string, body: any, colName: string | null, idx: number) => {
     let db, collection, data;
 
-    
+
     await client.connect(); // 접속
     db = client.db('choding');
     collection = db.collection(colName);
 
-    console.log('db접속', type, body, colName)
+    console.log('db접속', type, body, colName, idx)
 
     switch (type) {
         case 'post': await collection.insertOne(body);
@@ -25,10 +25,29 @@ export const connectToDB = async (type: string, body: any, colName: string|null)
             }
             break;
 
-        case 'delete': data = await collection.deleteOne(body);
+        case 'delete':
+            data = await collection.deleteOne(body);
             break;
 
-        case 'put': data = await collection.updateOne({ id: body.postId }, { $set: { title: body.title } });
+        {/*
+    case 'put':
+            data = await collection.updateOne({ postId: idx }, { $push: { title: body.title } });
+            break;  
+        */}
+        
+        case 'put':
+            const updateQuery = { [body.updateKey]: body.updateValue };
+            let updateOperation = {};
+        
+            if (body.updateType === 'push') {
+                updateOperation.$push = { [body.field]: body.value };
+            } else if (body.updateType === 'set') {
+                updateOperation.$set = { [body.field]: body.value };
+            } else {
+                updateOperation.$set = body;
+            }
+        
+            data = await collection.updateOne(updateQuery, updateOperation);
             break;
     }
 
