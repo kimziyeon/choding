@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation';
 import { storage } from '@/firebase/firebase-sdk';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import {ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
+import { ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
 import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
@@ -14,7 +14,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
 export default function MyProjectWrite() {
-    const { totalPostId, setTotalPostId } = myProjectStore();
+    const { totalPostId, setTotalPostId, originalData } = myProjectStore();
     const router = useRouter();
     const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
         defaultValues: {
@@ -26,7 +26,9 @@ export default function MyProjectWrite() {
             position: [],
             member: [],
             stack: [],
-            imgSrc: ''
+            comments: [],
+            imgSrc: '',
+            like: 0
         },
     });
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
@@ -36,7 +38,10 @@ export default function MyProjectWrite() {
         filterRef.current?.classList.toggle("filterActive");
         setisOnButtonActive(!isOnButtonActive);
     }
-    
+
+
+    dayjs.locale('ko');
+    const today = dayjs().format("YYYY년 MM월 DD일");
 
 
     // 이미지 주소 저장
@@ -49,10 +54,10 @@ export default function MyProjectWrite() {
 
             try {
                 await uploadBytes(storageRef, file)
-                .then(async snapshot => {
-                    const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
-                    setValue('imgSrc', url, { shouldValidate: true });
-                  })
+                    .then(async snapshot => {
+                        const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
+                        setValue('imgSrc', url, { shouldValidate: true });
+                    })
                 console.log('이미지가 성공적으로 업로드되었습니다.');
             } catch (error) {
                 console.error('업로드 중 에러가 발생했습니다:', error);
@@ -60,20 +65,6 @@ export default function MyProjectWrite() {
         }
     };
 
-
-
-    // 폼 전송
-    const onSubmit = (data: myProjectPostType) => {
-        dayjs.locale('ko');
-        const today = dayjs().format("YYYY년 MM월 DD일");
-
-        setTotalPostId(Number(totalPostId + 1))
-        setValue('date', today, { shouldValidate: true });
-        setValue('postId', totalPostId, { shouldValidate: true });
-        
-        serverStore('post', 'myProject', data);
-        router.push('/community/myProject');
-    };
 
     // 뒤로가기
     const onClickBackHandler = () => {
@@ -93,16 +84,34 @@ export default function MyProjectWrite() {
         });
     }
 
-    
+    useEffect(() => {
+        if (originalData) {
+            const maxId = originalData.reduce(
+                (max, item) => item.postId > max ? item.postId : max,
+                originalData[0].postId
+            );
+            setTotalPostId(Number(maxId + 1));
+            setValue('postId', totalPostId);
+        } else {
+            console.error('오류: 배열에 postId 속성이 누락된 아이템이 있습니다.');
+        }
+    }, [originalData])
 
-    useEffect(() => { // 선택 옵션 콘솔 확인용도 :)
-        console.log('~~~~~~~ MyProjectFilter ~~~~~~~~');
-        console.log('클릭한 옵션 -->', activeOptions);
-    }, [activeOptions])
+
+    // 폼 전송
+    const onSubmit = async (data: myProjectPostType) => {
+        console.log('------------data------------')
+        console.log(data)
+        await serverStore('post', 'myProject', data);
+        router.push('/community/myProject');
+    };
 
     return (
         <section id="MyProjectWrite">
             <form onSubmit={handleFormSubmit(onSubmit)}>
+                <input type="hidden" {...register('date')} value={today} />
+                <input type="hidden" {...register('postId')} value={totalPostId} />
+                <input type="hidden" {...register('comments')} />
                 <section id="writeHeader">
                     <h4>새 프로젝트 작성</h4>
                     <input {...register('title')} placeholder='제목을 입력해주세요'></input>

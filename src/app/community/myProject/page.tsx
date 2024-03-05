@@ -11,25 +11,27 @@ import './myProjectMain.scss';
 import { myProjectStore } from "./context/myProject";
 
 export default function MyProjectMain() {
-    const { setResult, result, originalData, setOriginalData } = myProjectStore();
+  const { setResult, result, setTotalPostId, setOriginalData } = myProjectStore();
 
-    async function dataCrl(type: string) {
-        // 데이터 가져오기 :)
-      const res = await serverStore(type, 'myProject');
-      if (res !== null) { setResult(res.data);}
-      setOriginalData(result)
+  async function dataCrl(type: string) {
+    // 데이터 가져오기 :)
+    const res = await serverStore(type, 'myProject');
+    if (res !== null) {
+      setResult(res.data);
     }
-  
-    useEffect(() => {
-      dataCrl('get')
-    }, [])
-  
-    
-    return (
-        <section id="myProjectMain" className='contPadding'>
-            <MyProjectFilter />
-            <MyProjectTotal />
-            <WriteMyProject />
-        </section>
-    );
+    setOriginalData(result)
+  }
+
+  useEffect(() => {
+    dataCrl('get')
+  }, [])
+
+
+  return (
+    <section id="myProjectMain" className='contPadding'>
+      <MyProjectFilter />
+      <MyProjectTotal />
+      <WriteMyProject />
+    </section>
+  );
 }
