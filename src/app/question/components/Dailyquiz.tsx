@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
 
-export default function Dailyquiz({ finishTest }) {
+export default function Dailyquiz() {
 
     const now = dayjs();
     dayjs.locale('ko');
@@ -19,7 +19,7 @@ export default function Dailyquiz({ finishTest }) {
     const [ques, setQues] = useState(QuizData.dailyQuiz);
     const ingQues = ques[ingId];
     const [testValue, setTestValue] = useState(false);
-    const [isValue, setIsvalue] = useState(null);
+    const [userValue, setUserValue] = useState(null);
 
 
     useEffect(() => {
@@ -31,25 +31,19 @@ export default function Dailyquiz({ finishTest }) {
         return () => clearInterval(intervalId);
     }, [timer]);
 
-    useEffect(() => {
-        if (timer === 0) {
-            setTestValue(true);
-            setIsvalue(false);
-        }
-    }, [timer]);
+
 
     const formatTime = (time) => {
         return time < 10 ? '0' + time : time;
     };
 
-    const handleAnswer = (userAnswer) => {
-        if (userAnswer === ingQues.answer) {
-            setIsvalue(true);
-        } else {
-            setIsvalue(false);
-        }
-    } setTestValue{ true};
+    const handleSubmit = () => {
+        setTestValue(true);
+    };
 
+    const handleAnswer = (index) => {
+        setUserValue(index + 1);
+    };
 
     return (
         <>
@@ -69,7 +63,7 @@ export default function Dailyquiz({ finishTest }) {
                                                 type="radio"
                                                 name="choice"
                                                 value={index + 1}
-                                                onClick={() => handleAnswer(index + 1)}
+                                                onChange={() => handleAnswer(index)}
                                             />
                                             {choice}
                                         </label>
@@ -85,12 +79,12 @@ export default function Dailyquiz({ finishTest }) {
                         </div>
                         <p className='timer'>00:{formatTime(timer)}</p>
                         <button className='popUpBtn'
-                            onClick={finishTest}>제출하기</button>
+                            onClick={handleSubmit}>제출하기</button>
                     </div>
                 </div>
             )}
 
-            {testValue && <DailyquizEnd />}
+            {testValue && <DailyquizEnd isCorrect={userValue === ingQues.answer} />}
         </>
     )
 }
