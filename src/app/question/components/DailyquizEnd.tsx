@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import chocho from '@/essets/charactor/CHO.svg';
 
-export default function DailyquizEnd() {
+export default function DailyquizEnd({ onClickMenu }) {
     return (
 
         <div className='popUp03'>
@@ -24,7 +24,8 @@ export default function DailyquizEnd() {
                     </div>
                 </div>
                 <button className='popUpBtn'>
-                    추천 강의 보러가기</button>
+                    <Link href="/search" onClick={onClickMenu} className='search'>강의 검색하기</Link>
+                </button>
             </div>
         </div>
 
