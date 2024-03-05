@@ -5,13 +5,13 @@ import Image from 'next/image';
 import empty from '@/essets/empty.svg';
 
 
-export default function MyCommunityEmpty() {
+export default function MyLikeEmpty() {
     return (
-        <div className='commuEmpty'>
+        <div className='likeEmpty'>
 
             <Image src={empty} alt='empty'></Image>
-            <p>작성한 글이 없습니다.</p>
-            <div>프로젝트 작성하기</div>
+            <p>책갈피 내역이 없습니다.</p>
+            <div>강의 둘러보기</div>
         </div>
     )
 }

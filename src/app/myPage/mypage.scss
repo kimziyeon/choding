@@ -1,16 +1,23 @@
 @use '../../styles/main' as *;
 
 .myPageMain {
-    padding-top: 6rem;
+    padding-top: 4rem;
     color: $grayDark;
 
-    .myPageTitle {
-        height: 290px;
+    .myPageBack {
         background-color: $main;
+        height: 290px;
+        width: 100%;
         color: #fff;
-        padding: 3rem 0 0 190px;
-        margin-bottom: 4rem;
+        position: relative;
+    }
 
+    .myPageTitle {
+        padding: 2rem;
+        max-width: calc(430px);
+        margin: 0 auto;
+
+        // margin-bottom: 4rem;
         .myTitle1 {
             span {
                 font-weight: bold;
@@ -34,7 +41,7 @@
             @include flexbox();
             gap: 10px;
             text-align: center;
-            position: relative;
+
 
             p {
                 font-size: 14px;
@@ -57,9 +64,9 @@
         }
 
         .myImg {
-            @include pos-center();
-            top: 47%;
-            left: calc(60% + 40px);
+            position: absolute;
+            top: 160px;
+            right: calc(20% + 2rem);
 
             >div {
                 width: 160px;
@@ -74,7 +81,9 @@
 
 
     .myPageContents {
-        margin: 2rem 190px;
+        max-width: calc(430px);
+        margin: 0 auto;
+        padding: 2rem;
 
         .myTitleFlex {
             @include flexbox(sb, c);
@@ -96,8 +105,8 @@
         figure {
 
             >div {
-                width: 170px;
-                height: 130px;
+                width: 150px;
+                height: 120px;
                 margin-right: 10px;
                 flex-shrink: 0;
                 background: $grayLight;
@@ -189,26 +198,40 @@
     .likeTitle,
     .commuTitle,
     .checkTitle {
-        @include flexbox();
+        position: relative;
 
         p {
-            margin-left: 2rem;
+            position: absolute;
+            top: 0;
+            left: 2rem;
         }
 
         h3 {
             text-align: center;
-            margin-left: 39%;
         }
     }
 
     .commuContents {
-        margin: 2rem 0;
-
-        figure {
-            @include flexbox(c);
-            padding: 0 160px;
-        }
+        max-width: calc(480px - 2rem);
+        margin: 2rem auto;
+        justify-content: center;
     }
 
-    .commuEmpty {}
+    .commuEmpty,
+    .likeEmpty {
+        @include column-flexbox(c, c);
+        margin: 5rem 0 2rem 0;
+
+        Image {}
+
+        p {}
+
+        div {
+            color: $grayLight;
+            padding: 0.5rem 1rem;
+            border: 1px solid $grayLight;
+            border-radius: 2rem;
+            margin: 1.5em;
+        }
+    }
 }
