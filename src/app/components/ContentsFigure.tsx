@@ -1,29 +1,29 @@
 import Image from 'next/image';
-import { googleSearchItem, myProjectPostType } from '@/types/datatype'; 
+import { googleSearchItem, myProjectPostType, naverSearchItem } from '@/types/datatype';
 import './contentsFigure.scss'
 
 interface contentsFigureType {
-    result: googleSearchItem[] | null;
+    result: googleSearchItem[] | naverSearchItem[] | null;
     option: number;
 }
-export default function ContentsFigure({ result, option }:contentsFigureType) {
+export default function ContentsFigure({ result, option }: contentsFigureType) {
     return (
         result && result.map((item, i) => (
             <figure className='contentsFigure' key={item.title + i}>
                 <a href={item.link} target='_blank'>
-                {
-                    option == 2 || option == 3 ? null : <img src={item.pagemap.cse_thumbnail[0].src} alt={item.title} />
-                }
-                <figcaption>
-                    <div className='figcaption'>
-                        <div className='top'>
-                            <p className='title'>{item.title}</p>
-                            <p className='description'>{option === 2 || option === 10 || item.description ? item.description : item.snippet}</p>
+                    {
+                        option == 2 || option == 3 ? null : <img src={item.pagemap.cse_thumbnail[0].src} alt={item.title} />
+                    }
+                    <figcaption>
+                        <div className='figcaption'>
+                            <div className='top'>
+                                <p className='title'>{item.title}</p>
+                                <p className='description'>{option === 2 || option === 10 || item.description ? item.description : item.snippet}</p>
+                            </div>
+                            <span className='author'>글쓴이</span>
                         </div>
-                        <span className='author'>글쓴이</span>
-                    </div>
                     </figcaption>
-                    </a>
+                </a>
             </figure>
         ))
     );
