@@ -10,13 +10,20 @@ export type myProjectPostType = {
     member: string[],
     stack: string[],
     imgSrc: string,
+    like: number,
     comments: myProjectCommentType[]
 }
 
 export type myProjectCommentType = {
-    userId: string,
-    comment: string,
-    date: string
+    updateKey: string,
+    updateValue: number,
+    updateType: string,
+    field: string,
+    value: {
+        userId: string,
+        comment: string,
+        date: string
+    }
 }
 
 export type FilterComponentType = {
