@@ -1,14 +1,21 @@
 @use '../../../../styles/main' as *;
 
-section{
+.QnAWriteMain{
     padding-top: 6rem;
     margin: 0 $b;
     form{
+        .writebox{
+            margin-top: $b;
+        }
         .QnAWriteTitle{
-            text-align: center;
             width: 100%;
             height: $l;
             font-weight: bold;
+            padding: 36px 0;
+            padding-left: 14px;
+            // padding-bottom: 36px;
+            border: 1px solid #ccc;
+            border-bottom: none;
             &::placeholder{
                 color: $main;
                 font-size: $m;
@@ -33,7 +40,7 @@ section{
         
         .quill{
             margin:0 !important;
-            margin-top: $b !important;
+            // margin-top: $b !important;
             margin-bottom: $b !important;
             .ql-container{
                 height: 92% !important;

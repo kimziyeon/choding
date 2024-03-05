@@ -1,20 +1,25 @@
 @use '../../../styles/main.scss' as *;
 
-#QnAMain{
-    .QnAContentContainer{
-        .QuestionBox{
+#QnAMain {
+    position: relative;
+
+    .QnAContentContainer {
+        .QuestionBox {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid $grayDark;
             padding: $b;
-            .QuestionText{
+
+            .QuestionText {
                 margin-right: $b;
                 width: 80%;
-                h2{
+
+                h2 {
                     color: $grayDark;
                     font-size: $b;
                 }
-                >p{
+
+                >p {
                     font-size: $s;
                     color: $grayLight;
                     -webkit-line-clamp: 3;
@@ -26,19 +31,83 @@
                     -webkit-box-orient: vertical;
                     margin: $b 0;
                 }
-                .QnAInfo{
+
+                .QnAInfo {
                     display: flex;
-                    >p{
+
+                    >p {
                         font-size: $s;
                         color: $grayLight;
                         margin-right: $b;
                     }
                 }
             }
-            .QuestionImg{
-                width: 120px; height: 120px;
+
+            .QuestionImg {
+                width: 120px;
+                height: 120px;
                 background-color: black;
             }
         }
     }
+
+    .QnAHeader {
+        button {
+            font-size: $t;
+            border-radius: 100px;
+            padding: 4px 18px;
+            background-color: #f5f5f5;
+            margin-right: 9px;
+        }
+        .active{
+            background-color: $main;
+            color: #ffffff;
+        }
+        .AllPage {}
+
+        .MyPage {}
+    }
+
+    .myPageMain {
+        padding-top: $b;
+
+        .writeBtn {
+            background-color: #f5f5f5;
+            padding: 4px 18px;
+            border-radius: 100px;
+            color: $grayDark;
+            font-size: $t;
+            display: inline-block;
+        }
+
+        .MyPageContainer {
+            .noWrite {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border-bottom: 1px solid black;
+
+                .noWriteImg {
+                    border-radius: 50px;
+                    width: 77px;
+                    height: 77px;
+                    background-color: black;
+                }
+
+                h3 {
+                    color: $grayDark;
+                    font-size: $b;
+                    margin: $b 0;
+                }
+
+                a {
+                    font-size: $s;
+                    color: gray;
+                    margin-bottom: $b;
+                }
+            }
+        }
+    }
+
+
 }
