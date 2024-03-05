@@ -5,19 +5,52 @@
     padding-top: calc(79px + 2rem);
     color: $grayDark;
 
+    @include column-flexbox;
+    gap: 2rem;
+
+    // 검색 인풋
     .totalSearchHeader {
         @include column-flexbox(c, c);
 
         #searchInputSub {
+            flex-direction: row-reverse;
+            justify-content: space-between;
             width: 100%;
             min-width: 10rem;
             max-width: calc(430px - 2rem);
-            background: linear-gradient(to right, $sub1, $mainLight);
-            opacity: 0.5;
-        }
+            background-color: transparent;
+            // background: linear-gradient(to right, $sub1, $mainLight);
 
-        input::placeholder {
-            color: #000;
+            img {
+                position: absolute;
+            }
+
+            form {
+                width: 100%;
+
+                input {
+                    opacity: 1 !important;
+                    height: 100%;
+                    width: 100%;
+                    font-size: $b;
+                    border-bottom: 3px solid;
+                    border-image: linear-gradient(to right, $grayLight, $grayLight);
+                    border-image-slice: 1;
+                    padding-bottom: 0.5rem;
+                }
+
+                input:focus {
+                    border-bottom: 4px solid;
+                    border-image: linear-gradient(to right, $sub1, $mainLight);
+                    border-image-slice: 1;
+                    color: $grayDark;
+                }
+
+                input::placeholder {
+                    color: $grayLight;
+                    font-size: $b;
+                }
+            }
         }
 
         p {
@@ -31,9 +64,71 @@
         }
     }
 
+    // 추천 검색어
+    .recommendQuery {
+        margin: 0 auto;
+        width: 100%;
+        min-width: 10rem;
+        max-width: calc(430px - 3rem);
+
+        h3 {
+            font-size: $s;
+            margin-bottom: 0.5rem;
+        }
+
+        ul {
+            @include flexbox;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+
+            li {
+                transition: 0.2s ease;
+                color: $gray;
+                font-size: $s;
+                padding: 0.2rem 0.5rem;
+                border: 1px solid $grayLight;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+
+            li:hover {
+                background-color: $main;
+                border: 1px solid $main;
+                color: #fff;
+                font-weight: 700;
+            }
+        }
+    }
+
+    // "검색어" 검색 결과 안내
+    .checkQuery {
+        @include flexbox(c, c);
+        gap: 0.3rem;
+        margin-top: 2rem;
+
+        span {
+            position: relative;
+            z-index: 0;
+            font-weight: 700;
+            display: block;
+        }
+
+        span::before {
+            content: '';
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            background-color: $sub1;
+        }
+    }
+
+
+    // 검색 결과
     .totalSearchSection {
         width: 100%;
-        padding-top: 2rem;
 
         .subheading {
             font-weight: 700;
