@@ -1,0 +1,380 @@
+[
+    {
+        "publishedAt": "2021-04-18T09:24:05Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #1 타입스크립트를 쓰는 이유를 알아보자 - 타입스크립트 강좌",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 첫 시간 입니다. 타입스크립트를 왜 쓰는지, 어떤 장점이 있는지 알아보겠습니다.\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/5oGAkQsGWkc/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/5oGAkQsGWkc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/5oGAkQsGWkc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/5oGAkQsGWkc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/5oGAkQsGWkc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 0,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "5oGAkQsGWkc"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-04-18T09:27:52Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #2 기본 타입 - 타입스크립트 강좌",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 타입스크립트 기본 타입 몇가지에 대해 알아 보겠습니다.\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/70w82P-KiVM/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/70w82P-KiVM/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/70w82P-KiVM/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/70w82P-KiVM/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/70w82P-KiVM/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 1,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "70w82P-KiVM"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-04-23T15:38:12Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #3 인터페이스(interface) - 타입스크립트 강좌",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 인터페이스(interface)에 대해 배우고, 다양한 활용법을 알아봅시다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/OIMPLNICzoc/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/OIMPLNICzoc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/OIMPLNICzoc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/OIMPLNICzoc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/OIMPLNICzoc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 2,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "OIMPLNICzoc"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-05-22T17:53:38Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #4 함수 - 타입스크립트 강좌",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 함수를 정의하는 방법들을 알아보겠습니다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 3,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "prfgfj03_VA"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-05-22T17:53:38Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #4 함수 - 타입스크립트 강좌",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 함수를 정의하는 방법들을 알아보겠습니다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/prfgfj03_VA/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 3,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "prfgfj03_VA"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-06-05T15:25:19Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #5 리터럴, 유니온/교차 타입 - 타입스크립트 강좌",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 문자/숫자 리터럴 타입, 유니온/교차 타입에 대해 알아 보겠습니다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/QZ8TRIJWCGQ/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/QZ8TRIJWCGQ/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/QZ8TRIJWCGQ/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/QZ8TRIJWCGQ/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/QZ8TRIJWCGQ/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 4,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "QZ8TRIJWCGQ"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-06-20T07:16:59Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #6 클래스 Class",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 클래스를 만들어 보겠습니다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/17Oh028Jpis/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/17Oh028Jpis/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/17Oh028Jpis/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/17Oh028Jpis/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/17Oh028Jpis/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 5,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "17Oh028Jpis"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-07-06T17:48:50Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #7 제네릭 Generics",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 제네릭에 대해 알아보겠습니다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/pReXmUBjU3E/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/pReXmUBjU3E/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/pReXmUBjU3E/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/pReXmUBjU3E/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/pReXmUBjU3E/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 6,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "pReXmUBjU3E"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    },
+    {
+        "publishedAt": "2021-07-28T00:59:11Z",
+        "channelId": "UCxft4RZ8lrK_BdPNz8NOP7Q",
+        "title": "TypeScript #8 유틸리티 타입 Utility Types",
+        "description": "안녕하세요 코딩앙마 입니다 😈\n타입스크립트 강좌 : 이번 시간에는 유틸리티 타입에 대해 알아보겠습니다!\n\n----------------------------------------\n이 영상은 타입스크립트 기초 강좌로, 자바스크립트에 대한 사전 학습이 필요합니다.\n(자바스크립트 기초 강좌를 먼저 수강해주세요!)\n\n재생목록 : https://www.youtube.com/playlist?list=PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0\n\n#Typescript #타입스크립트 #강좌",
+        "thumbnails": {
+            "default": {
+                "url": "https://i.ytimg.com/vi/IeXZo-JXJjc/default.jpg",
+                "width": 120,
+                "height": 90
+            },
+            "medium": {
+                "url": "https://i.ytimg.com/vi/IeXZo-JXJjc/mqdefault.jpg",
+                "width": 320,
+                "height": 180
+            },
+            "high": {
+                "url": "https://i.ytimg.com/vi/IeXZo-JXJjc/hqdefault.jpg",
+                "width": 480,
+                "height": 360
+            },
+            "standard": {
+                "url": "https://i.ytimg.com/vi/IeXZo-JXJjc/sddefault.jpg",
+                "width": 640,
+                "height": 480
+            },
+            "maxres": {
+                "url": "https://i.ytimg.com/vi/IeXZo-JXJjc/maxresdefault.jpg",
+                "width": 1280,
+                "height": 720
+            }
+        },
+        "channelTitle": "코딩앙마",
+        "playlistId": "PLZKTXPmaJk8KhKQ_BILr1JKCJbR0EGlx0",
+        "position": 7,
+        "resourceId": {
+            "kind": "youtube#video",
+            "videoId": "IeXZo-JXJjc"
+        },
+        "videoOwnerChannelTitle": "코딩앙마",
+        "videoOwnerChannelId": "UCxft4RZ8lrK_BdPNz8NOP7Q"
+    }
+]

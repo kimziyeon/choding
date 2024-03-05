@@ -3,19 +3,24 @@
 import { useEffect, useState } from "react";
 import QuizData from '../daily.json';
 import DailyquizEnd from "./DailyquizEnd";
+import dayjs from 'dayjs';
+import 'dayjs/locale/ko';
 
 
 export default function Dailyquiz({ finishTest }) {
 
+    const now = dayjs();
+    dayjs.locale('ko');
+    const today = dayjs().format("YYYY년 MM월 DD일");
+    // const itemCreatedDate = dayjs(item.date, 'YYYY년 MM월 DD일');
+
     const [timer, setTimer] = useState(10);
     const [ingId, setIngId] = useState(0);
-    const [ques, setQues] = useState([]);
+    const [ques, setQues] = useState(QuizData.dailyQuiz);
     const ingQues = ques[ingId];
     const [testValue, setTestValue] = useState(false);
+    const [isValue, setIsvalue] = useState(null);
 
-    useEffect(() => {
-        setQues(QuizData.dailyQuiz);
-    }, []);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -28,8 +33,8 @@ export default function Dailyquiz({ finishTest }) {
 
     useEffect(() => {
         if (timer === 0) {
-            // 시간이 다 되었을 때의 처리
-            // DailyquizEnd 컴포넌트를 보이도록 설정
+            setTestValue(true);
+            setIsvalue(false);
         }
     }, [timer]);
 
@@ -37,25 +42,55 @@ export default function Dailyquiz({ finishTest }) {
         return time < 10 ? '0' + time : time;
     };
 
-    return (
-        <div className='popUp02'>
-            <div className='popUpContents'>
-                <h3 className='dailyNum'>2024. 03. 02</h3>
-                <div className='qQuestion'>{ingQues.question}</div>
-                <div className='qAnswer'>
-                    <form>
-                        <p><label className="radio_cus"><input type="radio" id="choice1" name="choice" value="1" />{ingQues.choice[0]}</label></p>
-                        <p><label className="radio_cus"><input type="radio" id="choice2" name="choice" value="2" />{ingQues.choice[1]}</label></p>
-                        <p><label className="radio_cus"><input type="radio" id="choice3" name="choice" value="3" />{ingQues.choice[2]}</label></p>
-                        <p><label className="radio_cus"><input type="radio" id="choice4" name="choice" value="4" />{ingQues.choice[3]}</label></p>
-                    </form>
-                </div>
-                <p className='timer'>00:{formatTime(timer)}</p>
-                <button className='popUpBtn'
-                    onClick={finishTest}>제출하기</button>
-                {timer === 0 && <DailyquizEnd />}
-            </div>
+    const handleAnswer = (userAnswer) => {
+        if (userAnswer === ingQues.answer) {
+            setIsvalue(true);
+        } else {
+            setIsvalue(false);
+        }
+    } setTestValue{ true};
 
-        </div>
+
+    return (
+        <>
+            {!testValue && (
+
+                <div className='popUp02'>
+                    <div className='popUpContents'>
+                        <h3 className='dailyNum'>{today}</h3>
+                        <div className='qQuestion'>{ingQues.question}</div>
+                        <div className='qAnswer'>
+                            <form>
+
+                                {ingQues.choice.map((choice, index) => (
+                                    <p key={index}>
+                                        <label className="radio_cus">
+                                            <input
+                                                type="radio"
+                                                name="choice"
+                                                value={index + 1}
+                                                onClick={() => handleAnswer(index + 1)}
+                                            />
+                                            {choice}
+                                        </label>
+                                    </p>
+                                ))}
+
+                                {/* <p><label className="radio_cus"><input type="radio" id="choice1" name="choice" value="1" />{ingQues.choice[0]}</label></p>
+                                <p><label className="radio_cus"><input type="radio" id="choice2" name="choice" value="2" />{ingQues.choice[1]}</label></p>
+                                <p><label className="radio_cus"><input type="radio" id="choice3" name="choice" value="3" />{ingQues.choice[2]}</label></p>
+                                <p><label className="radio_cus"><input type="radio" id="choice4" name="choice" value="4" />{ingQues.choice[3]}</label></p>*/}
+
+                            </form>
+                        </div>
+                        <p className='timer'>00:{formatTime(timer)}</p>
+                        <button className='popUpBtn'
+                            onClick={finishTest}>제출하기</button>
+                    </div>
+                </div>
+            )}
+
+            {testValue && <DailyquizEnd />}
+        </>
     )
 }
