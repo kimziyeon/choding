@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { googleSearchItem, myProjectPostType, naverSearchItem } from '@/types/datatype';
+import { googleSearchItem, naverSearchItem } from '@/types/datatype';
 import './contentsFigure.scss'
 
 interface contentsFigureType {
@@ -20,11 +19,7 @@ export default function ContentsFigure({ result, option }: contentsFigureType) {
                                 <p className='title'>{item.title}</p>
                                 <p className='description'>{option === 2 || option === 10 || item.description ? item.description : item.snippet}</p>
                             </div>
-                            <span className='author'>
-                                {
-                                    // (option == 2 || option == 3) ? { item.bloggername } : null
-                                }
-                            </span>
+                            <span className='author'>{option == 2 || option == 3 ? item.bloggername : null}</span>
                         </div>
                     </figcaption>
                 </a>

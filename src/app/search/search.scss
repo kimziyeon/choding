@@ -154,7 +154,14 @@
 
             .contentsFigure {
                 width: calc((100% - 2rem)/3);
+                padding-bottom: 1rem;
             }
         }
+    }
+}
+
+@include responsive(s) {
+    #totalSearch .totalSearchSection .innerResults .contentsFigure {
+        width: calc((100% - 2rem) / 2);
     }
 }
