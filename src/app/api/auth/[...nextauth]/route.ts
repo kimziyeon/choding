@@ -30,6 +30,7 @@ export const option = {
     ], callbacks: {
         async jwt({ token, user }:any) {
             // MongoDB에 사용자 정보 저장
+           
             await saveUserToMongoDB(user);
             return { ...token, ...user };
         },

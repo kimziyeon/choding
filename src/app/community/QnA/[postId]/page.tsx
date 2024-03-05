@@ -1,5 +1,6 @@
 'use client'
 
+import axios from 'axios';
 import './post.scss'
 
 export default function QnADetail() {
@@ -14,7 +15,8 @@ export default function QnADetail() {
                     </div>
                 </div>
                 <form action="">
-                    
+                    <input type='' name='title' required />
+                    <input type="text" />
                 </form>
             </div>
         </>
