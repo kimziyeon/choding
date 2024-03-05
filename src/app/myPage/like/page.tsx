@@ -4,8 +4,11 @@ import '../mypage.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import arrowLeftGrayDark from '@/essets/arrowLeftGrayDark.svg';
+import MyLikeEmpty from './commponents/Empty';
+import MyLikeContents from './commponents/Contents';
 
-export default function LikeCommunity() {
+
+export default function MyLike() {
     return (
 
         <section className="likePage">
@@ -16,6 +19,9 @@ export default function LikeCommunity() {
                 </p>
                 <h3>내 책갈피</h3>
             </div>
+
+            <MyLikeContents />
+            {/* <MyLikeEmpty /> */}
         </section>
     );
 }
