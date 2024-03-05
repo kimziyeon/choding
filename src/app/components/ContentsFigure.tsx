@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { googleSearchItem, myProjectPostType, naver } from '@/types/datatype';
+import { googleSearchItem, myProjectPostType } from '@/types/datatype';
 import './contentsFigure.scss'
 
 interface contentsFigureType {
-    result: googleSearchItem[] | naver | null;
+    result: googleSearchItem[] | null;
     option: number;
 }
 export default function ContentsFigure({ result, option }: contentsFigureType) {
@@ -20,7 +20,11 @@ export default function ContentsFigure({ result, option }: contentsFigureType) {
                                 <p className='title'>{item.title}</p>
                                 <p className='description'>{option === 2 || option === 10 || item.description ? item.description : item.snippet}</p>
                             </div>
-                            <span className='author'>글쓴이</span>
+                            <span className='author'>
+                                {
+                                    // (option == 2 || option == 3) ? { item.bloggername } : null
+                                }
+                            </span>
                         </div>
                     </figcaption>
                 </a>
