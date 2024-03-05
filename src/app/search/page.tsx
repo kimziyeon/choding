@@ -73,7 +73,6 @@ export default function Search() {
                     totalSearchFunc={totalSearchFunc}
                 />
             </section>
-
             <section className='recommendQuery'>
                 <h3>추천 검색어</h3>
                 <ul>
@@ -88,7 +87,7 @@ export default function Search() {
             <section className='checkQuery'>
                 <span>{query}</span> 검색 결과
             </section>
-
+        
             <section id="totalSearch1" className='totalSearchSection'>
                 <p className='subheading'>동영상</p>
                 <Youtube />
@@ -103,7 +102,8 @@ export default function Search() {
 
             <section id="totalSearch3" className='totalSearchSection'>
                 <p className='subheading'>블로그</p>
-                <Naver />
+                {/* <Naver
+                    query={query} /> */}
             </section>
         </section>
     );

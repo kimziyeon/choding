@@ -17,6 +17,7 @@ export async function GET(req: NextRequest) {
         headers: { 'X-Naver-Client-Id': client_id, 'X-Naver-Client-Secret': client_secret },
         params: {
             query: q,
+            display: 6
         }
     });
     console.log("시작입니다")

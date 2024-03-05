@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { googleSearchItem, myProjectPostType } from '@/types/datatype';
+import { googleSearchItem, myProjectPostType, naverSearchItem } from '@/types/datatype';
 import './contentsFigure.scss'
 
 interface contentsFigureType {
-    result: googleSearchItem[] | null;
+    result: googleSearchItem[] | naverSearchItem[] | null;
     option: number;
 }
 export default function ContentsFigure({ result, option }: contentsFigureType) {
