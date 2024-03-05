@@ -57,4 +57,14 @@ export type googleSearchItem = {
             }
         ]
     }
-}
+};
+
+
+export type naverSearchItem = {
+    "title": string,
+    "link": string,
+    "description": string,
+    "bloggername": string,
+    "bloggerlink": string,
+    "postdate": string
+};
