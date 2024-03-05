@@ -5,6 +5,7 @@ import axios from 'axios';
 
 
 const NaverSearch = () => {
+
     const [text, setText] = useState('');
     const [blog, setBlog] = useState([]);
 

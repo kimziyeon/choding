@@ -5,6 +5,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import { naverSearchItem } from '@/types/datatype';
 import ContentsFigure from '@/app/components/ContentsFigure';
+import { error } from 'console';
 
 
 interface naverSearchType {
@@ -13,30 +14,40 @@ interface naverSearchType {
 
 export default function Naver({ query }: naverSearchType) {
 
-    // const [text, setText] = useState('');
-    const [result, setResult] = useState<naverSearchItem[] | null>(null)
+    const [blog, setBlog] = useState<naverSearchItem[] | null>(null);
 
-    const [blog, setBlog] = useState([]);
-
+    useEffect(() => {
+        if (query !== null) {
+            const queryTrim = query.trim();
+            if (queryTrim !== '' || queryTrim.length > 2) {
+                search();
+            }
+        }
+    }, [query])
 
     const search = async () => {
-        const result = await axios.get('/api/naver', { params: { q: query } });
-        setResult(result.data.items.map(item => ({
-            ...item,
-            title: item.title.replace(/(<([^>]+)>)/ig, ""),
-            description: item.description.replace(/(<([^>]+)>)/ig, "")
-        })));
+        try {
+            const response = await axios.get('/api/naver', { params: { q: query } });
+            const items = response.data.items.map(item => ({
+                ...item,
+                title: item.title.replace(/(<([^>]+)>)/ig, ""),
+                description: item.description.replace(/(<([^>]+)>)/ig, "")
+            }));
+            setBlog(items);
+        } catch (error) {
+            console.error('Error fetching data', error);
+        }
     };
 
-
     useEffect(() => { //검색결과 콘솔
-        console.log(result);
-    }, [result]);
+        console.log(blog);
+    }, [blog]);
+
 
     return (// className="innerResults" == 공통 스타일(search.scss)
         <section id="totalSearchNaverSection" className="innerResults">
             <ContentsFigure
-                result={result}
+                result={blog}
                 option={2}
             />
         </section>
