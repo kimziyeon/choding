@@ -1,0 +1,29 @@
+[
+    {
+        "cd": {
+            "youtube": "HTML 마크업",
+            "google": "CSS 기초",
+            "naver": "VSCode 사용법"
+        },
+        "jd": {
+            "youtube": "자바스크립트 기초",
+            "google": "제이쿼리 문법",
+            "naver": "SASS 문법"
+        },
+        "gd": {
+            "youtube": "React 기초",
+            "google": "React 서버 통신",
+            "naver": " 타입스크립트 입문"
+        },
+        "dd": {
+            "youtube": "Nextjs 기초",
+            "google": "Express 사용법",
+            "naver": "Axios 사용법"
+        },
+        "zd": {
+            "youtube": "파이썬 기초",
+            "google": "Nextjs14 라우터",
+            "naver": "프로젝트 빌드하는 법"
+        }
+    }
+]
