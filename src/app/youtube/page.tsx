@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import youtubeResult from '@/app/youbuteResult.json'
+import youtubeResult from '@/app/youtubeResult.json'
 import Link from 'next/link';
 
 export default function Youtube() {
