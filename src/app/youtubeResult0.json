@@ -1,0 +1,1004 @@
+[
+    {
+        "kind": "youtube#playlistItemListResponse",
+        "etag": "6LQNygqGftjf_iOJ0GE-mcFyFm0",
+        "items": [
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "Hyii6vsqxfCM2hy2YgIirEYViLA",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC41NkI0NEY2RDEwNTU3Q0M2",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:31:19Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "2024년. NextJS 14를 배워야하는 이유.",
+                    "description": "무료 강의 푼다.\n풀스택 앱 빌드가 이렇게 쉬웠던 적은 없었다.....!\n#리액트 #무료강의 #nextjs14 #nextjs \n-\n🔥 니꼴라쓰의 NextJS 14.0 무료 강의 🔥\nhttps://bit.ly/48Lo8gV\n-\n0:00~0:44 : Intro\n0:45~3:10 : Server Components\n3:11~4:38 : Server Actions\n4:39~6:11 : Outro",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 0,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "t0UocUiR5-8"
+                    },
+                    "videoOwnerChannelTitle": "노마드 코더 Nomad Coders",
+                    "videoOwnerChannelId": "UCUpJs89fSBXNolQGOYKn0YQ"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "WyGz1kockN_Z2iijXjPqoJ_-KJQ",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC4yODlGNEE0NkRGMEEzMEQy",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:31:25Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "프론트엔드 개발자가 Next.js를 반드시 배워야하는 이유 l 구조, 강점, 현직 활용 Tips",
+                    "description": "#nextjs #프론트엔드 #코딩\n\n요즘 프론트엔드 다루는 분들이라면 Next.js 많이 들어보셨을 텐데요.\n\n오늘은 Next.js에 대한 모든 것들을 정리해봤습니다.\n\n▶출연문의 contact us (현직자 개인 브랜딩 / 책홍보 / 영상홍보 / 회사홍보)\r\nsupport@mcode.co.kr\r\n\r\n▶메타코드M  오픈채팅방 초대받기 (IT 뉴스/ 참여 Event\nsupport@mcode.co.kr 이메일 보내주세요\r\n\r\n▶메타코드M 사이트 회원가입해서, 강의자료 받기\r\nmcode.co.kr",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/1w70c7x62BI/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/1w70c7x62BI/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/1w70c7x62BI/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/1w70c7x62BI/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/1w70c7x62BI/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 1,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "1w70c7x62BI"
+                    },
+                    "videoOwnerChannelTitle": "메타코드M",
+                    "videoOwnerChannelId": "UChu25pJgVZB3p0dVEgmU0PQ"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "YaYZhJ8T74s0LyQeJ5JDtkZCsdc",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC4wMTcyMDhGQUE4NTIzM0Y5",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:31:32Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "Next 14 강좌가 출시되었습니다!! (React-Query@5, MSW@2, Next-Auth@5, 서버 액션 포함!!)",
+                    "description": "강의 구매 링크\nhttps://inf.run/cHgst\nhttps://inf.run/cHgst\n\n유튜브에서 라이브 진행한 부분은 강의의 1/3 밖에 안 됩니다.\n\n4만명이 수강한 제로초 강좌/로드맵 통합 링크!\nhttps://www.zerocho.com/lecture\nhttps://www.zerocho.com/lecture\n\n의지력이 약해 다른 사람들과 함께 수강하고 싶다면! + 고민상담, 질문도 하고 싶다면\n2천명이 모여있는 제로초스쿨에서!\nhttps://www.zerocho.com/slack\nhttps://www.zerocho.com/slack\n\n-- 깃헙 --\nhttps://github.com/zerocho (레포지토리 스타 눌러주세요)\n-- 후원 및 멤버십 --\nhttps://toon.at/donate/zerocho\nhttps://www.youtube.com/channel/UCp-vBtwvBmDiGqjvLjChaJw/join\n-- 소개 --\nNode.js 교과서, Let's Get IT 자바스크립트 프로그래밍, 타입스크립트 교과서 저자\n제로초닷컴(ZeroCho.com) 운영자",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/yhu-hBl5bIw/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/yhu-hBl5bIw/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/yhu-hBl5bIw/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/yhu-hBl5bIw/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 2,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "yhu-hBl5bIw"
+                    },
+                    "videoOwnerChannelTitle": "ZeroCho TV",
+                    "videoOwnerChannelId": "UCp-vBtwvBmDiGqjvLjChaJw"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "5S2bZpwcxGlPF8i6-zWDkgD8G8E",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC41MjE1MkI0OTQ2QzJGNzNG",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:31:49Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "요즘 웹 개발이 그렇다고 합니다 (리액트와 NEXT.js 가 벌리고 있는 일들..)",
+                    "description": "React 서버컴포넌트와 NEXT server action 에 대한 내용입니다.\n\n#react #리액트 #next  #프론트엔드",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/5XrOIcn72FA/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/5XrOIcn72FA/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/5XrOIcn72FA/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/5XrOIcn72FA/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/5XrOIcn72FA/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 3,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "5XrOIcn72FA"
+                    },
+                    "videoOwnerChannelTitle": "프롱트",
+                    "videoOwnerChannelId": "UCku8mOp8y05Cm6sb9Rp0jMQ"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "ude987nBkzHsjTylMXE7kSVXO6k",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC4wOTA3OTZBNzVEMTUzOTMy",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:31:56Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "Next.js 13 강의 달린다 (1강~6강)",
+                    "description": "Next.js 강의 오픈 (얼리엑세스 50% 할인 중) \nhttps://codingapple.com/course/next-js/\n\n일반강의 10% 할인 쿠폰 : GPT5 (맨날 바뀜 최신영상 참고)\n\n\n\n0:00 1강 설치\n강의글 : https://codingapple.com/unit/nextjs-install/?id=68759\n\n6:18 2강 리액트 기초문법\n강의글 : https://codingapple.com/unit/nextjs-page-layout/?id=68759\n\n15:02 3강 Routing\n강의글 : https://codingapple.com/unit/nextjs-layout-file/?id=68759\n\n23:38 4강 map 반복문\n강의글 : https://codingapple.com/unit/nextjs-map/?id=68759\n\n37:35 5강 image 넣기\n강의글 : https://codingapple.com/unit/nextjs-image/?id=68759\n\n47:41 6강 component\n강의글 : https://codingapple.com/unit/nextjs-component/?id=68759",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 4,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "PCkiz2GUFg8"
+                    },
+                    "videoOwnerChannelTitle": "코딩애플",
+                    "videoOwnerChannelId": "UCSLrpBAzr-ROVGHQ5EmxnUg"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "0SwBHYNDCBqujHsK7fULZgvHfwA",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC4xMkVGQjNCMUM1N0RFNEUx",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:32:08Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "Next.js 13- 0. Next.js 란 무엇인가? (14 버전 호환됩니다)",
+                    "description": "#공지사항  \nNext.js는 리엑트 기반의 풀스택 웹 프래임워크로 \n더욱 편리하게 웹앱을 구현할 수 있도록 도와줍니다. \n\n전체 수업은 \n18개의 동영상, 1시간 20분 크기 입니다. \n\n적당한 크기로 공부하실 수 있도록  \n매일 저녁 8시에 아래 주소에서 순차적으로 공개합니다. \nhttps://opentutorials.org/course/5098\n\nNext.js 공부를 미루고 계셨던 분은 하루 30분만 시간을 빌려주세요.\n3일 후에는 Next.js의 사용자가 되어있을 것입니다. \n\n(공개일정 : https://docs.google.com/spreadsheets/d/1jsq6-i6cyHHsUbhxwEyZ4rw4CuolnMEC15KIhFP4ibc)\n------------------------------\n\n전체수업은 아래 채널에서 볼 수 있습니다. \nopentutorials (권장)\n- https://opentutorials.org/course/5098\n\nyoutube 재생목록\n- https://www.youtube.com/watch?v=9KOaR6QMb9A&list=PLuHgQVnccGMCwxXsQuEoG-JJ7RlwtNdwJ\n\n선행학습 : \nReact : https://seomal.com/map/1/220\n\n생활코딩 소식 메일링 리스트 : \nhttps://page.stibee.com/subscriptions/8851\n\n생활코딩 인스타 그램 : \nhttps://www.instagram.com/coohde/",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 5,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "9KOaR6QMb9A"
+                    },
+                    "videoOwnerChannelTitle": "생활코딩",
+                    "videoOwnerChannelId": "UCvc8kv-i5fvFTJBFAk6n1SA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "kPjWx2Dx-Y8_0CopK3VeFXTrz5I",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC41MzJCQjBCNDIyRkJDN0VD",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:32:19Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "리액트 vs Next JS vs Gatsby 언제 뭘 써야하지? | CSR vs SSR vs SSG 내 프로젝트 분석하고 맞는 기술스택 선택하는법!",
+                    "description": "프로젝트 분석하고 맞는 기술스택 선택하는법! \n요즘 핫하다는 리액트 vs Gatsby vs Nextjs \n어떤 상황에서 어떤걸 쓰는게 좋을까?\n\n00:00 상황극\n00:25 인트로\n01:51 프로젝트를 받았을때 생각해야 하는것\n04:27 기술스택 선택하는법 (CSR vs SSG vs SSR)\n11:37  CMS를 사용해야하는 경우\n12:46 그래서 초보자인 나는 뭘 배워야 하지?\n13:24  리액트 배우는 곳  추천\n13:34 당부의 말씀\n\n리액트 강의 듣는곳 \nhttps://codingnoona.thinkific.com/courses/3\n뇌를 살찌우러 올래?\n\n누나 인스타 뭐야? 1008_shine",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/C6kiIkrBdyE/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/C6kiIkrBdyE/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/C6kiIkrBdyE/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/C6kiIkrBdyE/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/C6kiIkrBdyE/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 6,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "C6kiIkrBdyE"
+                    },
+                    "videoOwnerChannelTitle": "코딩알려주는누나",
+                    "videoOwnerChannelId": "UCfBvs0ZJdTA43NQrnI9imGA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "mgub8h1_0mWKI-Dcr4V9_DjNmKs",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC5DQUNERDQ2NkIzRUQxNTY1",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:33:15Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "Next.js 나만의 포트폴리오 사이트 만들기 (개발하는 김에 배포까지) / LottieFiles, Notion Api, TailwindCSS",
+                    "description": "📌 내용\n- Next.js\n- Lottie Animation\n- Notion api integration\n- TailwindCSS\n- Vercel deploy\n\n👇 완성 소스코드\nhttps://github.com/TuenTuenna/next-portfolio-tutorial\n\n👇완성 포트폴리오 사이트\nhttps://next-portfolio-tutorial-hyioyx9rt-tuentuenna.vercel.app/\n\n📺수강기록을 남기고 싶으시면 아래에서 수강해보세요!\nhttps://ppak-coders.teachable.com/\n\n⏰ 타임스탬프\n===================================================\n0:00 인트로\n0:12 강의소개\n2:03 개발환경 설정\n2:27 Next.js 소개\n2:48 SSR 및 CSR 개념설명\n9:04 Next.js 설치 및 페이지 설정\n17:45 푸터, 해더 설정\n24:37 TailwindCSS 설정   \n30:29 레이아웃 설정   \n40:31 로티 애니메이션 적용   \n48:35 Link 작업   \n55:21 다크 모드 지원작업   \n1:17:10 노션 API 설명   \n1:35:15 Next.js 데이터 가져오기   \n1:52:21 Project 화면 만들기   \n2:28:16 배포하기   \n2:37:06\n===================================================\n\n부족한 제 채널을 구독해 주시고 꾸준히 영상을 시청해 주셔서\n너무너무 감사합니다! \n앞으로 더 노력하는 정대리가 되겠습니다! 🥰\n\n🍎 iOS 처음이신분 오세요! \nhttps://youtu.be/UKknl2yxQr4\n\n🎁 맴버쉽 혜택 및 iOS UIKit 강좌 안내\nhttps://youtu.be/FCFCKs9EAmA\n\n👍 진정빡코더 🔥👨‍💻 가입하고 유료 iOS 컨텐츠 보기https://www.youtube.com/channel/UCutO2H_AVmWHbzvE92rpxjA/join\n\n🔥진정 빡코더 맴버쉽 안내\nhttps://spangle-wedelia-2dc.notion.site/6198cd9c2d8840a5ab8d2758abf6a6d4\n\n개발하는 정대리 가 궁금하다면? 🔥\nhttp://ppak-coders.com/\n\n개발하는 정대리 빡코딩방👩🏼‍💻🔥 (비번: 1016)\nhttps://open.kakao.com/o/gxOOKJec\n\n영상이 도움이 되셨다면  구독과 좋아요는 저에게 큰 힘이 됩니다!🥰",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 7,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "KvoFvmu5eRo"
+                    },
+                    "videoOwnerChannelTitle": "개발하는 정대리",
+                    "videoOwnerChannelId": "UCutO2H_AVmWHbzvE92rpxjA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "J7sjS6p2-S2j2phoAx6FV9r9Z5Y",
+                "id": "UExFdEt6ZXVHMWZTOHhkVVlJb0lKeDcyeVBNQmYzejlsWC45NDk1REZENzhEMzU5MDQz",
+                "snippet": {
+                    "publishedAt": "2024-03-05T04:53:24Z",
+                    "channelId": "UCKyo9kgz1AvXemrh_6WJiSQ",
+                    "title": "토스ㅣSLASH 23 - 퍼널: 쏟아지는 페이지 한 방에 관리하기",
+                    "description": "매끄럽고 우아한 사용자 경험을 위한 개발자의 경험도 우아할 수 있을까요?\n수많은 화면과 쏟아지는 분기를 효과적으로 관리하는 ‘퍼널’ 설계에 대해 소개합니다.\n\n진유림 / 토스 Frontend Developer\n\n발표 자료\n👉🏻 https://bit.ly/3oKG2yR\n\n토스 개발자 컨퍼런스 SLASH에 대한 자세한 정보는 \n👉🏻 https://bit.ly/43kW3tO\n\n컨퍼런스 및 세션에 대한 문의는\n👉🏻 slash@toss.im\n\n토스에 합류하고 싶다면\n👉🏻 https://toss.im/career/jobs\n\n#퍼널 #라이브러리 #frontenddeveloper #토스 #개발자컨퍼런스 #SLASH \n\n*본 발표자료의 저작권은 연사에 있으며, 저작권자의 사전 서면 동의 없이 자료의 일부 또는 전부를 이용하거나 배포할 수 없습니다.\n*또한 해당 자료를 복제하여 SLASH 행사 홈페이지를 제외한 온라인상에 게재하는 행위는 연사가 동의한 저작권 및 배포전송권에 위배됩니다.\n*토스가 다루는 모든 개인정보는 고객에게 동의를 받은 후에 처리되고 있으며, 접근 권한이 분리되어 있습니다. 개발자는 모든 데이터가 아닌 담당 영역에 한하여 접근·이용할 수 있습니다.",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/NwLWX2RNVcw/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/NwLWX2RNVcw/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/NwLWX2RNVcw/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/NwLWX2RNVcw/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/NwLWX2RNVcw/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "손하늘",
+                    "playlistId": "PLEtKzeuG1fS8xdUYIoIJx72yPMBf3z9lX",
+                    "position": 8,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "NwLWX2RNVcw"
+                    },
+                    "videoOwnerChannelTitle": "토스",
+                    "videoOwnerChannelId": "UCeg5g-vWgtgzQ0cYNV2Cyow"
+                }
+            }
+        ],
+        "pageInfo": {
+            "totalResults": 9,
+            "resultsPerPage": 50
+        }
+    },
+    {
+        "kind": "youtube#playlistItemListResponse",
+        "etag": "b3mlBSmHNQfeYxO18wYEwdlazH4",
+        "items": [
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "RZZYfxLOUug3lpnJXKNuQv6b9SU",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy41NkI0NEY2RDEwNTU3Q0M2",
+                "snippet": {
+                    "publishedAt": "2021-11-22T00:18:06Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useState 15분만에 마스터하기 | 리액트 훅스 시리즈",
+                    "description": "뭐?! 리액트 훅스가 이렇게 쉬웠다고?! 리액트 개발자라면  반드시 알아야하는 useState에 대해 자세히 차근차근 알아봅시다!\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useState hook\nhttps://ko.reactjs.org/docs/hooks-state.html\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 #1 - 변수관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4&feature=youtu.be\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useState 개념설명\n01:40 예제 1\n06:31 예제 2",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/G3qglTF-fFI/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/G3qglTF-fFI/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/G3qglTF-fFI/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/G3qglTF-fFI/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/G3qglTF-fFI/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 0,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "G3qglTF-fFI"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "W0NcTRq1lbiJr13fsaASsa1e248",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy4yODlGNEE0NkRGMEEzMEQy",
+                "snippet": {
+                    "publishedAt": "2021-11-27T10:49:55Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useEffect 깔끔하게 마스터하기 | 리액트 훅스 시리즈",
+                    "description": "그 복잡한 useEffect hook을 최대한 간편하게 설명했습니다! 리액트 개발자라면  반드시 알아야하는 useEffect에 대해 자세히 차근차근 알아봅시다!\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useEffect hook\nhttps://ko.reactjs.org/docs/hooks-effect.html\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 #1 - 변수관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4&feature=youtu.be\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useEffect 개념설명\n02:30 useEffect 사용해보기 (예제 1)\n09:38 useEffect & Clean up - Timer (예제 2)",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/kyodvzc5GHU/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/kyodvzc5GHU/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/kyodvzc5GHU/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/kyodvzc5GHU/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/kyodvzc5GHU/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 1,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "kyodvzc5GHU"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "6q2yzr0WEIWfPOt-HQxo0pv72ZQ",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy4wMTcyMDhGQUE4NTIzM0Y5",
+                "snippet": {
+                    "publishedAt": "2021-12-25T21:47:31Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useRef 완벽 정리 1# 변수 관리 | 리액트 훅스 시리즈",
+                    "description": "useRef 대체 왜 쓰는거지? 컴포넌트 내부 변수 관리란?  완벽하게 정리해드립니다! useRef #1 - 변수 관리\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useRef hook\nhttps://ko.reactjs.org/docs/hooks-reference.html#useref\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4&feature=youtu.be\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useRef로 변수관리 - 개념설명\n02:20 코딩하면서 배우기",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/VxqZrL4FLz8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/VxqZrL4FLz8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/VxqZrL4FLz8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/VxqZrL4FLz8/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/VxqZrL4FLz8/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 2,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "VxqZrL4FLz8"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "rE1QEA3fvjupLHkET77IWzE9LdM",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy41MjE1MkI0OTQ2QzJGNzNG",
+                "snippet": {
+                    "publishedAt": "2021-12-29T10:29:04Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useRef 완벽 정리 2# DOM 요소 접근 | 리액트 훅스 시리즈",
+                    "description": "useRef 두 번째 편으로 돌아왔습니다! useRef로 DOM 요소에 접근하기! \nuseRef #2 - DOM 요소 접근\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useRef hook\nhttps://ko.reactjs.org/docs/hooks-reference.html#useref\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4&feature=youtu.be\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useRef로 DOM 접근 - 개념설명\n00:58 코딩하면서 배우기",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/EMK8oUUwP5Q/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/EMK8oUUwP5Q/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/EMK8oUUwP5Q/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/EMK8oUUwP5Q/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/EMK8oUUwP5Q/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 3,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "EMK8oUUwP5Q"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "V8jjyC6Uo2UbIf1Z4Hc9U7mhvV8",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy4wOTA3OTZBNzVEMTUzOTMy",
+                "snippet": {
+                    "publishedAt": "2022-01-15T11:31:32Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useContext + Context API | 리액트 훅스 시리즈",
+                    "description": "리액트 훅스 중에 가장 멋진 useContext! 아주 아주 쉽게 설명해드릴게요. \n___________________________\n🎨 index.css (강의에서 사용된 CSS)\nhttps://codepen.io/Coding-Star/pen/MWELozJ\n.....................................................\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ React Context API\nhttps://ko.reactjs.org/docs/context.html\n\n→ useContext hook\nhttps://ko.reactjs.org/docs/hooks-reference.html#usecontext\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4&feature=youtu.be\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useContext 개념설명\n04:29 useContext 실전!",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/LwvXVEHS638/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/LwvXVEHS638/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/LwvXVEHS638/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/LwvXVEHS638/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/LwvXVEHS638/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 4,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "LwvXVEHS638"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "hOAi2vXL7AOiN8pX0W6Zwr7F7Bg",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy4xMkVGQjNCMUM1N0RFNEUx",
+                "snippet": {
+                    "publishedAt": "2022-01-31T04:24:12Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useMemo 제대로 사용하기 | 리액트 훅스 시리즈",
+                    "description": "useMemo로 함께 컴포넌트 최적화를 해봐요. 이걸 몰랐다니! 깜짝 놀랄걸요?\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useMemo hook\nhttps://ko.reactjs.org/docs/hooks-reference.html#usememo\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useMemo 개념설명\n03:35 useMemo 사용해보기 (예제 1)\n12:23 useMemo 응용 (예제 2)\n20:00 끝~\n20:28 끝~",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/e-CnI8Q5RY4/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/e-CnI8Q5RY4/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/e-CnI8Q5RY4/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/e-CnI8Q5RY4/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/e-CnI8Q5RY4/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 5,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "e-CnI8Q5RY4"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "buVB_HNhdMSaJM-e1yHC64-x_Ho",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy41MzJCQjBCNDIyRkJDN0VD",
+                "snippet": {
+                    "publishedAt": "2022-02-17T10:46:16Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useCallback 짱 쉬운 강의 | 리액트 훅스 시리즈",
+                    "description": "useCallback으로 컴포넌트를 한 단계 더 최적화 해봅시다. 물론 함께 코딩하면서요!\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useCallback hook\nhttps://ko.reactjs.org/docs/hooks-reference.html#usecallback\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useCallback 개념설명\n04:01 useCallback 사용해보기 (예제 1)\n13:45 useCallback 응용 (예제 2)\n20:28 끝~",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/XfUF9qLa3mU/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/XfUF9qLa3mU/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/XfUF9qLa3mU/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/XfUF9qLa3mU/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/XfUF9qLa3mU/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 6,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "XfUF9qLa3mU"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "PtVlv87ETWIaNIBGOb4CADoj6dA",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy5DQUNERDQ2NkIzRUQxNTY1",
+                "snippet": {
+                    "publishedAt": "2022-02-27T08:25:33Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useReducer 확실히 정리해드려요 | 리액트 훅스 시리즈",
+                    "description": "어렵게만 보여서 미루고 미루던 useReducer, 이번 영상으로 끝내봐요!\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useReducer hook\nhttps://ko.reactjs.org/docs/hooks-reference.html#usereducer\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⏱타임라인\n00:00 useReducer 개념설명\n03:35 useReducer 사용해보기 (예제 1 - 은행)\n13:30 복잡한 state 다루기 (예제 2 - 출석부)\n24:42 끝~",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/tdORpiegLg0/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/tdORpiegLg0/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/tdORpiegLg0/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/tdORpiegLg0/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/tdORpiegLg0/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 7,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "tdORpiegLg0"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "KSDFFTE6E-kXrpE3G2KmwiOew9w",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy45NDk1REZENzhEMzU5MDQz",
+                "snippet": {
+                    "publishedAt": "2022-06-19T05:42:44Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React.memo로 컴포넌트 최적화하기 (ft. useMemo, useCallback)",
+                    "description": "불필요한 컴포넌트 렌더링 때문에 고생하고계신가요? React.memo를 통해 불필요한 렌더링을 방지해서 우리 앱의 성능을 끌어올려봅시다! React.memo, useMemo, useCallback의 환상적인 조합은 덤으로요 😆\n___________________________\n📚 추천 강의\n→ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n→ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n\n→ React.memo\nhttps://ko.reactjs.org/docs/react-api.html#reactmemo\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n\n⏱타임라인\n00:00 React.memo 개념설명\n05:59 프로젝트 준비\n12:15 React.memo 사용하기\n15:40 useMemo + React.memo\n20:06 useCallback + React.memo\n24:00 꼭 기억해야할 점",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/oqUgcxwrnSY/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/oqUgcxwrnSY/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/oqUgcxwrnSY/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/oqUgcxwrnSY/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/oqUgcxwrnSY/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 8,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "oqUgcxwrnSY"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "flo589djo3FuU9FMoXywKvtzkqo",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy5GNjNDRDREMDQxOThCMDQ2",
+                "snippet": {
+                    "publishedAt": "2022-08-21T00:08:58Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - Custom Hooks 커스텀 훅 | 리액트 훅스 시리즈",
+                    "description": "리액트 개발인생은 Custom hooks를 알기 전과 후로 나뉜다! 커스텀 훅 하나만 잘 만들어놓으면, 효율 1000배 증가 🚀\n___________________________\n\nJSON Placeholder API 주소\n→ https://jsonplaceholder.typicode.com/ (웹사이트)\n→ https://jsonplaceholder.typicode.com/users (URL 복붙용)\n\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서 (한글)\n→ React Hooks 소개\nhttps://ko.reactjs.org/docs/hooks-intro.html\n\n→ useReducer hook\nhttps://ko.reactjs.org/docs/hooks-custom.html\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⚛️ Custom hooks 커스텀 훅 (영상)\nhttps://youtu.be/S6POUU2-tr8\n\n⏱타임라인\n00:00 Custom hook이란?\n02:33 useInput\n13:27 useFetch\n24:37 수고하셨습니다!",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/S6POUU2-tr8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/S6POUU2-tr8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/S6POUU2-tr8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/S6POUU2-tr8/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/S6POUU2-tr8/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 9,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "S6POUU2-tr8"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "Sz20Q9x4kDCrLF5GTRzXk0UZQno",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy40NzZCMERDMjVEN0RFRThB",
+                "snippet": {
+                    "publishedAt": "2022-09-20T09:11:32Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 🧑🏻‍💻 #Shorts",
+                    "description": "리액트 개발자라면 꼭 알아야할 것들을 정리해서 모았습니다! \n별코딩과 함께 리액트 훅스에 취해보는거 어때요? 😆\n\n📽 React Hooks에 취한다 - 리액트 훅스 시리즈 (플레이 리스트)\n https://youtube.com/playlist?list=PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO\n\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⚛️ Custom hooks 커스텀 훅 (영상)\nhttps://youtu.be/S6POUU2-tr8\n\n#리액트훅스강의 #shorts",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/DSyJHvPPF48/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/DSyJHvPPF48/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/DSyJHvPPF48/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/DSyJHvPPF48/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/DSyJHvPPF48/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 10,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "DSyJHvPPF48"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "FqKKvu6zHCEP3GrVGTKNfy-jJio",
+                "id": "UExaNW9aMkttUUVZandoU3hqQl83NFBvVTZwbUZ6Z1ZNTy5EMEEwRUY5M0RDRTU3NDJC",
+                "snippet": {
+                    "publishedAt": "2024-02-15T12:19:50Z",
+                    "channelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q",
+                    "title": "React Hooks에 취한다 - useId 세상에서 제일 쉬운 리액트 훅",
+                    "description": "현존하는 리액트 훅중에 가장 쉬운 useId, 고유한 아이디를 만들때 꽤 유용하게 사용됩니다.\n___________________________\n🧑🏻‍💻더 깊은 공부를 위한 리액트 공식문서\n→ useId hook\nhttps://react.dev/reference/react/useId\n.....................................................\n📝코드 에디터\nVisual Studio Code\n.....................................................\n⚛️ useState 15분만에 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=G3qglTF-fFI\n\n⚛️ useEffect 깔끔하게 마스터하기 (영상)\nhttps://www.youtube.com/watch?v=kyodvzc5GHU\n\n⚛️ useRef 완벽 정리 1# 변수 관리 (영상)\nhttps://www.youtube.com/watch?v=VxqZrL4FLz8\n\n⚛️ useRef 완벽정리 #2 DOM 요소 접근 (영상)\nhttps://youtu.be/EMK8oUUwP5Q\n\n⚛️ useContext + Context API (영상)\nhttps://www.youtube.com/watch?v=LwvXVEHS638\n\n⚛️ useMemo 제대로 사용하기 (영상)\nhttps://www.youtube.com/watch?v=e-CnI8Q5RY4\n\n⚛️ useCallback 짱 쉬운 강의 (영상)\nhttps://www.youtube.com/watch?v=XfUF9qLa3mU\n\n⚛️ useReducer 확실히 정리해드려요 (영상)\nhttps://www.youtube.com/watch?v=tdORpiegLg0\n\n⚛️ useId 세상에서 제일 쉬운 리액트 훅\nhttps://www.youtube.com/watch?v=y0vhpilNSKo\n.....................................................\n⏱타임라인\n00:00 useId 짱쉬움\n00:18 useId 사용법\n06:53 useId 장점 1 - 쌍점\n09:37 useId 장점 1 - 안정성",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/y0vhpilNSKo/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/y0vhpilNSKo/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/y0vhpilNSKo/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/y0vhpilNSKo/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/y0vhpilNSKo/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "별코딩",
+                    "playlistId": "PLZ5oZ2KmQEYjwhSxjB_74PoU6pmFzgVMO",
+                    "position": 11,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "y0vhpilNSKo"
+                    },
+                    "videoOwnerChannelTitle": "별코딩",
+                    "videoOwnerChannelId": "UCDfJ2rNZsANU6ZNYNlzDJ5Q"
+                }
+            }
+        ],
+        "pageInfo": {
+            "totalResults": 12,
+            "resultsPerPage": 50
+        }
+    }
+]
