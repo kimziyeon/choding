@@ -1,15 +1,35 @@
 "use client"
-import { useState } from 'react';
-import youtubeResult from '@/app/youtubeResult.json'
+import { useEffect, useState } from 'react';
+import youtubeResult from '@/app/youtubeResult0.json'
 import Link from 'next/link';
 
 export default function Youtube() {
+    const [result, setResult] = useState([]);
 
-    console.log(youtubeResult)
+    const youtubeSetting = () => {
+        let itemArray = [];
+        youtubeResult.forEach((obj) => {
+            if (obj.items) {
+                obj.items.forEach((obj) => {
+                    itemArray.push(obj.snippet)
+                })
+            }
+        })
+        setResult(itemArray);
+    }
+
+    useEffect(() => {
+        youtubeSetting();
+    }, [])
+
+    console.log(result);
+
+    // const result = youtubeResult.items;
+
     return (
         <section style={{ paddingTop: '6rem', minHeight: '90vh' }}>
             {
-                youtubeResult.map((item) => {
+                result.map((item) => {
                     return <Link href={`https://youtu.be/${item.resourceId.videoId}`} key={item.resourceId.videoId}>
                         <figure>
                             <img src={item.thumbnails.medium.url}></img>
