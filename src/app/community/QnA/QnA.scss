@@ -13,24 +13,29 @@
             .QuestionText {
                 margin-right: $b;
                 width: 80%;
-
-                h2 {
-                    color: $grayDark;
-                    font-size: $b;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .QnAcontent{
+                    h2 {
+                        color: $grayDark;
+                        font-size: $b;
+                    }
+    
+                    >p {
+                        font-size: $s;
+                        color: $grayLight;
+                        -webkit-line-clamp: 3;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: normal;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 3;
+                        -webkit-box-orient: vertical;
+                        margin: $b 0;
+                    }
                 }
-
-                >p {
-                    font-size: $s;
-                    color: $grayLight;
-                    -webkit-line-clamp: 3;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: normal;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 3;
-                    -webkit-box-orient: vertical;
-                    margin: $b 0;
-                }
+                
 
                 .QnAInfo {
                     display: flex;

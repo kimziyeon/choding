@@ -1,10 +1,27 @@
 'use client'
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import "./QnA.scss";
+import axios from 'axios';
 
 export default function myPage() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get('/api/post?colName=qna');
+            setData(response.data);
+          } catch (error) {
+            console.error('Error fetching data:', error);
+          }
+        };
+    
+        fetchData();
+      }, []);
+
     return (
     <div id="QnAMain" className='myPageMain'>
         <Link className='writeBtn' href='./QnA/write'>글 쓰기</Link>
