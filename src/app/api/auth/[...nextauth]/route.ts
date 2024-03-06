@@ -23,20 +23,14 @@ export const option = {
             },
             async authorize(credentials, req) {
                 const user = { id: '1', name: 'yicha7', email: 'yicha7@gmail.com' }
-                if (user) {
-                    const existingUser = await findUserByEmail(user.email);
-                    if (existingUser) {
-                        // 사용자 정보가 존재하면 해당 사용자 정보를 업데이트
-                        await updataeUser(existingUser._id, { /* 업데이트할 데이터 */ }); // MongoDB에서 사용자 정보를 업데이트하는 함수
-                      }
-                     return user 
-                    }
+                if (user) { return user }
                 else { return null }
             },
         })
     ], callbacks: {
         async jwt({ token, user }:any) {
             // MongoDB에 사용자 정보 저장
+           
             await saveUserToMongoDB(user);
             return { ...token, ...user };
         },
@@ -50,18 +44,19 @@ export const option = {
     },
 }
 
-async function findUserByEmail(email:string) {
-    const user = await connectToDB('find',{email},'users',null);
-    return user;
-}
-
-async function updataeUser(UserId:string, updataData:string) {
-    await connectToDB('updata',{_id:userId},'users',null)
-}
-
 async function saveUserToMongoDB(user: any) {
-    connectToDB('post', user, 'LoginData',null)
-    
+    connectToDB('post', user, 'LoginData')
+
+    // try {
+    //     const client = new MongoClient(process.env.MONGODB_URI as string);
+    //     await client.connect();
+    //     const database = client.db('choding');
+    //     const collection = database.collection('LoginData');
+    //     await collection.insertOne(user);
+    //     await client.close();
+    // } catch (error) {
+    //     console.error('Error saving user to MongoDB:', error);
+    // }
 }
 
 const handler = NextAuth(option)
