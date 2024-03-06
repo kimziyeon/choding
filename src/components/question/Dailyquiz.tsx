@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import QuizData from '../daily.json';
+import QuizData from './daily.json';
 import DailyquizEnd from "./DailyquizEnd";
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
@@ -26,11 +26,18 @@ export default function Dailyquiz() {
         const intervalId = setInterval(() => {
             if (timer > 0) {
                 setTimer(timer - 1);
+            } else {
+                setTestValue(true);
+                clearInterval(intervalId);
             }
         }, 1000);
         return () => clearInterval(intervalId);
     }, [timer]);
 
+
+    // useEffect(() => {
+    //     console.log(userValue, typeof (userValue))
+    // }, [userValue])
 
 
     const formatTime = (time) => {
@@ -38,12 +45,23 @@ export default function Dailyquiz() {
     };
 
     const handleSubmit = () => {
-        setTestValue(true);
+        console.log('====================================');
+        console.log(userValue);
+        console.log('====================================');
+        if (userValue == null) {
+            setTestValue(true);
+        }
     };
 
     const handleAnswer = (index) => {
-        setUserValue(index + 1);
+        // console.log(testValue)
+        setUserValue(index);
     };
+
+
+    console.log('====================================');
+    console.log(testValue);
+    console.log('====================================');
 
     return (
         <>
@@ -62,18 +80,13 @@ export default function Dailyquiz() {
                                             <input
                                                 type="radio"
                                                 name="choice"
-                                                value={index + 1}
+                                                value={index}
                                                 onChange={() => handleAnswer(index)}
                                             />
                                             {choice}
                                         </label>
                                     </p>
                                 ))}
-
-                                {/* <p><label className="radio_cus"><input type="radio" id="choice1" name="choice" value="1" />{ingQues.choice[0]}</label></p>
-                                <p><label className="radio_cus"><input type="radio" id="choice2" name="choice" value="2" />{ingQues.choice[1]}</label></p>
-                                <p><label className="radio_cus"><input type="radio" id="choice3" name="choice" value="3" />{ingQues.choice[2]}</label></p>
-                                <p><label className="radio_cus"><input type="radio" id="choice4" name="choice" value="4" />{ingQues.choice[3]}</label></p>*/}
 
                             </form>
                         </div>
@@ -84,7 +97,7 @@ export default function Dailyquiz() {
                 </div>
             )}
 
-            {testValue && <DailyquizEnd isCorrect={userValue === ingQues.answer} />}
+            {testValue && <DailyquizEnd isCorrect={userValue == ingQues.answer} />}
         </>
     )
 }

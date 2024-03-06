@@ -10,7 +10,7 @@
                 "tuple",
                 "boolean"
             ],
-            "answer": "2"
+            "answer": 2
         },
         {
             "id": 1,
@@ -22,7 +22,7 @@
                 "JavaScript Extension",
                 "Java XML"
             ],
-            "answer": "1"
+            "answer": 0
         }
     ]
 }

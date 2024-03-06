@@ -6,6 +6,7 @@ import '@/styles/base/reset.scss';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { SessionProvider } from 'next-auth/react';
+import UserQuestion from "@/components/question/Question";
 
 
 // export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <body>
         <Header />
         <SessionProvider>
+          <UserQuestion />
           {children}
         </SessionProvider>
         <Footer />
