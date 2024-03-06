@@ -1,8 +1,9 @@
 "use client"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
 import InputComp from './components/InputComp';
+import serverStore from '@/lib/server/serverStore';
 import './signUp.scss';
 
 export default function SignUp() {
@@ -10,6 +11,30 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [domain, setDomain] = useState('google.com');
     const { setError } = useForm();
+
+    const [userData, setUserData] = useState();
+
+
+
+
+    // // 데이터 가져오기
+    // async function dataCrl(type: string) {
+    //     const res = await serverStore(type, 'user');
+    //     if (res !== null) {
+    //         setUserData(res.data)
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     dataCrl('get')
+    // }, [])
+
+    // console.log('-------- user 데이터에용 ----------')
+    // console.log(userData)
+
+
+
+
 
     const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<signUpType>({
         defaultValues: {
@@ -26,9 +51,8 @@ export default function SignUp() {
                 type: 'manual',
                 message: '비밀번호가 일치하지 않습니다.'
             });
-        }
-
-        console.log(data)
+        } else if (data.password == data.passwordCheck && errors[id])
+            console.log(data)
     }
 
     return (

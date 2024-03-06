@@ -1,5 +1,6 @@
 import { UseFormRegister, FieldErrors } from 'react-hook-form';
 import { signUpType } from '@/types/user';
+import { useEffect, useState } from 'react';
 
 type InputSectionType = {
     type: string;
@@ -12,9 +13,11 @@ type InputSectionType = {
 };
 
 export default function InputComp({ type, id, title, placeholder, register, errors, watch }: InputSectionType) {
-    const watchPassword = watch('password');
+
+
 
     // 유효성 검사
+    const watchPassword = watch('password');
     const getValidationRules = (id: string) => {
         switch (id) {
             case 'id':
@@ -50,8 +53,20 @@ export default function InputComp({ type, id, title, placeholder, register, erro
                 return {};
         }
     }
-
     const validationRules = getValidationRules(id);
+
+
+
+    // 중복 확인
+    const duplicateCheck = () => {
+        if (id === 'id') {
+            console.log('id를 검사할거에용')
+
+        } else {
+            console.log('이메일을 검사할거에용')
+        }
+    }
+
 
     return (
         <div className='field'>
@@ -65,7 +80,7 @@ export default function InputComp({ type, id, title, placeholder, register, erro
                         ...validationRules
                     })}
                 />
-                {id == "id" || id == "email" ? <button type="button">중복 확인</button> : null}
+                {id == "id" || id == "email" ? <button type="button" onClick={duplicateCheck}>중복 확인</button> : null}
             </div>
             {errors[id] ? <p className='errorMsg On'>{errors[id].message}</p> : null}
         </div>
