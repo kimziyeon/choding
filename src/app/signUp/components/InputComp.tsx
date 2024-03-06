@@ -1,26 +1,33 @@
-import { UseFormRegister, FieldErrors } from 'react-hook-form';
+import { UseFormRegister, FieldErrors, useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
 import { useEffect, useState } from 'react';
 
 type InputSectionType = {
     type: string;
-    id: "id" | "password" | "email" | "imgSrc" | "passwordCheck";
+    id: "name" | "password" | "email" | "imgSrc" | "passwordCheck";
     title: string;
     placeholder: string;
     register: UseFormRegister<signUpType>;
     errors: FieldErrors<signUpType>;
-    watch: (type: string) => string,
+    watch: (type: string) => string;
+    LoginData: [];
+    setNameCheck: React.Dispatch<React.SetStateAction<boolean>>;
+    setEmailCheck: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export default function InputComp({ type, id, title, placeholder, register, errors, watch }: InputSectionType) {
+export default function InputComp({ type, id, title, placeholder, register, errors, watch, LoginData, setNameCheck, setEmailCheck }: InputSectionType) {
 
+
+    const { setError } = useForm();
 
 
     // 유효성 검사
     const watchPassword = watch('password');
+    const watchName = watch('name');
+    const watchEmail = watch('email');
     const getValidationRules = (id: string) => {
         switch (id) {
-            case 'id':
+            case 'name':
                 return {
                     minLength: {
                         value: 2,
@@ -59,11 +66,24 @@ export default function InputComp({ type, id, title, placeholder, register, erro
 
     // 중복 확인
     const duplicateCheck = () => {
-        if (id === 'id') {
-            console.log('id를 검사할거에용')
-
-        } else {
-            console.log('이메일을 검사할거에용')
+        if (id === 'name') { // 닉네임 중복 확인
+            const includeCheck = LoginData && LoginData.map((item) => item.name).includes(watchName);
+            if (includeCheck) {
+                window.alert('존재하는 닉네임입니다...')
+                setNameCheck(false)
+            } else {
+                window.alert('사용 가능한 닉네임입니다^0^')
+                setNameCheck(true)
+            }
+        } else { // 이메일 중복 확인
+            const includeCheck = LoginData && LoginData.map((item) => item.email).includes(watchEmail);
+            if (includeCheck) {
+                window.alert('존재하는 이메일입니다...')
+                setEmailCheck(false)
+            } else {
+                window.alert('사용 가능한 이메일입니다^0^')
+                setEmailCheck(true)
+            }
         }
     }
 
@@ -80,7 +100,7 @@ export default function InputComp({ type, id, title, placeholder, register, erro
                         ...validationRules
                     })}
                 />
-                {id == "id" || id == "email" ? <button type="button" onClick={duplicateCheck}>중복 확인</button> : null}
+                {id == "name" || id == "email" ? <button type="button" onClick={duplicateCheck}>중복 확인</button> : null}
             </div>
             {errors[id] ? <p className='errorMsg On'>{errors[id].message}</p> : null}
         </div>
