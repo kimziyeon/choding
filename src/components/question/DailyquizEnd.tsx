@@ -1,11 +1,17 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import chocho from '@/essets/charactor/CHO.svg';
 
 export default function DailyquizEnd({ isCorrect }) {
+
+    useEffect(() => {
+        console.log(isCorrect)
+    }, [isCorrect])
+
+
     return (
 
         <div className='popUp03'>
