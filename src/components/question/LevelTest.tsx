@@ -2,9 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import QuizData from './level.json';
+import LevelTestStart from './LevelTestStart';
 import LevelTestEnd from './LevelTestEnd';
 
-export default function LevelTest({ finishTest }) {
+export default function LevelTest() {
 
     const [score, setScore] = useState(0);
     const [ingId, setIngId] = useState(0);
@@ -45,7 +46,7 @@ export default function LevelTest({ finishTest }) {
             setIngId(nextId);
             setTimer(10);
         } else {
-            setTestValue(true);
+            setTestState(3);
         }
     }
 
@@ -54,24 +55,31 @@ export default function LevelTest({ finishTest }) {
     };
 
 
+    //test state
+    const [testState, setTestState] = useState(1);
+
     return (
+        <>
+            {testState === 1 && <LevelTestStart startTest={setTestState} />}
+            {testState === 2 &&
+                <div className='popUp02'>
+                    <div className='popUpContents'>
+                        <h3 className='qNum'>{ingQues.number}</h3>
+                        <div className='qQuestion'>{ingQues.question}</div>
+                        <div className='qAnswer'>
+                            <button onClick={() => { btnHandler(true) }}>O</button>
+                            <button onClick={() => { btnHandler(false) }}>X</button>
+                        </div>
+                        {/* <p>점수는 {score}</p> */}
+                        <p className='timer'>00:{formatTime(timer)}</p>
 
-        <div className='popUp02'>
-            <div className='popUpContents'>
-                <h3 className='qNum'>{ingQues.number}</h3>
-                <div className='qQuestion'>{ingQues.question}</div>
-                <div className='qAnswer'>
-                    <button onClick={() => { btnHandler(true) }}>O</button>
-                    <button onClick={() => { btnHandler(false) }}>X</button>
+                        <button className={`popUpBtn ${ingQues.number === 10 && 'active'}`}
+                            onClick={() => { ingQues.number === 10 && setTestState(3) }}>제출하기</button>
+
+                    </div>
                 </div>
-                {/* <p>점수는 {score}</p> */}
-                <p className='timer'>00:{formatTime(timer)}</p>
-                <button className='popUpBtn'
-                    onClick={finishTest}>제출하기</button>
-                {testValue && <LevelTestEnd />}
-            </div>
-
-        </div>
-
+            }
+            {testState === 3 && <LevelTestEnd />}
+        </>
     )
 }
