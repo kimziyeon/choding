@@ -18,15 +18,18 @@ export const option = {
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
-                username: { label: 'Username', type: 'text', placeholder: 'yicha7' },
-                password: { label: 'Password', type: 'password' },
+              username: { label: 'Username', type: 'text', placeholder: 'yicha7' },
+              password: { label: 'Password', type: 'password' },
             },
-            async authorize(credentials, req) {
+            async authorize(credentials, req) {        
+                console.log(JSON.parse(credentials.body),'==========================')
                 const user = { id: '1', name: 'yicha7', email: 'yicha7@gmail.com' }
-                if (user) { return user }
-                else { return null }
+                if (user) {return user}
+                else {return null}
+                
             },
-        })
+          })
+      
     ], callbacks: {
         async jwt({ token, user }:any) {
             // MongoDB에 사용자 정보 저장
@@ -35,7 +38,7 @@ export const option = {
         },
         async session({ session, token }:any) {
             session.user = token;
-            // console.log(session.user)
+            console.log(session.user.email,"로그확인")
             return session;
         },
     },
@@ -43,21 +46,11 @@ export const option = {
         signIn: "/login",
     },
 }
-
 async function saveUserToMongoDB(user: any) {
-    connectToDB('post', user, 'LoginData',null)
-
-    // try {
-    //     const client = new MongoClient(process.env.MONGODB_URI as string);
-    //     await client.connect();
-    //     const database = client.db('choding');
-    //     const collection = database.collection('LoginData');
-    //     await collection.insertOne(user);
-    //     await client.close();
-    // } catch (error) {
-    //     console.error('Error saving user to MongoDB:', error);
-    // }
+    connectToDB('post', user, 'LoginData',null);
+    
 }
+
 
 const handler = NextAuth(option)
 

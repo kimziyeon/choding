@@ -13,6 +13,12 @@ export const connectToDB = async (type: string, body: any, colName: string | nul
 
     console.log('db접속', type, body, colName, idx)
 
+    if(colName == 'LoginData' && body){
+        console.log(body)
+        let aaa = await collection.find({email:body.email}).toArray();
+        if (aaa.length) return;        
+    }
+ 
     switch (type) {
         case 'post': await collection.insertOne(body);
             break;

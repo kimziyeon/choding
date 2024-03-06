@@ -31,7 +31,7 @@ export default async function allPage() {
             <div className='QuestionText'>
                 <div className='QnAcontent'>
                     <h2>{item.title}</h2>
-                    <p>{item.content}</p>
+                    <p dangerouslySetInnerHTML={{ __html:item.content}}></p>
                 </div>
                 <div className='QnAInfo'>
                     <p>이름</p>

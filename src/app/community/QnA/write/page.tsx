@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import "./QnAWrite.scss";
 import { connectToDB } from '@/lib/mongodb';
 import axios from 'axios';
+import { useSession } from 'next-auth/react';
 
 const QuillExample = dynamic(() => import('./components/QuillExample'), { ssr: false });
 
@@ -14,6 +15,8 @@ export default function QnAWrite() {
         // 데이터베이스에 데이터 저장 로직을 직접 구현하거나, 외부 함수를 호출하여 처리할 수 있습니다.
         saveToDatabase(title, content);
     };
+
+    const { data: session, status } = useSession();
 
     const saveToDatabase = async (title: string, content: string) => {
         try {
@@ -33,7 +36,6 @@ export default function QnAWrite() {
             <section className='QnAWriteMain'>
                 <form onSubmit={(e) => e.preventDefault()}>
                     <QuillExample onSaveContent={handleSaveContent} />
-                    <button type="submit">저장</button>
                 </form>
             </section>
         </>
