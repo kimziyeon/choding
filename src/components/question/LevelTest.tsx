@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import QuizData from '../level.json';
+import QuizData from './level.json';
 import LevelTestEnd from './LevelTestEnd';
 
 export default function LevelTest({ finishTest }) {

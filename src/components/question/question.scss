@@ -1,7 +1,12 @@
 @use '../../styles/main' as *;
 
 .question {
+    width: 100%;
     height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999999;
 }
 
 .popUpQues {
@@ -145,14 +150,12 @@
 
             .popUpSubTitle {
                 .valueOOO {
-                    display: block;
                     font-size: 4rem;
                     color: $main;
                     padding-bottom: 2rem;
                 }
 
                 .valueXXX {
-                    display: none;
                     color: $grayLight;
                     padding-bottom: 2rem;
                 }
