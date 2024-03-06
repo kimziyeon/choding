@@ -1,3 +1,4 @@
+import { useQuestion } from "@/context/questionStore"
 import Link from "next/link"
 
 type ListComponentType = {
@@ -7,11 +8,18 @@ type ListComponentType = {
 }
 
 export default function List({ options, onClickMenu, href }: ListComponentType) {
+    const { isOpenFunc } = useQuestion();
     return (
         <ul className='MenuGroup'>
             {options.map((item, index) => (
                 <li key={index} onClick={onClickMenu}>
-                    <Link href={href[index]}>{item}</Link>
+                    {
+                        (item !== '오늘의 퀴즈') ? (
+                            <Link href={href[index]}>{item}</Link>
+                        ) : (
+                            <span onClick={isOpenFunc}>{item}</span>
+                        )
+                    }
                 </li>
             ))}
         </ul>

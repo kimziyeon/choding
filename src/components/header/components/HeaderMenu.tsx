@@ -12,8 +12,8 @@ import ListComponent from './List';
 import './headerMenu.scss';
 
 export default function HeaderMenu({ active, setActive, onClickMenu }: { active: boolean; setActive: (value: boolean) => void, onClickMenu: (value: boolean) => void }) {
-    
-    
+
+
     return (
         <div id="HeaderMenu" className={active ? 'active' : ''}>
             <div className='headerBG'>
@@ -39,7 +39,7 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
                         <li>
                             <h3>교육</h3>
                             <ListComponent
-                                options={['홈', '전체 강의', '오늘의 퀴즈']}
+                                options={['홈', '전체 검색', '오늘의 퀴즈']}
                                 href={['/', '/search', '/question']}
                                 onClickMenu={onClickMenu}
                             />
