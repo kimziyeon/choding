@@ -55,7 +55,7 @@ export default function Login() {
     //next auth
     const { data: session, status } = useSession();
 
-    console.log(session);
+    // console.log(session);
     
     
     if (status === 'authenticated') {

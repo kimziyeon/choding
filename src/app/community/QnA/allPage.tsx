@@ -27,7 +27,7 @@ export default async function allPage() {
     <section id="QnAMain" className="contPadding">
         <div className='QnAContentContainer'>
         {data && data.map((item, index)=>(
-            <Link href='./QnA/postid' className='QuestionBox'>
+            <Link href='./QnA/postid' className='QuestionBox' key={index}>
             <div className='QuestionText'>
                 <div className='QnAcontent'>
                     <h2>{item.title}</h2>
