@@ -14,14 +14,15 @@ export default function FigureComponent() {
     const onClickHandler = async (num: number) => {
         router.push(`/community/myProject/${num}`)
     }
-    
+    console.log(originalData)
+
     return (
         originalData.map((item) => (
             <figure className='communityFigure'
                 onClick={() => { onClickHandler(item.postId) }}
                 key={item.postId}>
                 {
-                    item.imgSrc === null ? <div className='noImage'></div> : <img src={item.imgSrc} alt={item.title} />
+                    !item.imgSrc && (item.imgSrc == undefined || item.imgSrc.length < 1) ? <div className='noImage'></div> : <img src={item.imgSrc} alt={item.title} />
                 }
                 <figcaption>
                     <div className='figcaption'>
