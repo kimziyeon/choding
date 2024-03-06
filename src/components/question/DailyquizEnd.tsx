@@ -2,13 +2,25 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import chocho from '@/essets/charactor/CHO.svg';
+import { useRouter } from 'next/navigation'
+import { useQuestion } from '@/context/questionStore';
+
+
+
 
 export default function DailyquizEnd({ isCorrect }) {
 
+    const router = useRouter();
+    const { isOpenFunc } = useQuestion();
+    function quizEnd() {
+        isOpenFunc({ isOpen: false, isTest: false })
+        router.push('/search');
+    }
+
+
     useEffect(() => {
-        console.log(isCorrect)
+
     }, [isCorrect])
 
 
@@ -40,9 +52,8 @@ export default function DailyquizEnd({ isCorrect }) {
                     )}
 
                 </div>
-                <button className='popUpBtn'>
-                    <Link href="/search" className='search'>강의 검색하기</Link>
-                </button>
+                <button className='popUpBtn' onClick={quizEnd}>
+                    강의 검색하기</button>
             </div>
         </div>
 

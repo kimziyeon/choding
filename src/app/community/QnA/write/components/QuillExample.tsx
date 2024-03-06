@@ -3,9 +3,11 @@
 
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
+import ReactQuill, {Quill} from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { connectToDB } from '@/lib/mongodb';
+import ImageResize from 'quill-image-resize';
+Quill.register('modules/ImageResize', ImageResize);
 
 interface QuillExampleProps {
     onSaveContent: (title: string, content: string) => void;
@@ -39,13 +41,16 @@ export default function QuillExample({ onSaveContent }: QuillExampleProps) {
             ['link', 'image'], // 이미지 삽입 버튼 추가
             ['clean']
         ],
+        ImageResize: {
+            parchment: Quill.import('parchment')
+        }
     };
 
     return (
         <>
             <div className='BtnBox'>
                 <button className='delete' onClick={onClickBackHandler}>취소</button>
-                <button className='save' onClick={handleSave}>저장</button>
+                <button className='save' onClick={()=>{handleSave(); onClickBackHandler();}}>저장</button>
             </div>
             <div className='writebox'>
                 <input

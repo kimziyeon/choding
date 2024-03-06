@@ -35,6 +35,7 @@ export const option = {
         },
         async session({ session, token }:any) {
             session.user = token;
+            // console.log(session.user)
             return session;
         },
     },
@@ -44,7 +45,7 @@ export const option = {
 }
 
 async function saveUserToMongoDB(user: any) {
-    connectToDB('post', user, 'LoginData')
+    connectToDB('post', user, 'LoginData',null)
 
     // try {
     //     const client = new MongoClient(process.env.MONGODB_URI as string);

@@ -8,28 +8,28 @@ import './login.scss'
 export default function Login() {
 
 
-    useEffect(() => {
-        const code = location.search;
-        if (code) {
-            console.log('실행');
-            axios.post('/api', { param: code.substr(1) })
-                .then(res => {
-                    console.log(res.data);
-                });
-        }
-    }, []);
+    // useEffect(() => {
+    //     const code = location.search;
+    //     if (code) {
+    //         console.log('실행');
+    //         axios.post('/api', { param: code.substr(1) })
+    //             .then(res => {
+    //                 console.log(res.data);
+    //             });
+    //     }
+    // }, []);
 
-    const goNaverLogin = () => {
-        window.location.href =
-            "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=0kFzpuisNF_m9ApdMXrl&redirect_uri=http://localhost:3000/login&state=asd2222222";
-    };
+    // const goNaverLogin = () => {
+    //     window.location.href =
+    //         "https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=0kFzpuisNF_m9ApdMXrl&redirect_uri=http://localhost:3000/login&state=asd2222222";
+    // };
 
-    const handleGithubLogin = () => {
-        const router = useRouter();
-        router.push(
-            `${process.env.NEXT_PUBLIC_GITHUB_ORIGIN_URI}/login?client_id=${process.env.NEXT_PUBLIC_GITHUB_AUTHORIZE_CLIENT_ID}`
-        );
-    };
+    // const handleGithubLogin = () => {
+    //     const router = useRouter();
+    //     router.push(
+    //         `${process.env.NEXT_PUBLIC_GITHUB_ORIGIN_URI}/login?client_id=${process.env.NEXT_PUBLIC_GITHUB_AUTHORIZE_CLIENT_ID}`
+    //     );
+    // };
 
     async function loginGit() {
         const result = await signIn("github", {
@@ -45,11 +45,11 @@ export default function Login() {
     }
     //next auth
     const { data: session, status } = useSession();
-    console.log(status)
+    
 
     if (status === 'authenticated') {
         return <section>
-            <p>Signed in as {session.user?.email}</p>
+            <p>Signed in as {session.user?.name}</p>
             <button onClick={() => { signOut() }}>logout</button>
         </section>
     }

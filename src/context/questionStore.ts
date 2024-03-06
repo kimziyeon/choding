@@ -2,15 +2,20 @@ import { create } from 'zustand';
 
 
 interface T {
-    isOpen: boolean,
-    isOpenFunc: () => void
+    quiz: { isOpen: boolean, isTest: boolean }
+    isOpenFunc: (quizState: { isOpen: boolean, isTest: boolean }) => void
 }
 
 export const useQuestion = create<T>((set) => {
     return {
-        isOpen: false,
-        isOpenFunc: () => {
-            set((state: any) => ({ isOpen: !state.isOpen }))
+        quiz: { isOpen: false, isTest: false, },
+        isOpenFunc: (quizState) => {
+            set((state: any) => ({
+                quiz: {
+                    isOpen: quizState.isOpen,
+                    isTest: quizState.isTest,
+                }
+            }))
         }
     }
 });
