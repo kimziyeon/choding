@@ -45,11 +45,11 @@ export default function Login() {
     }
     //next auth
     const { data: session, status } = useSession();
-    console.log(status)
+    
 
     if (status === 'authenticated') {
         return <section>
-            <p>Signed in as {session.user?.email}</p>
+            <p>Signed in as {session.user?.name}</p>
             <button onClick={() => { signOut() }}>logout</button>
         </section>
     }

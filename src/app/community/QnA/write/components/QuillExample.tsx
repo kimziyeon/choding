@@ -9,7 +9,6 @@ import { connectToDB } from '@/lib/mongodb';
 import ImageResize from 'quill-image-resize';
 Quill.register('modules/ImageResize', ImageResize);
 
-
 interface QuillExampleProps {
     onSaveContent: (title: string, content: string) => void;
 }
