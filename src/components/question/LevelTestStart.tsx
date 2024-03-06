@@ -16,7 +16,7 @@ export default function LevelTestStart({ startTest }) {
                         </div>
                     </div>
                     <button className='popUpBtn'
-                        onClick={startTest}
+                        onClick={() => { startTest(2) }}
                     >테스트 시작하기</button>
                 </div>
             </div>

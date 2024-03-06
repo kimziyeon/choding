@@ -17,24 +17,33 @@ import { useQuestion } from '@/context/questionStore';
 
 export default function UserQuestion() {
 
-    const { isOpen, isOpenFunc } = useQuestion();
+    const { quiz, isOpenFunc } = useQuestion();
     const [isTest, setIsTest] = useState(false);
     const [isDaily, setIsDaily] = useState(false);
 
     const handleClose = () => {
-        isOpenFunc();
+        isOpenFunc({ isOpen: false, isTest: false });
     };
 
     const handleTestStart = () => {
-        setIsTest(true)
-    }
+        setIsTest(true);
+    };
 
-    const handleDailyEnd = () => {
+    const handleDailyStart = () => {
         setIsDaily(true);
     };
 
+    const handleTestEnd = () => {
+        setIsTest(false);
+    };
 
-    if (!isOpen) return;
+    const handleDailyEnd = () => {
+        setIsDaily(false);
+    };
+
+    if (!quiz.isOpen) return null;
+
+
 
     return (
         <section className='question'>
@@ -51,17 +60,26 @@ export default function UserQuestion() {
                         ></Image>
                     </button>
 
+                    {
+                        quiz.isTest ? <LevelTest /> : <Dailyquiz />
+                    }
+
                     {/* <LevelTestStart /> */}
                     {/* <LevelTest /> */}
                     {/* <LevelTestEnd /> */}
-
-                    {/* {isTest ? <LevelTest /> : <LevelTestStart startTest={handleTestStart} />} */}
 
                     {/* <DailyquizStart /> */}
                     {/* <Dailyquiz /> */}
                     {/* <DailyquizEnd /> */}
 
-                    {isDaily ? <DailyquizEnd /> : <Dailyquiz finishTest={handleDailyEnd} />}
+                    {/* 
+                    {isTest ?
+                        <LevelTestStart startTest={handleTestStart} /> :
+                        <DailyquizStart startTest={handleDailyStart} />
+                    } */}
+
+                    {/* {isDaily ? <DailyquizEnd /> : <Dailyquiz finishTest={handleDailyEnd} />} */}
+
                 </div>
             </div>
 

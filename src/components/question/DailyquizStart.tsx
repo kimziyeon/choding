@@ -1,7 +1,8 @@
 "use client";
 
 
-export default function DailyquizStart() {
+export default function DailyquizStart({ startTest }) {
+
     return (
         <div>
             <div className='popUp04'>
@@ -16,7 +17,7 @@ export default function DailyquizStart() {
                         </div>
                     </div>
                     <button className='popUpBtn'
-                    >퀴즈 풀러가기</button>
+                        onClick={() => { startTest(2) }}>퀴즈 풀러가기</button>
                 </div>
             </div>
         </div>
