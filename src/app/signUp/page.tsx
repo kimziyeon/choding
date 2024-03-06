@@ -45,14 +45,19 @@ export default function SignUp() {
         },
     });
 
-    const onSubmit = (data: signUpType) => {
+    const onSubmit = async (data) => {
+
+        
         if (data.password !== data.passwordCheck) { // 비밀번호 확인 체크
             setError('passwordCheck', {
                 type: 'manual',
                 message: '비밀번호가 일치하지 않습니다.'
             });
-        } else if (data.password == data.passwordCheck && errors[id])
+        } else {
+            await delete data.passwordCheck;
             console.log(data)
+        }
+        
     }
 
     return (
