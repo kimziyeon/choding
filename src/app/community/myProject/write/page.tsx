@@ -14,10 +14,39 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
 export default function MyProjectWrite() {
-    const { totalPostId, setTotalPostId, originalData } = myProjectStore();
+    dayjs.locale('ko');
+    const today = dayjs().format("YYYY년 MM월 DD일");
+
+    const [pid, setPid] = useState<number>(0);
+    let checkResult: myProjectPostType[] = [];
+
+    useEffect(() => {
+        async function fetchData() {
+            await dataCrl('get');
+            const maxId = checkResult.reduce(
+                (max, item) => item.postId > max ? item.postId : max,
+                checkResult[0].postId
+            )
+            setPid(Number(maxId + 1));
+            setValue('postId', Number(maxId + 1));
+        }
+        fetchData();
+    }, []);
+
+
+    // 데이터 가져오기 :)
+    async function dataCrl(type: string) {
+        const res = await serverStore(type, 'myProject');
+        if (res !== null) {
+            checkResult = res.data;
+        }
+    }
+
+
     const router = useRouter();
     const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
         defaultValues: {
+            date: today,
             title: '',
             postId: 0,
             goal: '',
@@ -27,7 +56,7 @@ export default function MyProjectWrite() {
             member: [],
             stack: [],
             comments: [],
-            imgSrc: '',
+            imgSrc: undefined,
             like: 0
         },
     });
@@ -38,10 +67,6 @@ export default function MyProjectWrite() {
         filterRef.current?.classList.toggle("filterActive");
         setisOnButtonActive(!isOnButtonActive);
     }
-
-
-    dayjs.locale('ko');
-    const today = dayjs().format("YYYY년 MM월 DD일");
 
 
     // 이미지 주소 저장
@@ -84,20 +109,6 @@ export default function MyProjectWrite() {
         });
     }
 
-    useEffect(() => {
-        if (originalData) {
-            const maxId = originalData.reduce(
-                (max, item) => item.postId > max ? item.postId : max,
-                originalData[0].postId
-            );
-            setTotalPostId(Number(maxId + 1));
-            setValue('postId', totalPostId);
-        } else {
-            console.error('오류: 배열에 postId 속성이 누락된 아이템이 있습니다.');
-        }
-    }, [originalData])
-
-
     // 폼 전송
     const onSubmit = async (data: myProjectPostType) => {
         console.log('------------data------------')
@@ -109,8 +120,8 @@ export default function MyProjectWrite() {
     return (
         <section id="MyProjectWrite">
             <form onSubmit={handleFormSubmit(onSubmit)}>
-                <input type="hidden" {...register('date')} value={today} />
-                <input type="hidden" {...register('postId')} value={totalPostId} />
+                <input type="hidden" {...register('date')} />
+                <input type="hidden" {...register('postId')} />
                 <input type="hidden" {...register('comments')} />
                 <section id="writeHeader">
                     <h4>새 프로젝트 작성</h4>
