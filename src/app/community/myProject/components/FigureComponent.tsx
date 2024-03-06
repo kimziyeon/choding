@@ -17,27 +17,31 @@ export default function FigureComponent() {
     console.log(originalData)
 
     return (
-        originalData.map((item) => (
-            <figure className='communityFigure'
-                onClick={() => { onClickHandler(item.postId) }}
-                key={item.postId}>
-                {
-                    !item.imgSrc && (item.imgSrc == undefined || item.imgSrc.length < 1) ? <div className='noImage'></div> : <img src={item.imgSrc} alt={item.title} />
-                }
-                <figcaption>
-                    <div className='figcaption'>
-                        <div className='top'>
-                            <span className='goal'>#{item.goal}</span>
-                            <p className='title'>{item.title}</p>
-                            <p className='overview'>{item.overview}</p>
+        <>
+            {originalData.map((item) => (
+                <figure className='communityFigure'
+                    onClick={() => { onClickHandler(item.postId) }}
+                    key={item.postId}>
+                    {
+                        !item.imgSrc && (item.imgSrc == undefined || item.imgSrc.length < 1) ? <div className='noImage'></div> : <img src={item.imgSrc} alt={item.title} />
+                    }
+                    <figcaption>
+                        <div className='figcaption'>
+                            <div className='top'>
+                                <span className='goal'>#{item.goal}</span>
+                                <p className='title'>{item.title}</p>
+                                <p className='overview'>{item.overview}</p>
+                            </div>
+                            <div className='bottom'>
+                                <span className='date'>{item.date}</span>
+                                <span className='userId'>{item.userId}</span>
+                            </div>
                         </div>
-                        <div className='bottom'>
-                            <span className='date'>{item.date}</span>
-                            <span className='userId'>{item.userId}</span>
-                        </div>
-                    </div>
-                </figcaption>
-            </figure>
-        ))
+                    </figcaption>
+                </figure>
+            ))
+            }
+            {originalData.length < 1 ? <div className='myProjectNoData'>데이터가 없어요ㅠ</div> : <></>}
+        </>
     );
 }

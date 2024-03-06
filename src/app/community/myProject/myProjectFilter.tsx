@@ -22,7 +22,7 @@ export default function MyProjectFilter() {
     setisOnButtonActive(!isOnButtonActive);
   }
 
-          // 클릭한 옵션을 배열로 
+  // 클릭한 옵션을 배열로 
   const handleOptionClick = (option: string) => {
     setActiveOptions(prevState => {
       if (prevState.includes(option)) {
@@ -40,25 +40,30 @@ export default function MyProjectFilter() {
     if (!filters.length) {
       return dataset;
     }
-    
+
     const filteredData = dataset.filter((item) => {
-      const memberFilters = filters.some(filter => item.member.includes(filter));
-      const stackFilters = filters.some(filter => item.stack.includes(filter));
-      return memberFilters || stackFilters;
+      const memberFilters = filters.every(filter => item.member.includes(filter));
+      const stackFilters = filters.every(filter => item.stack.includes(filter));
+      return memberFilters && stackFilters;
     });
-  
+
     return filteredData;
   }
-  
+
   useEffect(() => {
     setFilteredData(filterData(result, activeOptions));
-  }, [activeOptions, result]); 
+  }, [activeOptions]);
 
   useEffect(() => {
     setOriginalData(filteredData);
-  }, [filteredData]); 
+  }, [filteredData]);
 
-    // --------------- 필터 끝 ----------------
+  console.log('activeOptions-----------')
+  console.log(activeOptions)
+  console.log('filteredData-----------')
+  console.log(filteredData)
+
+  // --------------- 필터 끝 ----------------
 
   return (
     <section id="myProjectFilter" className="communityContainer" ref={filterRef}>
