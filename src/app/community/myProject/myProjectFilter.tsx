@@ -42,9 +42,9 @@ export default function MyProjectFilter() {
     }
 
     const filteredData = dataset.filter((item) => {
-      const memberFilters = filters.every(filter => item.member.includes(filter));
-      const stackFilters = filters.every(filter => item.stack.includes(filter));
-      return memberFilters && stackFilters;
+      const memberFilters = filters.some(filter => item.member.includes(filter));
+      const stackFilters = filters.some(filter => item.stack.includes(filter));
+      return memberFilters || stackFilters;
     });
 
     return filteredData;
@@ -52,16 +52,11 @@ export default function MyProjectFilter() {
 
   useEffect(() => {
     setFilteredData(filterData(result, activeOptions));
-  }, [activeOptions]);
+  }, [activeOptions, result]);
 
   useEffect(() => {
     setOriginalData(filteredData);
   }, [filteredData]);
-
-  console.log('activeOptions-----------')
-  console.log(activeOptions)
-  console.log('filteredData-----------')
-  console.log(filteredData)
 
   // --------------- 필터 끝 ----------------
 

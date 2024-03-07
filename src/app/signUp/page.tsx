@@ -1,59 +1,75 @@
 "use client"
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
 import InputComp from './components/InputComp';
 import serverStore from '@/lib/server/serverStore';
+import { useRouter } from 'next/navigation';
+import swal from 'sweetalert';
 import './signUp.scss';
 
 export default function SignUp() {
+    const router = useRouter();
     const [isOnComplete, setComplete] = useState(false);
-    const [email, setEmail] = useState('');
-    const [domain, setDomain] = useState('google.com');
-    const { setError } = useForm();
+    const [nameCheck, setNameCheck] = useState(false);
+    const [emailCheck, setEmailCheck] = useState(false);
 
-    const [userData, setUserData] = useState();
-
-
-
-
-    // // 데이터 가져오기
-    // async function dataCrl(type: string) {
-    //     const res = await serverStore(type, 'user');
-    //     if (res !== null) {
-    //         setUserData(res.data)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     dataCrl('get')
-    // }, [])
-
-    // console.log('-------- user 데이터에용 ----------')
-    // console.log(userData)
+    const [LoginData, setLoginData] = useState();
 
 
 
 
+    // 데이터 가져오기
+    async function dataCrl(type: string) {
+        const res = await serverStore(type, 'LoginData');
+        if (res !== null) {
+            setLoginData(res.data)
+        }
+    }
 
+    useEffect(() => {
+        dataCrl('get')
+    }, [])
+
+
+    // useForm 
     const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<signUpType>({
         defaultValues: {
-            id: '',
+            name: '',
             password: '',
             email: '',
             imgSrc: 'https://firebasestorage.googleapis.com/v0/b/choding.appspot.com/o/writeImg%2FuserDefault.png?alt=media&token=21a6d29c-aa75-4f34-97a4-0935a44fbe2e'
         },
     });
 
-    const onSubmit = (data: signUpType) => {
-        if (data.password !== data.passwordCheck) { // 비밀번호 확인 체크
-            setError('passwordCheck', {
-                type: 'manual',
-                message: '비밀번호가 일치하지 않습니다.'
-            });
-        } else if (data.password == data.passwordCheck && errors[id])
+
+
+
+    // 제출
+    const onSubmit = async (data: signUpType) => {
+        if (!nameCheck) {
+            swal("오류", "닉네임 중복 체크를 해주세요!", "warning")
+        } else if (!emailCheck) {
+            swal("오류", "이메일 중복 체크를 해주세요!", "warning")
+        } else if (nameCheck && emailCheck) {
+            // 닉네임, 이메일 중복체크 성공 후
+            await delete data.passwordCheck;
             console.log(data)
+            // 이제 post
+            await serverStore('post', 'LoginData', data, null);
+            swal("회원 가입에 성공했습니다!", "로그인 페이지로 이동하시겠습니까?", "success")
+                .then(() => {
+                    router.push('/login');
+                });
+        }
+
     }
+
+    // if (nameCheck && emailCheck && !errors.[id]) {
+    //     // 가입 버튼 활성화 스타일, 추후 진행
+    //     setComplete(true)
+    // }
 
     return (
         <article id='signUp'>
@@ -63,12 +79,15 @@ export default function SignUp() {
             <form onSubmit={handleFormSubmit(onSubmit)}>
                 <InputComp
                     type={'text'}
-                    id={'id'}
+                    id={'name'}
                     title={'닉네임'}
-                    placeholder={'6자 이내'}
+                    placeholder={'2글자 이상 6자 이내'}
                     register={register}
                     errors={errors}
                     watch={watch}
+                    LoginData={LoginData}
+                    setNameCheck={setNameCheck}
+                    setEmailCheck={setEmailCheck}
                 />
                 <InputComp
                     type={'password'}
@@ -78,6 +97,9 @@ export default function SignUp() {
                     register={register}
                     errors={errors}
                     watch={watch}
+                    LoginData={LoginData}
+                    setNameCheck={setNameCheck}
+                    setEmailCheck={setEmailCheck}
                 />
                 <InputComp
                     type={'password'}
@@ -87,6 +109,9 @@ export default function SignUp() {
                     register={register}
                     errors={errors}
                     watch={watch}
+                    LoginData={LoginData}
+                    setNameCheck={setNameCheck}
+                    setEmailCheck={setEmailCheck}
                 />
                 <InputComp
                     type={'email'}
@@ -96,9 +121,12 @@ export default function SignUp() {
                     register={register}
                     errors={errors}
                     watch={watch}
+                    LoginData={LoginData}
+                    setNameCheck={setNameCheck}
+                    setEmailCheck={setEmailCheck}
                 />
                 <div className="actions">
-                    <button type="submit" className={isOnComplete ? 'on' : 'on'}>가입</button>
+                    <button type="submit" className="on">가입</button>
                 </div>
             </form>
         </article >

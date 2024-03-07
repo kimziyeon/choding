@@ -18,27 +18,26 @@ export const option = {
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
-              username: { label: 'Username', type: 'text', placeholder: 'yicha7' },
-              password: { label: 'Password', type: 'password' },
+                username: { label: 'Username', type: 'text', placeholder: '회원' },
+                password: { label: 'Password', type: 'password' },
             },
-            async authorize(credentials, req) {        
-                console.log(JSON.parse(credentials.body),'==========================')
-                const user = { id: '1', name: 'yicha7', email: 'yicha7@gmail.com' }
-                if (user) {return user}
-                else {return null}
-                
+            async authorize(credentials, req) {
+                const dd = JSON.parse(credentials.body);
+                const user = { id: dd.id, name: dd.name, email: dd.email }
+                if (user) { return user }
+                else { return null }
             },
-          })
-      
+        })
+
     ], callbacks: {
-        async jwt({ token, user }:any) {
+        async jwt({ token, user }: any) {
             // MongoDB에 사용자 정보 저장
             await saveUserToMongoDB(user);
             return { ...token, ...user };
         },
-        async session({ session, token }:any) {
+        async session({ session, token }: any) {
             session.user = token;
-            console.log(session.user.email,"로그확인")
+            console.log(session.user.email, "로그확인")
             return session;
         },
     },
@@ -47,8 +46,7 @@ export const option = {
     },
 }
 async function saveUserToMongoDB(user: any) {
-    connectToDB('post', user, 'LoginData',null);
-    
+    connectToDB('post', user, 'LoginData', null);
 }
 
 
