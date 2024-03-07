@@ -56,8 +56,22 @@
                 }
 
                 .popUpSubTitle {
+
                     font-size: $b;
                     line-height: 160%;
+
+                    .scoreBox {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+
+                    .lvBox {
+                        font-size: $m;
+                        font-weight: 600;
+                        color: $main;
+                        padding: 2rem 0;
+                    }
 
                 }
 
@@ -85,7 +99,7 @@
             }
 
             .popUpBtn {
-                margin-top: 36px;
+                // margin-top: 36px;
                 width: 100%;
                 height: 56px;
                 background-color: $main;
@@ -100,7 +114,7 @@
 
             .qQuestion {
                 // height: 5rem;
-                padding: 0 1.5rem;
+                padding: 0 2rem;
                 line-height: 160%;
                 word-break: keep-all;
             }
@@ -118,12 +132,16 @@
                     color: #fff;
                 }
 
+                button.active {
+                    background-color: $main;
+                }
+
                 form {
                     >p {
-                        padding: 6px 100px;
+                        padding: 8px 60px;
                         border: 1px solid $main;
                         border-radius: 1rem;
-                        margin-bottom: 5px;
+                        margin-bottom: 0.5rem;
 
                         // .radio_cus input[type="radio"] {
                         //     overflow: hidden;
@@ -160,6 +178,13 @@
                 .valueXXX {
                     color: $grayLight;
                     padding-bottom: 2rem;
+                }
+
+                .lvBoxOX {
+                    font-size: $m;
+                    font-weight: 600;
+                    color: $main;
+                    margin-bottom: 2rem;
                 }
             }
         }
