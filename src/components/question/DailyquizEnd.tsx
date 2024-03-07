@@ -38,14 +38,14 @@ export default function DailyquizEnd({ isCorrect }) {
                     {isCorrect ? (
                         <>
                             <div className='valueOOO'>+1</div>
-                            <div className='lvBox'>
+                            <div className='lvBoxOX'>
                                 <span>Lv.&nbsp;</span>
                             </div>
                         </>
                     ) : (
                         <>
                             <div className='valueXXX'>아쉽네요 :&#40;<br />내일 다시 도전해주세요</div>
-                            <div className='lvBox'>
+                            <div className='lvBoxOX'>
                                 <span>Lv.&nbsp;</span>
                             </div>
                         </>

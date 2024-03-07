@@ -40,13 +40,15 @@ export default function LevelTestEnd({ score }) {
                         </Image>
                     </div>
                     <div className='popUpSubTitle'>
-                        &nbsp;님의 총 점수는 {score}점 입니다.
+                        <div className='scoreBox'>
+                            <span>곰문곰</span>님의<br></br>총 점수는 <span>{score}</span>점 입니다.
+                        </div>
                         <div className='lvBox'>
                             <span>Lv.{levelValue()}</span>
                         </div>
-                        <div>
-                            로그인을 통해 강의를 추천해드림
-                        </div>
+                        {/* <div className='msg'>
+                            로그인 시 다양한 강의 정보를 추천해드립니다.
+                        </div> */}
                     </div>
                     <button className='popUpBtn' onClick={quizEnd}>
                         로그인 하러가기</button>

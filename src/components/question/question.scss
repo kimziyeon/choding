@@ -56,8 +56,22 @@
                 }
 
                 .popUpSubTitle {
+
                     font-size: $b;
                     line-height: 160%;
+
+                    .scoreBox {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+
+                    .lvBox {
+                        font-size: $m;
+                        font-weight: 600;
+                        color: $main;
+                        padding: 2rem 0;
+                    }
 
                 }
 
@@ -118,6 +132,10 @@
                     color: #fff;
                 }
 
+                button.active {
+                    background-color: $main;
+                }
+
                 form {
                     >p {
                         padding: 8px 60px;
@@ -160,6 +178,13 @@
                 .valueXXX {
                     color: $grayLight;
                     padding-bottom: 2rem;
+                }
+
+                .lvBoxOX {
+                    font-size: $m;
+                    font-weight: 600;
+                    color: $main;
+                    margin-bottom: 2rem;
                 }
             }
         }
