@@ -1,4 +1,5 @@
 "use client"
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
@@ -55,6 +56,8 @@ export default function SignUp() {
             // 닉네임, 이메일 중복체크 성공 후
             await delete data.passwordCheck;
             console.log(data)
+            // 이제 post
+            await serverStore('post', 'LoginData', data, null);
             swal("회원 가입에 성공했습니다!", "로그인 페이지로 이동하시겠습니까?", "success")
                 .then(() => {
                     router.push('/login');
