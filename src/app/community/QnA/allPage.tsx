@@ -9,6 +9,8 @@ import "./QnA.scss";
 export default async function allPage() {
     const [data, setData] = useState([]);
 
+    
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -18,13 +20,11 @@ export default async function allPage() {
             console.error('Error fetching data:', error);
           }
         };
-    
         fetchData();
       }, []);
-    
 
     return (
-    <section id="QnAMain" className="contPadding">
+    <div className="contPadding">
         <div className='QnAContentContainer'>
         {data && data.map((item, index)=>(
             <Link href='./QnA/postid' className='QuestionBox' key={index}>
@@ -45,6 +45,6 @@ export default async function allPage() {
         ))}
         
       </div>
-    </section>
+    </div>
     );
 }
