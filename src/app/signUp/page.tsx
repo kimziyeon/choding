@@ -4,15 +4,15 @@ import { useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
 import InputComp from './components/InputComp';
 import serverStore from '@/lib/server/serverStore';
+import { useRouter } from 'next/navigation';
+import swal from 'sweetalert';
 import './signUp.scss';
 
 export default function SignUp() {
+    const router = useRouter();
     const [isOnComplete, setComplete] = useState(false);
     const [nameCheck, setNameCheck] = useState(false);
     const [emailCheck, setEmailCheck] = useState(false);
-    const [email, setEmail] = useState('');
-    const [domain, setDomain] = useState('google.com');
-    const { setError } = useForm();
 
     const [LoginData, setLoginData] = useState();
 
@@ -31,11 +31,8 @@ export default function SignUp() {
         dataCrl('get')
     }, [])
 
-    // console.log('-------- LoginData 데이터에용 ----------')
-    // console.log(LoginData)
 
-
-
+    // useForm 
     const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<signUpType>({
         defaultValues: {
             name: '',
@@ -48,22 +45,28 @@ export default function SignUp() {
 
 
 
-// 제출
-    const onSubmit = async (data) => {
+    // 제출
+    const onSubmit = async (data: signUpType) => {
         if (!nameCheck) {
-            window.alert('닉네임 중복 체크를 해주세요')
+            swal("오류", "닉네임 중복 체크를 해주세요!", "warning")
         } else if (!emailCheck) {
-            window.alert('이메일 중복 체크를 해주세요')
+            swal("오류", "이메일 중복 체크를 해주세요!", "warning")
         } else if (nameCheck && emailCheck) {
             // 닉네임, 이메일 중복체크 성공 후
             await delete data.passwordCheck;
             console.log(data)
-            window.alert('가입 성공 ><!!')
+            swal("회원 가입에 성공했습니다!", "로그인 페이지로 이동하시겠습니까?", "success")
+                .then(() => {
+                    router.push('/login');
+                });
         }
-        
+
     }
 
-
+    // if (nameCheck && emailCheck && !errors.[id]) {
+    //     // 가입 버튼 활성화 스타일, 추후 진행
+    //     setComplete(true)
+    // }
 
     return (
         <article id='signUp'>
@@ -120,7 +123,7 @@ export default function SignUp() {
                     setEmailCheck={setEmailCheck}
                 />
                 <div className="actions">
-                    <button type="submit" className={isOnComplete ? 'on' : 'on'}>가입</button>
+                    <button type="submit" className="on">가입</button>
                 </div>
             </form>
         </article >

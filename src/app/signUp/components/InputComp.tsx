@@ -1,6 +1,7 @@
 import { UseFormRegister, FieldErrors, useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
 import { useEffect, useState } from 'react';
+import swal from 'sweetalert';
 
 type InputSectionType = {
     type: string;
@@ -16,9 +17,6 @@ type InputSectionType = {
 };
 
 export default function InputComp({ type, id, title, placeholder, register, errors, watch, LoginData, setNameCheck, setEmailCheck }: InputSectionType) {
-
-
-    const { setError } = useForm();
 
 
     // 유효성 검사
@@ -69,19 +67,19 @@ export default function InputComp({ type, id, title, placeholder, register, erro
         if (id === 'name') { // 닉네임 중복 확인
             const includeCheck = LoginData && LoginData.map((item) => item.name).includes(watchName);
             if (includeCheck) {
-                window.alert('존재하는 닉네임입니다...')
+                swal("오류", "이미 존재하는 닉네임입니다!", "warning")
                 setNameCheck(false)
             } else {
-                window.alert('사용 가능한 닉네임입니다^0^')
+                swal("성공", "사용 가능한 닉네임입니다.", "success")
                 setNameCheck(true)
             }
         } else { // 이메일 중복 확인
             const includeCheck = LoginData && LoginData.map((item) => item.email).includes(watchEmail);
             if (includeCheck) {
-                window.alert('존재하는 이메일입니다...')
+                swal("오류", "이미 존재하는 이메일입니다!", "warning")
                 setEmailCheck(false)
             } else {
-                window.alert('사용 가능한 이메일입니다^0^')
+                swal("성공", "사용 가능한 이메일입니다.", "success")
                 setEmailCheck(true)
             }
         }
