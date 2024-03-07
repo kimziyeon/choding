@@ -17,7 +17,7 @@ export default function List({ options, onClickMenu, href }: ListComponentType) 
                         (item !== '오늘의 퀴즈') ? (
                             <Link href={href[index]}>{item}</Link>
                         ) : (
-                            <span onClick={() => { isOpenFunc({ isOpen: true, isTest: false }) }}>{item}</span>
+                            <span onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>{item}</span>
                         )
                     }
                 </li>
