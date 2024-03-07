@@ -88,6 +88,16 @@ export default function InputComp({ type, id, title, placeholder, register, erro
     }
 
 
+    // 중복검사 후 true인채로 정보를 변경하는 경우 false로 리셋
+    const returnfalse = () => {
+        if (id == 'name') {
+            setNameCheck(false)
+        } else if (id == 'email') {
+            setEmailCheck(false)
+        }
+    }
+
+
     return (
         <div className='field'>
             <label htmlFor={id}><b>{title}</b></label>
@@ -99,6 +109,7 @@ export default function InputComp({ type, id, title, placeholder, register, erro
                         required: '필수 입력 사항입니다!',
                         ...validationRules
                     })}
+                    onChange={returnfalse}
                 />
                 {id == "name" || id == "email" ? <button type="button" onClick={duplicateCheck}>중복 확인</button> : null}
             </div>
