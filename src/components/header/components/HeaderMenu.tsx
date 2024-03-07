@@ -9,10 +9,11 @@ import User from '@/essets/user.svg';
 import Close from '@/essets/close.svg';
 import ArrowRight from '@/essets/arrowRight.svg';
 import ListComponent from './List';
+import { useSession } from 'next-auth/react';
 import './headerMenu.scss';
 
 export default function HeaderMenu({ active, setActive, onClickMenu }: { active: boolean; setActive: (value: boolean) => void, onClickMenu: (value: boolean) => void }) {
-
+    const { data: session, status } = useSession();
 
     return (
         <div id="HeaderMenu" className={active ? 'active' : ''}>
@@ -28,7 +29,7 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
                     </button>
                     <div className='loginCont'>
                         <Link href="/login" onClick={onClickMenu}>
-                            <b>로그인 해주세요 </b>
+                            {status === 'authenticated' ? <b>{session.user.name}</b> : <b>로그인 해주세요</b>}
                             <Image
                                 src={ArrowRight}
                                 alt='arrow image'
