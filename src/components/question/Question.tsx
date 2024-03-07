@@ -5,43 +5,38 @@ import Image from 'next/image';
 import Close from '@/essets/close.svg';
 import './question.scss';
 
-import LevelTestStart from './LevelTestStart';
 import LevelTest from './LevelTest';
-import LevelTestEnd from './LevelTestEnd';
-
-import DailyquizStart from './DailyquizStart';
 import Dailyquiz from './Dailyquiz';
-import DailyquizEnd from './DailyquizEnd';
 import { useQuestion } from '@/context/questionStore';
 
 
 export default function UserQuestion() {
 
     const { quiz, isOpenFunc } = useQuestion();
-    const [isTest, setIsTest] = useState(false);
-    const [isDaily, setIsDaily] = useState(false);
+    // const [isTest, setIsTest] = useState(false);
+    // const [isDaily, setIsDaily] = useState(false);
 
     const handleClose = () => {
         isOpenFunc({ isOpen: false, isTest: false });
     };
 
-    const handleTestStart = () => {
-        setIsTest(true);
-    };
-
-    const handleDailyStart = () => {
-        setIsDaily(true);
-    };
-
-    const handleTestEnd = () => {
-        setIsTest(false);
-    };
-
-    const handleDailyEnd = () => {
-        setIsDaily(false);
-    };
-
     if (!quiz.isOpen) return null;
+
+    // const handleTestStart = () => {
+    //     setIsTest(true);
+    // };
+
+    // const handleDailyStart = () => {
+    //     setIsDaily(true);
+    // };
+
+    // const handleTestEnd = () => {
+    //     setIsTest(false);
+    // };
+
+    // const handleDailyEnd = () => {
+    //     setIsDaily(false);
+    // };
 
 
 
