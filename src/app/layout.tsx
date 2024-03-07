@@ -18,12 +18,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
   return (
     <html lang="en">
       <body>
-        <Header />
         <SessionProvider>
+          <Header />
           <UserQuestion />
           {children}
+          <Footer />
         </SessionProvider>
-        <Footer />
       </body>
     </html>
   );

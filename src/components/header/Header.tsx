@@ -7,6 +7,7 @@ import Logo from '@/essets/LOGO.svg';
 import Menu from '@/essets/menu.svg';
 import User from '@/essets/user.svg';
 import HeaderMenu from './components/HeaderMenu';
+import { useSession } from 'next-auth/react';
 
 import './header.scss';
 
