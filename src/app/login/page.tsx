@@ -50,7 +50,6 @@ export default function Login() {
 
     // -------------------------------------------------- 세션 저장 next auth
     const { data: session, status } = useSession();
-    // console.log(session);
 
 
 

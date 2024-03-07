@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -7,6 +8,10 @@ import SearchIconSVG from '@/essets/searchSub.svg'
 import './mainBanner.scss';
 
 export default function MainBanner() {
+    const { data: session, status } = useSession();
+    if (status === 'authenticated') {
+        console.log(session)
+    }
     const router = useRouter();
     const [query, setQuery] = useState('');
 
@@ -22,7 +27,7 @@ export default function MainBanner() {
             <div className="contents">
                 <div className='text'>
                     <p>
-                        <span className='mainColor'>농담곰</span>님&nbsp;어서오세요!
+                        <span className='mainColor'>{status === 'authenticated' ? session.user.name : '비회원'}</span>님&nbsp;어서오세요!
                     </p>
                     <p className='textMain'>오늘은&nbsp;
                         <span className='mainColor box'>리액트 초급</span>
