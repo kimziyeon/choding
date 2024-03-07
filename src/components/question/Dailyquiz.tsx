@@ -16,14 +16,20 @@ export default function Dailyquiz() {
     dayjs.locale('ko');
     const today = dayjs().format("YYYY년 MM월 DD일");
 
-    const [timer, setTimer] = useState(10);
+    const [timer, setTimer] = useState(10); //10초제한
     const [ingId, setIngId] = useState(0);
     const [ques, setQues] = useState(QuizData.dailyQuiz);
     const ingQues = ques[ingId];
-    // const [testValue, setTestValue] = useState(false);
-    const [userValue, setUserValue] = useState(null);
+    const [userValue, setUserValue] = useState(null); //사용자 답
     //test state
     const [testState, setTestState] = useState(1);
+
+
+    useEffect(() => {
+        setQues(randomArray(QuizData.dailyQuiz)); // 퀴즈를 랜덤하게 섞어서 설정
+    }, []);
+
+
 
     useEffect(() => {
         let intervalId: any;
@@ -46,21 +52,22 @@ export default function Dailyquiz() {
         return time < 10 ? '0' + time : time;
     };
 
-    // const handleSubmit = () => {
-    //     setTestValue(true);
-    //     // 제출하기 버튼을 누르면 퀴즈 종료
-    // };
 
 
     const handleAnswer = (index) => {
-        // console.log('====================================');
-        // console.log(index);
-        // console.log('====================================');
+        console.log(index);
         setUserValue(index);
     };
 
 
-
+    function randomArray(array) {
+        const randomQues = [...array];
+        for (let i = randomQues.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [randomQues[i], randomQues[j]] = [randomQues[j], randomQues[i]];
+        }
+        return randomQues;
+    }
 
 
 
@@ -100,9 +107,8 @@ export default function Dailyquiz() {
                 </div>
             }
 
-            {testState === 3 && <DailyquizEnd />}
+            {testState === 3 && <DailyquizEnd isCorrect={userValue == ingQues.answer} />}
 
-            {/* {testValue && <DailyquizEnd isCorrect={userValue == ingQues.answer} />} */}
         </>
     )
 }
