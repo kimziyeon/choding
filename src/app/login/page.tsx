@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import serverStore from '@/lib/server/serverStore';
 import { useEffect, useState } from "react";
 import { signIn, useSession, signOut } from 'next-auth/react';
-import axios from "axios";
+import swal from 'sweetalert';
 import './login.scss'
 
 export default function Login() {
@@ -30,13 +30,21 @@ export default function Login() {
     }
 
     // 로컬 로그인 
+    // async function loginLocal(bodyData) {
+    //     const result = await signIn("Credentials", {
+    //         redirect: true,
+    //         body: JSON.stringify(bodyData),
+    //         callbackUrl: "/login",
+    //     });
+    // }
     async function loginLocal(bodyData) {
-        const result = await signIn("credentials", {
+        await signIn("credentials", {
             redirect: true,
             body: JSON.stringify(bodyData),
             callbackUrl: "/login",
         });
     }
+
 
 
 
@@ -64,7 +72,7 @@ export default function Login() {
         setPassword(e.currentTarget.value);
     }
 
-    const submitLogin = (e) => {
+    const submitLogin = async (e) => {
         {/*
             >> 해야할 일
             db에서 LoginData를 get해와서 전체 데이터중에 localUserInputEmail이 있는지 체크한다.
@@ -73,16 +81,21 @@ export default function Login() {
             맞으면 loginLocal(bodyData)에 값을 보냄
             아니면 ID나 PASSWORD가 일치하지 않습니다^^ 알림띄움
         */}
-
         e.preventDefault();
-        console.log('submit 이메일은', localUserInputEmail);
-        console.log('submit 비밀번호는', localUserInputPassword);
 
-        const res = await serverStore('get', 'Login');
-        if (res !== null) {
-            setResult(res.data);
+        let getDB = [];
+        const res = await serverStore('get', 'LoginData');
+        if (res !== null) { getDB = res.data; }
+        const includeCheck = getDB && getDB.find((item) => item.email === localUserInputEmail);
+        // console.log('이메일을 체크합시다', includeCheck)
+        if (includeCheck) {
+            if (includeCheck.password == localUserInputPassword) {
+                // console.log(includeCheck)
+                loginLocal(includeCheck)
+            }
+        } else {
+            swal('오류', '이메일 또는 비밀번호가 맞지 않습니다.', 'warning');
         }
-        setOriginalData(result)
 
     }
 

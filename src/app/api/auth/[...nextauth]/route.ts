@@ -3,6 +3,7 @@ import NextAuth from 'next-auth/next';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import GitHubProvider from "next-auth/providers/github";
 import NaverProvider from "next-auth/providers/naver";
+import Providers from "next-auth/providers";
 import { connectToDB } from '@/lib/mongodb';
 
 export const option = {
@@ -16,18 +17,21 @@ export const option = {
             clientSecret: process.env.NEXT_PUBLIC_NAVER_SECRET as string,
         }),
         CredentialsProvider({
+            id: "credentials",
             name: 'Credentials',
             credentials: {
-                username: { label: 'Username', type: 'text', placeholder: '회원' },
-                password: { label: 'Password', type: 'password' },
+                email: { label: "userEmail", type: "email" },
+                password: { label: "userPassaword", type: "password" },
             },
-            async authorize(credentials, req) {
-                const dd = JSON.parse(credentials.body);
-                const user = { id: dd.id, name: dd.name, email: dd.email }
-                if (user) { return user }
+            authorize: async (credentials, req) => {
+                const userObject = await JSON.parse(credentials.body);
+                const { email, password } = userObject;
+                const user = { name: password, email: email }
+                if (userObject) { return userObject }
                 else { return null }
             },
         })
+
 
     ], callbacks: {
         async jwt({ token, user }: any) {
