@@ -12,51 +12,72 @@ export default function LevelTest() {
     const [timer, setTimer] = useState(10);
     const [ques, setQues] = useState(QuizData.oxQuiz);
     const ingQues = ques[ingId];
-    const [testValue, setTestValue] = useState(false);
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            if (timer > 0) {
-                setTimer(timer - 1);
-            }
-        }, 1000);
-        return () => clearInterval(intervalId);
-    }, [timer]);
+    //test state
+    const [testState, setTestState] = useState(1);
+    const [userValue, setUservalue] = useState(null);
 
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            nextQuestion();
-        }, 10000);
-
-        return () => clearInterval(intervalId);
-    }, [ingId, ques]);
-
-
-
-    const btnHandler = (res) => {
-        if (res === ingQues.answer) {
-            setScore(score + 1);
-        } nextQuestion();
-    };
-
-    const nextQuestion = () => {
-        const nextId = ingId + 1;
-        if (ingId < ques.length - 1) {
-            setIngId(nextId);
-            setTimer(10);
-        } else {
-            setTestState(3);
+        let intervalId: any;
+        if (testState == 2) {
+            intervalId = setInterval(() => {
+                if (timer > 0) {
+                    setTimer(timer - 1);
+                }
+            }, 1000);
         }
-    }
+        return () => clearInterval(intervalId);
+    }, [timer, testState]);
+
 
     const formatTime = (time) => {
         return time < 10 ? '0' + time : time;
     };
 
 
-    //test state
-    const [testState, setTestState] = useState(1);
+    useEffect(() => {
+        let intervalId: any;
+        if (testState == 2) {
+            intervalId = setInterval(() => {
+                nextQuestion();
+            }, 10000);
+        }
+        return () => clearInterval(intervalId);
+    }, [ingId, ques, testState]);
+
+
+    const btnHandler = (res) => {
+        setUservalue(res);
+    };
+
+
+    const submitHandler = () => {
+        if (userValue === ingQues.answer) {
+            setScore(score + 1);
+        }
+        nextQuestion();
+    };
+
+    const nextQuestion = () => {
+        const nextId = ingId + 1;
+        if (nextId < ques.length) {
+            setIngId(nextId);
+            setTimer(10);
+            setUservalue(null);
+
+        } else {
+            console.log('====================================');
+            console.log(score);
+            console.log('====================================');
+            setTestState(3);
+        }
+    };
+
+
+
+
+
 
     return (
         <>
@@ -67,19 +88,24 @@ export default function LevelTest() {
                         <h3 className='qNum'>{ingQues.number}</h3>
                         <div className='qQuestion'>{ingQues.question}</div>
                         <div className='qAnswer'>
-                            <button onClick={() => { btnHandler(true) }}>O</button>
-                            <button onClick={() => { btnHandler(false) }}>X</button>
+                            <button
+                                className={userValue === true ? 'active' : ''}
+                                onClick={() => btnHandler(true)}>O</button>
+
+                            <button
+                                className={userValue === false ? 'active' : ''}
+                                onClick={() => btnHandler(false)}>X</button>
                         </div>
                         {/* <p>점수는 {score}</p> */}
                         <p className='timer'>00:{formatTime(timer)}</p>
 
-                        <button className={`popUpBtn ${ingQues.number === 10 && 'active'}`}
-                            onClick={() => { ingQues.number === 10 && setTestState(3) }}>제출하기</button>
+                        <button className="popUpBtn"
+                            onClick={submitHandler}>제출하기</button>
 
                     </div>
                 </div>
             }
-            {testState === 3 && <LevelTestEnd />}
+            {testState === 3 && <LevelTestEnd score={score} />};
         </>
     )
 }

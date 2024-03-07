@@ -25,3 +25,6 @@ export default function List({ options, onClickMenu, href }: ListComponentType) 
         </ul>
     )
 }
+
+// isOpenFunc({ isOpen: true, isTest: true }) 레벨테스트
+// isOpenFunc({ isOpen: true, isTest: false }) 오늘의퀴즈
