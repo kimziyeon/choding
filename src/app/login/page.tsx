@@ -40,24 +40,24 @@ export default function Login() {
     async function loginNaver() {
         const result = await signIn("naver", {
             redirect: true,
-            credentials:{id:10000},
+            credentials: { id: 10000 },
             callbackUrl: "/login",
         });
     }
 
     async function aaaa() {
         const result = await signIn("credentials", {
-            redirect: true,            
+            redirect: true,
             callbackUrl: "/login",
-            body:JSON.stringify({id:10000, name:'홍길동'})
+            body: JSON.stringify({ id: 10000, name: '홍길동' })
         });
     }
     //next auth
     const { data: session, status } = useSession();
 
     // console.log(session);
-    
-    
+
+
     if (status === 'authenticated') {
         return <section>
             <p>Signed in as {session.user?.name}</p>
