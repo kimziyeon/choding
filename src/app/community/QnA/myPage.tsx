@@ -34,7 +34,7 @@ export default function myPage() {
       return <div className='myPageMain'>
         <Link className='writeBtn' href='./QnA/write'>글 쓰기</Link>
         {MyQnAList && MyQnAList.map((item, index) => (
-          <Link href={`./QnA/postid${item._id}`} className='QuestionBox' key={index}>
+          <Link href={`./QnA/${item._id}`} className='QuestionBox' key={index}>
             <div className='QuestionText'>
               <div className='QnAcontent'>
                 <h2>{item.title}</h2>

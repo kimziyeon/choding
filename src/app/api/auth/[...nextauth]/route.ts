@@ -41,7 +41,6 @@ export const option = {
         },
         async session({ session, token }: any) {
             session.user = token;
-            console.log(session.user.email, "로그확인")
             return session;
         },
     },

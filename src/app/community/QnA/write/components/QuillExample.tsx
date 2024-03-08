@@ -46,6 +46,20 @@ export default function QuillExample({ onSaveContent }: QuillExampleProps) {
         }
     };
 
+    function validareFormWith(){
+        const name = document.querySelector('#QnATitle');
+        const contents = document.querySelector('#QnAContent');
+
+        if(!name){
+            alert('제목을 적어주세요')
+            return false
+        }
+        if(!contents){
+            alert('내용을 넣어주세요');
+            return false
+        }
+    }
+
     return (
         <>
             <div className='BtnBox'>
@@ -55,6 +69,7 @@ export default function QuillExample({ onSaveContent }: QuillExampleProps) {
             <div className='writebox'>
                 <input
                     type="text"
+                    id='QnATitle'
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="제목이 들어와요!"
@@ -63,6 +78,7 @@ export default function QuillExample({ onSaveContent }: QuillExampleProps) {
 
                 <ReactQuill
                     theme="snow"
+                    id='QnAContent'
                     value={value}
                     onChange={handleChange}
                     placeholder="Write something..."

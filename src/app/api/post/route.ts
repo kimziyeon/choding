@@ -13,8 +13,3 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(data)
 
 }
-
-// export async function GET(req: NextRequest) {
-//     const data = await req.json();    
-//     return NextResponse.json(await connectToDB('post', data, 'qna'));
-// }
