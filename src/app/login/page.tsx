@@ -16,7 +16,7 @@ export default function Login() {
     async function loginGit() {
         const result = await signIn("github", {
             redirect: true,
-            callbackUrl: "/login",
+            callbackUrl: "/",
         });
     }
 
@@ -25,7 +25,7 @@ export default function Login() {
         const result = await signIn("naver", {
             redirect: true,
             credentials: { id: 10000 },
-            callbackUrl: "/login",
+            callbackUrl: "/",
         });
     }
 
@@ -41,7 +41,7 @@ export default function Login() {
         await signIn("credentials", {
             redirect: true,
             body: JSON.stringify(bodyData),
-            callbackUrl: "/login",
+            callbackUrl: "/",
         });
     }
 
@@ -49,17 +49,20 @@ export default function Login() {
 
 
     // -------------------------------------------------- 세션 저장 next auth
-    const { data: session, status } = useSession();
+    // const { data: session, status } = useSession();
 
 
 
     // -------------------------------------------------- 로그아웃
+    {/*
     if (status === 'authenticated') {
         return <section>
             <p>Signed in as {session.user?.name}</p>
             <button onClick={() => { signOut() }}>logout</button>
         </section>
     }
+    */}
+
 
 
     // -------------------------------------------------- 로컬 로그인 검사

@@ -39,11 +39,9 @@ export default function SignUp() {
             name: '',
             password: '',
             email: '',
-            imgSrc: 'https://firebasestorage.googleapis.com/v0/b/choding.appspot.com/o/writeImg%2FuserDefault.png?alt=media&token=21a6d29c-aa75-4f34-97a4-0935a44fbe2e'
+            image: 'https://firebasestorage.googleapis.com/v0/b/choding.appspot.com/o/writeImg%2FuserDefault.png?alt=media&token=21a6d29c-aa75-4f34-97a4-0935a44fbe2e'
         },
     });
-
-
 
 
     // 제출
