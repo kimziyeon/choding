@@ -7,7 +7,7 @@ import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
 import serverStore from '@/lib/server/serverStore';
 import { useState, useEffect } from 'react';
-import levelKeyword from '@/app/levelKeyword.json';
+import levelKeyword from '@/data/levelKeyword.json';
 import cdData from '@/data/main/cd.json';
 import jdData from '@/data/main/jd.json';
 import gdData from '@/data/main/gd.json';
