@@ -13,7 +13,7 @@ export const connectToDB = async (type: string, body: any, colName: string | nul
 
     console.log('db접속', type, body, colName, idx)
 
-    if (colName == 'LoginData' && body) {
+    if (colName == 'LoginData' && body) { // 로그인 이메일 중복 방지
         console.log(body)
         let aaa = await collection.find({ email: body.email }).toArray();
         if (aaa.length) return;

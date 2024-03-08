@@ -3,7 +3,7 @@
 .QnAWriteMain{
     padding-top: 6rem;
     margin: 0 $b;
-    form{
+    >form{
         .writebox{
             margin-top: $b;
         }
@@ -24,7 +24,7 @@
         .BtnBox{
             display: flex;
             justify-content: flex-end;
-            button{
+            >button{
                 border-radius: 100px;
                 padding: 4px 18px;
                 margin-left: 9px;

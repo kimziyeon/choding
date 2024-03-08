@@ -9,8 +9,6 @@ import "./QnA.scss";
 export default async function allPage() {
     const [data, setData] = useState([]);
 
-    console.log(data)
-
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -27,7 +25,7 @@ export default async function allPage() {
     <div className="contPadding">
         <div className='QnAContentContainer'>
         {data && data.map((item, index)=>(
-            <Link href={`./QnA/postid${item._id}`} className='QuestionBox' key={index}>
+            <Link href={`./QnA/${item._id}`} className='QuestionBox' key={index}>
             <div className='QuestionText'>
                 <div className='QnAcontent'>
                     <h2>{item.title}</h2>
