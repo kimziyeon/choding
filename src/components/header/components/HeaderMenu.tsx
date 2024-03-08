@@ -26,7 +26,7 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
     }
 
     return (
-        <div id="HeaderMenu" className={active ? 'active' : ''}>
+        <div id="HeaderMenu" className={active ? 'active' : null}>
             <div className='headerBG'>
                 <div className='headerTop'>
                     <button>
