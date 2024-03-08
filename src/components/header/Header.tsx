@@ -13,6 +13,7 @@ import './header.scss';
 
 export default function Header() {
     const [active, setActive] = useState(false);
+    const { data: session, status } = useSession();
 
     const onClickMenu: React.MouseEventHandler<HTMLImageElement> | undefined = () => {
         setActive(!active);
@@ -35,9 +36,21 @@ export default function Header() {
                     </Link>
                 </h1>
                 <div className='rightSide'>
+
                     <Link href='/myPage' className='signUp'>
                         <Image src={User} alt='Logo' width={50} height={25}></Image>
                     </Link>
+
+                    {/* {status === 'authenticated' ?
+                        <Link href='/myPage' className='signUp'>
+                            <Image src={User} alt='Logo' width={50} height={25}></Image>
+                        </Link>
+                        :
+                        <Link href='/login' className='signUp'>
+                            <Image src={User} alt='Logo' width={50} height={25}></Image>
+                        </Link>
+                    } */}
+
                 </div>
             </div>
         </header>
