@@ -20,7 +20,7 @@ export default function Home() {
   const { data: session, status } = useSession();
   const [loginData, setLoginData] = useState([]);
 
-  // 데이터 가져오기
+  // 데이터 가져오기 
   async function dataCrl(type: string) {
     const res = await serverStore(type, 'LoginData');
     if (res !== null) {
