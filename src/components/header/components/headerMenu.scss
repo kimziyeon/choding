@@ -46,6 +46,11 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid $grayLight;
 
+            .userName {
+                color: $main;
+                font-size: 700;
+            }
+
             a {
                 @include flexbox(s, c);
                 font-size: $b;
