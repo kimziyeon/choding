@@ -4,7 +4,7 @@
 #MyProjectTotal {
     .communityFigure {
         margin: 1rem 0;
-        width: calc((100% - 2rem)/3);
+        width: calc((100% - 4rem)/3);
 
         .noImage,
         img {
@@ -94,7 +94,7 @@
 @include responsive(m) {
     #MyProjectTotal {
         .communityFigure {
-            width: calc((100% - 1rem)/2);
+            width: calc((100% - 3rem)/2);
         }
     }
 }
