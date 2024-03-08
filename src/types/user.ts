@@ -2,5 +2,14 @@ export type signUpType = {
     name: string,
     password: string,
     email: string,
-    imgSrc: string
+    image: string
+}
+
+export type userDataType = {
+    email: string,
+    image: string | null,
+    id: string | null | undefined,
+    password: string | undefined,
+    name: string | null,
+    level: string | undefined | null
 }

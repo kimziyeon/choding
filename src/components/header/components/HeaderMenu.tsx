@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/essets/LOGO.svg';
@@ -9,14 +9,24 @@ import User from '@/essets/user.svg';
 import Close from '@/essets/close.svg';
 import ArrowRight from '@/essets/arrowRight.svg';
 import ListComponent from './List';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import './headerMenu.scss';
 
 export default function HeaderMenu({ active, setActive, onClickMenu }: { active: boolean; setActive: (value: boolean) => void, onClickMenu: (value: boolean) => void }) {
+    const [activeLogin, setActiveLogin] = useState(false);
+
     const { data: session, status } = useSession();
 
+    useEffect(() => {
+        { status === 'authenticated' ? setActiveLogin(true) : setActiveLogin(false) }
+    }, [status])
+
+    let loginContStyle = {
+        display: status === 'authenticated' ? 'block' : 'none'
+    }
+
     return (
-        <div id="HeaderMenu" className={active ? 'active' : ''}>
+        <div id="HeaderMenu" className={active ? 'active' : null}>
             <div className='headerBG'>
                 <div className='headerTop'>
                     <button>
@@ -28,13 +38,14 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
                         ></Image>
                     </button>
                     <div className='loginCont'>
-                        <Link href="/login" onClick={onClickMenu}>
-                            {status === 'authenticated' ? <b>{session.user.name}</b> : <b>로그인 해주세요</b>}
+                        {status === 'authenticated' ? <p style={loginContStyle}><span className='userName'>{session.user.name}</span>님 어서오세요!</p> : <Link href="/login" onClick={onClickMenu}>
+                            <b>로그인 해주세요</b>
                             <Image
                                 src={ArrowRight}
                                 alt='arrow image'
                                 width={20} height={20}
-                            ></Image></Link>
+                            ></Image>
+                        </Link>}
                     </div>
                     <ul className='headerMenuGroup'>
                         <li>
@@ -56,9 +67,10 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
                     </ul>
                 </div>
                 <div className='headerBottom'>
-                    <Link href="/signUp" onClick={onClickMenu} className='signUp'>회원가입</Link>
+                    {status === 'authenticated' ? <span onClick={() => { signOut() }} className='signUp'>로그아웃</span> : <Link href="/signUp" onClick={onClickMenu} className='signUp'>회원가입</Link>}
+
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
