@@ -8,9 +8,9 @@ import SearchIconSVG from '@/essets/searchSub.svg'
 import './mainBanner.scss';
 
 export default function MainBanner({ title }) {
-    console.log('---------------------title')
-    console.log(title)
-    console.log('---------------------title')
+    // console.log('---------------------title')
+    // console.log(title)
+    // console.log('---------------------title')
     const { data: session, status } = useSession();
     if (status === 'authenticated') {
 

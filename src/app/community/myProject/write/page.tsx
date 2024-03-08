@@ -10,6 +10,7 @@ import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
 import serverStore from '@/lib/server/serverStore';
 import { myProjectStore } from '@/app/community/myProject/context/myProject';
+import swal from 'sweetalert';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
@@ -63,15 +64,13 @@ export default function MyProjectWrite() {
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
     const [isOnButtonActive, setisOnButtonActive] = useState(false);
     const filterRef = useRef<HTMLHeadingElement | null>(null);
-    const filterToggleBtn: React.MouseEventHandler<HTMLHeadingElement> = () => {
-        filterRef.current?.classList.toggle("filterActive");
-        setisOnButtonActive(!isOnButtonActive);
-    }
+    const [imgText, setImgText] = useState("파일 선택");
 
 
     // 이미지 주소 저장
     const imageSubmit = async (event) => {
         event.preventDefault();
+        setImgText('파일 선택')
 
         if (event.target.files.length > 0) {
             const file = event.target.files[0];
@@ -82,10 +81,11 @@ export default function MyProjectWrite() {
                     .then(async snapshot => {
                         const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
                         setValue('imgSrc', url, { shouldValidate: true });
+                        setImgText('이미지 업로드 완료')
                     })
-                console.log('이미지가 성공적으로 업로드되었습니다.');
+                swal("성공", "이미지가 업로드 되었습니다 :)", "success")
             } catch (error) {
-                console.error('업로드 중 에러가 발생했습니다:', error);
+                swal("오류", "이미지 업로드 실패! 다시 시도해주세요.", "warning")
             }
         }
     };
@@ -128,7 +128,8 @@ export default function MyProjectWrite() {
                     <input {...register('title')} placeholder='제목을 입력해주세요'></input>
                 </section>
                 <section id="myProjectWriteImage">
-                    <input type="file" onChange={imageSubmit} />
+                    <label htmlFor="imgUpload">{imgText}</label>
+                    <input id="imgUpload" type="file" onChange={imageSubmit} />
                 </section>
                 <section id="writeStep1" className='writeStep'>
                     <InputSection

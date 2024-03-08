@@ -20,8 +20,25 @@ export default function Home() {
   const { isOpenFunc } = useQuestion();
   const { data: session, status } = useSession();
   const [loginData, setLoginData] = useState([]);
+  const [result, setResult] = useState([]);
+  const [title, setTitle] = useState<string[]>([]);
 
-  // 데이터 가져오기 
+
+  useEffect(() => {
+    dataCrl('get')
+    if (status !== 'authenticated') {
+      setTitle(['리액트 초급', '리액트 훅', '넥스트 라우팅']);
+      setResult(cdData)
+    }
+  }, [status])
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      loadData()
+    }
+  }, [loginData])
+
+  // 데이터 가져오기  
   async function dataCrl(type: string) {
     const res = await serverStore(type, 'LoginData');
     if (res !== null) {
@@ -29,16 +46,15 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    dataCrl('get')
-  }, [])
-
-
-  const [result, setResult] = useState([]);
-  const [title, setTitle] = useState<string[]>([]);
 
   const loadData = async () => {
     let nowUser = await loginData.find(obj => obj.email === session.user?.email);
+
+    if (!nowUser) return;
+    console.log('-----------------nowUser')
+    console.log(nowUser)
+    console.log('------------------------')
+
     switch (nowUser.level) {
       case '초딩':
         setTitle(levelKeyword[0].cd)
@@ -67,17 +83,11 @@ export default function Home() {
     }
   }
 
-  useEffect(() => {
-    if (status === 'authenticated') { // 유저 로그인
-      loadData();
-    } else { // 비회원 데이터 키워드
-      setTitle(['리액트 초급', '리액트 훅', '넥스트 라우팅']);
-      setResult(cdData)
-    }
-  }, [status])
 
-  console.log('---------------result')
-  console.log(result)
+
+
+  // console.log('---------------result')
+  // console.log(result)
 
   return (
     <main className="mainContainer">
