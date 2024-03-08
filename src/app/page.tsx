@@ -1,12 +1,16 @@
+"use client";
 //              src/app/page.tsx
 //              메인 교육
 
 import './home.scss';
 import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
+import { useQuestion } from '@/context/questionStore';
 
 
 export default function Home() {
+  const { isOpenFunc } = useQuestion();
+
   return (
     <main className="mainContainer">
       <MainBanner />
@@ -42,7 +46,7 @@ export default function Home() {
               <span>&nbsp;퀴즈</span>
             </h3>
           </div>
-          <div className="contRight"></div>
+          <div className="contRight" onClick={() => { isOpenFunc({ isOpen: true, isTest: false }) }}></div>
         </section>
       </section>
     </main>

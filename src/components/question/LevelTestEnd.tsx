@@ -6,13 +6,22 @@ import Link from 'next/link';
 import chocho from '@/essets/charactor/CHO.svg';
 import { useRouter } from 'next/navigation'
 import { useQuestion } from '@/context/questionStore';
+import { useSession } from 'next-auth/react';
 
 export default function LevelTestEnd({ score }) {
+
+    const { data: session, status } = useSession();
     const router = useRouter();
     const { isOpenFunc } = useQuestion();
-    function quizEnd() {
+
+    function quizEndLogin() {
         isOpenFunc({ isOpen: false, isTest: false })
         router.push('/login');
+    }
+
+    function quizEndSearch() {
+        isOpenFunc({ isOpen: false, isTest: false })
+        router.push('/search');
     }
 
     const levelValue = () => {
@@ -40,18 +49,27 @@ export default function LevelTestEnd({ score }) {
                         </Image>
                     </div>
                     <div className='popUpSubTitle'>
-                        <div className='scoreBox'>
-                            <span>곰문곰</span>님의<br></br>총 점수는 <span>{score}</span>점 입니다.
-                        </div>
+
+                        {status === 'authenticated' ?
+                            <div className='scoreBox'>
+                                <span>{session.user.name}</span>님의<br></br>총 점수는 <span>{score}</span>점 입니다.</div> :
+                            <div className='noNameTitle'>로그인 시<br></br>다양한 강의 정보를 추천해드립니다.</div>}
+
+
                         <div className='lvBox'>
                             <span>Lv.{levelValue()}</span>
                         </div>
-                        {/* <div className='msg'>
-                            로그인 시 다양한 강의 정보를 추천해드립니다.
-                        </div> */}
+
                     </div>
-                    <button className='popUpBtn' onClick={quizEnd}>
-                        로그인 하러가기</button>
+
+                    {status === 'authenticated' ?
+                        <button className='popUpBtn' onClick={quizEndSearch}>
+                            공부 하러가기</button>
+                        :
+                        <button className='popUpBtn' onClick={quizEndLogin}>
+                            로그인 하러가기</button>
+                    }
+
                 </div>
             </div>
         </div>

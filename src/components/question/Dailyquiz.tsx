@@ -26,7 +26,7 @@ export default function Dailyquiz() {
 
 
     useEffect(() => {
-        setQues(randomArray(QuizData.dailyQuiz)); // 퀴즈를 랜덤하게 섞어서 설정
+        setQues(randomArray(QuizData.dailyQuiz)); // 퀴즈 랜덤설정
     }, []);
 
 
