@@ -19,17 +19,18 @@
 
         // margin-bottom: 4rem;
         .myTitle1 {
+            padding: 1rem 0;
+
             span {
                 font-weight: bold;
             }
         }
 
         .myTitle2 {
+            height: 110px;
             font-size: x-large;
             line-height: 130%;
-            padding: 10px 0 60px 0;
             font-weight: 500;
-
 
             span {
                 color: $sub1;
