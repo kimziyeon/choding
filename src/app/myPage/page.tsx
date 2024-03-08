@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from 'react';
 import './mypage.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,8 +12,30 @@ import { useSession } from 'next-auth/react';
 
 export default function MyPage() {
     const { data: session, status } = useSession();
+    const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session.user.image})` } : {}; //유저이미지
 
-    const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session.user.imgSrc})` } : {};
+    const [randomTitle, setRandomTitle] = useState('');
+    useEffect(() => {
+        const title = [
+            "스치면 인연, 스며들면 스폰지밥",
+            "힘내요! 잘해왔잖아요",
+            "Start each day like it's your birthday",
+            "오늘은 밝은옷을 입으세요",
+            "나는 노동자, 슬픈 내 눈동자",
+            "역시 내가 귀여운 탓인가",
+            "외출말고 휴식을 취하세요",
+            "결과는 기대 이상입니다",
+            "기다리던 소식이 찾아와요",
+            "오늘의 행운의 색 RED",
+            "적게 주고 크게 얻는날",
+            "이루지 못할 일은 없어요",
+            "미뤄뒀던 계획을 실행하세요",
+            "하던 일에 결실이 보이네요!",
+            "한 걸음만 양보해보세요"
+        ];
+        const randomId = Math.floor(Math.random() * title.length);
+        setRandomTitle(title[randomId]);
+    }, []);
 
 
     return (
@@ -23,7 +46,7 @@ export default function MyPage() {
                 <article className='myPageTitle'>
                     <div className='myTitle1'>
                         {/* <span>{session.user.name}</span> */}님 어서오세요!</div>
-                    <div className='myTitle2'>오늘은 <span>리액트 초급</span>을<br></br>공부해볼까요?</div>
+                    <div className='myTitle2'>{randomTitle}</div>
 
                     <div className='myInfo'>
                         <div className='myLv'>
