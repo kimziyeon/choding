@@ -26,7 +26,7 @@ export default function Home() {
 
   useEffect(() => {
     dataCrl('get')
-    if (status !== 'authenticated') { // 유저 로그인
+    if (status !== 'authenticated') {
       setTitle(['리액트 초급', '리액트 훅', '넥스트 라우팅']);
       setResult(cdData)
     }
@@ -38,7 +38,7 @@ export default function Home() {
     }
   }, [loginData])
 
-  // 데이터 가져오기 
+  // 데이터 가져오기  
   async function dataCrl(type: string) {
     const res = await serverStore(type, 'LoginData');
     if (res !== null) {
