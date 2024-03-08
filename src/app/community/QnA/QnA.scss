@@ -2,6 +2,7 @@
 
 #QnAMain {
     position: relative;
+    min-height: calc(100vh - 3rem);
 
     .QnAContentContainer {
         .QuestionBox {
@@ -17,7 +18,7 @@
                 flex-direction: column;
                 justify-content: space-between;
                 .QnAcontent{
-                    h2 {
+                    >h2 {
                         color: $grayDark;
                         font-size: $b;
                     }
@@ -57,7 +58,7 @@
     }
 
     .QnAHeader {
-        button {
+        >button {
             font-size: $t;
             border-radius: 100px;
             padding: 4px 18px;
@@ -99,13 +100,13 @@
                     background-color: black;
                 }
 
-                h3 {
+                >h3 {
                     color: $grayDark;
                     font-size: $b;
                     margin: $b 0;
                 }
 
-                a {
+                >a {
                     font-size: $s;
                     color: gray;
                     margin-bottom: $b;

@@ -2,4 +2,26 @@
 
 .postMain{
     padding: 6rem 2rem 2rem 2rem;
+    .postForm{
+        >textarea{
+            resize: none;
+            border: 1px solid black;
+            width: 100%;
+            padding: $t;
+            margin-bottom: $b;
+        } 
+        >input{
+            border: 1px solid black;
+        }
+        .qnapostBtn{
+            display: flex;
+            justify-content: flex-end;
+            >button{
+                color: white;
+                background-color: $main;
+                border-radius: 9px;
+                padding: 4px $b;
+            }
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    }
 }

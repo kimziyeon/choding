@@ -9,12 +9,7 @@ export async function POST(req: NextRequest) { // QnA write에서 보낸 데이�
 
 export async function GET(req: NextRequest) {
     const collection: any = req.nextUrl.searchParams.get('colName');
-    const data = await connectToDB('get', 0, collection,null);
+    const data = await connectToDB('get', 0, collection, null);
     return NextResponse.json(data)
 
 }
-
-// export async function GET(req: NextRequest) {
-//     const data = await req.json();    
-//     return NextResponse.json(await connectToDB('post', data, 'qna'));
-// }
