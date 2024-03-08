@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import chocho from '@/essets/charactor/CHO.svg';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import { useQuestion } from '@/context/questionStore';
+import { useSession } from 'next-auth/react';
 
 
 
@@ -12,11 +13,15 @@ import { useQuestion } from '@/context/questionStore';
 export default function DailyquizEnd({ isCorrect }) {
 
     const router = useRouter();
+
     const { isOpenFunc } = useQuestion();
-    function quizEnd() {
+
+    function quizEndSearch() {
         isOpenFunc({ isOpen: false, isTest: false })
         router.push('/search');
     }
+
+    const { data: session, status } = useSession();
 
 
     useEffect(() => {
@@ -39,21 +44,21 @@ export default function DailyquizEnd({ isCorrect }) {
                         <>
                             <div className='valueOOO'>+1</div>
                             <div className='lvBoxOX'>
-                                <span>Lv.&nbsp;</span>
+                                <span>Lv.{session.user.level}</span>
                             </div>
                         </>
                     ) : (
                         <>
                             <div className='valueXXX'>아쉽네요 :&#40;<br />내일 다시 도전해주세요</div>
                             <div className='lvBoxOX'>
-                                <span>Lv.&nbsp;</span>
+                                <span>Lv.{session.user.level}</span>
                             </div>
                         </>
                     )}
 
                 </div>
-                <button className='popUpBtn' onClick={quizEnd}>
-                    강의 검색하기</button>
+                <button className='popUpBtn' onClick={quizEndSearch}>
+                    공부 하러가기</button>
             </div>
         </div>
 

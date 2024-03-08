@@ -60,6 +60,16 @@
                     font-size: $b;
                     line-height: 160%;
 
+                    .nameTitle {
+                        span {
+                            font-weight: 600;
+                        }
+                    }
+
+                    .noNameTitle {
+                        font-weight: 600;
+                    }
+
                     .scoreBox {
                         span {
                             font-weight: 600;
