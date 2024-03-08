@@ -10,9 +10,8 @@ export default function QnADetail({ params }: any) {
     const [data, setData] = useState();
     const [comment, setComment] = useState<any>('');
     const { data: session, status } = useSession();
-    const id = params.postId;
-
-    console.log(id)
+    const id = params.postId
+    const name = session?.user?.name
 
     const {
         register,
@@ -20,29 +19,33 @@ export default function QnADetail({ params }: any) {
         formState: { errors },
     } = useForm(); 
 
-    const onSubmit = async (data:any) =>{
-        console.log(data)
-        try{
-            const commentText = data.comment;
-            const comment = {commentText}
-            await axios.post('/api/post',comment);
-        } catch(error){
-            console.error('데이터 저장 중 오류 발생:', error);
-        }
+    const onSubmit = async (formdata:any) =>{
+        // console.log(formdata)
+        const commentText = formdata.comment;
+        const comment = {commentText, name}
+
+        console.log(comment)
+
+        axios.post(`/api/post${id}`, comment)
         
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`/api/post?colName=qna`);
-                const d = response.data.filter((obj: any) => obj._id == id)
-                setData(d);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`/api/post?colName=qna`);
+            const d = response.data.filter((obj: any) => obj._id == id)
+            const e = d[0].comment
 
+            console.log(e)
+
+            setData(d);
+            setComment(e);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    useEffect(() => {
         fetchData();
     }, []);
 
@@ -66,6 +69,13 @@ export default function QnADetail({ params }: any) {
                 </div>
                 )
             }
+                <div className='commentContainer'>
+                    {
+                        comment &&(
+                            <div></div>
+                        )
+                    }
+                </div>
 
 
         </>
