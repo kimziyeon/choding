@@ -17,6 +17,7 @@ import zdData from '@/data/main/zd.json';
 
 
 export default function Home() {
+  const { isOpenFunc } = useQuestion();
   const { data: session, status } = useSession();
   const [loginData, setLoginData] = useState([]);
 
