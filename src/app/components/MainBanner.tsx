@@ -38,7 +38,7 @@ export default function MainBanner({ title }) {
             <div className="contents">
                 <div className='text unauthenticated' style={unauthenticatedStyle}>
                     <p>
-                        <span className='mainColor'>내 개발 레벨은?</span>
+                        <span className='mainColor'>내 개발 수준은?</span>
                     </p>
                     <p className='textMain'>궁금하다면&nbsp;
                         <span className='mainColor box'>로그인하고</span>
