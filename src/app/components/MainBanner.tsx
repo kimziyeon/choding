@@ -7,10 +7,13 @@ import MainCharactor from '@/essets/mainCharactor.png';
 import SearchIconSVG from '@/essets/searchSub.svg'
 import './mainBanner.scss';
 
-export default function MainBanner() {
+export default function MainBanner({ title }) {
+    console.log('---------------------title')
+    console.log(title)
+    console.log('---------------------title')
     const { data: session, status } = useSession();
     if (status === 'authenticated') {
-        console.log(session)
+
     }
     const router = useRouter();
     const [query, setQuery] = useState('');
@@ -22,15 +25,32 @@ export default function MainBanner() {
         }
     }
 
+    let unauthenticatedStyle = {
+        display: status === 'authenticated' ? 'none' : 'block'
+    }
+
+    let authenticatedStyle = {
+        display: status === 'authenticated' ? 'block' : 'none'
+    }
+
     return (
         <section className="mainBanner">
             <div className="contents">
-                <div className='text'>
+                <div className='text unauthenticated' style={unauthenticatedStyle}>
+                    <p>
+                        <span className='mainColor'>내 개발 레벨은?</span>
+                    </p>
+                    <p className='textMain'>궁금하다면&nbsp;
+                        <span className='mainColor box'>로그인하고</span>
+                        <br></br>레벨 테스트 받자!
+                    </p>
+                </div>
+                <div className='text authenticated' style={authenticatedStyle}>
                     <p>
                         <span className='mainColor'>{status === 'authenticated' ? session.user.name : '비회원'}</span>님&nbsp;어서오세요!
                     </p>
                     <p className='textMain'>오늘은&nbsp;
-                        <span className='mainColor box'>리액트 초급</span>
+                        <span className='mainColor box'>{title[2]}</span>
                         을<br></br>공부해볼까요?
                     </p>
                 </div>
