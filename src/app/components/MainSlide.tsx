@@ -13,19 +13,17 @@ import popularJsonData from '@/data/popular.json';
 
 
 export default function MainSlide() {
-    const [slideNum, setNum] = useState<number>(2.5);
-
-    const innerWidth = window.innerWidth;
+    const [slideNum, setNum] = useState<number>(2.2);
 
     useEffect(() => {
         const handleResize = () => {
-            window.innerWidth < 430 ? setNum(1.5) : setNum(2.5)
+            window.innerWidth < 430 ? setNum(1.2) : setNum(2.2)
       };
       window.addEventListener('resize', handleResize);
 
       return () => window.removeEventListener('resize', handleResize);
     }, []);
-    
+
     return (
         <section className='contentsBox' id="mainPopularSlide">
         <div className='contLeft'>
@@ -45,19 +43,25 @@ export default function MainSlide() {
             delay: 2500,
             disableOnInteraction: false,
         }}
-        navigation={true}
+        // navigation={true}
         modules={[Autoplay, Navigation, Pagination]}
                 className="mySwiper"
                 id="mainSlide"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
+            >
+                {
+                    popularJsonData.map((item) => {
+                        return <SwiperSlide
+                            className='contentsFigure'
+                            key={item.publishedAt}
+                            style={{ backgroundImage: `url(${item.thumbnails.medium.url})` }}>
+                            <div className='innerContents'>
+                                <span>#{item.videoOwnerChannelTitle}</span>
+                                <h3 className='title'>{item.title}</h3>
+
+                            </div>
+                        </SwiperSlide>
+                    })
+                }
       </Swiper>
     </section>
     )
