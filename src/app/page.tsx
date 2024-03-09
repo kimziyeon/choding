@@ -6,6 +6,7 @@ import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
 import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
+import MainSlide from './components/MainSlide';
 import serverStore from '@/lib/server/serverStore';
 import { useState, useEffect } from 'react';
 import levelKeyword from '@/data/levelKeyword.json';
@@ -27,7 +28,7 @@ export default function Home() {
   useEffect(() => {
     dataCrl('get')
     if (status !== 'authenticated') {
-      setTitle(['리액트 초급', '리액트 훅', '넥스트 라우팅']);
+      setTitle(levelKeyword[0].cd)
       setResult(cdData)
     }
   }, [status])
@@ -94,14 +95,7 @@ export default function Home() {
       <MainBanner
         title={title}
       />
-      <MainContentsSection
-        option={3}
-        subtext={'초딩들이 스크랩한 강의에요'}
-        title={'요즘 인기있는'}
-        loginData={loginData}
-        result={result.popular}
-      />
-
+      <MainSlide />
       <MainContentsSection
         option={0}
         subtext={'유튜브 테스트에용'}
