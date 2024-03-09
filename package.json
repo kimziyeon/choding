@@ -25,6 +25,7 @@
     "react-youtube": "^10.1.0",
     "sass": "^1.71.1",
     "sweetalert": "^2.1.2",
+    "swiper": "^11.0.7",
     "zustand": "^4.5.1"
   },
   "devDependencies": {

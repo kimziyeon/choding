@@ -1,4 +1,5 @@
 "use client";
+import popularJsonData from '@/data/popular.json';
 
 
 export default function MainSlide() {
