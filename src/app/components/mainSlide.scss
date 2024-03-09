@@ -1,0 +1,48 @@
+@use '../../styles/main' as *;
+
+#mainPopularSlide {
+    flex-direction: column;
+
+    .contLeft {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #mainSlide {
+        width: 100%;
+        height: 100%;
+
+        .swiper-wrapper {
+            .swiper-slide {
+                width: calc((100% - 2rem) / 2.5) !important;
+                height: 240px;
+                background: $main;
+                text-align: center;
+                font-size: 18px;
+
+                /* Center slide text vertically */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+            }
+        }
+
+        .swiper-pagination {}
+
+    }
+
+}
+
+@include responsive(s) {
+    #mainPopularSlide #mainSlide .swiper-wrapper .swiper-slide {
+        width: calc((100% - 2rem) / 1.5) !important;
+    }
+}
