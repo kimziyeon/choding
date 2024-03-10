@@ -8,6 +8,8 @@ import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
 import serverStore from '@/lib/server/serverStore';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import levelTestBtn from '@/essets/levelTestBtn.svg';
 import levelKeyword from '@/data/levelKeyword.json';
 import cdData from '@/data/main/cd.json';
 import jdData from '@/data/main/jd.json';
@@ -144,6 +146,15 @@ export default function Home() {
           <div className="contRight" onClick={() => { isOpenFunc({ isOpen: true, isTest: false }) }}></div>
         </section>
       </section>
+
+      <div className="lvTestBtn">
+        <p className='dot'></p>
+        <div onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>
+          <Image src={levelTestBtn} alt='levelTestBtn' />
+        </div>
+
+      </div>
     </main>
+
   );
 }
