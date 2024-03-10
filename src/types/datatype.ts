@@ -11,7 +11,8 @@ export type myProjectPostType = {
     stack: string[],
     imgSrc: string,
     like: number,
-    comments: myProjectCommentType[]
+    comments: myProjectCommentType[],
+    author: string | null | undefined
 }
 
 export type myProjectCommentType = {

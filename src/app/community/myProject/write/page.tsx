@@ -10,11 +10,22 @@ import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
 import serverStore from '@/lib/server/serverStore';
 import { myProjectStore } from '@/app/community/myProject/context/myProject';
+import { useSession } from 'next-auth/react';
 import swal from 'sweetalert';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 
 export default function MyProjectWrite() {
+    const { data: session, status } = useSession();
+    const router = useRouter();
+    
+    useEffect(()=>{
+        if(status !== 'authenticated'){ // 진입 방지
+            swal("로그인해주세요!", "비회원은 글을 작성할 수 없습니다.", "warning")
+            router.push('/login');
+        }
+    },[])
+
     dayjs.locale('ko');
     const today = dayjs().format("YYYY년 MM월 DD일");
 
@@ -43,8 +54,6 @@ export default function MyProjectWrite() {
         }
     }
 
-
-    const router = useRouter();
     const { formState: { errors }, register, watch, setValue, handleSubmit: handleFormSubmit } = useForm<myProjectPostType>({
         defaultValues: {
             date: today,
@@ -58,7 +67,8 @@ export default function MyProjectWrite() {
             stack: [],
             comments: [],
             imgSrc: undefined,
-            like: 0
+            like: 0,
+            author: session?.user?.name
         },
     });
     const [activeOptions, setActiveOptions] = useState<string[]>([]);
