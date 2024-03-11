@@ -34,7 +34,7 @@ export default function FigureComponent() {
                             </div>
                             <div className='bottom'>
                                 <span className='date'>{item.date}</span>
-                                <span className='userId'>{item.userId}</span>
+                                <span className='userId'>{item.name}</span>
                             </div>
                         </div>
                     </figcaption>
