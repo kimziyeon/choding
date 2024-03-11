@@ -135,36 +135,36 @@
     ],
     "naver": [
         {
-            "title": "[넥스트 JS] - 신규프로젝트 수정 에러",
-            "link": "https://blog.naver.com/wormsbrother/223053260427",
-            "description": "위와같이 index.js 파일의 내용을 리액트로 적어주면 바로 해결된다. 감사합니다. #NextJS #신규파일수정 #에러 #에러해결 #메인페이지수정방법 #넥스트JS기초",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230323"
+            "title": "'vscode'설치는 했는데... 어떻게 사용할까? - 'vscode'사용법!",
+            "link": "https://blog.naver.com/tilkoblet/222915607242",
+            "description": "지난 콘텐츠에서는 이것의 뜻과 설치 방법에 대해 알아봤는데요, 이번에는 사용법에 대해 소개해 드리겠습니다. 'vscode'로 원하는 정보를 빠르게 찾을 수 있다? 자료가 많을수록 원하는 자료를 빠르게... ",
+            "bloggername": "틸코블렛-비즈니스에 데이터를 더하다",
+            "bloggerlink": "blog.naver.com/tilkoblet",
+            "postdate": "20221031"
         },
         {
-            "title": "NEXT.JS 기초개념",
-            "link": "https://blog.naver.com/qpxmaks/223231310244",
-            "description": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
-            "bloggername": "정보보안전문가",
-            "bloggerlink": "blog.naver.com/qpxmaks",
-            "postdate": "20231008"
+            "title": "VSCode RestClient 사용법",
+            "link": "https://blog.naver.com/doksajokyo/222856264260",
+            "description": "Public 망이 없는 환경에서 Postman 사용이 불가해서 대체품을 찾는 도중에 VSCode의 RestClient를 알게 되었고 유용한 점이 많아 이기회에 사용법을 정리해 둔다. Install VSCode에서 rest client... ",
+            "bloggername": "감생이님의 블로그",
+            "bloggerlink": "blog.naver.com/doksajokyo",
+            "postdate": "20220823"
         },
         {
-            "title": "node.js(다운로드, 기초 설명)",
-            "link": "https://blog.naver.com/ssora-/223021701469",
-            "description": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
-            "bloggername": "이모저모",
-            "bloggerlink": "blog.naver.com/ssora-",
-            "postdate": "20230220"
+            "title": "VSCODE 사용법 (파일 및 폴더 만들기)",
+            "link": "https://blog.naver.com/dkfl2003/222884098988",
+            "description": "※ 오늘은 VSCODE를 강의에서 배울 사용 환경에 알맞게 다듬어가는 것을 기록하고 정리할 예정이므로 꽤나 많은 이미지들이 할애될 거니 주의할 것! VSCODE 폴더 설정하기 가장 먼저 앞으로 사용할... ",
+            "bloggername": "경제적 자유 백서, 자유록",
+            "bloggerlink": "blog.naver.com/dkfl2003",
+            "postdate": "20220925"
         },
         {
-            "title": "[넥스트 JS] 중첩 동적 라우트 세그먼트 한번에 잡기",
-            "link": "https://blog.naver.com/wormsbrother/223063036862",
-            "description": "#프론트엔드 #프론트엔드공부 #프론트엔드학습 #프론트엔드실습 #넥스트JS ＃넥스트기초학습 #넥스트기초실습 #넥스트기초공부 #넥스트기초 #중첩라우팅세그먼트 #동적라우팅 #중첩라우팅... ",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230403"
+            "title": "패스트캠퍼스 인강 2일차 - Python 설치와 Vscode 사용법",
+            "link": "https://blog.naver.com/hakuneko_16/222612503734",
+            "description": "Python 설치와 Vscode 사용법에 대해 들어보자! ★Python 설치 및 사용법 1. https://www.python.org 에서... ex) vscode 나 anaconda 등 ★ Vscode 설치및 사용법 ◆ 소스코드 편집기를 사용하는 이유 - 폴더 및... ",
+            "bloggername": "하쿠냥의 자기계발ing",
+            "bloggerlink": "blog.naver.com/hakuneko_16",
+            "postdate": "20220104"
         }
     ]
 }

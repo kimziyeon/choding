@@ -135,36 +135,36 @@
     ],
     "naver": [
         {
-            "title": "[넥스트 JS] - 신규프로젝트 수정 에러",
-            "link": "https://blog.naver.com/wormsbrother/223053260427",
-            "description": "위와같이 index.js 파일의 내용을 리액트로 적어주면 바로 해결된다. 감사합니다. #NextJS #신규파일수정 #에러 #에러해결 #메인페이지수정방법 #넥스트JS기초",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230323"
+            "title": "프로가되기 위한 타입스크립트 프로그래밍 입문",
+            "link": "https://blog.naver.com/hji7000/223335976235",
+            "description": "프로가 되기 위한 타입스크립트 프로그래밍 입문 저자 미등록 출판 미등록 발매 미등록 작년 4월쯤 구입해서, 조금씩 들춰보다가 작년 말에 마음을 다잡고 읽은 책입니다. 그동안 타입스크립트에 대한... ",
+            "bloggername": "마음이 한적한 곳으로...",
+            "bloggerlink": "blog.naver.com/hji7000",
+            "postdate": "20240128"
         },
         {
-            "title": "NEXT.JS 기초개념",
-            "link": "https://blog.naver.com/qpxmaks/223231310244",
-            "description": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
-            "bloggername": "정보보안전문가",
-            "bloggerlink": "blog.naver.com/qpxmaks",
-            "postdate": "20231008"
+            "title": "형님의 쉽게 시작하는 타입스크립트로 타입스크립트 입문하기",
+            "link": "https://blog.naver.com/rebi13/223201161625",
+            "description": "타입스크립트의 개념부터 프로젝트 실습까지 입문자에게 가장 필요한 기본 지식을 설명한다! 쉽게 시작하는 타입스크립트 저자 장기효 출판 길벗 발매 2023.06.16. 근데 캡틴판교님이 왜 형님이냐? 설명을... ",
+            "bloggername": "의식의 흐름으로〃",
+            "bloggerlink": "blog.naver.com/rebi13",
+            "postdate": "20230903"
         },
         {
-            "title": "node.js(다운로드, 기초 설명)",
-            "link": "https://blog.naver.com/ssora-/223021701469",
-            "description": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
-            "bloggername": "이모저모",
-            "bloggerlink": "blog.naver.com/ssora-",
-            "postdate": "20230220"
+            "title": "타입스크립트 믿고 보는 캡틴판교의 타입스크립트 입문책",
+            "link": "https://blog.naver.com/gilbutzigy/223123583676",
+            "description": "캡틴판교의 타입 스크립트 입문서 출간 타입스크립트는 자바스크립트에 타입을 부여한... 도서 소개 타입스크립트의 개념부터 프로젝트 실습까지 입문자에게 가장 필요한 기본 지식을... ",
+            "bloggername": "길벗 IT",
+            "bloggerlink": "blog.naver.com/gilbutzigy",
+            "postdate": "20230609"
         },
         {
-            "title": "[넥스트 JS] 중첩 동적 라우트 세그먼트 한번에 잡기",
-            "link": "https://blog.naver.com/wormsbrother/223063036862",
-            "description": "#프론트엔드 #프론트엔드공부 #프론트엔드학습 #프론트엔드실습 #넥스트JS ＃넥스트기초학습 #넥스트기초실습 #넥스트기초공부 #넥스트기초 #중첩라우팅세그먼트 #동적라우팅 #중첩라우팅... ",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230403"
+            "title": "[Book] 쉽게 시작하는 타입스크립트",
+            "link": "https://blog.naver.com/doublesj1226/223151292332",
+            "description": "* 인프런 강의 : 타입스크립트 입문 -기초부터 실전까지 Part.1 물론 강의를 들어봤다면 더 잘 알겠지만 타입스크립트를 처음 입문하는 사람에게 큰 어려움 없이 접하기 쉬운 강의이다. *단, 자바스크립트에... ",
+            "bloggername": "Although only for a moment",
+            "bloggerlink": "blog.naver.com/doublesj1226",
+            "postdate": "20230709"
         }
     ]
 }
