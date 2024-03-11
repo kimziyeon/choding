@@ -113,7 +113,6 @@
 
     .contentsBox.num1,
     .contentsBox.num2 {
-
         .contLeft {}
 
         .contRight {
@@ -190,6 +189,10 @@
 // 네이버(2)
 .contentsBox.num1,
 .contentsBox.num2 {
+    .contLeft {
+        align-items: flex-start;
+    }
+
     .contRight {
         width: 100%;
         @include flexbox();
@@ -229,6 +232,7 @@
 
         .contLeft {
             width: 100%;
+            align-items: flex-start;
 
             .title {
                 margin: 0;
