@@ -5,6 +5,7 @@ import './post.scss'
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSession } from 'next-auth/react';
+import detailStore from '@/lib/server/detailStore';
 
 export default function QnADetail({ params }: any) {
     const [data, setData] = useState();
@@ -13,21 +14,24 @@ export default function QnADetail({ params }: any) {
     const id = params.postId
     const name = session?.user?.name
 
+    console.log(data)
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm(); 
+    
 
     const onSubmit = async (formdata:any) =>{
         // console.log(formdata)
         const commentText = formdata.comment;
         const comment = {commentText, name}
 
-        console.log(comment)
+        // console.log(comment)
 
-        axios.post(`/api/post${id}`, comment)
-        
+        const res = await detailStore('put','qna',comment)
+        await fetchData();
     }
 
     const fetchData = async () => {
@@ -36,7 +40,7 @@ export default function QnADetail({ params }: any) {
             const d = response.data.filter((obj: any) => obj._id == id)
             const e = d[0].comment
 
-            console.log(e)
+            // console.log(e)
 
             setData(d);
             setComment(e);
@@ -71,9 +75,9 @@ export default function QnADetail({ params }: any) {
             }
                 <div className='commentContainer'>
                     {
-                        comment &&(
-                            <div></div>
-                        )
+                        // comment &&(
+                        //     <div></div>
+                        // )
                     }
                 </div>
 

@@ -1,14 +1,14 @@
 {
     "youtube": [
         {
-            "title": "대딩의 데이터입니다",
-            "link": "https://ko.legacy.reactjs.org/",
+            "title": "Next js 강좌 #1 소개, 페이지 레이아웃 (Intro, Page layout)",
+            "link": "https://youtu.be/Ujjdn2wMIew?si=E85oguOubdjMuzPz",
             "displayLink": "ko.legacy.reactjs.org",
-            "snippet": "선언형. React는 상호작용이 많은 UI를 만들 때 생기는 어려움을 줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요. 그럼 React는 데이터가 변경됨에 ...",
+            "snippet": "Next js 강좌 #1 소개, 페이지 레이아웃 (Intro, Page layout)",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "src": "https://i.ytimg.com/vi/Ujjdn2wMIew/mqdefault.jpg",
                         "width": "310",
                         "height": "163"
                     }
@@ -16,14 +16,14 @@
             }
         },
         {
-            "title": "시작하기 – React",
-            "link": "https://ko.legacy.reactjs.org/docs/getting-started.html",
+            "title": "Next js 강좌 #2 Dynamic Routes, next/link",
+            "link": "https://youtu.be/W4gWRK-_It8?si=fZmfeeyu_C96_7Eq",
             "displayLink": "ko.legacy.reactjs.org",
-            "snippet": "새 React 앱 만들기. React 프로젝트를 시작한다면 스크립트 태그를 사용한 간단한 HTML 페이지를 만드는 것이 최고의 방법일 것입니다. 설치하는 데 1분밖에 걸리지 ...",
+            "snippet": "안녕하세요. 코딩앙마 입니다 :) React Framework 인 Next.js 강좌 시작합니다. React, HTML, CSS 에 어느정도 기초 지식이 있으신 분들 대상으로 진행합니다. 이번 수업에서는 Axios 를 이용해 api 를 호출하고 받아온 데이터를 화면에 그려주는 작업을 진행합니다. 사용된 api 는http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline 입니다. React hook(useEffect, useState)을 사용해 마운트 시점에 api를 호출하고, 상태관리를 해봅니다. Next js 의 Dynamic Routes 를 이용해서 상품 ID가 달라도 하나의 페이지로 관리하고, next/link 를 이용해 새로고침 없이 페이지간 이동을 할 수 있습니다. 그 외 map 을 이용한 순회, module CSS 등은 영상을 통해 확인해주세요!\n감사합니다",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "src": "https://i.ytimg.com/vi/W4gWRK-_It8/mqdefault.jpg",
                         "width": "310",
                         "height": "163"
                     }
@@ -31,10 +31,10 @@
             }
         },
         {
-            "title": "[번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기",
-            "link": "https://velog.io/@eunbinn/modularizing-react-apps",
+            "title": "Next js 강좌 #3 서버사이드 렌더링 (Server-side Rendering/SSR/Dynamic Rendering)",
+            "link": "https://youtu.be/hvkeK71WXb8?si=yhUFMl6ODT4xUzAJ",
             "displayLink": "velog.io",
-            "snippet": "Feb 22, 2023 ... [번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기 · 리액트는 뷰를 구축하기 위한 소박한 라이브러리입니다. · 현실 세계의 리액트 ...",
+            "snippet": "안녕하세요. 코딩앙마 입니다 :) React Framework 인 Next.js 강좌 시작합니다. React, HTML, CSS 에 어느정도 기초 지식이 있으신 분들 대상으로 진행합니다. 이번 수업에서는 로딩 화면을 만들고, getServerSideProps 를 이용해서 서버사이드 렌더링(Server-side Rendering/SSR/Dynamic Rendering)을 구현해 보겠습니다. 서버사이드 렌더링은 SEO나 SNS 공유등을 이용할때 필수죠? 정적 생성과의 차이점을 알아보고, 장단점을 비교해볼게요.",
             "pagemap": {
                 "cse_thumbnail": [
                     {
