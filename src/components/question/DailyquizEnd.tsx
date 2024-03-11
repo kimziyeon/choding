@@ -6,6 +6,7 @@ import chocho from '@/essets/charactor/CHO.svg';
 import { useRouter } from 'next/navigation';
 import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
+import axios from 'axios';
 
 
 
@@ -13,7 +14,7 @@ import { useSession } from 'next-auth/react';
 export default function DailyquizEnd({ isCorrect }) {
 
     const router = useRouter();
-
+    const { data: session, status } = useSession();
     const { isOpenFunc } = useQuestion();
 
     function quizEndSearch() {
@@ -21,12 +22,37 @@ export default function DailyquizEnd({ isCorrect }) {
         router.push('/search');
     }
 
-    const { data: session, status } = useSession();
 
 
     useEffect(() => {
+        async function point() {
+            if (isCorrect) {
+                const myPointInfo: any = await axios.get(`/api/mypoint?email=${session?.user?.email}`);
 
-    }, [isCorrect])
+
+                if (!myPointInfo.data.length) {
+                    await axios.post('/api/mypoint', { email: session?.user?.email, level: '', point: 0 })
+                } else {
+                    const myPoint: number = myPointInfo.data[0].point + 1;
+                    let levelName = '';
+                    if (myPoint <= 2) {
+                        levelName = '초딩';
+                    } else if (myPoint <= 4) {
+                        levelName = '중딩';
+                    } else if (myPoint <= 6) {
+                        levelName = '고딩';
+                    } else if (myPoint <= 8) {
+                        levelName = '대딩';
+                    } else if (myPoint <= 10) {
+                        levelName = '직딩';
+                    }
+                    await axios.put('/api/mypoint', { email: session?.user?.email, level: levelName, point: myPoint })
+                }
+            }
+        }
+        point();
+
+    }, [session])
 
 
     return (
@@ -44,14 +70,14 @@ export default function DailyquizEnd({ isCorrect }) {
                         <>
                             <div className='valueOOO'>+1</div>
                             <div className='lvBoxOX'>
-                                <span>Lv.{session.user.level}</span>
+                                {/* <span>Lv.{session?.user.level}</span> */}
                             </div>
                         </>
                     ) : (
                         <>
                             <div className='valueXXX'>아쉽네요 :&#40;<br />내일 다시 도전해주세요</div>
                             <div className='lvBoxOX'>
-                                <span>Lv.{session.user.level}</span>
+                                {/* <span>Lv.{session.user.level}</span> */}
                             </div>
                         </>
                     )}

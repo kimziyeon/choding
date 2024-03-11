@@ -98,7 +98,7 @@ export default function Home() {
       <MainBanner
         title={title}
       />
-      <MainSlide/>
+      <MainSlide />
       <MainContentsSection
         option={0}
         subtext={'유튜브 테스트에용'}
@@ -147,8 +147,8 @@ export default function Home() {
         <div onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>
           <Image src={levelTestBtn} alt='levelTestBtn' />
         </div>
-
       </div>
+
     </main>
 
   );
