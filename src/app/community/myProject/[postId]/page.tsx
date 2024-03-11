@@ -14,7 +14,7 @@ import swal from 'sweetalert';
 
 export default function MyProjectDetail({ params }: any) {
   const [result, setResult] = useState<myProjectPostType>();
-  const [isOnLikeClick, setOnLike] = useState(false);
+  const [isOnLikeClick, setOnLike] = useState(true);
   const [likeUserNum, setLikeUserNum] = useState(0);
   const { data: session, status } = useSession();
 
@@ -43,43 +43,34 @@ export default function MyProjectDetail({ params }: any) {
   }
 
   // --------------------------------- 좋아요 클릭
+  const likedAlready = result?.like.some(obj => obj.email === session?.user?.email);
   const onClicklikeHandler = async (postId: number) => {
-    if (!session?.user?.email) { // 비회원은 이용할 수 없어용!
-      swal('잠깐!', '로그인 후 이용해주세요', 'warning')
-      return
-    }
-
-    setOnLike(!isOnLikeClick) // css
-
-    let setUpdateResult = {
-        field: "like",
-        updateKey: "postId",
-        updateValue: result.postId,
-        updateType: 'set',
-        value: {
-          email : session?.user?.email
-        }
-    }
-
-    const isOnTrue = result?.like.find(obj => obj.email === session?.user?.email);
-
-    if(isOnTrue){ // 이미 클릭 해서 값이 있으면
-      const filtered = await result?.like.filter((value, i, arr) => {
-        return value.email !== session?.user?.email
-      })
-      setUpdateResult.value = filtered;
-      setOnLike(!isOnLikeClick)
-    } else{
-      setUpdateResult.updateType = 'push';
-    }
-
-    const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
-    if (res && res.status === 200) {
-      await fetchData();
-    } else {
-      console.error('myProject like error', res);
-    }
+  if (!session?.user?.email) {
+    swal('잠깐!', '로그인 후 이용해주세요', 'warning');
+    return;
   }
+
+  const userEmail = session.user.email;
+  const filtered = result?.like.filter((value) => {
+    return value.email !== userEmail
+  })
+
+  const updateResult = {
+    field: "like",
+    updateKey: "postId",
+    updateValue: result?.postId,
+    updateType: likedAlready ? 'set' : 'push',
+    value: likedAlready ? filtered : {email: userEmail}
+  };  
+
+  const res = await detailStore('put', 'myProject', updateResult, result?.postId);
+  if (res && res.status === 200) {
+    await fetchData();
+    setOnLike(!isOnLikeClick);
+  } else {
+    console.error('myProject like error', res);
+  }
+}
 
   return (
     <>
@@ -98,7 +89,7 @@ export default function MyProjectDetail({ params }: any) {
                 <button
                   type='button'
                   onClick={() => { onClicklikeHandler(result.postId) }}
-                  className={isOnLikeClick ? 'active like' : 'like'}>
+                  className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
                   <p>♥ <span>{result.like.length}</span></p>
                 </button>
               </div>
