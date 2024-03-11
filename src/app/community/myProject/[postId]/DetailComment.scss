@@ -38,36 +38,81 @@
             padding: 1rem 0;
             border-bottom: 1px solid $wGray;
 
-            .top {
-                font-size: $s;
-                @include flexbox(s, c);
-                gap: 0.5rem;
+            #mpCommentsProfile {
+                @include flexbox(sb, c);
 
-                .mydUserPic {
+                .profileCont {
+                    font-size: $s;
+                    @include flexbox(s, c);
+                    gap: 0.5rem;
 
-                    img {
-                        object-fit: cover;
-                        border-radius: 50%;
-                        border: 1px solid $main;
+                    .mydUserPic {
+                        img {
+                            object-fit: cover;
+                            border-radius: 50%;
+                            border: 1px solid $main;
+                        }
+                    }
+
+                    .mydCommentDate {
+                        @include flexbox(c, c);
+                        color: $grayLight;
+
+                        &::before {
+                            margin-right: 0.5rem;
+                            width: 1px;
+                            height: 0.7rem;
+                            background-color: $grayLight;
+                            content: '';
+                        }
                     }
                 }
 
-                .mydCommentDate {
-                    @include flexbox(c, c);
-                    color: $grayLight;
+                .functionCont {
+                    @include flexbox;
+                    gap: 0.5rem;
 
-                    &::before {
-                        margin-right: 0.5rem;
-                        width: 1px;
-                        height: 0.7rem;
-                        background-color: $grayLight;
-                        content: '';
+                    button {
+                        color: $gray;
+                    }
+
+                    button:hover {
+                        text-decoration: underline;
                     }
                 }
             }
 
             .commentText {
                 margin-top: 1rem;
+
+                textarea {
+                    width: 100%;
+                    height: 4rem;
+                    padding: 1rem;
+                    resize: none;
+                    outline: none;
+                    line-height: 180%;
+                    border: 1px solid #CCCCCC;
+                    border-radius: 0.25rem;
+                }
+
+                .updateBtnCont {
+                    margin-top: 0.5rem;
+                    width: 100%;
+                    @include flexbox(e);
+
+                    .updateComplete {
+                        transition: 0.2s ease-in-out;
+                        padding: 0.5rem;
+                        border-radius: 3px;
+                        background-color: $grayLight;
+                        color: #fff;
+                    }
+
+                    .updateComplete:hover {
+                        background-color: $gray;
+                    }
+                }
             }
         }
     }
