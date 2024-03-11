@@ -103,7 +103,7 @@ export default function Login() {
 
 
     return (
-        <section>
+        <section id="loginpage">
             <div className="loginMain">
                 <h2>로그인</h2>
 
