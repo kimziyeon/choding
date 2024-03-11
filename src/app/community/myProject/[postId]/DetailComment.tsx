@@ -132,7 +132,7 @@ export default function DetailComment({ result, fetchData }) {
                 <p className='mydCommentDate'>{diffInDaysForItem}일 전</p>
               </div>
               <div className='functionCont'
-              // style={{ display: session?.user?.email === item.email ? 'flex' : 'none' }}
+                style={{ display: session?.user?.email === item.email ? 'flex' : 'none' }}
               >
                 <button type="button"
                   className='update'
