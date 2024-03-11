@@ -2,7 +2,7 @@
 "use client"
 
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill, {Quill} from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { connectToDB } from '@/lib/mongodb';
@@ -18,10 +18,21 @@ export default function QuillExample({ onSaveContent }: QuillExampleProps) {
 
     const [value, setValue] = useState<string>('');
     const [title, setTitle] = useState<string>('');
+    const [images, setImages] = useState<string[]>([]);
 
     const handleChange = (content: string, delta: any, source: string, editor: any) => {
         setValue(content);
+        // extractImages(content);
     };
+
+    // const extractImages = (content : string) =>{
+    //     const imgTags = content.match(/<img[^>]+src="([^">]+)"/g);
+    //     if (imgTags) {
+    //         // 추출된 이미지 URL 배열에 추가
+    //         const extractedImages = imgTags.map(tag => tag.match(/src="([^"]+)"/)[1]);
+    //         setImages(extractedImages);
+    //     }
+    // };
 
     const handleSave = () => {
         onSaveContent(title, value);
@@ -37,7 +48,7 @@ export default function QuillExample({ onSaveContent }: QuillExampleProps) {
             [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
             [{ size: [] }],
             ['bold', 'italic', 'underline', 'strike', 'blockquote'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+            // [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
             ['link', 'image'], // 이미지 삽입 버튼 추가
             ['clean']
         ],

@@ -13,6 +13,8 @@ export default function QnADetail({ params }: any) {
     const id = params.postId
     const name = session?.user?.name
 
+    console.log(data)
+
     const {
         register,
         handleSubmit,
@@ -24,9 +26,9 @@ export default function QnADetail({ params }: any) {
         const commentText = formdata.comment;
         const comment = {commentText, name}
 
-        console.log(comment)
+        // console.log(comment)
 
-        axios.post(`/api/post${id}`, comment)
+        axios.post(`/api/post/${id}`, comment)
         
     }
 
@@ -36,7 +38,7 @@ export default function QnADetail({ params }: any) {
             const d = response.data.filter((obj: any) => obj._id == id)
             const e = d[0].comment
 
-            console.log(e)
+            // console.log(e)
 
             setData(d);
             setComment(e);
@@ -71,9 +73,9 @@ export default function QnADetail({ params }: any) {
             }
                 <div className='commentContainer'>
                     {
-                        comment &&(
-                            <div></div>
-                        )
+                        // comment &&(
+                        //     <div></div>
+                        // )
                     }
                 </div>
 
