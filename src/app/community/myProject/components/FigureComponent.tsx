@@ -23,7 +23,7 @@ export default function FigureComponent() {
                     onClick={() => { onClickHandler(item.postId) }}
                     key={item.postId}>
                     {
-                        !item.imgSrc && (item.imgSrc == undefined || item.imgSrc.length < 1) ? <div className='noImage'></div> : <img src={item.imgSrc} alt={item.title} />
+                        !item.image && (item.image == undefined || item.image.length < 1) ? <div className='noImage'></div> : <img src={item.image} alt={item.title} />
                     }
                     <figcaption>
                         <div className='figcaption'>

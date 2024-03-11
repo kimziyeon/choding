@@ -135,36 +135,36 @@
     ],
     "naver": [
         {
-            "title": "[넥스트 JS] - 신규프로젝트 수정 에러",
-            "link": "https://blog.naver.com/wormsbrother/223053260427",
-            "description": "위와같이 index.js 파일의 내용을 리액트로 적어주면 바로 해결된다. 감사합니다. #NextJS #신규파일수정 #에러 #에러해결 #메인페이지수정방법 #넥스트JS기초",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230323"
+            "title": "[2024.01.18] SASS 셋팅 문법",
+            "link": "https://blog.naver.com/jibbbang2/223326849116",
+            "description": "watch sass ) [ SASS 파일생성 ] 파일형식 : .scss ex. test.scss 이런식으로 생성하면 된다. [ SASS 문법... [ SASS 없이 CSS 에서도 문법 사용이 가능하다. ] ( 근데 사용법이 복잡함 ) [ .scss 파일형식 말고... ",
+            "bloggername": "★",
+            "bloggerlink": "blog.naver.com/jibbbang2",
+            "postdate": "20240118"
         },
         {
-            "title": "NEXT.JS 기초개념",
-            "link": "https://blog.naver.com/qpxmaks/223231310244",
-            "description": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
-            "bloggername": "정보보안전문가",
-            "bloggerlink": "blog.naver.com/qpxmaks",
-            "postdate": "20231008"
+            "title": "Sass 기본 문법 예시 정리",
+            "link": "https://blog.naver.com/nasca55/223096854380",
+            "description": "오늘은 얼마 전에 Sass라는 CSS 라이브러리를 배운 기념으로 Sass 기본 문법에 대해 메모해놨던... Sass 문법 1. 변수 : 자주 쓰는 값들을 변수에 저장하면 쉽게 갖다 쓸수도 있고, 나중에 수정할 때도... ",
+            "bloggername": "응애프로그래머",
+            "bloggerlink": "blog.naver.com/nasca55",
+            "postdate": "20230509"
         },
         {
-            "title": "node.js(다운로드, 기초 설명)",
-            "link": "https://blog.naver.com/ssora-/223021701469",
-            "description": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
-            "bloggername": "이모저모",
-            "bloggerlink": "blog.naver.com/ssora-",
-            "postdate": "20230220"
+            "title": "[코딩애플]아니면 CSS대신 SASS를 쓰자 (SASS 문법 10분... ",
+            "link": "https://blog.naver.com/with_with_/222661856566",
+            "description": "이제 여기에 sass 문법을 적용하면 끝입니다. sass 문법을 사용하는 이유는 프로그래밍... 함수만드는 문법입니다. 함수는 코드를 축약하고 재사용할 때 많이 쓰죠? sass에서는 function 대신 @mixin... ",
+            "bloggername": "하와이검은파도",
+            "bloggerlink": "blog.naver.com/with_with_",
+            "postdate": "20220302"
         },
         {
-            "title": "[넥스트 JS] 중첩 동적 라우트 세그먼트 한번에 잡기",
-            "link": "https://blog.naver.com/wormsbrother/223063036862",
-            "description": "#프론트엔드 #프론트엔드공부 #프론트엔드학습 #프론트엔드실습 #넥스트JS ＃넥스트기초학습 #넥스트기초실습 #넥스트기초공부 #넥스트기초 #중첩라우팅세그먼트 #동적라우팅 #중첩라우팅... ",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230403"
+            "title": "실무에서 사용하는 SASS 문법 정리",
+            "link": "https://blog.naver.com/wd_byeong/223221106968",
+            "description": "것이 sass이다. 1. 변수 사용법에 대해 알아보자 이제 이 색을 사용할 때 아래와 같이 사용해주면... 했는데 sass에서는 class를 한번에 관리할 수 있다. 코드 가독성이 좋아질 거 같다.(물론 모든... ",
+            "bloggername": "하늘",
+            "bloggerlink": "blog.naver.com/wd_byeong",
+            "postdate": "20230925"
         }
     ]
 }

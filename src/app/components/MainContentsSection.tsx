@@ -4,7 +4,6 @@ import './mainContentsSection.scss'
 import Image from 'next/image';
 import ArrowRight from '@/essets/arrowRight.svg';
 import ContentsFigure from './ContentsFigure';
-import mainData from '../mainData.json';
 import { useEffect, useState } from 'react';
 import { userDataType } from '@/types/user'
 

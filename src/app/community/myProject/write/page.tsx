@@ -26,7 +26,7 @@ export default function MyProjectWrite() {
     let checkResult: myProjectPostType[] = [];
 
     useEffect(() => {
-        if(status !== 'authenticated'){ // 비회원 글쓰기 방지
+        if (status !== 'authenticated') { // 비회원 글쓰기 방지
             swal("로그인해주세요!", "비회원은 글을 작성할 수 없습니다.", "warning")
             router.push('/login');
         }
@@ -63,8 +63,8 @@ export default function MyProjectWrite() {
             link: "",
             member: [],
             stack: [],
-            imgSrc: undefined,
-            like: 0,
+            image: undefined,
+            like: [],
             comments: [],
             name: session?.user?.name,
             email: session?.user?.email,
@@ -89,7 +89,7 @@ export default function MyProjectWrite() {
                 await uploadBytes(storageRef, file)
                     .then(async snapshot => {
                         const url = await getDownloadURL(ref(storage, snapshot.metadata.fullPath));
-                        setValue('imgSrc', url, { shouldValidate: true });
+                        setValue('image', url, { shouldValidate: true });
                         setImgText('이미지 업로드 완료')
                     })
                 swal("성공", "이미지가 업로드 되었습니다 :)", "success")

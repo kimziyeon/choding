@@ -9,10 +9,14 @@ export type myProjectPostType = {
     member: string[],
     stack: string[],
     image: string,
-    like: number,
+    like: LikeUserEmail[],
     comments: myProjectCommentType[],
     name: string | null | undefined,
     email: string | null | undefined
+}
+
+export type LikeUserEmail = {
+    email: string
 }
 
 export type myProjectCommentType = {
