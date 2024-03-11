@@ -57,7 +57,7 @@ export default function MyProjectDetail({ params }: any) {
               </div>
             </div>
             <div className='mpdhBottom'>
-              <span className='userId'>{result.userId}</span>
+              <span className='userId'>{result.name}</span>
               <span className='postDate'>{result.date}</span>
             </div>
           </section>
