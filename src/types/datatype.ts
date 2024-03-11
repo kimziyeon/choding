@@ -8,7 +8,7 @@ export type myProjectPostType = {
     link: string,
     member: string[],
     stack: string[],
-    imgSrc: string,
+    image: string,
     like: number,
     comments: myProjectCommentType[],
     name: string | null | undefined,

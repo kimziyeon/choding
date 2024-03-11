@@ -8,6 +8,9 @@
 
     .contLeft {
         width: calc((100% - 4rem) / 3);
+        white-space: nowrap;
+        text-align: center;
+        @include column-flexbox(s, c);
 
         .subtext {
             font-size: $s;
@@ -18,7 +21,6 @@
         .title {
             font-size: $m;
             margin-bottom: 2rem;
-            white-space: nowrap;
 
             span {
                 color: $main;
@@ -335,7 +337,7 @@
 
 @include responsive(s) {
     .contentsBox {
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
 
     .bottomContents {
