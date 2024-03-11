@@ -43,7 +43,7 @@ export default function MyProjectDetail({ params }: any) {
   }
 
   // --------------------------------- 좋아요 클릭
-  const onClicklikeHandler = (postId: number) => {
+  const onClicklikeHandler = async (postId: number) => {
     if (!session?.user?.email) { // 비회원은 이용할 수 없어용!
       swal('잠깐!', '로그인 후 이용해주세요', 'warning')
       return
@@ -51,27 +51,36 @@ export default function MyProjectDetail({ params }: any) {
 
     setOnLike(!isOnLikeClick) // css
 
-    // myProject의 해당 아이템의 like[] 에 session.user.email을 객체로 push함
-    const setUpdateResult = {
-      field: "like",
-      updateKey: "postId",
-      updateValue: result.postId,
-      updateType: "push",
-      value: {
-        email: session?.user?.email
+    if (result?.like.find(obj => obj.email === session?.user?.email)) {// 이미 클릭 했으면
+      // 삭제
+      const filtered = await result.like.filter((value, i, arr) => {
+        return value.email !== session?.user?.email
+      })
+      const setUpdateResult = {
+        field: "like",
+        updateKey: "postId",
+        updateValue: result.postId,
+        updateType: "push",
+        value: filtered
+      }
+      const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
+    } else {
+      const setUpdateResult = {
+        field: "like",
+        updateKey: "postId",
+        updateValue: result.postId,
+        updateType: "push",
+        value: {
+          email: session?.user?.email
+        }
+      }
+      const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
+      if (res && res.status === 200) {
+        await fetchData();
+      } else {
+        console.error('--------------삭제 실패!!!', res);
       }
     }
-
-    // const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
-    // if (res && res.status === 200) {
-    //   await fetchData();
-    //   if (keyword === 'update') {
-    //     setUpdate(!isOnUpdate)
-    //   }
-    // } else {
-    //   console.error('--------------삭제 실패!!!', res);
-    // }
-
 
     // 좋아요수 : get like[] 객체 length
   }
