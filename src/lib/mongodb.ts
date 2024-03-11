@@ -19,6 +19,18 @@ export const connectToDB = async (type: string, body: any, colName: string | nul
         if (aaa.length) return;
     }
 
+    if (colName == 'myPoint') {
+        let data;
+        switch (type) {
+            case 'post': await collection.insertOne(body); break;
+            case 'put': data = await collection.updateOne({ email: body.email }, { $set: { level: body.level, point: body.point } });
+            case 'get': data = await collection.find({ email: body }).toArray();
+        }
+        return data
+    }
+
+
+
     switch (type) {
         case 'post': await collection.insertOne(body);
             break;

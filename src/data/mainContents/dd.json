@@ -135,36 +135,36 @@
     ],
     "naver": [
         {
-            "title": "[넥스트 JS] - 신규프로젝트 수정 에러",
-            "link": "https://blog.naver.com/wormsbrother/223053260427",
-            "description": "위와같이 index.js 파일의 내용을 리액트로 적어주면 바로 해결된다. 감사합니다. #NextJS #신규파일수정 #에러 #에러해결 #메인페이지수정방법 #넥스트JS기초",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230323"
+            "title": "AJAX 사용법 총정리 (axios, jquery, fetch)",
+            "link": "https://blog.naver.com/tex02/223268631883",
+            "description": "AJAX 사용법 2. Axios를 사용하기 위해서는 먼저 심어야 합니다. 지금 시대 좋은 때 아닙니까 테스트 용도이니 CDN으로 심읍시다. 실제 운영할 때는 직접 다운받아 서버에 인클루드 하는 것이... ",
+            "bloggername": "라이트 코딩",
+            "bloggerlink": "blog.naver.com/tex02",
+            "postdate": "20231123"
         },
         {
-            "title": "NEXT.JS 기초개념",
-            "link": "https://blog.naver.com/qpxmaks/223231310244",
-            "description": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
-            "bloggername": "정보보안전문가",
-            "bloggerlink": "blog.naver.com/qpxmaks",
-            "postdate": "20231008"
+            "title": "[node.js] axios 사용법",
+            "link": "https://blog.naver.com/lucakim82/222931339083",
+            "description": "//http-common.js 파일import axios from axios; export default axios.create({ baseURL: http://~~~, // url 경로 headers: { Content-type: application/json //header 설정 }... ",
+            "bloggername": "lucakim82",
+            "bloggerlink": "blog.naver.com/lucakim82",
+            "postdate": "20221117"
         },
         {
-            "title": "node.js(다운로드, 기초 설명)",
-            "link": "https://blog.naver.com/ssora-/223021701469",
-            "description": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
-            "bloggername": "이모저모",
-            "bloggerlink": "blog.naver.com/ssora-",
-            "postdate": "20230220"
+            "title": "axios사용법 fetch와 차이점 백엔드 서버 통신하기 Get 방식",
+            "link": "https://blog.naver.com/thvldk0025/222937990606",
+            "description": "(아래 비동기 promise,async,await에 관한 노트 참고) fetch() 사용법 fetch함수는 2개의 인자를 받는데... React에서 OpenAPI(유튜브 등) 이용한 통신을 할때 Axios를 주로 사용한다 axios사용법 axios의... ",
+            "bloggername": "Front-end notes",
+            "bloggerlink": "blog.naver.com/thvldk0025",
+            "postdate": "20221125"
         },
         {
-            "title": "[넥스트 JS] 중첩 동적 라우트 세그먼트 한번에 잡기",
-            "link": "https://blog.naver.com/wormsbrother/223063036862",
-            "description": "#프론트엔드 #프론트엔드공부 #프론트엔드학습 #프론트엔드실습 #넥스트JS ＃넥스트기초학습 #넥스트기초실습 #넥스트기초공부 #넥스트기초 #중첩라우팅세그먼트 #동적라우팅 #중첩라우팅... ",
-            "bloggername": "꿈틀거리는 개발블로그",
-            "bloggerlink": "blog.naver.com/wormsbrother",
-            "postdate": "20230403"
+            "title": "[react] axios 사용법",
+            "link": "https://blog.naver.com/jjjo0o/223221967586",
+            "description": "#react #axios AJAX란?(in 제이쿼리) GET, POST 요청할 때 새로고침 없이 데이터 주고받기가 가능... fetch axios란?(in 프레임워크) promise 기반의 HTTP 클라이언트 라이브러리 브라우저와 Node.... ",
+            "bloggername": "meraki",
+            "bloggerlink": "blog.naver.com/jjjo0o",
+            "postdate": "20230926"
         }
     ]
 }

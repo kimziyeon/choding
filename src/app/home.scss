@@ -13,7 +13,7 @@
     .lvTestBtn {
         @include column-flexbox(c, c);
         position: fixed;
-        right: 30px;
+        right: calc(50% - 330px);
         bottom: 25px;
         cursor: pointer;
 

@@ -12,9 +12,10 @@ import { useSession } from 'next-auth/react';
 
 export default function MyPage() {
     const { data: session, status } = useSession();
-    const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session.user.image})` } : {}; //유저이미지
+    const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session?.user?.image})` } : {}; //유저이미지
 
     const [randomTitle, setRandomTitle] = useState('');
+
     useEffect(() => {
         const title = [
             "스치면 인연, 스며들면 스폰지밥",
@@ -45,24 +46,23 @@ export default function MyPage() {
             <article className='myPageBack'>
                 <article className='myPageTitle'>
                     <div className='myTitle1'>
-                        {/* <span>{session.user.name}</span> */}님 어서오세요!</div>
+                        {status === 'authenticated' ? <span>{session?.user?.name}</span> : '비회원'}
+                        님 어서오세요!</div>
                     <div className='myTitle2'>{randomTitle}</div>
 
                     <div className='myInfo'>
                         <div className='myLv'>
                             <p>레벨</p>
-                            {/* <b>{session.user.level}</b> */}
+                            <b>
+                                {status === 'authenticated' ? (session?.user?.level ? session.user.level : '') : ''}
+                            </b>
                         </div>
 
-                        <div className='myAct'>
-                            <p>내 질문</p>
-                            <b>1000</b>
+                        <div className='myPot'>
+                            <p>포인트</p>
+                            <b>1</b>
                         </div>
 
-                        <div className='myAct'>
-                            <p>좋아요</p>
-                            <b>2000</b>
-                        </div>
                     </div>
                     <div className='myImg'>
                         <div style={myImgStyle}>
