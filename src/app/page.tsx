@@ -42,7 +42,7 @@ export default function Home() {
 
   // 데이터 가져오기  
   async function dataCrl(type: string) {
-    const res = await serverStore(type, 'LoginData');
+    const res = await serverStore(type, 'myPoint');
     if (res !== null) {
       setLoginData(res.data)
     }
@@ -96,7 +96,7 @@ export default function Home() {
       <MainBanner
         title={title}
       />
-      <MainSlide/>
+      <MainSlide />
       <MainContentsSection
         option={0}
         subtext={'유튜브 테스트에용'}

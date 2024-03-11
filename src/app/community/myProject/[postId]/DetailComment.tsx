@@ -129,7 +129,11 @@ export default function DetailComment({ result, fetchData }) {
           return <div className='mpdComment' key={i}>
             <section id="mpCommentsProfile">
               <div className='profileCont'>
-                <p className='mydUserPic'><Image src={item.image} width={36} height={36} alt="user profile" /></p>
+                <p className='mydUserPic'>
+                  {
+                    !item.image || item.image == undefined || item.image == null || item.image.length < 1 ? <div className='noImage'></div> : <Image src={item.image} width={36} height={36} alt="user profile" />
+                  }
+                </p>
                 <p className='mydUserId'>{item.name}</p>
                 <p className='mydCommentDate'>{diffInDaysForItem}일 전</p>
               </div>

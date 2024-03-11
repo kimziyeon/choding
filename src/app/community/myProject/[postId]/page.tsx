@@ -77,7 +77,7 @@ export default function MyProjectDetail({ params }: any) {
           </section>
           <section className='bodyText'>
             {
-              result.imgSrc == null ? null : <Image src={result.imgSrc} width={480} height={480} alt="img" ></Image>
+              result.image == null ? null : <Image src={result.image} width={480} height={480} alt="img" ></Image>
             }
             <div className='bodyTextBottom'>
               <ul>
