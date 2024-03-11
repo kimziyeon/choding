@@ -190,11 +190,14 @@
 .contentsBox.num1,
 .contentsBox.num2 {
     .contLeft {
+        text-align: left;
         align-items: flex-start;
+        word-break: keep-all;
+        white-space: wrap;
     }
 
     .contRight {
-        width: 100%;
+        width: calc((100% - 2rem) / 3 * 2);
         @include flexbox();
         gap: 1rem;
         flex-wrap: wrap;
@@ -335,6 +338,10 @@
                 width: 100%;
                 justify-content: flex-end;
             }
+        }
+
+        .contRight {
+            width: 100%;
         }
     }
 }
