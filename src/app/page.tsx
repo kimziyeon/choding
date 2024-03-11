@@ -6,14 +6,16 @@ import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
 import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
+import MainSlide from './components/MainSlide';
 import serverStore from '@/lib/server/serverStore';
 import { useState, useEffect } from 'react';
 import levelKeyword from '@/data/levelKeyword.json';
-import cdData from '@/data/main/cd.json';
-import jdData from '@/data/main/jd.json';
-import gdData from '@/data/main/gd.json';
-import ddData from '@/data/main/dd.json';
-import zdData from '@/data/main/zd.json';
+import cdData from '@/data/mainContents/cd.json';
+import jdData from '@/data/mainContents/jd.json';
+import gdData from '@/data/mainContents/gd.json';
+import ddData from '@/data/mainContents/dd.json';
+import zdData from '@/data/mainContents/zd.json';
+import community from '@/data/community.json';
 
 
 export default function Home() {
@@ -27,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     dataCrl('get')
     if (status !== 'authenticated') {
-      setTitle(['리액트 초급', '리액트 훅', '넥스트 라우팅']);
+      setTitle(levelKeyword[0].cd)
       setResult(cdData)
     }
   }, [status])
@@ -94,14 +96,7 @@ export default function Home() {
       <MainBanner
         title={title}
       />
-      <MainContentsSection
-        option={3}
-        subtext={'초딩들이 스크랩한 강의에요'}
-        title={'요즘 인기있는'}
-        loginData={loginData}
-        result={result.popular}
-      />
-
+      <MainSlide/>
       <MainContentsSection
         option={0}
         subtext={'유튜브 테스트에용'}
@@ -132,7 +127,7 @@ export default function Home() {
           subtext={'모두와 공유해요'}
           title={'커뮤니티'}
           loginData={loginData}
-          result={result.community}
+          result={community}
         />
         <section id="mainTodayQuiz" className="num5">
           <div className='contLeft'>
