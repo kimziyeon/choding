@@ -51,45 +51,34 @@ export default function MyProjectDetail({ params }: any) {
 
     setOnLike(!isOnLikeClick) // css
 
-    if (result?.like.find(obj => obj.email === session?.user?.email)) {// 이미 클릭 했으면
-      console.log('이미 값이 있어용')
-      // 삭제
-      const filtered = await result.like.filter((value, i, arr) => {
-        return value.email !== session?.user?.email
-      })
-      console.log(filtered)
-      const setUpdateResult = {
+    let setUpdateResult = {
         field: "like",
         updateKey: "postId",
         updateValue: result.postId,
-        updateType: "set",
-        value: filtered
-      }
-      const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
-      if (res && res.status === 200) {
-        await fetchData();
-      } else {
-        console.error('--------------삭제 실패!!!', res);
-      }
-    } else { // 좋아요 처음 누름
-      const setUpdateResult = {
-        field: "like",
-        updateKey: "postId",
-        updateValue: result.postId,
-        updateType: "push",
+        updateType: 'set',
         value: {
-          email: session?.user?.email
+          email : session?.user?.email
         }
-      }
-      const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
-      if (res && res.status === 200) {
-        await fetchData();
-      } else {
-        console.error('--------------삭제 실패!!!', res);
-      }
     }
 
-    // 좋아요수 : get like[] 객체 length
+    const isOnTrue = result?.like.find(obj => obj.email === session?.user?.email);
+
+    if(isOnTrue){ // 이미 클릭 해서 값이 있으면
+      const filtered = await result?.like.filter((value, i, arr) => {
+        return value.email !== session?.user?.email
+      })
+      setUpdateResult.value = filtered;
+      setOnLike(!isOnLikeClick)
+    } else{
+      setUpdateResult.updateType = 'push';
+    }
+
+    const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
+    if (res && res.status === 200) {
+      await fetchData();
+    } else {
+      console.error('myProject like error', res);
+    }
   }
 
   return (
