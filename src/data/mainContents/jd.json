@@ -1,14 +1,14 @@
 {
     "youtube": [
         {
-            "title": "중딩의 데이터입니다",
-            "link": "https://ko.legacy.reactjs.org/",
+            "title": "입문자를 위한 자바스크립트 기초 #0 수업 소개",
+            "link": "https://youtu.be/9olX2yyXnVA?si=vXESvNMEqaHN8-FY",
             "displayLink": "ko.legacy.reactjs.org",
-            "snippet": "선언형. React는 상호작용이 많은 UI를 만들 때 생기는 어려움을 줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요. 그럼 React는 데이터가 변경됨에 ...",
+            "snippet": "입문자를 위한 자바스크립트 기초 강의",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "src": "https://i.ytimg.com/vi/9olX2yyXnVA/mqdefault.jpg",
                         "width": "310",
                         "height": "163"
                     }
@@ -16,14 +16,14 @@
             }
         },
         {
-            "title": "시작하기 – React",
-            "link": "https://ko.legacy.reactjs.org/docs/getting-started.html",
+            "title": "입문자를 위한 자바스크립트 기초 #1 자바스크립트 소개",
+            "link": "https://youtu.be/wQ1hZ1Wrqck?si=PExyIJmcry-V8sF-",
             "displayLink": "ko.legacy.reactjs.org",
-            "snippet": "새 React 앱 만들기. React 프로젝트를 시작한다면 스크립트 태그를 사용한 간단한 HTML 페이지를 만드는 것이 최고의 방법일 것입니다. 설치하는 데 1분밖에 걸리지 ...",
+            "snippet": "입문자를 위한 자바스크립트 기초 강의",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "src": "https://i.ytimg.com/vi/9olX2yyXnVA/mqdefault.jpg",
                         "width": "310",
                         "height": "163"
                     }
@@ -31,14 +31,14 @@
             }
         },
         {
-            "title": "[번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기",
-            "link": "https://velog.io/@eunbinn/modularizing-react-apps",
+            "title": "입문자를 위한 자바스크립트 기초 #3 객체 그리고 window",
+            "link": "https://youtu.be/re8fIHNxyUY?si=E1WBE9yFUKrN_wtl",
             "displayLink": "velog.io",
             "snippet": "Feb 22, 2023 ... [번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기 · 리액트는 뷰를 구축하기 위한 소박한 라이브러리입니다. · 현실 세계의 리액트 ...",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFLlEj0lHkWn_FJcROHoiwnu7AU0-c_BHBjTtHjAZUJfWVaC4u77TMA_s",
+                        "src": "https://i.ytimg.com/vi/lJd6VpkPM9I/mqdefault.jpg",
                         "width": "297",
                         "height": "170"
                     }

@@ -1,14 +1,14 @@
 {
     "youtube": [
         {
-            "title": "초딩의 데이터입니다",
-            "link": "https://ko.legacy.reactjs.org/",
+            "title": "입문자를 위한 HTML 기초 강의 #0 강의 소개",
+            "link": "https://youtu.be/8kJwTrs6e-4?si=y6qRIhYa7XXPloQ4",
             "displayLink": "ko.legacy.reactjs.org",
-            "snippet": "선언형. React는 상호작용이 많은 UI를 만들 때 생기는 어려움을 줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요. 그럼 React는 데이터가 변경됨에 ...",
+            "snippet": "안녕하세요! 입문자를 위한 HTML 기초 강의입니다.  입문자 분들이 부담없이 무료로 들을 수 있는 강의를 만들어보고 싶어서 시작한 강의입니다. 원래는 처음부터 끝까지 다 만들어놓은 다음 한꺼번에 업로드할 생각이었는데,\n그러면 왠지 미루고 미루다 끝내지 못할 것 같다는 생각이 들어서(ㅠ_ㅠ) \n시간 날 때마다 하나씩 만들고 천천히 업로드할 계획입니다. \n\n누구나 편하게 볼 수 있도록 다소 라이트한 느낌으로 만들 계획이고, 동영상 15개로 구성된 약 2시간 짜리 강의가 될 예정이나 변동 가능성 있습니다.넉넉잡아 4월이 가기 전까지는 끝까지 다 올리는 것이 목표입니다.",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "src": "https://i.ytimg.com/vi/8kJwTrs6e-4/mqdefault.jpg",
                         "width": "310",
                         "height": "163"
                     }
@@ -16,14 +16,14 @@
             }
         },
         {
-            "title": "시작하기 – React",
-            "link": "https://ko.legacy.reactjs.org/docs/getting-started.html",
+            "title": "입문자를 위한 HTML 기초 강의 #1 HTML이란? HTML에 대해 알아보자",
+            "link": "https://youtu.be/dOpFU0apoes?si=l7Y4wuOyHKCm_lUR",
             "displayLink": "ko.legacy.reactjs.org",
-            "snippet": "새 React 앱 만들기. React 프로젝트를 시작한다면 스크립트 태그를 사용한 간단한 HTML 페이지를 만드는 것이 최고의 방법일 것입니다. 설치하는 데 1분밖에 걸리지 ...",
+            "snippet": "영상 속 HTML 문서 만들기가 맥 운영체제에서 진행됐기 때문에 윈도우 운영체제에서는 따라하기 어려우셨을수도 있습니다. 그래서 제 블로그에 윈도우 메모장으로 HTML 문서 만드는 법에 대한 정리를 해두었으니 필요하신 분들은 참고해주세요! 원리(?)는 완전히 똑같습니다. 감사합니다. 메모장으로 HTML 문서 만들기",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "src": "https://i.ytimg.com/vi/dOpFU0apoes/mqdefault.jpg",
                         "width": "310",
                         "height": "163"
                     }
@@ -31,14 +31,14 @@
             }
         },
         {
-            "title": "[번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기",
-            "link": "https://velog.io/@eunbinn/modularizing-react-apps",
+            "title": "HTML기초01_h1/p/div태그 알아보기(+비쥬얼스튜디오코드)",
+            "link": "https://youtu.be/J3hq7-KyIts?si=Ot-hVd-OfsiMxScI",
             "displayLink": "velog.io",
-            "snippet": "Feb 22, 2023 ... [번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기 · 리액트는 뷰를 구축하기 위한 소박한 라이브러리입니다. · 현실 세계의 리액트 ...",
+            "snippet": "안녕하세요. 이미니강사입니다 HTML기초01_h1/p/div태그 알아보기입니다. 순서대로 천천히 HTML을 익혀보세요:) 여러분들의 좋아요! 구독!은 이미니강사의 힘이됩니다 #웹디자인기능사 #웹디자인기능사실기  #HTML기초 #html",
             "pagemap": {
                 "cse_thumbnail": [
                     {
-                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFLlEj0lHkWn_FJcROHoiwnu7AU0-c_BHBjTtHjAZUJfWVaC4u77TMA_s",
+                        "src": "https://i.ytimg.com/vi/J3hq7-KyIts/mqdefault.jpg",
                         "width": "297",
                         "height": "170"
                     }

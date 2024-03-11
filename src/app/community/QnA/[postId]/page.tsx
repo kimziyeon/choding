@@ -5,6 +5,7 @@ import './post.scss'
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useSession } from 'next-auth/react';
+import detailStore from '@/lib/server/detailStore';
 
 export default function QnADetail({ params }: any) {
     const [data, setData] = useState();
@@ -20,6 +21,7 @@ export default function QnADetail({ params }: any) {
         handleSubmit,
         formState: { errors },
     } = useForm(); 
+    
 
     const onSubmit = async (formdata:any) =>{
         // console.log(formdata)
@@ -28,8 +30,8 @@ export default function QnADetail({ params }: any) {
 
         // console.log(comment)
 
-        axios.post(`/api/post/${id}`, comment)
-        
+        const res = await detailStore('put','qna',comment)
+        await fetchData();
     }
 
     const fetchData = async () => {
