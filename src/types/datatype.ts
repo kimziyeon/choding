@@ -8,11 +8,15 @@ export type myProjectPostType = {
     link: string,
     member: string[],
     stack: string[],
-    imgSrc: string,
-    like: number,
+    image: string,
+    like: LikeUserEmail[],
     comments: myProjectCommentType[],
     name: string | null | undefined,
     email: string | null | undefined
+}
+
+export type LikeUserEmail = {
+    email: string
 }
 
 export type myProjectCommentType = {
