@@ -4,7 +4,9 @@
 #MyProjectTotal {
     .communityFigure {
         margin: 1rem 0;
+        padding: 1rem;
         width: calc((100% - 4rem)/3);
+        transition: 0.3s ease-in-out;
 
         .noImage,
         img {
@@ -24,7 +26,7 @@
 
             .figcaption {
                 .top {
-                    height: 8rem;
+                    height: 7rem;
 
                     .goal {
                         font-size: $s;
@@ -68,16 +70,28 @@
                 }
 
                 .bottom {
-                    font-size: $t;
+                    font-size: $s;
                     color: $gray;
 
-                    .date {}
-
-                    .userId {
+                    .comments,
+                    .likeNum {
                         padding-left: 1rem;
+                    }
+
+                    .sub2 {
+                        margin-top: 0.5rem;
+
+                        .likeNum {
+                            color: $main;
+                        }
                     }
                 }
             }
+        }
+
+        &:hover {
+            box-shadow: 0 0 10px 0 $grayLight;
+            border-radius: 0.5rem;
         }
     }
 

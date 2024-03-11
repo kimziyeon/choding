@@ -8,12 +8,15 @@ import { myProjectPostType } from '@/types/datatype';
 import DetailComment from './DetailComment';
 import Share from '@/essets/share.svg';
 import Heart from '@/essets/heart.svg';
+import { useSession } from 'next-auth/react';
 import './MyProjectDetail.scss'
+import swal from 'sweetalert';
 
 export default function MyProjectDetail({ params }: any) {
   const [result, setResult] = useState<myProjectPostType>();
   const [isOnLikeClick, setOnLike] = useState(false);
   const [likeUserNum, setLikeUserNum] = useState(0);
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     console.log(result);
@@ -41,10 +44,35 @@ export default function MyProjectDetail({ params }: any) {
 
   // --------------------------------- 좋아요 클릭
   const onClicklikeHandler = (postId: number) => {
+    if (!session?.user?.email) { // 비회원은 이용할 수 없어용!
+      swal('잠깐!', '로그인 후 이용해주세요', 'warning')
+      return
+    }
+
     setOnLike(!isOnLikeClick) // css
 
-    // 클릭하면 css 변경하고
-    // myProject의 해당 아이템의 like[] 에 session.user.email을 객체로 추가함
+    // myProject의 해당 아이템의 like[] 에 session.user.email을 객체로 push함
+    const setUpdateResult = {
+      field: "like",
+      updateKey: "postId",
+      updateValue: result.postId,
+      updateType: "push",
+      value: {
+        email: session?.user?.email
+      }
+    }
+
+    // const res = await detailStore('put', 'myProject', setUpdateResult, result.postId);
+    // if (res && res.status === 200) {
+    //   await fetchData();
+    //   if (keyword === 'update') {
+    //     setUpdate(!isOnUpdate)
+    //   }
+    // } else {
+    //   console.error('--------------삭제 실패!!!', res);
+    // }
+
+
     // 좋아요수 : get like[] 객체 length
   }
 
@@ -66,7 +94,7 @@ export default function MyProjectDetail({ params }: any) {
                   type='button'
                   onClick={() => { onClicklikeHandler(result.postId) }}
                   className={isOnLikeClick ? 'active like' : 'like'}>
-                  <p>♥ <span>{likeUserNum}</span></p>
+                  <p>♥ <span>{result.like.length}</span></p>
                 </button>
               </div>
             </div>
