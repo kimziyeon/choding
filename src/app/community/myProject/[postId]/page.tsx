@@ -12,6 +12,8 @@ import './MyProjectDetail.scss'
 
 export default function MyProjectDetail({ params }: any) {
   const [result, setResult] = useState<myProjectPostType>();
+  const [isOnLikeClick, setOnLike] = useState(false);
+  const [likeUserNum, setLikeUserNum] = useState(0);
 
   useEffect(() => {
     console.log(result);
@@ -28,13 +30,22 @@ export default function MyProjectDetail({ params }: any) {
     fetchData();
   }, []);
 
+  // --------------------------------- 공유 클릭
   const shareHandler = () => {
     if (result) {
       const url = encodeURIComponent(result.link);
       const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
       window.open(facebookUrl, "_blank");
     }
+  }
 
+  // --------------------------------- 좋아요 클릭
+  const onClicklikeHandler = (postId: number) => {
+    setOnLike(!isOnLikeClick) // css
+
+    // 클릭하면 css 변경하고
+    // myProject의 해당 아이템의 like[] 에 session.user.email을 객체로 추가함
+    // 좋아요수 : get like[] 객체 length
   }
 
   return (
@@ -48,12 +59,15 @@ export default function MyProjectDetail({ params }: any) {
                 <button
                   type='button'
                   className='share'
-                  onClick={shareHandler}><Image src={Share} width={25} height={24} alt="share icon" />
+                  onClick={shareHandler}>
+                  <Image src={Share} width={25} height={24} alt="share icon" />
                 </button>
                 <button
                   type='button'
-                  className='like'></button>
-                <Image src={Heart} width={29} height={24} alt="heart icon" />
+                  onClick={() => { onClicklikeHandler(result.postId) }}
+                  className={isOnLikeClick ? 'active like' : 'like'}>
+                  <p>♥ <span>{likeUserNum}</span></p>
+                </button>
               </div>
             </div>
             <div className='mpdhBottom'>

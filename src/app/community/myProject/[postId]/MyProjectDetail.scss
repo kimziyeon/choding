@@ -19,6 +19,27 @@
             .iconCont {
                 @include flexbox();
                 gap: 0.5rem;
+
+                .like {
+                    border-radius: 1rem;
+                    border: 1px solid $main;
+                    padding: 0 0.5rem;
+                    height: 33px;
+                    @include flexbox(c, c);
+
+                    p {
+                        color: $main;
+                        font-size: 1rem;
+                    }
+                }
+
+                .like.active {
+                    background-color: $main;
+
+                    p {
+                        color: #fff;
+                    }
+                }
             }
         }
 

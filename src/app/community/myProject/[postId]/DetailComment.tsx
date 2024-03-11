@@ -42,12 +42,14 @@ export default function DetailComment({ result, fetchData }) {
   });
 
   const onSubmit = async (data: myProjectCommentType) => {
-    if (status !== 'authenticated') {
+    if (status !== 'authenticated' || !data.value.email) {
       swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
       return
     }
-
-    console.log(data)
+    if (data.value.comment.length < 3) {
+      swal("2글자 이상 작성해주세요", "정성 가득한 댓글 부탁드립니다 :)", "warning")
+      return
+    }
 
     const res = await detailStore('put', 'myProject', data, result.postId);
 
