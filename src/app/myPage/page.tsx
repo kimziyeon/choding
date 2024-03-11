@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './mypage.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,8 +14,8 @@ import { useSession } from 'next-auth/react';
 export default function MyPage() {
     const { data: session, status } = useSession();
     const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session?.user?.image})` } : {}; //유저이미지
-
     const [randomTitle, setRandomTitle] = useState('');
+
 
     useEffect(() => {
         const title = [
@@ -39,6 +40,8 @@ export default function MyPage() {
     }, []);
 
 
+
+
     return (
 
         <section className="myPageMain">
@@ -54,7 +57,7 @@ export default function MyPage() {
                         <div className='myLv'>
                             <p>레벨</p>
                             <b>
-                                {status === 'authenticated' ? (session?.user?.level ? session.user.level : '') : ''}
+                                {status === 'authenticated' ? session?.user?.email?.level : ''}
                             </b>
                         </div>
 
