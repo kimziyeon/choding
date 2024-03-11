@@ -33,8 +33,14 @@ export default function FigureComponent() {
                                 <p className='overview'>{item.overview}</p>
                             </div>
                             <div className='bottom'>
-                                <span className='date'>{item.date}</span>
-                                <span className='userId'>{item.name}</span>
+                                <div className='sub1'>
+                                    <span className='date'>{item.date}</span>
+                                    <span className='comments'>댓글 {item.comments.length}</span>
+                                </div>
+                                <div className='sub2'>
+                                    <span className='name'>by {item.name}</span>
+                                    <span className='likeNum'>♥ {item.like.length}</span>
+                                </div>
                             </div>
                         </div>
                     </figcaption>

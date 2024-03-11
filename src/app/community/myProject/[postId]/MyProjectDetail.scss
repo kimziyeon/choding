@@ -1,6 +1,8 @@
 @use '../../../../styles/main' as *;
 
 #MyProjectDetail {
+    height: 100%;
+    min-height: 90vh;
     padding: 2rem;
     padding-top: calc(79px + 2rem);
     color: $grayDark;
