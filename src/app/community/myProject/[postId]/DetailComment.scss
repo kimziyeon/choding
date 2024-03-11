@@ -31,6 +31,8 @@
 
     #DetailComment {
         padding: 1rem 0;
+        @include flexbox;
+        flex-direction: column-reverse;
 
         .mpdComment {
             padding: 1rem 0;

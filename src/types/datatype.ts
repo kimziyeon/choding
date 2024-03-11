@@ -4,14 +4,15 @@ export type myProjectPostType = {
     position: string[],
     postId: number,
     title: string,
-    userId: string,
     goal: string,
     link: string,
     member: string[],
     stack: string[],
     imgSrc: string,
     like: number,
-    comments: myProjectCommentType[]
+    comments: myProjectCommentType[],
+    name: string | null | undefined,
+    email: string | null | undefined
 }
 
 export type myProjectCommentType = {
@@ -20,7 +21,9 @@ export type myProjectCommentType = {
     updateType: string,
     field: string,
     value: {
-        userId: string,
+        name: string | null | undefined,
+        email: string | null | undefined,
+        image: string | null | undefined,
         comment: string,
         date: string
     }

@@ -1,0 +1,170 @@
+{
+    "youtube": [
+        {
+            "title": "대딩의 데이터입니다",
+            "link": "https://ko.legacy.reactjs.org/",
+            "displayLink": "ko.legacy.reactjs.org",
+            "snippet": "선언형. React는 상호작용이 많은 UI를 만들 때 생기는 어려움을 줄여줍니다. 애플리케이션의 각 상태에 대한 간단한 뷰만 설계하세요. 그럼 React는 데이터가 변경됨에 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "시작하기 – React",
+            "link": "https://ko.legacy.reactjs.org/docs/getting-started.html",
+            "displayLink": "ko.legacy.reactjs.org",
+            "snippet": "새 React 앱 만들기. React 프로젝트를 시작한다면 스크립트 태그를 사용한 간단한 HTML 페이지를 만드는 것이 최고의 방법일 것입니다. 설치하는 데 1분밖에 걸리지 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS8ckj5CLZitzYAlmj6QZjvlnO7HxTYPjJLSMkgDMtQpxTYcC5vbrw9z_C7",
+                        "width": "310",
+                        "height": "163"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기",
+            "link": "https://velog.io/@eunbinn/modularizing-react-apps",
+            "displayLink": "velog.io",
+            "snippet": "Feb 22, 2023 ... [번역] 잘 알려진 UI 패턴을 사용하여 리액트 애플리케이션 모듈화하기 · 리액트는 뷰를 구축하기 위한 소박한 라이브러리입니다. · 현실 세계의 리액트 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSFLlEj0lHkWn_FJcROHoiwnu7AU0-c_BHBjTtHjAZUJfWVaC4u77TMA_s",
+                        "width": "297",
+                        "height": "170"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "기존에 잘 알려진 UI 패턴을 프런트엔드 개발에 적용하는 과정을 적은 글입니다. 리팩토링하는 과정을 단계별로 쫓아가며 UI 패턴을 실제 리액트 사례에 적용하는 방법을 살펴보고 그 이점을 확인할 수 있습니다 :)"
+                    }
+                ]
+            }
+        }
+    ],
+    "google": [
+        {
+            "title": "[Node.js] 익스프레스 웹 서버 만들기",
+            "link": "https://velog.io/@hahaha/Node.js-%EC%9D%B5%EC%8A%A4%ED%94%84%EB%A0%88%EC%8A%A4-%EC%9B%B9-%EC%84%9C%EB%B2%84-%EB%A7%8C%EB%93%A4%EA%B8%B0",
+            "displayLink": "velog.io",
+            "snippet": "Oct 10, 2021 ... 서버 제작에 있어 불편함을 해소하고 편의 기능을 추가한 웹 서버 프레임워크http 모듈의 요청과 응답 객체에 추가 기능들을 부여서버 코드에 수정 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQUtW-vLCcudMje-Wb31X6blj4a4VpgUMks5lH3UcIQdj_R_fZLBEwUtRFh",
+                        "width": "318",
+                        "height": "159"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "서버 제작에 있어 불편함을 해소하고 편의 기능을 추가한 웹 서버 프레임워크http 모듈의 요청과 응답 객체에 추가 기능들을 부여서버 코드에 수정 사항이 생길 때마다 서버를 자동으로 재시작rs 명령어를 통해 수동 재시작 가능개발용으로만 사용하는 것을 권장http&#x3A"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[Node.js] 익스프레스로 웹 서버 만들기 1 - 익스프레스 서버와 미들웨어",
+            "link": "https://ahn3330.tistory.com/47",
+            "displayLink": "ahn3330.tistory.com",
+            "snippet": "Jan 14, 2021 ... 노드로 가장 기본적인 웹 서버를 만드는 법을 알아보고 클라이언트에 응답을 보내 웹 페이지를 띄우는 법을 알아보겠습니다. 목차 익스프레스 서버 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6eHXOVoWmA1zZF7MBcoxnPY1oj3rNPn_dPgAJQcLsXpjf9jNbPGmqLgHn",
+                        "width": "301",
+                        "height": "167"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "노드로 가장 기본적인 웹 서버를 만드는 법을 알아보고 클라이언트에 응답을 보내 웹 페이지를 띄우는 법을 알아보겠습니다. 목차 익스프레스 서버 만들기 미들웨어로 클라이언트에 응답 보내기 익스프레스로 서버 만들기 익스프레스 모듈을 사용하기 전에 노드에 기본으로 들어있는 http 모듈을 사용하여 서버를 만드는 법을 보겠습니다. 급하신 분들은 express를 사용한 부분만 봐도 됩니다. var http = require('http'); // 웹 서버 객체 만들기 var server = http.createServer(); // 웹 서버를 시작하여 3000번 포트에서 대기 var port = 3000; server.listen(port, function(){ console.log('웹 서버가 시작되었습니다 %d .."
+                    }
+                ]
+            }
+        },
+        {
+            "title": "TIL 29일차(20240124) 노드 & 익스프레스 기본",
+            "link": "https://velog.io/@intellik/TIL-29%EC%9D%BC%EC%B0%A820240124-%EB%85%B8%EB%93%9C-%EC%9D%B5%EC%8A%A4%ED%94%84%EB%A0%88%EC%8A%A4-%EA%B8%B0%EB%B3%B8",
+            "displayLink": "velog.io",
+            "snippet": "Jan 24, 2024 ... 익스프레스는 미들웨어와 라우팅 메커니즘을 기반으로 작동하며 미들웨어, 라우팅 메커니즘이 정의된 순서대로 실행됩니다. 익스프레스 애플리케이션에서 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTljdFzTpZhZfafYSEbcxuj25xcpWP5jY01NUd8-JkiKUlFsruUAM1D-P0",
+                        "width": "150",
+                        "height": "84"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "Node.js와 express.js 학습을 기록합니다 📝"
+                    }
+                ]
+            }
+        },
+        {
+            "title": "[node(노드)/express(익스프레스)] 1분만에 API 서버 만들기",
+            "link": "https://gofogo.tistory.com/25",
+            "displayLink": "gofogo.tistory.com",
+            "snippet": "Nov 11, 2021 ... 딸기 꼭지 부분을 자세하게 보면 솜털이 가득한데요. 이 부분을 통해 잔류 농약과 이물질이 뭍어 있을 가능성이 크다고 해요. 그래서 이것을 제거하지 ...",
+            "pagemap": {
+                "cse_thumbnail": [
+                    {
+                        "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSu_dD2MZ4N8nKT9gyOSJPYSr1bYe9LkRGIMJsPuQl63ZZq3DKYG7BWZp8",
+                        "width": "455",
+                        "height": "111"
+                    }
+                ],
+                "metatags": [
+                    {
+                        "twitter:description": "[node(노드)/express(익스프레스)] 1분만에 API 서버 만들기 [사전 환경] 1.node 설치된 환경을 기준으로 작성되었습니다. 2.vscode 개발환경 기준으로 작성되었습니다. 1.노드가 설치된 환경에서 main.js 파일 생성 2.터미널(terminal)에서 아래 명령어를 입력하여, express 라이브러리를 설치 npm i express 2.아래 코드 작성 const express = require(\"express\"); const app = express(); app.get(\"/\", (req, res) => { res.send(\"call root\"); }); app.get(\"/test\", (req, res) => { res.send(\"call test\"); }); app.listen(3.."
+                    }
+                ]
+            }
+        }
+    ],
+    "naver": [
+        {
+            "title": "[넥스트 JS] - 신규프로젝트 수정 에러",
+            "link": "https://blog.naver.com/wormsbrother/223053260427",
+            "description": "위와같이 index.js 파일의 내용을 리액트로 적어주면 바로 해결된다. 감사합니다. #NextJS #신규파일수정 #에러 #에러해결 #메인페이지수정방법 #넥스트JS기초",
+            "bloggername": "꿈틀거리는 개발블로그",
+            "bloggerlink": "blog.naver.com/wormsbrother",
+            "postdate": "20230323"
+        },
+        {
+            "title": "NEXT.JS 기초개념",
+            "link": "https://blog.naver.com/qpxmaks/223231310244",
+            "description": "App.js: 넥스트 JS 애플리케이션의 최상위 컴포넌트입니다. 페이지 라우팅, API 통신 등의 기능을 구현할 수 있습니다. - HTML, CSS, JS의 구조 pages _document.js: HTML 문서, 애플리케이션 컨테이너, 각종... ",
+            "bloggername": "정보보안전문가",
+            "bloggerlink": "blog.naver.com/qpxmaks",
+            "postdate": "20231008"
+        },
+        {
+            "title": "node.js(다운로드, 기초 설명)",
+            "link": "https://blog.naver.com/ssora-/223021701469",
+            "description": "다 넥스트 눌러 설치하면 됨 내 폴더에 nodejs 폴더 만들고 그 안에 넣어줬음 그리고 그 파일을 비주얼 스튜디오로 열고 을 적어준 다음 터미널에 node -v 를 입력하고 node base.js를 쳐주면 base.js의 내용이... ",
+            "bloggername": "이모저모",
+            "bloggerlink": "blog.naver.com/ssora-",
+            "postdate": "20230220"
+        },
+        {
+            "title": "[넥스트 JS] 중첩 동적 라우트 세그먼트 한번에 잡기",
+            "link": "https://blog.naver.com/wormsbrother/223063036862",
+            "description": "#프론트엔드 #프론트엔드공부 #프론트엔드학습 #프론트엔드실습 #넥스트JS ＃넥스트기초학습 #넥스트기초실습 #넥스트기초공부 #넥스트기초 #중첩라우팅세그먼트 #동적라우팅 #중첩라우팅... ",
+            "bloggername": "꿈틀거리는 개발블로그",
+            "bloggerlink": "blog.naver.com/wormsbrother",
+            "postdate": "20230403"
+        }
+    ]
+}
