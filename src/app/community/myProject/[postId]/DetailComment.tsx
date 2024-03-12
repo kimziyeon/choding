@@ -19,6 +19,8 @@ export default function DetailComment({ result, fetchData }) {
   const [textareaValue, setTAValue] = useState('');
   const [clickItemNum, setClickItemNum] = useState(0);
 
+  console.log(result ,'확인용')
+
   // 작성일 차이 계산
   dayjs.extend(customParseFormat);
   const now = dayjs();

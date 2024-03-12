@@ -13,8 +13,9 @@ export default function QnADetail({ params }: any) {
     const { data: session, status } = useSession();
     const id = params.postId
     const name = session?.user?.name
+    const postId = data?.[0]?.postId
 
-    console.log(data)
+    console.log(postId)
 
     const {
         register,
@@ -30,7 +31,7 @@ export default function QnADetail({ params }: any) {
 
         // console.log(comment)
 
-        const res = await detailStore('put','qna',comment)
+        const res = await detailStore('put','qna',comment,postId)
         await fetchData();
     }
 
