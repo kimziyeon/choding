@@ -15,6 +15,19 @@
     .myProjectFilterHeader {
         @include flexbox(sb, c);
         margin-bottom: 1rem;
+        position: relative;
+
+        .inputSearch {
+            background-color: $wGray;
+            padding: 0.5rem;
+            padding-left: 1rem;
+            border-radius: 1rem;
+        }
+
+        img {
+            position: absolute;
+            right: 0.75rem;
+        }
 
         .filterTitle {
             cursor: pointer;
