@@ -2,14 +2,14 @@
 @use '../../styles/main' as *;
 
 #communityHome {
+    padding-top: 6rem; //헤더 밀려남
+
     .communityContHeader {
+        padding: 0 2rem;
+
         .containerTitle {
             font-size: $m;
             text-align: center;
-
-            span {
-                color: $main;
-            }
         }
 
         div {

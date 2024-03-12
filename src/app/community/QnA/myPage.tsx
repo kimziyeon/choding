@@ -42,7 +42,8 @@ export default function myPage() {
               </div>
               <div className='QnAInfo'>
                 <p>이름 : {item.userName}</p>
-                <p>댓글 수 0</p>
+                <p>댓글 수 {item.comment.length}</p>
+                <p>좋아요 </p>
               </div>
             </div>
             <div className='QuestionImg'>

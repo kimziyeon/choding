@@ -20,4 +20,10 @@ $l-breakpoint: 768px;
       @content;
     }
   }
+
+  @if ($screen) {
+    @media screen and (max-width: $screen) {
+      @content;
+    }
+  }
 }
