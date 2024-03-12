@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
@@ -21,6 +21,8 @@ export default async function allPage() {
         fetchData();
       }, []);
 
+      //좋아요 좋아요 중소기업
+
     return (
     <div className="contPadding">
         <div className='QnAContentContainer'>
@@ -33,7 +35,8 @@ export default async function allPage() {
                 </div>
                 <div className='QnAInfo'>
                     <p>이름 : {item.userName}</p>
-                    <p>댓글 수 0</p>
+                    <p>댓글 수 {item.comment.length}</p>
+                    <p>좋아요 <span></span></p>
                 </div>
             </div>
             <div className='QuestionImg'>
