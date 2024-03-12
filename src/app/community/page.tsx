@@ -7,7 +7,7 @@ import MyProjectBest from './MyProjectBest';
 export default function Community() {
   return (
     <section id="communityHome">
-      <QnABest />
+      {/* <QnABest /> */}
       <MyProjectBest />
     </section>
   );
