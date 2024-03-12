@@ -66,6 +66,8 @@ export default function MyProjectFilter() {
         <h3 className="filterTitle" onClick={filterToggleBtn}>
           {isOnButtonActive ? '필터 정렬 ∨' : '필터 정렬 ∧'}
         </h3>
+        <label htmlFor="myProjectSearch">dd?</label>
+        <input type="text" id="myProjectSearch" />
       </div>
       <div className="containerContents">
         <FilterComponent
