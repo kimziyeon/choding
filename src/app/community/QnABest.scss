@@ -1,0 +1,57 @@
+@use '../../styles/main' as *;
+
+.containerContentsQnA {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 70px);
+    grid-template-areas: 
+            "b a c"
+            "b a c"
+            "b a c"
+    ;
+    align-items: end;
+    .QnABsetContainer {
+        box-shadow: 3px 4px 30px rgba(0, 0, 0, 10%);
+        border-radius: 9px;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        &::after{
+            font-weight: bold;
+            position: absolute;
+            right: -13%;
+            top: -5%;
+            color: $main;
+        }
+        &:nth-child(1){
+            grid-area: a;
+            height: 100%;
+            &::after{
+                content: '1';
+                font-size: 9rem;
+            }
+        }
+        &:nth-child(2){
+            grid-area: b;
+            height: 90%;
+            &::after{
+                content: '2';
+                font-size: 8rem;
+            }
+        }
+        &:nth-child(3){
+            grid-area: c;
+            height: 90%;
+            &::after{
+                content: '3';
+                font-size: 8rem;
+            }
+        }
+        .BestContent {
+            .title {}
+
+            .Name {}
+        }
+    }
+}

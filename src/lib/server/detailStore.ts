@@ -12,11 +12,11 @@ export default async function detailStore(type: string, colName: string, postDat
             });
             break;
 
-        case 'post':
-            res = await axios.post(`/api/mongodb/${idx}`, {
-                params: { colName }
-            });
-            break;
+        // case 'post':
+        //     res = await axios.post(`/api/mongodb/${idx}`, {
+        //         params: { colName }
+        //     });
+        //     break;
 
         case 'delete':
             res = await axios.delete(`/api/mongodb/${idx}`, {
