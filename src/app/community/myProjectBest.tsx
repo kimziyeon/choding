@@ -8,11 +8,13 @@ import './myProjectBest.scss';
 import HTML from '@/essets/myProjectBG/HTML.png';
 import { useEffect, useState } from 'react';
 import serverStore from '@/lib/server/serverStore';
+import MyProjectSlide from '../components/MyProjectSlide';
 
 export default function myProjectBest() {
   const router = useRouter();
   const [result, setResult] = useState();
   const [likePost, setLikePost] = useState([]);
+  const [slidePost, setSlidePost] = useState([]);
 
   useEffect(() => {
     dataCrl('get');
@@ -32,17 +34,22 @@ export default function myProjectBest() {
         });
         setLikePost(likePost);
       }
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
+  useEffect(() => {
+    const removed = likePost.slice(1);
+    setSlidePost(removed)
+  }, [likePost]);
+
+  console.log(slidePost)
+
   const clickBestFigure = () => {
     router.push(`/community/myProject/${likePost[0].postId}`)
   }
-
-  console.log('------------------------------')
-  console.log(likePost)
 
   return (
     <section id="communityMyProjectContainer" className="communityContainer">
@@ -73,10 +80,7 @@ export default function myProjectBest() {
             </>
           }
         </figure>
-        <div className='ccitem bestCont'>
-          <figure className='best2'></figure>
-          <figure className='best3'></figure>
-        </div>
+        <MyProjectSlide slidePost={slidePost} />
       </section>
     </section>
   );
