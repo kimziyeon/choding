@@ -44,6 +44,7 @@ export default function Home() {
   }, [loginData])
 
   // 데이터 가져오기  
+
   async function dataCrl(type: string) {
     // console.log(session?.user?.email)
     const res = await axios.get(`/api/mongodb?colName=myPoint&email=${session?.user?.email}`);
@@ -51,7 +52,6 @@ export default function Home() {
       setLoginData(res.data)
     }
   }
-
   const loadData = async () => {
     let nowUser = await loginData.find(obj => obj.email === session.user?.email);
 

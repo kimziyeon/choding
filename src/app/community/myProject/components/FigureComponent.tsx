@@ -14,7 +14,6 @@ export default function FigureComponent() {
     const onClickHandler = async (num: number) => {
         router.push(`/community/myProject/${num}`)
     }
-    console.log(originalData)
 
     return (
         <>

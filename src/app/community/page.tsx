@@ -6,9 +6,9 @@ import MyProjectBest from './MyProjectBest';
 
 export default function Community() {
   return (
-      <section id="communityHome" className='contPadding'>
-        <QnABest/>
-        <MyProjectBest />
-      </section>
-    );
-  }
+    <section id="communityHome">
+      <QnABest />
+      <MyProjectBest />
+    </section>
+  );
+}
