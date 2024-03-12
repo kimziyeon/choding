@@ -64,7 +64,8 @@ export default function MyProjectBest() {
       </div>
       <section className="containerContents">
         { projects.length > 0 && 
-          <figure className='ccitem best1' onClick={handleClickBestFigure}>
+          <figure className='ccitem best1'
+          onClick={handleClickBestFigure}>
             <img src={projects[0].image} alt="" />
             <figcaption>
               <h3>{projects[0].title}</h3>

@@ -1,13 +1,21 @@
 "use client";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useRouter } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import './MyProjectSlide.scss';
+import { useCallback } from 'react';
 
 export default function MyProjectSlide({ slidePost }) {
+  const router = useRouter();
+
+  const handleClickBestFigure = (i:number) => {
+    router.push(`/community/myProject/${i}`);
+  }
+
     return (
         <Swiper
             slidesPerView={1}
@@ -26,10 +34,11 @@ export default function MyProjectSlide({ slidePost }) {
             id="mainSlide"
         >
             {
-                slidePost && slidePost.map((item) => {
+                slidePost && slidePost.map((item, i) => {
                     return <SwiperSlide
                         className='contentsFigure'
-                        key={item.postId}>
+                        key={item.postId}
+                        onClick={()=>{handleClickBestFigure(item.postId)}}>
                         <figure className='innerContents'>
                             {item.image !== null ? <img src={item.image}></img> : <div className='noImage'>이미지가 없습니다</div>}
                             <figcaption>
