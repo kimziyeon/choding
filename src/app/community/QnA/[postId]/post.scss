@@ -2,7 +2,16 @@
 
 .postMain{
     padding: 6rem 2rem 2rem 2rem;
+    .postContainer{
+        >p{
+            padding: $s 0 $m 0;
+            color: $grayDark;
+        }
+    }
     .postForm{
+        .commentLength{
+            padding: $l 0 9px 0;
+        }
         >textarea{
             resize: none;
             border: 1px solid black;
@@ -23,5 +32,20 @@
                 padding: 4px $b;
             }
         }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+    }
+}
+.commentContainer{
+    padding: $b 2rem;
+    .commentbox{
+        border-bottom: 1px solid $grayLight;
+        padding: 9px 0;
+        font-size: $t;
+        .commentinfo{
+            display: flex;
+        }
+        .textbox{
+            padding: 9px 0 $m 0;
+            .commentText{}
+        }
     }
 }

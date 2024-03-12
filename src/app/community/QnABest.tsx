@@ -1,11 +1,31 @@
 //src/app/community/QnABest.tsx
-// "use client";
+"use client";
 
 import Image from 'next/image';
+import "./QnABest.scss"
 import ArrowRight from '@/essets/arrowRight.svg';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 export default function QnABest() {
+
+  const [data, setData] = useState([]);
+
+  console.log(data, 'test');
+
+  useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get('/api/post?colName=qna');
+          setData(response.data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      };
+      fetchData();
+    }, []);
+
     return (
       <section id="communityQnAContainer" className="communityContainer">
         <div className="communityContHeader">
@@ -20,10 +40,22 @@ export default function QnABest() {
             </Link>
           </div>
         </div>
-        <div className="containerContents">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
+        <div className="containerContentsQnA">
+          {
+            data && data.map((item, index)=>(
+              <>
+                <div key={index} className='QnABsetContainer'>
+                  <div className='BestContent'>
+                    <div>
+                      <p className='title'>{item.title}</p>
+                      <p dangerouslySetInnerHTML={{ __html:item.content}}></p>
+                    </div>
+                    <p className='Name'>{item.userName}</p>
+                  </div>
+                </div>
+              </>
+            ))
+          }
         </div>
       </section>
     );
