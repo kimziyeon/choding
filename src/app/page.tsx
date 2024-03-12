@@ -22,32 +22,66 @@ import community from '@/data/community.json';
 
 
 export default function Home() {
-  const { isOpenFunc } = useQuestion();
+  const { quiz, isOpenFunc } = useQuestion();
   const { data: session, status } = useSession();
-  const [loginData, setLoginData] = useState([]);
+  const [loginData, setLoginData] = useState([0]);
   const [result, setResult] = useState([]);
   const [title, setTitle] = useState<string[]>([]);
 
 
+
+
+  // useEffect(() => {
+  //   axios.get(`/api/mypoint?email=${session?.user?.email}`)
+  //     .then(res => {
+  //       console.log(res.data)
+
+  //     });
+  // }, [])
+
+
   useEffect(() => {
-    dataCrl('get')
+    dataCrl('get');
     if (status !== 'authenticated') {
       setTitle(levelKeyword[0].cd)
-      setResult(cdData)
+      setResult(cdData);
     }
   }, [status])
+
 
   useEffect(() => {
     if (status === 'authenticated') {
       loadData()
     }
+
   }, [loginData])
+
+
+  useEffect(() => {
+
+    if (status === 'authenticated') {
+      isOpenFunc({ isOpen: false, isTest: false });
+      console.log('n.n');
+    } else {
+      isOpenFunc({ isOpen: true, isTest: true });
+      console.log('ㅜ.ㅜ');
+    }
+
+
+    console.log(status)
+  }, [session])
+
+
+
+
 
   // 데이터 가져오기  
 
   async function dataCrl(type: string) {
     // console.log(session?.user?.email)
     const res = await axios.get(`/api/mongodb?colName=myPoint&email=${session?.user?.email}`);
+    console.log(res.data, '--------------res.data');
+
     if (res !== null) {
       setLoginData(res.data)
     }

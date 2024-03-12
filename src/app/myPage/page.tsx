@@ -15,6 +15,9 @@ export default function MyPage() {
     const { data: session, status } = useSession();
     const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session?.user?.image})` } : {}; //유저이미지
     const [randomTitle, setRandomTitle] = useState('');
+    const [mypageData, setMypageData] = useState([]);
+
+
 
 
     useEffect(() => {
@@ -40,6 +43,19 @@ export default function MyPage() {
     }, []);
 
 
+    // console.log(session?.user?.email)
+    useEffect(() => {
+        axios.get(`/api/mypoint?email=${session?.user?.email}`)
+            .then(res => {
+                // console.log(res.data)
+                if (res !== null) {
+                    setMypageData(res.data[0]);
+                }
+            });
+    }, [session])
+
+    // const leveldata = mypageData[0]
+    // console.log(mypageData)
 
 
     return (
@@ -57,13 +73,15 @@ export default function MyPage() {
                         <div className='myLv'>
                             <p>레벨</p>
                             <b>
-                                {status === 'authenticated' ? session?.user?.email?.level : ''}
+                                {mypageData?.level}
                             </b>
                         </div>
 
                         <div className='myPot'>
                             <p>포인트</p>
-                            <b>1</b>
+                            <b>
+                                {mypageData?.point}
+                            </b>
                         </div>
 
                     </div>
