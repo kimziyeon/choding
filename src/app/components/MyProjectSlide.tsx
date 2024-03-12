@@ -5,6 +5,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
+import './MyProjectSlide.scss';
+
+
 
 export default function MyProjectSlide({ slidePost }) {
     return (
@@ -15,13 +18,13 @@ export default function MyProjectSlide({ slidePost }) {
                 clickable: true,
             }}
             loop={true}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //     delay: 2500,
+            //     disableOnInteraction: false,
+            // }}
             // navigation={true}
             modules={[Autoplay, Navigation, Pagination]}
-            className="mySwiper ccitem slide"
+            className="mySwiper ccitem"
             id="mainSlide"
         >
             {
@@ -30,9 +33,11 @@ export default function MyProjectSlide({ slidePost }) {
                         className='contentsFigure'
                         key={item.postId}>
                         <div className='innerContents'>
-                            <span>by {item.name}</span>
-                            <h3 className='title'>{item.title}</h3>
-
+                            {item.image !== null ? <img src={item.image}></img> : <div className='noImage'>이미지가 없습니다</div>}
+                            <div className='bottom'>
+                                <span>by {item.name}</span>
+                                <h3 className='title'>{item.title}</h3>
+                            </div>
                         </div>
                     </SwiperSlide>
                 })
