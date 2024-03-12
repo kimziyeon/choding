@@ -16,6 +16,7 @@ export default function DailyquizEnd({ isCorrect }) {
     const router = useRouter();
     const { data: session, status } = useSession();
     const { isOpenFunc } = useQuestion();
+    const [mypageData, setMypageData] = useState([]);
 
     function quizEndSearch() {
         isOpenFunc({ isOpen: false, isTest: false })
@@ -31,10 +32,11 @@ export default function DailyquizEnd({ isCorrect }) {
 
 
                 if (!myPointInfo.data.length) {
-                    await axios.post('/api/mypoint', { email: session?.user?.email, level: '', point: 0 })
+                    await axios.post('/api/mypoint', { email: session?.user?.email, level: '초딩', point: 1 })
                 } else {
                     const myPoint: number = myPointInfo.data[0].point + 1;
                     let levelName = '';
+
                     if (myPoint <= 2) {
                         levelName = '초딩';
                     } else if (myPoint <= 4) {
@@ -55,6 +57,19 @@ export default function DailyquizEnd({ isCorrect }) {
     }, [session])
 
 
+
+    useEffect(() => {
+        axios.get(`/api/mypoint?email=${session?.user?.email}`)
+            .then(res => {
+                // console.log(res.data)
+                if (res !== null) {
+                    setMypageData(res.data[0]);
+                }
+            });
+    }, [session])
+
+
+
     return (
 
         <div className='popUp03'>
@@ -70,14 +85,14 @@ export default function DailyquizEnd({ isCorrect }) {
                         <>
                             <div className='valueOOO'>+1</div>
                             <div className='lvBoxOX'>
-                                {/* <span>Lv.{session?.user.level}</span> */}
+                                <span>Lv.{mypageData?.level}</span>
                             </div>
                         </>
                     ) : (
                         <>
                             <div className='valueXXX'>아쉽네요 :&#40;<br />내일 다시 도전해주세요</div>
                             <div className='lvBoxOX'>
-                                {/* <span>Lv.{session.user.level}</span> */}
+                                <span>Lv.{mypageData?.level}</span>
                             </div>
                         </>
                     )}

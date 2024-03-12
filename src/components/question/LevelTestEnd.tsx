@@ -7,6 +7,8 @@ import chocho from '@/essets/charactor/CHO.svg';
 import { useRouter } from 'next/navigation'
 import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
+import axios from 'axios';
+
 
 export default function LevelTestEnd({ score }) {
 
@@ -24,6 +26,7 @@ export default function LevelTestEnd({ score }) {
         router.push('/search');
     }
 
+
     const levelValue = () => {
         if (score <= 2) {
             return '초딩';
@@ -37,6 +40,7 @@ export default function LevelTestEnd({ score }) {
             return '직딩';
         }
     }
+
 
 
     return (

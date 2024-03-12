@@ -10,6 +10,7 @@ import Dailyquiz from './Dailyquiz';
 import { useQuestion } from '@/context/questionStore';
 
 
+
 export default function UserQuestion() {
 
     const { quiz, isOpenFunc } = useQuestion();
@@ -19,6 +20,7 @@ export default function UserQuestion() {
     const handleClose = () => {
         isOpenFunc({ isOpen: false, isTest: false });
     };
+
 
     if (!quiz.isOpen) return null;
 
@@ -38,10 +40,8 @@ export default function UserQuestion() {
     //     setIsDaily(false);
     // };
 
-
-
     return (
-        <section className='question'>
+        <section className={`question ${quiz.isOpen ? 'active' : ''}`}>
 
             <div className='popUpQues'>
                 <div className='popUpBg'>
@@ -80,6 +80,6 @@ export default function UserQuestion() {
 
 
 
-        </section>
+        </section >
     );
 }
