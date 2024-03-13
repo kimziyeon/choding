@@ -197,7 +197,7 @@
     }
 
     .contRight {
-        width: calc((100% - 2rem) / 3 * 2);
+        width: calc(100% / 3 * 2);
         @include flexbox();
         gap: 1rem;
         flex-wrap: wrap;

@@ -23,6 +23,10 @@ export default function Home({ subtext, title, option, loginData, result }: Home
 
     const classname = `num${option}`;
 
+    const clickMore = (t) => {
+        console.log(t)
+    }
+
     return (
         <section className={`contentsBox ${classname}`}>
             <div className='contLeft'>
@@ -32,13 +36,15 @@ export default function Home({ subtext, title, option, loginData, result }: Home
                     <span>{title}</span>
                     {option === 4 ? null : ' 강의'}
                 </h3>
-                <span className='more'>더보기
-                    <Image
-                        src={ArrowRight}
-                        alt='arrow image'
-                        width={20} height={20}
-                    />
-                </span>
+                {
+                    option !== 4 ? <span className='more' onClick={() => { clickMore(title) }}>더보기
+                        <Image
+                            src={ArrowRight}
+                            alt='arrow image'
+                            width={20} height={20}
+                        />
+                    </span> : null
+                }
             </div>
             <div className="contRight">
                 <ContentsFigure
