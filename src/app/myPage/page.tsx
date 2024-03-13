@@ -67,21 +67,25 @@ export default function MyPage() {
                     <div className='myTitle1'>
                         {status === 'authenticated' ? <span>{session?.user?.name}</span> : '비회원'}
                         님 어서오세요!</div>
-                    <div className='myTitle2'>{randomTitle}</div>
+                    <div className='myTitle2'>
+                        {mypageData?.level ?
+                            <div>{randomTitle}</div> : <div>레벨테스트하고<br></br> 강의를 추천받으세요!</div>}
+
+                    </div>
 
                     <div className='myInfo'>
                         <div className='myLv'>
                             <p>레벨</p>
-                            <b>
-                                {mypageData?.level}
-                            </b>
+
+                            {mypageData?.level ?
+                                <b>{mypageData?.level}</b> : <b>?</b>}
                         </div>
 
                         <div className='myPot'>
                             <p>포인트</p>
-                            <b>
-                                {mypageData?.point}
-                            </b>
+
+                            {mypageData?.point ?
+                                <b> {mypageData?.point} </b> : <b>0</b>}
                         </div>
 
                     </div>
