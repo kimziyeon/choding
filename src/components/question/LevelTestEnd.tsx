@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import chocho from '@/essets/charactor/CHO.svg';
@@ -12,8 +12,8 @@ import axios from 'axios';
 
 export default function LevelTestEnd({ score }) {
 
-    const { data: session, status } = useSession();
     const router = useRouter();
+    const { data: session, status } = useSession();
     const { isOpenFunc } = useQuestion();
 
     function quizEndLogin() {
@@ -27,19 +27,37 @@ export default function LevelTestEnd({ score }) {
     }
 
 
-    const levelValue = () => {
-        if (score <= 2) {
-            return '초딩';
-        } else if (score <= 4) {
-            return '중딩';
-        } else if (score <= 6) {
-            return '고딩';
-        } else if (score <= 8) {
-            return '대딩';
-        } else if (score <= 10) {
-            return '직딩';
+    useEffect(() => {
+        async function updateLevel() {
+            const myPointInfo: any = await axios.get(`/api/mypoint?email=${session?.user?.email}`);
+            if (score) {
+                let level = '';
+                if (score <= 2) {
+                    level = '초딩';
+                } else if (score <= 4) {
+                    level = '중딩';
+                } else if (score <= 6) {
+                    level = '고딩';
+                } else if (score <= 8) {
+                    level = '대딩';
+                } else if (score <= 10) {
+                    level = '직딩';
+                }
+
+                if (!myPointInfo.data.length) {
+                    await axios.post('/api/mypoint', { email: session?.user?.email, level: level, point: score })
+                }
+                // else {
+                //     await axios.put('/api/mypoint', { email: session?.user?.email, level: level, point: score })
+                // }
+
+
+
+            }
         }
-    }
+
+        updateLevel();
+    }, [score, session]);
 
 
 
@@ -55,13 +73,15 @@ export default function LevelTestEnd({ score }) {
                     <div className='popUpSubTitle'>
 
                         {status === 'authenticated' ?
+
                             <div className='scoreBox'>
                                 <span>{session.user.name}</span>님의<br></br>총 점수는 <span>{score}</span>점 입니다.</div> :
+
                             <div className='noNameTitle'>로그인 시<br></br>다양한 강의 정보를 추천해드립니다.</div>}
 
 
                         <div className='lvBox'>
-                            <span>Lv.{levelValue()}</span>
+                            {/* <span>Lv.{levelValue()}</span> */}
                         </div>
 
                     </div>
