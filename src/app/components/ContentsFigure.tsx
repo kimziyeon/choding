@@ -1,11 +1,15 @@
-import { googleSearchItem, naverSearchItem } from '@/types/datatype';
+import { googleSearchItem, naverSearchItem, youtubeSnippet } from '@/types/datatype';
 import './contentsFigure.scss'
 
 interface contentsFigureType {
-    result: googleSearchItem[] | naverSearchItem[] | null;
+    result: googleSearchItem[] | naverSearchItem[] | youtubeSnippet[] | null;
     option: number;
 }
 export default function ContentsFigure({ result, option }: contentsFigureType) {
+    if (result == null) {
+        return <div>검색 결과가 없습니다!</div>
+    }
+
     return (
         result && result.map((item, i) => (
             <figure className='contentsFigure' key={item.title + i}>
