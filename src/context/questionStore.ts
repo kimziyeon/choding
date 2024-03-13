@@ -8,7 +8,7 @@ interface T {
 
 export const useQuestion = create<T>((set) => {
     return {
-        quiz: { isOpen: false, isTest: true, },
+        quiz: { isOpen: false, isTest: false, },
         isOpenFunc: (quizState) => {
             set((state: any) => ({
                 quiz: {

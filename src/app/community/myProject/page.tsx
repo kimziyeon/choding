@@ -11,7 +11,7 @@ import './myProjectMain.scss';
 import { myProjectStore } from "./context/myProject";
 
 export default function MyProjectMain() {
-  const { setResult, result, setTotalPostId, setOriginalData } = myProjectStore();
+  const { setResult, result, setTotalPostId, originalData, setOriginalData } = myProjectStore();
 
   async function dataCrl(type: string) {
     // 데이터 가져오기 :)

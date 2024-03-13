@@ -136,7 +136,16 @@ export default function MyProjectWrite() {
                 <input type="hidden" {...register('name')} />
                 <section id="writeHeader">
                     <h4>새 프로젝트 작성</h4>
-                    <input {...register('title')} placeholder='제목을 입력해주세요'></input>
+                    <input
+                        {...register('title', {
+                            required: '*필수 입력 사항입니다!',
+                            minLength: {
+                                value: 2,
+                                message: '제목을 입력해주세요'
+                            }
+                        })}
+                        placeholder='제목을 입력해주세요'
+                    />
                 </section>
                 <section id="myProjectWriteImage">
                     <label htmlFor="imgUpload">{imgText}</label>
