@@ -19,8 +19,8 @@ export default function MyCommunity() {
                 </p>
                 <h3>커뮤니티</h3>
             </div>
-            <MyCommunityEmpty />
-            {/* <MyCommunityContents /> */}
+            {/* <MyCommunityEmpty /> */}
+            <MyCommunityContents />
         </section>
 
     );
