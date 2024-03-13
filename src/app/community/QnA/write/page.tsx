@@ -12,8 +12,11 @@ const QuillExample = dynamic(() => import('./components/QuillExample'), { ssr: f
 export default function QnAWrite() {
 
     const { data: session, status } = useSession();
+    let postIdCounter = 0;
 
     const handleSaveContent = (title: string, content: string) => {
+        postIdCounter++;
+        const postId = postIdCounter;
         console.log(title, content);
         // 데이터베이스에 데이터 저장 로직을 직접 구현하거나, 외부 함수를 호출하여 처리할 수 있습니다.
         saveToDatabase(title, content);
