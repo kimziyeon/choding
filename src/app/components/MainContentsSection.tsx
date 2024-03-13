@@ -6,6 +6,7 @@ import ArrowRight from '@/essets/arrowRight.svg';
 import ContentsFigure from './ContentsFigure';
 import { useEffect, useState } from 'react';
 import { userDataType } from '@/types/user'
+import { useRouter } from 'next/navigation';
 
 type HomeType = {
     subtext: string,
@@ -16,6 +17,7 @@ type HomeType = {
 }
 
 export default function Home({ subtext, title, option, loginData, result }: HomeType) {
+    const router = useRouter();
 
     const { data: session, status } = useSession();
     // const [result, setResult] = useState([]);
@@ -24,7 +26,7 @@ export default function Home({ subtext, title, option, loginData, result }: Home
     const classname = `num${option}`;
 
     const clickMore = (t) => {
-        console.log(t)
+        router.push(`http://localhost:3000/search?key=${t}`)
     }
 
     return (
