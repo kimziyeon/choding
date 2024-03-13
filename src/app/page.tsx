@@ -31,22 +31,17 @@ export default function Home() {
 
 
 
-  // useEffect(() => {
-  //   axios.get(`/api/mypoint?email=${session?.user?.email}`)
-  //     .then(res => {
-  //       console.log(res.data)
-
-  //     });
-  // }, [])
-
 
   useEffect(() => {
     dataCrl('get');
     if (status !== 'authenticated') {
       setTitle(levelKeyword[0].cd)
       setResult(cdData);
+      isOpenFunc({ isOpen: true, isTest: true }); //테스트팝업on
+
     }
   }, [status])
+
 
 
   useEffect(() => {
@@ -57,19 +52,18 @@ export default function Home() {
   }, [loginData])
 
 
-  useEffect(() => {
 
-    if (status === 'authenticated') {
-      isOpenFunc({ isOpen: false, isTest: false });
-      console.log('n.n');
-    } else {
-      isOpenFunc({ isOpen: true, isTest: true });
-      console.log('ㅜ.ㅜ');
-    }
+  // useEffect(() => {
+
+  //   if (status === 'unauthenticated') {
+  //     isOpenFunc({ isOpen: true, isTest: true }); console.log('ㅜ.ㅜ');
+  //   } else {
+  //     isOpenFunc({ isOpen: false, isTest: false }); console.log('n.n');
+  //   }
 
 
-    console.log(status)
-  }, [session])
+  //   console.log(status)
+  // }, [session])
 
 
 
@@ -80,7 +74,6 @@ export default function Home() {
   async function dataCrl(type: string) {
     // console.log(session?.user?.email)
     const res = await axios.get(`/api/mongodb?colName=myPoint&email=${session?.user?.email}`);
-    console.log(res.data, '--------------res.data');
 
     if (res !== null) {
       setLoginData(res.data)
@@ -88,12 +81,14 @@ export default function Home() {
   }
   const loadData = async () => {
     let nowUser = await loginData.find(obj => obj.email === session.user?.email);
+    isOpenFunc({ isOpen: false, isTest: false });//테스트팝업off (따닥........)
 
     if (!nowUser) {
       setTitle(levelKeyword[0].cd)
       setResult(cdData)
-      console.log('nowUser 값이 없음!')
+
       console.log('레벨 테스트를 해야하는 유저')
+      isOpenFunc({ isOpen: true, isTest: true }); //테스트팝업on
       return;
     };
 
@@ -184,12 +179,6 @@ export default function Home() {
         </section>
       </section>
 
-      <div className="lvTestBtn">
-        <p className='dot'></p>
-        <div onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>
-          <Image src={levelTestBtn} alt='levelTestBtn' />
-        </div>
-      </div>
 
     </main>
 
