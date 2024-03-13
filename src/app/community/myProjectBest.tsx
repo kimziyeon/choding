@@ -1,86 +1,83 @@
-//src/app/community/myProjectBest.tsx
 "use client";
+
+import { useCallback, useEffect, useState, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import ArrowRight from '@/essets/arrowRight.svg';
 import './myProjectBest.scss';
-import HTML from '@/essets/myProjectBG/HTML.png';
-import { useEffect, useState } from 'react';
-import serverStore from '@/lib/server/serverStore';
 import MyProjectSlide from '../components/MyProjectSlide';
+import serverStore from '@/lib/server/serverStore';
 
-export default function myProjectBest() {
+export default function MyProjectBest() {
   const router = useRouter();
-  const [result, setResult] = useState();
-  const [likePost, setLikePost] = useState([]);
-  const [slidePost, setSlidePost] = useState([]);
+  const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    dataCrl('get');
+    fetchProjects();
   }, []);
 
-  const dataCrl = async (type: string) => {
+  const fetchProjects = async () => {
     try {
-      const res = await serverStore(type, 'myProject');
-      if (res !== null) {
-        await setResult(res.data);
-        const likePost = await res.data.sort((a, b) => {
-          if (a.like.length === b.like.length) {
-            return b.comments.length - a.comments.length;
-          } else {
-            return b.like.length - a.like.length;
-          }
-        });
-        setLikePost(likePost);
+      const response = await serverStore('get', 'myProject');
+      if (response) {
+        const sortedProjects = sortProjectsByLikesAndComments(response.data);
+        setProjects(sortedProjects);
       }
-
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
-  useEffect(() => {
-    const removed = likePost.slice(1);
-    setSlidePost(removed)
-  }, [likePost]);
+  const sortProjectsByLikesAndComments = (projects) => {
+    return projects.sort((a, b) => {
+      if (a.like.length === b.like.length) {
+        return b.comments.length - a.comments.length;
+      }
+      return b.like.length - a.like.length;
+    });
+  };
 
-  console.log(slidePost)
+  const sortedProjects = useMemo(() => sortProjectsByLikesAndComments(projects), [projects]);
 
-  const clickBestFigure = () => {
-    router.push(`/community/myProject/${likePost[0].postId}`)
+  const handleClickBestFigure = useCallback(() => {
+    // 컴포넌트가 리렌더링될 때마다 같은 함수를 재사용하도록!(최적화 ㅇㅅㅇb)
+  if(projects.length > 0) {
+    router.push(`/community/myProject/${sortedProjects[0].postId}`);
   }
+  }, [sortedProjects, router]);
+
 
   return (
     <section id="communityMyProjectContainer" className="communityContainer">
-      <header className="communityContHeader">
-        <h2 className="containerTitle">최근 핫한 프로젝트</h2>
+      <div className="communityContHeader">
+        <h2 className="containerTitle">최근 핫한 <span>프로젝트</span></h2>
         <div>
-          <Link href='/community/myProject' className='more'>더보기
-            <Image
-              src={ArrowRight}
-              alt='arrow image'
-              width={20} height={20}
-            />
-          </Link>
+        <Link href='/community/myProject' className='more'>더보기
+          <Image
+            src={ArrowRight}
+            alt='arrow image'
+            width={20} height={20}
+          />
+        </Link>
         </div>
-      </header>
+      </div>
       <section className="containerContents">
-        <figure className='ccitem best1' onClick={clickBestFigure}>
-          {
-            likePost.length > 0 && <>
-              <img src={likePost[0].image} alt="" />
-              <figcaption>
-                <h3>{likePost[0].title}</h3>
-                <div className='bottom'>
-                  <p className='name'>{likePost[0].name}</p>
-                  <span className='like'>♥ {likePost[0].like.length}</span>
-                </div>
-              </figcaption>
-            </>
-          }
-        </figure>
-        <MyProjectSlide slidePost={slidePost} />
+        { projects.length > 0 && 
+          <figure className='ccitem best1'
+          onClick={handleClickBestFigure}>
+            <img src={projects[0].image} alt="" />
+            <figcaption>
+              <h3>{projects[0].title}</h3>
+              <div className='bottom'>
+                <span className='name'>by {projects[0].name}</span>
+                <span className='like'>♥ {projects[0].like.length}</span>
+                <span>💬 {projects[0].comments.length}</span>
+              </div>
+            </figcaption>
+          </figure>
+        }
+        <MyProjectSlide slidePost={projects.slice(1)} />
       </section>
     </section>
   );
