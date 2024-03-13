@@ -105,10 +105,18 @@
     }
 }
 
-@include responsive(m) {
+@include responsive(l) {
     #MyProjectTotal {
         .communityFigure {
             width: calc((100% - 3rem)/2);
+        }
+    }
+}
+
+@include responsive(520px) {
+    #MyProjectTotal {
+        .communityFigure {
+            width: 100%;
         }
     }
 }

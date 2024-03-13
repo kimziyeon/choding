@@ -37,11 +37,7 @@ export default function Header() {
                 </h1>
                 <div className='rightSide'>
 
-                    <Link href='/myPage' className='signUp'>
-                        <Image src={User} alt='Logo' width={50} height={25}></Image>
-                    </Link>
-
-                    {/* {status === 'authenticated' ?
+                    {status === 'authenticated' ?
                         <Link href='/myPage' className='signUp'>
                             <Image src={User} alt='Logo' width={50} height={25}></Image>
                         </Link>
@@ -49,7 +45,7 @@ export default function Header() {
                         <Link href='/login' className='signUp'>
                             <Image src={User} alt='Logo' width={50} height={25}></Image>
                         </Link>
-                    } */}
+                    }
 
                 </div>
             </div>
