@@ -155,6 +155,23 @@
             .contentsFigure {
                 width: calc((100% - 2rem)/3);
                 padding-bottom: 1rem;
+                position: relative;
+
+                .study {
+                    // 스크랩 버튼
+                    position: absolute;
+                    right: 0.5rem;
+                    top: -0.5rem;
+
+                    width: 25px;
+                    height: 30px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 0;
+                    }
+                }
             }
         }
     }
