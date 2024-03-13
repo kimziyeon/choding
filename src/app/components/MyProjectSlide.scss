@@ -1,7 +1,14 @@
+@use '../../styles/main' as *;
+
 #mainSlide {
     .swiper-wrapper {
         .contentsFigure {
+            height: 240px;
+
             .innerContents {
+                height: 100%;
+                @include column-flexbox;
+
 
                 img {
                     width: 100%;
@@ -9,10 +16,32 @@
                     object-fit: cover;
                 }
 
-                .bottom {
+                figcaption {
                     padding: 1rem;
+
+                    .title {
+                        font-size: $b;
+                    }
+
+                    .bottom {
+                        padding-top: 0.5rem;
+                        font-size: $s;
+
+                        span {
+                            color: $gray;
+                        }
+
+                        .like {
+                            padding: 0 0.5rem;
+                        }
+                    }
                 }
             }
         }
     }
+}
+
+// swiper
+.swiper-pagination-bullet-active {
+    background-color: $main;
 }
