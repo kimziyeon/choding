@@ -10,7 +10,7 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
         return <div>검색 결과가 없습니다!</div>
     }
     return (
-        result && result.map((item, i) => (
+        result && result.filter((item, i) => i < 6).map((item, i) => ( // 최대 6개까지만 출력!!!
             <figure className='contentsFigure' key={item.channelId + i}>
                 <a href={`https://www.youtube.com/watch?v=${item.resourceId.videoId}`} target='_blank'>
                     <img src={item.thumbnails.medium ? item.thumbnails.medium?.url : item.thumbnails.default.url} alt="썸네일 이미지" />
