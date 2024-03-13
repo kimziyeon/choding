@@ -6,6 +6,7 @@ import "./QnA.scss";
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Login from '@/app/login/page';
+import { AnyPtrRecord } from 'dns';
 
 export default function myPage() {
 
@@ -18,6 +19,27 @@ export default function myPage() {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/post?colName=qna');
+
+        response.data.forEach((obj:any)=>{
+
+          const tag:any = document.createElement('div');
+          tag.innerHTML = obj.content;
+          
+          const tumb = tag.querySelector('img');
+          
+          
+          const text = [];  
+          tag.childNodes.forEach((node:any)=>{
+              node.childNodes.forEach((child:any)=>{
+                if(child.tagName == undefined){
+                  text.push(child)
+                }
+              });
+          })
+          // resObj.push({tumb, text:text[0]});
+          obj.content = {thumb:tumb?.src, text:text[0]}
+        })
+
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -27,27 +49,27 @@ export default function myPage() {
     fetchData();
   }, []);
 
-  console.log(MyQnAList.length === 0)
+
 
   if (status === 'authenticated') {
     if (MyQnAList.length !== 0) {
       return <div className='myPageMain'>
-        <Link className='writeBtn' href='./QnA/write'>글 쓰기</Link>
+        <div className='writeBtnBox'><Link className='writeBtn' href='./QnA/write'>글 쓰기</Link></div>
         {MyQnAList && MyQnAList.map((item, index) => (
           <Link href={`./QnA/${item._id}`} className='QuestionBox' key={index}>
             <div className='QuestionText'>
               <div className='QnAcontent'>
                 <h2>{item.title}</h2>
-                <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
+                <p>{item.content.text?.textContent}</p>
               </div>
               <div className='QnAInfo'>
                 <p>이름 : {item.userName}</p>
                 <p>댓글 수 {item.comment.length}</p>
-                <p>좋아요 </p>
+                <p>좋아요<span>{item.like.length}</span> </p>
               </div>
             </div>
             <div className='QuestionImg'>
-              <img src="" alt="" />
+              <img src={item.content?.thumb} alt=""  /> 
             </div>
           </Link>
         ))}

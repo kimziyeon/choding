@@ -18,6 +18,27 @@ export default function QnABest() {
       const fetchData = async () => {
         try {
           const response = await axios.get('/api/post?colName=qna');
+
+          response.data.forEach((obj:any)=>{
+
+            const tag:any = document.createElement('div');
+            tag.innerHTML = obj.content;
+            
+            const tumb = tag.querySelector('img');
+            
+            
+            const text = [];  
+            tag.childNodes.forEach((node:any)=>{
+                node.childNodes.forEach((child:any)=>{
+                  if(child.tagName == undefined){
+                    text.push(child)
+                  }
+                });
+            })
+            // resObj.push({tumb, text:text[0]});
+            obj.content = {thumb:tumb?.src, text:text[0]}
+          })
+
           setData(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -46,8 +67,8 @@ export default function QnABest() {
               <div key={index} className='QnABsetContainer'>
                 <div className='BestContent'>
                   <div className='contentBox'>
-                    <p className='title'>{item.title}</p>
-                    <p className='content' dangerouslySetInnerHTML={{ __html: item.content }}></p>
+                    <h2 className='title'>{item.title}</h2>
+                    <p className='content'>{item.content.text?.textContent}</p>
                   </div>
                   <p className='Name'>{item.userName}</p>
                 </div>
