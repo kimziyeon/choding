@@ -179,12 +179,6 @@ export default function Home() {
         </section>
       </section>
 
-      <div className="lvTestBtn">
-        <p className='dot'></p>
-        <div onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>
-          <Image src={levelTestBtn} alt='levelTestBtn' />
-        </div>
-      </div>
 
     </main>
 

@@ -51,6 +51,8 @@
 
 
             .myLv {
+                cursor: pointer;
+
                 >b {
                     color: $main;
                     background-color: #fff;
@@ -99,7 +101,7 @@
         }
     }
 
-    .likeThumb {
+    .studyThumb {
         @include flexbox();
         overflow: hidden;
 
@@ -190,13 +192,13 @@
 
 //마이페이지 / 책갈피,커뮤니티
 
-.likePage,
+.studyPage,
 .commuPage,
 .checkPage {
     padding-top: 6rem;
     color: $grayDark;
 
-    .likeTitle,
+    .studyTitle,
     .commuTitle,
     .checkTitle {
         position: relative;
@@ -212,14 +214,14 @@
         }
     }
 
-    .commuContents {
+    .commuContents .studyContents {
         max-width: calc(480px - 2rem);
         margin: 2rem auto;
         justify-content: center;
     }
 
     .commuEmpty,
-    .likeEmpty {
+    .studyEmpty {
         @include column-flexbox(c, c);
         margin: 5rem 0 2rem 0;
 

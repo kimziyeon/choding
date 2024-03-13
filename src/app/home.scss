@@ -9,20 +9,4 @@
         box-sizing: border-box;
         padding: 2rem;
     }
-
-    .lvTestBtn {
-        @include column-flexbox(c, c);
-        position: fixed;
-        right: calc(50% - 330px);
-        bottom: 25px;
-        cursor: pointer;
-
-        .dot {
-            width: 7px;
-            height: 7px;
-            background-color: #D67BFF;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-    }
 }
