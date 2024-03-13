@@ -82,3 +82,53 @@ export type naverSearchItem = {
     "bloggerlink": string,
     "postdate": string
 };
+
+
+// -------------------------------------- 유튜브 검색 결과
+export type youtubeSearch = {
+    "kind": string,
+    "etag": string,
+    "items": youtubeSearchItem,
+    "pageInfo": {
+        "totalResults": number,
+        "resultsPerPage": number
+    }
+}
+
+export type youtubeSearchItem = {
+    "kind": string,
+    "etag": string,
+    "id": string,
+    "snippet": youtubeSnippet
+}
+
+export type youtubeSnippet = {
+    "publishedAt": string,
+    "channelId": string,
+    "title": string,
+    "description": string,
+    "thumbnails": youtubeThumbnails,
+    "channelTitle": string,
+    "playlistId": string,
+    "position": number,
+    "resourceId": {
+        "kind": string,
+        "videoId": string
+    },
+    "videoOwnerChannelTitle": string,
+    "videoOwnerChannelId": string
+}
+
+export type youtubeThumbnails = {
+    "default": youtubeThumbObject,
+    "medium"?: youtubeThumbObject,
+    "high"?: youtubeThumbObject,
+    "standard"?: youtubeThumbObject,
+    "maxres"?: youtubeThumbObject
+}
+
+export type youtubeThumbObject = {
+    "url": string,
+    "width": number,
+    "height": number
+}
