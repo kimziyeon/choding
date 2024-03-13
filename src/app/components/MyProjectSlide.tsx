@@ -1,15 +1,21 @@
 "use client";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useRouter } from 'next/navigation';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import './MyProjectSlide.scss';
-
-
+import { useCallback } from 'react';
 
 export default function MyProjectSlide({ slidePost }) {
+  const router = useRouter();
+
+  const handleClickBestFigure = (i:number) => {
+    router.push(`/community/myProject/${i}`);
+  }
+
     return (
         <Swiper
             slidesPerView={1}
@@ -18,27 +24,32 @@ export default function MyProjectSlide({ slidePost }) {
                 clickable: true,
             }}
             loop={true}
-            // autoplay={{
-            //     delay: 2500,
-            //     disableOnInteraction: false,
-            // }}
+            autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+            }}
             // navigation={true}
             modules={[Autoplay, Navigation, Pagination]}
             className="mySwiper ccitem"
             id="mainSlide"
         >
             {
-                slidePost && slidePost.map((item) => {
+                slidePost && slidePost.map((item, i) => {
                     return <SwiperSlide
                         className='contentsFigure'
-                        key={item.postId}>
-                        <div className='innerContents'>
+                        key={item.postId}
+                        onClick={()=>{handleClickBestFigure(item.postId)}}>
+                        <figure className='innerContents'>
                             {item.image !== null ? <img src={item.image}></img> : <div className='noImage'>이미지가 없습니다</div>}
-                            <div className='bottom'>
-                                <span>by {item.name}</span>
+                            <figcaption>
                                 <h3 className='title'>{item.title}</h3>
-                            </div>
-                        </div>
+                                <div className="bottom">
+                                    <span>by {item.name}</span>
+                                    <span className='like'>♥ {item.like.length}</span>
+                                    <span>💬 {item.comments.length}</span>
+                                </div>
+                            </figcaption>
+                        </figure>
                     </SwiperSlide>
                 })
             }

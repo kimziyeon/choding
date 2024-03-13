@@ -1,21 +1,19 @@
 @use '../../styles/main' as *;
 
 #communityMyProjectContainer {
-    padding: 2rem 0;
+    padding: 4rem 0;
     position: relative;
     z-index: 0;
 
     &::before {
         content: '';
         width: 100%;
-        height: 240px;
+        height: 280px;
         position: absolute;
         top: 0;
         z-index: -1;
         background: $wGray;
     }
-
-    .communityContHeader {}
 
     .containerContents {
         padding: 0 2rem;
@@ -31,19 +29,18 @@
 
         .ccitem.best1 {
             position: relative;
-            overflow: hidden;
             background-color: #000;
 
             img {
+                transition: 0.1s ease-in;
                 width: 100%;
+                height: 100%;
                 opacity: 0.7;
                 object-fit: cover;
             }
 
-            &:hover {
-                img {
-                    opacity: 0.5;
-                }
+            &:hover img {
+                opacity: 0.5;
             }
 
             &::after {
@@ -67,7 +64,6 @@
 
             figcaption {
                 position: absolute;
-                color: #fff;
                 bottom: 1rem;
                 left: 1rem;
                 z-index: 0;
@@ -77,6 +73,7 @@
                     position: relative;
                     font-size: $b;
                     z-index: 0;
+                    color: #fff;
 
                     &::after {
                         content: '';
@@ -92,15 +89,25 @@
 
                 .bottom {
                     padding-top: 0.5rem;
-                    @include flexbox;
+                    @include flexbox(s, c);
                     gap: 0.5rem;
+                    font-size: $s;
 
-                    .name,
-                    .like {
-                        font-size: $s;
+                    * {
+                        color: #fff;
                     }
                 }
             }
+        }
+    }
+}
+
+@include responsive(m) {
+    #communityMyProjectContainer .containerContents {
+        flex-direction: column;
+
+        .ccitem {
+            width: 100%;
         }
     }
 }

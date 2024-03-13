@@ -4,6 +4,10 @@
 #communityHome {
     padding-top: 6rem; //헤더 밀려남
 
+    * {
+        color: $grayDark; // 기본 설정
+    }
+
     .communityContHeader {
         padding: 0 2rem;
 
