@@ -44,6 +44,11 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
+
+        .title {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
     }
 }
 
@@ -146,11 +151,12 @@
 
         figure {
             @include column-flexbox(s, s);
-            width: 100%;
+            width: calc((100% - 2rem) / 3);
             border-radius: 1rem;
             padding: 1rem;
             height: 240px;
             box-shadow: 0 0 10px 0 $grayLight;
+            background-color: #fff;
 
             figcaption {
                 width: 100%;
@@ -158,12 +164,6 @@
 
                 .figcaption {
                     width: 100%;
-
-                    .top {
-                        .title {
-                            font-weight: 700;
-                        }
-                    }
 
                     .author {
                         font-size: $s;
@@ -310,21 +310,37 @@
     .contentsBox.num0 {
         .contRight {
             flex-direction: column;
+
+            .contentsFigure {
+                width: 100%;
+                height: 100%;
+
+                a {
+                    width: 100%;
+                    @include flexbox;
+                    gap: 1rem;
+
+                    img {
+                        width: 50%;
+                    }
+
+                    figcaption {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 
-    // google
     .contentsBox.num1 {
         flex-direction: column;
     }
 
-    // naver
     .contentsBox.num2 {
         flex-direction: column;
     }
 
 
-    // more
     .contentsBox.num1,
     .contentsBox.num2 {
         .contLeft {
