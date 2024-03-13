@@ -24,7 +24,7 @@ export default function QnADetail({ params }: any) {
     const day: number = today.getDate();
     const thisDay = (month + '월' + day + '일')
 
-    console.log(data?.[0].like.length)
+    console.log(postId)
 
     const {
         register,
@@ -44,15 +44,12 @@ export default function QnADetail({ params }: any) {
         }
 
 
-        if (status !== 'authenticated') {
-            swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
-            return
-        }
-
-
+        // if (status !== 'authenticated') {
+        //     swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
+        //     return
+        // }
 
         const res = await detailStore('put', 'qna', comment, postId)
-
         await fetchData();
     }
 
@@ -65,7 +62,7 @@ export default function QnADetail({ params }: any) {
             // console.log(e)
 
             setData(d);
-            setComments(prevComments => [...prevComments, ...e]);
+            setComments(e);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -77,10 +74,10 @@ export default function QnADetail({ params }: any) {
 
     const likedAlready = data?.[0]?.like.some(obj => obj.email === session?.user?.email)
     const onClicklikeHandler = async () => {
-        if (!session?.user?.email) {
-            swal('잠깐!', '로그인 후 이용해주세요', 'warning');
-            return;
-        }
+        // if (!session?.user?.email) {
+        //     swal('잠깐!', '로그인 후 이용해주세요', 'warning');
+        //     return;
+        // }
 
         const filtered = data?.[0].like.filter((value) => {
             return value.email !== email
@@ -116,6 +113,12 @@ export default function QnADetail({ params }: any) {
                             <p dangerouslySetInnerHTML={{ __html: data[0].content }}></p>
                         </div>
                     </div>
+                    <button
+                        type='button'
+                        onClick={() => { onClicklikeHandler(data.postId) }}
+                        className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
+                        <p>♥ <span>{data?.[0].like.length}</span></p>
+                    </button>
                     <form action="" className='postForm' onSubmit={handleSubmit(onSubmit)}>
                         {
                             comments && (
@@ -124,13 +127,6 @@ export default function QnADetail({ params }: any) {
                                 </>
                             )
                         }
-
-                        <button
-                            type='button'
-                            onClick={() => { onClicklikeHandler(data.postId) }}
-                            className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
-                            <p>♥ <span>{data?.[0].like.length}</span></p>
-                        </button>
 
                         <textarea {...register('comment', { required: true })} placeholder='여러분들의 소중한 의견을 부탁드립니다!' />
                         <div className='qnapostBtn'>
@@ -152,8 +148,6 @@ export default function QnADetail({ params }: any) {
                                 <p className='commentText'>{comment.commentText}</p>
                                 <p>{comment.thisDay}</p>
                             </div>
-                            <div>답글 한숟가락</div>
-                            <DetailComment />
                         </article>
                     ))
                 }

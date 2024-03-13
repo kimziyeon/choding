@@ -2,6 +2,7 @@
 
 .containerContentsQnA {
     display: grid;
+    padding: 0 2rem;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 70px);
@@ -11,6 +12,10 @@
             "b a c"
     ;
     align-items: end;
+    @include responsive('s'){
+        display: flex;
+        flex-direction: column;
+    }
     .QnABsetContainer {
         box-shadow: 3px 4px 30px rgba(0, 0, 0, 10%);
         border-radius: 9px;
@@ -23,6 +28,13 @@
             right: -13%;
             top: -5%;
             color: $main;
+            @include responsive('m'){
+                right: 0; top: 0;
+                display: flex;
+            }
+        }
+        @include responsive('s'){
+            width: 100%;
         }
         &:nth-child(1){
             grid-area: a;
@@ -30,6 +42,9 @@
             &::after{
                 content: '1';
                 font-size: 9rem;
+                @include responsive('s'){
+                    font-size: 5rem;
+                }
             }
         }
         &:nth-child(2){
@@ -38,6 +53,9 @@
             &::after{
                 content: '2';
                 font-size: 8rem;
+                @include responsive('s'){
+                    font-size: 4rem;
+                }
             }
         }
         &:nth-child(3){
@@ -46,12 +64,35 @@
             &::after{
                 content: '3';
                 font-size: 8rem;
+                @include responsive('s'){
+                    font-size: 4rem;
+                }
             }
         }
         .BestContent {
-            .title {}
-
-            .Name {}
+            padding: 9px;
+            display: block;
+            // width: 100%;
+            // min-width: 90px;
+            max-width: 190px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            .contentBox{
+                padding-bottom: $l;
+                .title {
+                    font-weight: bold;
+                    font-size: $s;
+                }
+                .content{
+                    font-size: $t;
+                    color: $gray;
+                }
+            }
+            .Name {
+                font-size: $t;
+                color: $gray;
+            }
         }
     }
 }

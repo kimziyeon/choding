@@ -45,9 +45,9 @@ export default function QnABest() {
             data.map((item, index) => (
               <div key={index} className='QnABsetContainer'>
                 <div className='BestContent'>
-                  <div>
+                  <div className='contentBox'>
                     <p className='title'>{item.title}</p>
-                    <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
+                    <p className='content' dangerouslySetInnerHTML={{ __html: item.content }}></p>
                   </div>
                   <p className='Name'>{item.userName}</p>
                 </div>
