@@ -8,6 +8,7 @@ import Link from 'next/link';
 import heart from '../../essets/heart.svg';
 import arrowRight from '@/essets/arrowRight.svg';
 import { useSession } from 'next-auth/react';
+import { useQuestion } from '@/context/questionStore';
 
 
 
@@ -16,7 +17,7 @@ export default function MyPage() {
     const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session?.user?.image})` } : {}; //유저이미지
     const [randomTitle, setRandomTitle] = useState('');
     const [mypageData, setMypageData] = useState([]);
-
+    const { isOpenFunc } = useQuestion();
 
 
 
@@ -74,11 +75,13 @@ export default function MyPage() {
                     </div>
 
                     <div className='myInfo'>
-                        <div className='myLv'>
+                        <div className='myLv' onClick={() => { isOpenFunc({ isOpen: true, isTest: true }) }}>
                             <p>레벨</p>
 
                             {mypageData?.level ?
-                                <b>{mypageData?.level}</b> : <b>?</b>}
+                                <b>{mypageData?.level}</b>
+                                :
+                                <b>?</b>}
                         </div>
 
                         <div className='myPot'>
@@ -100,14 +103,14 @@ export default function MyPage() {
                 <div className='myTitleFlex'>
                     <h4>내 책갈피</h4>
                     <span>
-                        <Link href='myPage/like'>더 보기</Link>
+                        <Link href='myPage/study'>더보기</Link>
                         <Image
                             src={arrowRight} alt='arrowRight'
                             width={20} height={20}>
                         </Image>
                     </span>
                 </div>
-                <div className='likeThumb'>
+                <div className='studyThumb'>
                     <figure>
                         <div></div>
                         <figcaption>컨텐츠 타이틀을 ..</figcaption>
@@ -129,7 +132,7 @@ export default function MyPage() {
                 <div className='myTitleFlex'>
                     <h4>커뮤니티</h4>
                     <span>
-                        <Link href='myPage/community'>더 보기</Link>
+                        <Link href='myPage/community'>더보기</Link>
                         <Image
                             src={arrowRight} alt='arrowRight'
                             width={20} height={20}>
