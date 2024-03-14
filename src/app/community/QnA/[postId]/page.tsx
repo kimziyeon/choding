@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { useSession } from 'next-auth/react';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
+import Image from 'next/image';
 import DetailComment from './detailComment';
 import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
@@ -175,7 +176,7 @@ export default function QnADetail({ params }: any) {
                     comments.map((comment, index) => (
                         <article key={index} className='commentbox'>
                             <div className='commentinfo'>
-                                <img src={comment.img} alt="" />
+                                <Image src={comment.img} alt='' width={90} height={50}/>
                                 <p>{comment.name}</p>
                             </div>
                             <div className='textbox'>
