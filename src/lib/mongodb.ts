@@ -8,7 +8,7 @@ export const connectToDB = async (type: string, body: any, colName: string | nul
 
 
     await client.connect(); // 접속
-    db = client.db('choding3');
+    db = client.db('choding');
     collection = db.collection(colName);
 
     console.log('db접속', type, body, colName, idx)
