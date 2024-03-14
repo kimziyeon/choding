@@ -12,24 +12,31 @@
             "b a c"
     ;
     align-items: end;
-    @include responsive('s'){
-        display: flex;
-        flex-direction: column;
+    @include responsive('m'){
+        grid-gap: 0.5rem;
+        grid-template-rows: repeat(3, 350px);
+        grid-template-areas: 
+        "a a a"
+        "b b b"
+        "c c c"
+;
     }
     .QnABsetContainer {
         box-shadow: 3px 4px 30px rgba(0, 0, 0, 10%);
         border-radius: 9px;
         position: relative;
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
         &::after{
             font-weight: bold;
             position: absolute;
-            right: -13%;
-            top: -5%;
+            right: 0%;
+            top: 0%;
             color: $main;
             @include responsive('m'){
-                right: 0; top: 0;
+                right: 3%; top: 0;
                 display: flex;
             }
         }
@@ -41,7 +48,10 @@
             height: 100%;
             &::after{
                 content: '1';
-                font-size: 9rem;
+                font-size: 5rem;
+                @include responsive('m'){
+                    font-size: 5rem;
+                }
                 @include responsive('s'){
                     font-size: 5rem;
                 }
@@ -52,7 +62,10 @@
             height: 90%;
             &::after{
                 content: '2';
-                font-size: 8rem;
+                font-size: 5rem;
+                @include responsive('m'){
+                    font-size: 4rem;
+                }
                 @include responsive('s'){
                     font-size: 4rem;
                 }
@@ -63,23 +76,30 @@
             height: 90%;
             &::after{
                 content: '3';
-                font-size: 8rem;
+                font-size: 5rem;
+                @include responsive('m'){
+                    font-size: 4rem;
+                }
                 @include responsive('s'){
                     font-size: 4rem;
                 }
             }
         }
+        img{
+           width: 100%; height: 65%;
+           object-fit: cover;
+           &:nth-child(1){
+            height: 67%;
+           }
+        }
         .BestContent {
             padding: 9px;
             display: block;
-            // width: 100%;
-            // min-width: 90px;
-            max-width: 190px;
             white-space: nowrap;
-            overflow: hidden;
             text-overflow: ellipsis;
             .contentBox{
                 padding-bottom: $l;
+                overflow: hidden;
                 .title {
                     font-weight: bold;
                     font-size: $s;
@@ -87,6 +107,11 @@
                 .content{
                     font-size: $t;
                     color: $gray;
+                    white-space: normal;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
                 }
             }
             .Name {

@@ -32,15 +32,15 @@ export default function LevelTestEnd({ score }) {
             const myPointInfo: any = await axios.get(`/api/mypoint?email=${session?.user?.email}`);
             if (score) {
                 let level = '';
-                if (score <= 2) {
+                if (score <= 5) {
                     level = '초딩';
-                } else if (score <= 4) {
-                    level = '중딩';
-                } else if (score <= 6) {
-                    level = '고딩';
-                } else if (score <= 8) {
-                    level = '대딩';
                 } else if (score <= 10) {
+                    level = '중딩';
+                } else if (score <= 15) {
+                    level = '고딩';
+                } else if (score <= 20) {
+                    level = '대딩';
+                } else if (score > 25) {
                     level = '직딩';
                 }
 

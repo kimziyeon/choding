@@ -6,6 +6,9 @@ import './YoutubeFigure.scss'
 import { useState } from 'react';
 import study from '@/essets/study.png';
 import studyChecked from '@/essets/studychecked.png';
+import axios from 'axios';
+import swal from 'sweetalert';
+import { useSession } from 'next-auth/react';
 
 interface youtubeFigureType {
     result: youtubeSnippet[]
@@ -13,6 +16,8 @@ interface youtubeFigureType {
 
 export default function YoutubeFigure({ result }: youtubeFigureType) {
     const [studyStates, setStudyStates] = useState<Record<string, boolean>>({});
+    const [studyData, setStudyData] = useState<any[]>([]);
+    const { data: session, status } = useSession();
 
     if (result.length < 1) {
         return <div>검색 결과가 없습니다!</div>
@@ -20,6 +25,22 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
 
     const toggleStudyState = (videoId: string) => {
         setStudyStates(prev => ({ ...prev, [videoId]: !prev[videoId] }));
+        
+        if (!session?.user?.email) {
+            swal('잠깐!', '로그인 후 이용해주세요', 'warning');
+            return;
+        }
+
+        const desiredVideo = videoId;
+        const desiredItem = result.find(item => item.resourceId.videoId === desiredVideo)
+        const email = session.user.email;
+        // setStudyData(prevData => [...prevData, desiredItem])
+
+        // const data = {email, desiredItem}
+
+        // axios.post('/api/bookmark' , data)
+
+        if(!desiredItem) return;
     }
 
     return (

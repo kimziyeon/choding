@@ -1,16 +1,10 @@
 import { connectToDB } from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
-let postIdCounter: number = 0;
-
 export async function POST(req: NextRequest) { // QnA write에서 보낸 데이터값을 req로 받아서 쓴다
-    const data = await req.json();
 
-    postIdCounter++;
-    data.postId = postIdCounter;
-
-    // console.log(postIdCounter , 'postId증가')
-    return NextResponse.json(await connectToDB('post', data, 'qna', null));
+    const data = await req.json();    
+    return NextResponse.json(await connectToDB('post', data, 'qna',null));
 }
 
 export async function GET(req: NextRequest) {
