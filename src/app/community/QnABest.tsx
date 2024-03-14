@@ -11,9 +11,6 @@ import axios from 'axios';
 export default function QnABest() {
 
   const [data, setData] = useState([]);
-
-  console.log(data, 'test');
-
   useEffect(() => {
       const fetchData = async () => {
         try {

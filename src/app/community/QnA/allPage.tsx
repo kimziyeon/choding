@@ -6,7 +6,7 @@ import axios from 'axios';
 import "./QnA.scss";
 
 
-export default async function allPage() {
+export default function allPage() {
     const [data, setData] = useState([]);
 
     const findMaxPostId = (data:any) => {
@@ -21,8 +21,6 @@ export default async function allPage() {
   
   // data 배열에서 제일 큰 postId 값을 찾기
   const maxPostId = findMaxPostId(data);
-  
-  console.log("제일 큰 postId:", maxPostId);
 
     useEffect(() => {
         const fetchData = async () => {
