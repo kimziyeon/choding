@@ -139,7 +139,7 @@
 .commuContents {
 
     figure {
-        @include flexbox(s, c);
+        @include flexbox(c, c);
         gap: 10px;
         cursor: pointer;
 
@@ -189,8 +189,6 @@
         }
     }
 }
-
-
 
 
 
