@@ -8,7 +8,7 @@ import MyStudyEmpty from './commponents/Empty';
 import MyStudyContents from './commponents/Contents';
 
 
-export default function MyStudy() {
+export default function studyPage() {
     return (
 
         <section className="studyPage">
@@ -21,7 +21,6 @@ export default function MyStudy() {
             </div>
 
             <MyStudyContents />
-            {/* <MyStudyEmpty /> */}
         </section>
     );
 }

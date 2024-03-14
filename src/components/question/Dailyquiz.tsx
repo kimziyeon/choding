@@ -55,7 +55,7 @@ export default function Dailyquiz() {
 
 
     const handleAnswer = (index) => {
-        console.log(index);
+        // console.log(index);
         setUserValue(index);
     };
 
