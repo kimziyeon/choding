@@ -120,8 +120,8 @@ export default function MyProjectWrite() {
 
     // 폼 전송
     const onSubmit = async (data: myProjectPostType) => {
-        console.log('------------data------------')
-        console.log(data)
+        // console.log('------------data------------')
+        // console.log(data)
         await serverStore('post', 'myProject', data);
         router.push('/community/myProject');
     };

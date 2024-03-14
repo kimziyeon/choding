@@ -1,6 +1,5 @@
 import { UseFormRegister, FieldErrors, useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
-import { useEffect, useState } from 'react';
 import swal from 'sweetalert';
 
 type InputSectionType = {
