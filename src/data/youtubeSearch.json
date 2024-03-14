@@ -9523,6 +9523,716 @@
             "totalResults": 7,
             "resultsPerPage": 50
         }
+    },
+    {
+        "kind": "youtube#playlistItemListResponse",
+        "etag": "yr5dxdP_xgV-ImjYm1aR7EPREGE",
+        "items": [
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "GJZT-0WcuL4Lg6IfIwvEaHKe18M",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS41NkI0NEY2RDEwNTU3Q0M2",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:32:19Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "Next.js 13- 0. Next.js 란 무엇인가? (14 버전 호환됩니다)",
+                    "description": "#공지사항  \nNext.js는 리엑트 기반의 풀스택 웹 프래임워크로 \n더욱 편리하게 웹앱을 구현할 수 있도록 도와줍니다. \n\n전체 수업은 \n18개의 동영상, 1시간 20분 크기 입니다. \n\n적당한 크기로 공부하실 수 있도록  \n매일 저녁 8시에 아래 주소에서 순차적으로 공개합니다. \nhttps://opentutorials.org/course/5098\n\nNext.js 공부를 미루고 계셨던 분은 하루 30분만 시간을 빌려주세요.\n3일 후에는 Next.js의 사용자가 되어있을 것입니다. \n\n(공개일정 : https://docs.google.com/spreadsheets/d/1jsq6-i6cyHHsUbhxwEyZ4rw4CuolnMEC15KIhFP4ibc)\n------------------------------\n\n전체수업은 아래 채널에서 볼 수 있습니다. \nopentutorials (권장)\n- https://opentutorials.org/course/5098\n\nyoutube 재생목록\n- https://www.youtube.com/watch?v=9KOaR6QMb9A&list=PLuHgQVnccGMCwxXsQuEoG-JJ7RlwtNdwJ\n\n선행학습 : \nReact : https://seomal.com/map/1/220\n\n생활코딩 소식 메일링 리스트 : \nhttps://page.stibee.com/subscriptions/8851\n\n생활코딩 인스타 그램 : \nhttps://www.instagram.com/coohde/ Nextjs14 Router",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/9KOaR6QMb9A/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 0,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "9KOaR6QMb9A"
+                    },
+                    "videoOwnerChannelTitle": "생활코딩",
+                    "videoOwnerChannelId": "UCvc8kv-i5fvFTJBFAk6n1SA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "HwLGZuykmseCRm7zaiTQKnPzI9s",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS4yODlGNEE0NkRGMEEzMEQy",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:33:32Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "Next.js 13 강의 달린다 (1강~6강)",
+                    "description": "Next.js 강의 오픈 (얼리엑세스 50% 할인 중) \nhttps://codingapple.com/course/next-js/\n\n일반강의 10% 할인 쿠폰 : GPT5 (맨날 바뀜 최신영상 참고)\n\n\n\n0:00 1강 설치\n강의글 : https://codingapple.com/unit/nextjs-install/?id=68759\n\n6:18 2강 리액트 기초문법\n강의글 : https://codingapple.com/unit/nextjs-page-layout/?id=68759\n\n15:02 3강 Routing\n강의글 : https://codingapple.com/unit/nextjs-layout-file/?id=68759\n\n23:38 4강 map 반복문\n강의글 : https://codingapple.com/unit/nextjs-map/?id=68759\n\n37:35 5강 image 넣기\n강의글 : https://codingapple.com/unit/nextjs-image/?id=68759\n\n47:41 6강 component\n강의글 : https://codingapple.com/unit/nextjs-component/?id=68759 Nextjs14 Router",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/PCkiz2GUFg8/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 1,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "PCkiz2GUFg8"
+                    },
+                    "videoOwnerChannelTitle": "코딩애플",
+                    "videoOwnerChannelId": "UCSLrpBAzr-ROVGHQ5EmxnUg"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "QTk00LL9bAdH38lwurVIrDZQ2u0",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS4wMTcyMDhGQUE4NTIzM0Y5",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:33:46Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "Next.js 14 Tutorial - 1 - Introduction",
+                    "description": "📘 Frontend Interview Course - https://learn.codevolution.dev/\n💖 Support UPI - https://support.codevolution.dev/\n💖 Support Paypal - https://www.paypal.me/Codevolution\n💾 Github - https://github.com/gopinav/Next.js-14-Tutorials\n\n📱 Follow Codevolution\n+ Twitter - https://twitter.com/CodevolutionWeb\n+ Facebook - https://www.facebook.com/codevolutionweb\n\n📫 Business - codevolution.business@gmail.com\n\nNext.js 14 Tutorial\nNext.js 14\nNext.js App Router\nNext.js Tutorial for Beginners Nextjs14 Router",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/ZjAqacIC_3c/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/ZjAqacIC_3c/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/ZjAqacIC_3c/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/ZjAqacIC_3c/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/ZjAqacIC_3c/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 2,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "ZjAqacIC_3c"
+                    },
+                    "videoOwnerChannelTitle": "Codevolution",
+                    "videoOwnerChannelId": "UC80PWRj_ZU8Zu0HSMNVwKWw"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "oEEeja_H3-t1zRFp863tu0_CnwQ",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS41MjE1MkI0OTQ2QzJGNzNG",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:33:57Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "2024년. NextJS 14를 배워야하는 이유.",
+                    "description": "무료 강의 푼다.\n풀스택 앱 빌드가 이렇게 쉬웠던 적은 없었다.....!\n#리액트 #무료강의 #nextjs14 #nextjs \n-\n🔥 니꼴라쓰의 NextJS 14.0 무료 강의 🔥\nhttps://bit.ly/48Lo8gV\n-\n0:00~0:44 : Intro\n0:45~3:10 : Server Components\n3:11~4:38 : Server Actions\n4:39~6:11 : Outro Nextjs14 Router",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/t0UocUiR5-8/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 3,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "t0UocUiR5-8"
+                    },
+                    "videoOwnerChannelTitle": "노마드 코더 Nomad Coders",
+                    "videoOwnerChannelId": "UCUpJs89fSBXNolQGOYKn0YQ"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "xLDsoUpyfYGopcFjRMIopMrlMSs",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS4wOTA3OTZBNzVEMTUzOTMy",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:34:28Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "Next.js 나만의 포트폴리오 사이트 만들기 (개발하는 김에 배포까지) / LottieFiles, Notion Api, TailwindCSS",
+                    "description": "📌 내용\n- Next.js\n- Lottie Animation\n- Notion api integration\n- TailwindCSS\n- Vercel deploy\n\n👇 완성 소스코드\nhttps://github.com/TuenTuenna/next-portfolio-tutorial\n\n👇완성 포트폴리오 사이트\nhttps://next-portfolio-tutorial-hyioyx9rt-tuentuenna.vercel.app/\n\n📺수강기록을 남기고 싶으시면 아래에서 수강해보세요!\nhttps://ppak-coders.teachable.com/\n\n⏰ 타임스탬프\n===================================================\n0:00 인트로\n0:12 강의소개\n2:03 개발환경 설정\n2:27 Next.js 소개\n2:48 SSR 및 CSR 개념설명\n9:04 Next.js 설치 및 페이지 설정\n17:45 푸터, 해더 설정\n24:37 TailwindCSS 설정   \n30:29 레이아웃 설정   \n40:31 로티 애니메이션 적용   \n48:35 Link 작업   \n55:21 다크 모드 지원작업   \n1:17:10 노션 API 설명   \n1:35:15 Next.js 데이터 가져오기   \n1:52:21 Project 화면 만들기   \n2:28:16 배포하기   \n2:37:06\n===================================================\n\n부족한 제 채널을 구독해 주시고 꾸준히 영상을 시청해 주셔서\n너무너무 감사합니다! \n앞으로 더 노력하는 정대리가 되겠습니다! 🥰\n\n🍎 iOS 처음이신분 오세요! \nhttps://youtu.be/UKknl2yxQr4\n\n🎁 맴버쉽 혜택 및 iOS UIKit 강좌 안내\nhttps://youtu.be/FCFCKs9EAmA\n\n👍 진정빡코더 🔥👨‍💻 가입하고 유료 iOS 컨텐츠 보기https://www.youtube.com/channel/UCutO2H_AVmWHbzvE92rpxjA/join\n\n🔥진정 빡코더 맴버쉽 안내\nhttps://spangle-wedelia-2dc.notion.site/6198cd9c2d8840a5ab8d2758abf6a6d4\n\n개발하는 정대리 가 궁금하다면? 🔥\nhttp://ppak-coders.com/\n\n개발하는 정대리 빡코딩방👩🏼‍💻🔥 (비번: 1016)\nhttps://open.kakao.com/o/gxOOKJec\n\n영상이 도움이 되셨다면  구독과 좋아요는 저에게 큰 힘이 됩니다!🥰 Nextjs14 Router",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/KvoFvmu5eRo/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 4,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "KvoFvmu5eRo"
+                    },
+                    "videoOwnerChannelTitle": "개발하는 정대리",
+                    "videoOwnerChannelId": "UCutO2H_AVmWHbzvE92rpxjA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "sEztsmlHoDYoaPQ7kJE-ihmFYqM",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS4xMkVGQjNCMUM1N0RFNEUx",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:37:33Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "웹개발 프레임워크 끝판왕, Next.js 💪",
+                    "description": "Next.js 최신 버전 13+강의가 왔습니다!  블로그 만들기, 인스타그램 클론코딩과 함께 기본 부터 심화까지 모두다 가져가세요! 강의 링크: https://academy.dream-coding.com/courses/next  (↙ 자세한 내용)\n___________________________\n\n💡 풀스택 개발 로드맵 ⇢ https://academy.dream-coding.com/pages/roadmap\n\n🚀 엘리와 더 체계적으로 배우고 싶다면 ⇢ 드림코딩 아카데미:\nhttp://academy.dream-coding.com/\n\n.....................................................\n\n🔥 유튜브 영상을 정리해서 블로그에 올리시는 경우 꼭 출처 및 영상 링크를 남겨 주세요.\n\n.....................................................\n\n☀️ 드림코딩 엘리\n모든 드림코더분들이 개발자로 성장해 나가고 꿈을 이루는 여정에 함께 할 채널입니다 :)\n❝Don't forget to code your dream\n여러분들의 멋진 꿈을 코딩하세요 ⭐️\n\n.....................................................\n\n\n🌐 프론트엔드 개발자 되기 입문자편 영상 목록:\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotQ1F92Jp9Ce7ovHEsuRQB3Y\n\n📒 자바스크립트 기초 강의 영상 목록:\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2\n\n💻 개발자라면 누구나 알고 있으면 좋은 지식 💡\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotSn1ThdDeqvBx8QuRSd01qv\n\n💰 개발자 경력 관리 영상 목록:\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotSyQ6RPdytiHID5Cmnv_sA3\n\n📄 이력서 작성 방법\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotTZfvF0s8Vs0gpRtodlTsgg\n\n📈 IT 트렌드\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotRTfM1zJLQMCLriBpLFg8r-\n\n📷 개발자 브이로그\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotR1tALnxov7sAUshyBmfYfU\n\n🤗 생산력 향상 팁\nhttps://www.youtube.com/playlist?list=PLv2d7VI9OotQB-9p29xrAnARhuE1Vf88I\n\n.....................................................\n\n#웹개발#프론트엔드#풀스택 Nextjs14 Router",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/O-D7g3ajzRM/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/O-D7g3ajzRM/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/O-D7g3ajzRM/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/O-D7g3ajzRM/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 5,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "O-D7g3ajzRM"
+                    },
+                    "videoOwnerChannelTitle": "드림코딩",
+                    "videoOwnerChannelId": "UC_4u-bXaba7yrRz_6x6kb_w"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "h-Pj8GDWagXfKBUQXJUkAYyLtug",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS41MzJCQjBCNDIyRkJDN0VD",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:40:30Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "JavaScript Full Course for free 🌐 (2024)",
+                    "description": "#javascript  #tutorial #course\n\n⭐Time Stamps⭐\n#1   00:00:00 JavaScript tutorial for beginners 🌐\n#2   00:12:32 Variables 📦\n#3   00:25:20 Arithmetic operators ➕\n#4   00:33:47 Accept user input 💬\n#5   00:39:09 Type conversion 💱\n#6   00:44:48 Constants 🚫\n#7   00:52:30 ⭐ Counter program 🔢\n#8   01:01:46 Math object 🧮\n#9   01:07:23 Random number generator ⁉\n#10 01:15:59 If statements 🤔\n#11 01:31:56 Checked property ✅\n#12 01:42:03 Ternary operator ❓\n#13 01:48:49 Switches 💡\n#14 01:55:33 String methods 🧵\n#15 02:03:35 String slicing ✂️\n#16 02:11:36 Method chaining ⛓\n#17 02:17:03 Logical operators ❗\n#18 02:22:44 Strict equality 🟰\n#19 02:26:41 While loops 🔁\n#20 02:34:53 For loops 🔂\n#21 02:40:37 ⭐ Number guessing game ↕\n#22 02:49:31 Functions 📞\n#23 03:01:44 Variable scope 🏠\n#24 03:07:10 ⭐ Temperature conversion program 🌡️\n#25 03:23:28 Arrays 🗃\n#26 03:31:33 Spread operator 📖\n#27 03:36:27 Rest parameters 🗄\n#28 03:44:32 ⭐ Dice Roller program 🎲\n#29 03:58:44 ⭐ Random password generator 🔑\n#30 04:10:49 Callbacks 🤙\n#31 04:18:05 forEach() ➿\n#32 04:26:07 map() 🗺\n#33 04:33:08 filter() 🚰\n#34 04:39:37 reduce() ♻\n#35 04:45:07 Function expressions 🐣\n#36 04:52:39 Arrow functions 🎯\n#37 05:00:40 JavaScript Ojects🧍\n#38 05:07:40 What is THIS 👈\n#39 05:12:07 Constructors 🛠\n#40 05:17:38 Classes 🏭\n#41 05:23:47 STATIC keyword ⚡\n#42 05:31:50 Inheritance 🐇\n#43 05:38:53 SUPER keyword 🦸‍♂️\n#44 05:48:14 Getters & Setters 📐\n#45 06:01:28 Destructuring 💥\n#46 06:10:08 Nested objects 📫\n#47 06:19:21 Arrays of objects 🍎\n#48 06:29:21 Sorting 🗃\n#49 06:36:03 Shuffle an array 🔀\n#50 06:40:08 Dates 📅\n#51 06:48:09 Closures 🔒\n#52 06:59:07 setTimeout() ⏰\n#53 07:05:20 ⭐ Digital Clock program 🕐\n#54 07:16:07 ⭐ Stopwatch program ⏱\n#55 07:34:12 ES6 Modules 🚢\n#56 07:40:17 Asynchronous code 💤\n#57 07:45:04 Error handling ⚠\n#58 07:54:06 ⭐ Calculator program 🖩\n#59 08:09:26 What is the DOM? 🌳\n#60 08:14:26 Element selectors 📑\n#61 08:32:04 DOM navigation 🧭\n#62 08:47:31 Add & change HTML 🛠️\n#63 09:03:03 Mouse events 🖱\n#64 09:13:33 Key events ⌨\n#65 09:24:49 Hide/show HTML 🖼\n#66 09:30:00 NodeLists 📃\n#67 09:43:21 classList 🧾\n#68 09:59:20 ⭐ Rock Paper Scissors 👊\n#69 10:18:14 ⭐ Image Slider 🖼️\n#70 10:34:03 Callback Hell? 🔥\n#71 10:39:50 Promises 🤞\n#72 10:52:24 Async/Await ⏳\n#73 10:57:00 JSON files 📄\n#74 11:07:07 Fetch data from an API ↩️\n#75 11:21:22 ⭐ Weather App project ☀️\n\nThis course is a combination of individual videos from my JavaScript playlist. Additional topics discussed can be found in the original playlist that did not fit into this 12-hour series. Code for each topic is pinned underneath each video in the original playlist.\n\nCopyright Disclaimer:\n\nThis video is the intellectual property of Bro Code. All rights reserved. No part of this video may be reproduced, distributed, or transmitted in any form or by any means, including but not limited to recording, uploading, or other electronic or mechanical methods, without my written permission, except in the case of brief quotations embodied in critical reviews and certain other noncommercial uses permitted by copyright law. 자바스크립트 최신 강의",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/lfmg-EJ8gm4/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/lfmg-EJ8gm4/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/lfmg-EJ8gm4/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/lfmg-EJ8gm4/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/lfmg-EJ8gm4/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 6,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "lfmg-EJ8gm4"
+                    },
+                    "videoOwnerChannelTitle": "Bro Code",
+                    "videoOwnerChannelId": "UC4SVo0Ue36XCfOyb5Lh1viQ"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "LpVI_b5SN9vFoSwkt3pdSyEB7YQ",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS5DQUNERDQ2NkIzRUQxNTY1",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:40:51Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "Javascript 무료 풀강의 | 9시간이면 누구든 Javascript 개발자로 만들어버리는 마법같은 영상 | 타임스탬프 O",
+                    "description": "초보분들이 따라오기 최대한 천천히 진행했습니다.\n테스트해보니 어느정도 개념이 잡힌 분들은 1.5배속 또는 2배속으로 들으시면 좋습니다.\n\n[초급] 8시간만에 배우는 Typescript\nhttps://bit.ly/3qaiEer\n\n[초급] 코드팩토리 NestJS 강의\nhttps://bit.ly/3tDFzk5\n\n[초급] 왕초보도 배울 수 있는 플러터 강의\nhttps://bit.ly/3tflvR6\n\n[중급] 플러터 고수가 되는길\nhttps://bit.ly/3PKecdl\n\n[서적] Must Have 코드팩토리의 플러터 프로그래밍\nhttps://bit.ly/3WZnAO2\n\n코드팩토리 통합링크\nhttps://links.codefactory.ai\n\n레포지토리\nhttps://github.com/codefactory-co/javascript-full-tutorial-2023\n\n타임스탬프\n1) 기본기 ⭐️\n\n00:00:00 세팅하기\n00:02:02 Hello World\n00:07:53 주석 (Comment)\n00:10:33 변수 선언하기 (Declaring Variables)\n00:20:21 변수명 짓는 룰 (Naming Conventions)\n00:27:18 데이터 타입 (Data Types)\n00:54:47 호이스팅 (Hoisting)\n01:01:51 연산자 (Operators)\n01:31:18 메모리 기본기 (Memory Basics)\n01:36:37 if문과 switch문 (If and Switch)\n01:44:48 반복문 (Loops)\n01:57:07 브레이크와 컨티뉴 (Break & Continue)\n02:08:13 명시적 & 암묵적 타입변환 (Coercion)\n02:22:31 함수 기본기 (Function Basics)\n02:52:10 꼭 알아야하는 어레이 함수 (Must Know Array Functions)\n03:25:12 reduce 함수 키노트 (Reduce)\n03:29:21 객체 기본기 (Object Basics)\n03:44:27 값 & 레퍼런스 복사 (Copy by Value & Copy by Reference)\n04:02:36 try...catch\n\n2) Class & OOP ⭐️⭐️\n04:09:48 클래스 기본기 (Class Basics)\n04:32:15 게터와 세터 (Getter and Setter)\n04:41:47 스태틱 키워드 (Static Keyword)\n04:50:28 상속 (Inheritance)\n05:05:10 슈퍼 & 오버라이드 키워드 (Super & Override)\n05:15:15 클래스 실전문제 (Class Challenge)\n\n3) 객체에대한 모든 것 ⭐️⭐️⭐️⭐️⭐️\n05:28:26 소개 (Introduction)\n05:34:43 프로퍼티 어트리뷰트 (Property Attribute)\n05:57:01 불변객체 (Immutable Object)\n06:09:54 생성자 함수 (Constructor Function)\n06:19:59 프로토타입 체인 (Prototype Chain)\n07:06:11 스코프 (Scope)\n07:16:09 this 키워드 (this Keyword)\n07:28:37 실행 컨텍스트 (Execution Context)\n07:49:54 클로저 (Closure)\n\n4) 비동기 프로그래밍 ⭐️⭐️⭐️\n08:04:20 비동기 프로그래밍 소개 (Introduction)\n08:17:57 콜백지옥과 프로미스 (Callback Hell and Promise)\n08:33:24 async await 자바스크립트 최신 강의",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/ZOVG7_41kJE/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/ZOVG7_41kJE/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/ZOVG7_41kJE/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/ZOVG7_41kJE/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/ZOVG7_41kJE/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 7,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "ZOVG7_41kJE"
+                    },
+                    "videoOwnerChannelTitle": "코드팩토리",
+                    "videoOwnerChannelId": "UCxZ2AlaT0hOmxzZVbF_j_Sw"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "nyWLF18nT8PZGFVxDKvobdfvPeA",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS45NDk1REZENzhEMzU5MDQz",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:41:14Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "입문자를 위한 자바스크립트 기초 #0 수업 소개",
+                    "description": "'입문자를 위한 자바스크립트 기초 강의' 전체 강의는 \n성장기회의 평등을 추구하는 교육 플랫폼, '인프런(inflearn)'에서 \n유료로 만나보실 수 있습니다!\n\n유튜브 무료 버전 - 26개의 강의 영상 \n인프런 유료 버전 - 40개의 강의 영상 + 4개의 미니 프로젝트 (소스코드와 해설문 제공)\n\n전체 강의는 다음 링크를 통해 만나보실 수 있습니다.\n👉🏻 https://www.inflearn.com/course/%EC%9E%85%EB%AC%B8%EC%9E%90-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88%EA%B0%95%EC%9D%98?inst=a394a957 자바스크립트 최신 강의",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/9olX2yyXnVA/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/9olX2yyXnVA/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/9olX2yyXnVA/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/9olX2yyXnVA/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/9olX2yyXnVA/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 8,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "9olX2yyXnVA"
+                    },
+                    "videoOwnerChannelTitle": "유노코딩",
+                    "videoOwnerChannelId": "UCbeOr-FhWmj4KulT8oHup4w"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "NK2-Pjkb8QubzRbruJ3BJO1xVP4",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS5GNjNDRDREMDQxOThCMDQ2",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:41:42Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "자바스크립트 기초 입문 강의 30분 완성",
+                    "description": "이번 영상은 웹 개발 5주 완성 라이브 강의 편집본으로 JavaScript 기초, 변수, 조건문, 반복문, 함수를 배우는 강의입니다.\n5주만에 코딩 기초와 웹 프론트엔드부터 백엔드까지 모두 배울 수 있는 커리큘럼을 진행하니 구독, 좋아요 눌러두시고 많은 시청부탁드립니다!\n\n📖수업페이지: jocoding.net\n💬디스코드: https://discord.gg/zny87VeSaX\n\n[라이브 풀버전] 조코딩의 웹 개발 5주 완성\nhttps://youtube.com/playlist?list=PLU9-uwewPMe0hiCRaWjRHd-TTNJYu9N6w\n\n[편집본] 2022 코딩 기초와 웹 프로그래밍\nhttps://youtube.com/playlist?list=PLU9-uwewPMe2-R9-taf4oIjwrEZDgE-q2\n\n조코딩 멤버십 가입하기\nhttps://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg/join\n\n보조 교재\n📖『Do it! 조코딩의 프로그래밍 입문』\n- 예스24: https://vo.la/SbhB7F\n- 교보문고: https://vo.la/6XXfEL\n- 알라딘: https://vo.la/OXqNP1\n\n목차\n00:00 미리보기\n00:09 java와 javascript의 차이\n00:44 javascript를 배우면 할 수 있는 일\n01:38 웹에서 자바스크립트의 역할\n02:32 프로그래밍 언어 기초 문법의 핵심\n03:42 자바스크립트 변수 var, let, const\n08:29 자바스크립트 함수\n16:54 자바스크립트 조건문\n22:14 자바스크립트 반복문\n28:40 자바스크립트의 특징과 유머 밈\n31:24 VVIP 멤버십 후원 감사 인사\n\nVVIP 멤버십 후원\nSOOJIN BANG님, THE MOTOR CITY님, CURIOUS_CuringE님, 김우종님, 동대문아들들님, 그림자그림자님, 마비님, 파라소프트웨어님, 최영득님, 뚱뚜루_수수또님 VVIP 후원 감사드립니다.\nhttps://youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg/join\n\n#javascript #자바스크립트 #코딩 #프로그래밍 #웹개발 자바스크립트 최신 강의",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/E-PzX2mKGUQ/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/E-PzX2mKGUQ/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/E-PzX2mKGUQ/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/E-PzX2mKGUQ/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/E-PzX2mKGUQ/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 9,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "E-PzX2mKGUQ"
+                    },
+                    "videoOwnerChannelTitle": "조코딩 JoCoding",
+                    "videoOwnerChannelId": "UCQNE2JmbasNYbjGAcuBiRRg"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "TGdI4h5lS8s3TNsiuOlVtI18HyI",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS40NzZCMERDMjVEN0RFRThB",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:41:52Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "이거 모르면 프론트엔드 개발자 못됨 | 리액트 진짜 쉽게 설명해줌 | 리액트 초보자 입문 강의 1탄",
+                    "description": "프론트 엔드 개발자가 되기위해 \n반드시 알아야하는 리액트에 대해 강의를 만들어봤어요!\n최대한 쉽게 설명해보려고했는데 괜찮은가용? :)\n\n2탄 바로보러가기\nhttps://youtu.be/qcphnSqneE0\n3탄 바로보러가기\nhttps://youtu.be/TFLvKGhrAwM\n\n더 많은 누나의 리액트강의 보러오기\nhttps://codingnoona.thinkific.com/courses/3\n\n뇌를 살찌우러 올래?\n\n누나 인스타뭐야?\n1008_shine\n\n#리액트, #프론트엔드, #코딩독학 React Reac useEffect",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/MeZ3FCTub3I/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/MeZ3FCTub3I/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/MeZ3FCTub3I/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/MeZ3FCTub3I/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/MeZ3FCTub3I/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 10,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "MeZ3FCTub3I"
+                    },
+                    "videoOwnerChannelTitle": "코딩알려주는누나",
+                    "videoOwnerChannelId": "UCfBvs0ZJdTA43NQrnI9imGA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "_x0x56Tco8ec0GNL-yveiYF_LV8",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS5EMEEwRUY5M0RDRTU3NDJC",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:42:09Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "🎁자바스크립트 기초 강의🎉 몰아보기 #15 - 이거 하나면 끝!!! JavaScript  Basics Tutorial",
+                    "description": "자바스크립트강의는 해당 학과의 레전드급 강사님이 기초부터 실무적으로도 충분히 학습할 수 있게 진행된 강의입니다.\n누구나 차근차근 공부할 수 있는 강의로 실습하세요~!\n\n알지오는 평생교육바우처사용처로 평생교육바우처카드 사용이 가능합니다.\n구독해 주세요♡ https://www.youtube.com/@chmyoungsu?sub_confirmation=1\n\n강의 바로가기 https://www.alzio.co.kr/contents/Category_Main.php?gb=2&dp1=171&dp2=626 자바스크립트 최신 강의",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/q5xN1XWpcGU/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/q5xN1XWpcGU/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/q5xN1XWpcGU/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/q5xN1XWpcGU/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/q5xN1XWpcGU/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 11,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "q5xN1XWpcGU"
+                    },
+                    "videoOwnerChannelTitle": "chaems",
+                    "videoOwnerChannelId": "UCLpG7zqy4mdVCpkC3aWVdtg"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "DWs6cF7lZQrx4pu98SV0mmU1nMc",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS45ODRDNTg0QjA4NkFBNkQy",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:42:33Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "Javascript 기초 문법",
+                    "description": "강의 내용 블로그 : https://codegear.tistory.com/55\nJavascript의 기초 문법에 대해서 알아봅니다. 자바스크립트 최신 강의",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/mcq-cqnFJD0/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/mcq-cqnFJD0/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/mcq-cqnFJD0/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/mcq-cqnFJD0/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/mcq-cqnFJD0/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 12,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "mcq-cqnFJD0"
+                    },
+                    "videoOwnerChannelTitle": "CODE GEAR - 프로그래밍",
+                    "videoOwnerChannelId": "UC-Gao5whUjNMzsAIwsK2X2A"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "diBtXwUguESQ2Bq6WC3dlLSzYG4",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS4zMDg5MkQ5MEVDMEM1NTg2",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:47:25Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "HTML - 하이퍼텍스트와 속성",
+                    "description": "https://opentutorials.org/module/1892/10932",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/AE7foaifXMU/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/AE7foaifXMU/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/AE7foaifXMU/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/AE7foaifXMU/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/AE7foaifXMU/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 13,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "AE7foaifXMU"
+                    },
+                    "videoOwnerChannelTitle": "생활코딩",
+                    "videoOwnerChannelId": "UCvc8kv-i5fvFTJBFAk6n1SA"
+                }
+            },
+            {
+                "kind": "youtube#playlistItem",
+                "etag": "Qn6iPJddiwzsuQtweeD55jOV65M",
+                "id": "UEw5ZzE4c1FkeWVWR2s3b01Zc2JtQ3B3TEZXV1d2R3NjOS41Mzk2QTAxMTkzNDk4MDhF",
+                "snippet": {
+                    "publishedAt": "2024-03-13T05:47:53Z",
+                    "channelId": "UCkuF8EqXsp_VCIvNX4Pz92w",
+                    "title": "프론트에서 서버에 데이터 요청하는 방법 (React로 fetch, axios 사용하기)",
+                    "description": "React에서 fetch api, axios 라이브러리 간단한 사용법을 다룹니다.\napi 서버에 get, post 요청을 보내 todolist api 를 사용하는 법을 다룹니다.\napi 서버를 직접 만들어 보며 이해를 더 높일 수 있습니다. axios React useEffect",
+                    "thumbnails": {
+                        "default": {
+                            "url": "https://i.ytimg.com/vi/d6suykcsNeY/default.jpg",
+                            "width": 120,
+                            "height": 90
+                        },
+                        "medium": {
+                            "url": "https://i.ytimg.com/vi/d6suykcsNeY/mqdefault.jpg",
+                            "width": 320,
+                            "height": 180
+                        },
+                        "high": {
+                            "url": "https://i.ytimg.com/vi/d6suykcsNeY/hqdefault.jpg",
+                            "width": 480,
+                            "height": 360
+                        },
+                        "standard": {
+                            "url": "https://i.ytimg.com/vi/d6suykcsNeY/sddefault.jpg",
+                            "width": 640,
+                            "height": 480
+                        },
+                        "maxres": {
+                            "url": "https://i.ytimg.com/vi/d6suykcsNeY/maxresdefault.jpg",
+                            "width": 1280,
+                            "height": 720
+                        }
+                    },
+                    "channelTitle": "김진우",
+                    "playlistId": "PL9g18sQdyeVGk7oMYsbmCpwLFWWWvGsc9",
+                    "position": 14,
+                    "resourceId": {
+                        "kind": "youtube#video",
+                        "videoId": "d6suykcsNeY"
+                    },
+                    "videoOwnerChannelTitle": "라매개발자",
+                    "videoOwnerChannelId": "UCr3lkp7TJiJTCY4ffRQ1m2A"
+                }
+            }
+        ],
+        "pageInfo": {
+            "totalResults": 15,
+            "resultsPerPage": 50
+        }
     }
 
 ]
