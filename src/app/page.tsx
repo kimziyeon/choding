@@ -87,14 +87,14 @@ export default function Home() {
       setTitle(levelKeyword[0].cd)
       setResult(cdData)
 
-      console.log('레벨 테스트를 해야하는 유저')
+      // console.log('레벨 테스트를 해야하는 유저')
       isOpenFunc({ isOpen: true, isTest: true }); //테스트팝업on
       return;
     };
 
-    console.log('-----------------nowUser')
-    console.log(nowUser)
-    console.log('------------------------')
+    // console.log('-----------------nowUser')
+    // console.log(nowUser)
+    // console.log('------------------------')
 
     switch (nowUser.level) {
       case '초딩':
@@ -138,7 +138,7 @@ export default function Home() {
       <MainSlide />
       <MainContentsSection
         option={0}
-        subtext={'유튜브 테스트에용'}
+        subtext={'동영상으로 차근차근'}
         title={title[0]}
         loginData={loginData}
         result={result.youtube}
@@ -154,7 +154,7 @@ export default function Home() {
 
       <MainContentsSection
         option={2}
-        subtext={'네이버가 들어와용'}
+        subtext={'자세히 알아봐요'}
         title={title[2]}
         loginData={loginData}
         result={result.naver}
