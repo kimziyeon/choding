@@ -53,7 +53,7 @@ export default function DetailComment({ result, fetchData }) {
 
     const res = await detailStore('put', 'myProject', data, result.postId);
 
-    console.log(res?.status, 'test')
+    // console.log(res?.status, 'test')
 
     if (res && res.status === 200) {
       await fetchData();

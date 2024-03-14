@@ -10,6 +10,8 @@ import MainContentsSection from './components/MainContentsSection';
 import MainSlide from './components/MainSlide';
 import serverStore from '@/lib/server/serverStore';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import levelTestBtn from '@/essets/levelTestBtn.svg';
 import levelKeyword from '@/data/levelKeyword.json';
 import cdData from '@/data/mainContents/cd.json';
 import jdData from '@/data/mainContents/jd.json';
@@ -136,7 +138,7 @@ export default function Home() {
       <MainSlide />
       <MainContentsSection
         option={0}
-        subtext={'유튜브 테스트에용'}
+        subtext={'동영상으로 차근차근'}
         title={title[0]}
         loginData={loginData}
         result={result.youtube}
@@ -152,7 +154,7 @@ export default function Home() {
 
       <MainContentsSection
         option={2}
-        subtext={'네이버가 들어와용'}
+        subtext={'자세히 알아봐요'}
         title={title[2]}
         loginData={loginData}
         result={result.naver}

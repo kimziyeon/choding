@@ -28,7 +28,7 @@ export default function Google({ query }: googleSearchType) {
         setResult(response.data.items);
       })
       .catch(error => {
-        console.error('Error fetching data', error);
+        // console.error('Error fetching data', error);
       })
   };
 

@@ -16,9 +16,9 @@ export default function MyProjectDetail({ params }: any) {
   const [result, setResult] = useState<myProjectPostType>();
   const { data: session, status } = useSession();
 
-  useEffect(() => {
-    console.log(result);
-  }, [result]);
+  // useEffect(() => {
+  //   console.log(result);
+  // }, [result]);
 
   async function fetchData() {
     const res = await detailStore('get', 'myProject', null, params.postId);
