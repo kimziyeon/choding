@@ -37,15 +37,15 @@ export default function DailyquizEnd({ isCorrect }) {
                     const myPoint: number = myPointInfo.data[0].point + 1;
                     let levelName = '';
 
-                    if (myPoint <= 2) {
+                    if (myPoint <= 5) {
                         levelName = '초딩';
-                    } else if (myPoint <= 4) {
-                        levelName = '중딩';
-                    } else if (myPoint <= 6) {
-                        levelName = '고딩';
-                    } else if (myPoint <= 8) {
-                        levelName = '대딩';
                     } else if (myPoint <= 10) {
+                        levelName = '중딩';
+                    } else if (myPoint <= 15) {
+                        levelName = '고딩';
+                    } else if (myPoint <= 20) {
+                        levelName = '대딩';
+                    } else if (myPoint > 25) {
                         levelName = '직딩';
                     }
                     await axios.put('/api/mypoint', { email: session?.user?.email, level: levelName, point: myPoint })
