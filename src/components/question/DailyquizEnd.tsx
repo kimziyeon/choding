@@ -11,7 +11,7 @@ import axios from 'axios';
 
 
 
-export default function DailyquizEnd({ isCorrect }) {
+export default function DailyquizEnd({ isCorrect }: any) {
 
     const router = useRouter();
     const { data: session, status } = useSession();
