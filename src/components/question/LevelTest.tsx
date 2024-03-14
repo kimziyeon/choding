@@ -67,9 +67,9 @@ export default function LevelTest() {
             setUservalue(null);
 
         } else {
-            console.log('====================================');
-            console.log(score);
-            console.log('====================================');
+            // console.log('====================================');
+            // console.log(score);
+            // console.log('====================================');
             setTestState(3);
         }
     };

@@ -9,12 +9,12 @@ export async function GET(req: NextRequest) {
         const data = await connectToDB('get', email, collection, null);
         return NextResponse.json(data)
     }
-    const data = await connectToDB('get', 0, collection);
+    const data = await connectToDB('get', 0, collection, null);
     return NextResponse.json(data)
 }
 
 export async function POST(req: NextRequest) {
     const collection: any = req.nextUrl.searchParams.get('colName');
     const data = await req.json()
-    return NextResponse.json(await connectToDB('post', data, collection));
+    return NextResponse.json(await connectToDB('post', data, collection, null));
 }

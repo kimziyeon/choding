@@ -11,5 +11,4 @@ export async function GET(req: NextRequest) {
     const collection: any = req.nextUrl.searchParams.get('colName');
     const data = await connectToDB('get', 0, collection, null);
     return NextResponse.json(data)
-
 }
