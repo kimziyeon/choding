@@ -34,11 +34,11 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
         }
 
         const desiredVideo = videoId;
-        const desiredItem = result.find(item => item.resourceId.videoId === desiredVideo)
+        const study = result.find(item => item.resourceId.videoId === desiredVideo)
         const email = session.user.email;
-        setStudyData(prevData => [...prevData, desiredItem])
+        setStudyData(prevData => [...prevData, study])
 
-        const data = {email, desiredItem}
+        const data = {email, study}
 
         axios.post('/api/bookmark' , data)
     }
