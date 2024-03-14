@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
             display: 6
         }
     });
-    console.log("시작입니다")
+    // console.log("시작입니다")
 
     return NextResponse.json(result.data);
 }

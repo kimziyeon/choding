@@ -47,6 +47,8 @@ export default function QnABest() {
       fetchData();
     }, []);
 
+    const sortedData = data.slice().sort((a, b) => b.like.length - a.like.length);
+
     return (
       <section id="communityQnAContainer" className="communityContainer">
         <div className="communityContHeader">
@@ -63,8 +65,9 @@ export default function QnABest() {
         </div>
         <div className="containerContentsQnA">
           {
-            data.map((item, index) => (
+            sortedData.slice(0, 3).map((item, index) => (
               <div key={index} className='QnABsetContainer'>
+                  <img src={item.content?.thumb} alt=""  />             
                 <div className='BestContent'>
                   <div className='contentBox'>
                     <h2 className='title'>{item.title}</h2>

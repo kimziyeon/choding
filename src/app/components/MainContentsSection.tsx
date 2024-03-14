@@ -6,6 +6,7 @@ import ArrowRight from '@/essets/arrowRight.svg';
 import ContentsFigure from './ContentsFigure';
 import { useEffect, useState } from 'react';
 import { userDataType } from '@/types/user'
+import { useRouter } from 'next/navigation';
 
 type HomeType = {
     subtext: string,
@@ -16,12 +17,17 @@ type HomeType = {
 }
 
 export default function Home({ subtext, title, option, loginData, result }: HomeType) {
+    const router = useRouter();
 
     const { data: session, status } = useSession();
     // const [result, setResult] = useState([]);
     const [subtitle, setSubtitle] = useState([]);
 
     const classname = `num${option}`;
+
+    const clickMore = (t) => {
+        router.push(`http://localhost:3000/search?key=${t}`)
+    }
 
     return (
         <section className={`contentsBox ${classname}`}>
@@ -32,13 +38,15 @@ export default function Home({ subtext, title, option, loginData, result }: Home
                     <span>{title}</span>
                     {option === 4 ? null : ' 강의'}
                 </h3>
-                <span className='more'>더보기
-                    <Image
-                        src={ArrowRight}
-                        alt='arrow image'
-                        width={20} height={20}
-                    />
-                </span>
+                {
+                    option !== 4 ? <span className='more' onClick={() => { clickMore(title) }}>더보기
+                        <Image
+                            src={ArrowRight}
+                            alt='arrow image'
+                            width={20} height={20}
+                        />
+                    </span> : null
+                }
             </div>
             <div className="contRight">
                 <ContentsFigure

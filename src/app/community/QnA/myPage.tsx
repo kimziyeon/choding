@@ -7,6 +7,8 @@ import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import Login from '@/app/login/page';
 import { AnyPtrRecord } from 'dns';
+import Image from 'next/image';
+import empty from '@/essets/empty.svg';
 
 export default function myPage() {
 
@@ -20,24 +22,24 @@ export default function myPage() {
       try {
         const response = await axios.get('/api/post?colName=qna');
 
-        response.data.forEach((obj:any)=>{
+        response.data.forEach((obj: any) => {
 
-          const tag:any = document.createElement('div');
+          const tag: any = document.createElement('div');
           tag.innerHTML = obj.content;
-          
+
           const tumb = tag.querySelector('img');
-          
-          
-          const text = [];  
-          tag.childNodes.forEach((node:any)=>{
-              node.childNodes.forEach((child:any)=>{
-                if(child.tagName == undefined){
-                  text.push(child)
-                }
-              });
+
+
+          const text = [];
+          tag.childNodes.forEach((node: any) => {
+            node.childNodes.forEach((child: any) => {
+              if (child.tagName == undefined) {
+                text.push(child)
+              }
+            });
           })
           // resObj.push({tumb, text:text[0]});
-          obj.content = {thumb:tumb?.src, text:text[0]}
+          obj.content = { thumb: tumb?.src, text: text[0] }
         })
 
         setData(response.data);
@@ -63,23 +65,25 @@ export default function myPage() {
                 <p>{item.content.text?.textContent}</p>
               </div>
               <div className='QnAInfo'>
-                <p>이름 : {item.userName}</p>
-                <p>댓글 수 {item.comment.length}</p>
-                <p>좋아요<span>{item.like.length}</span> </p>
+                <p>by {item.userName}</p>
+                <p>💬 {item.comment.length}</p>
+                <p>♥<span>{item.like.length}</span> </p>
               </div>
             </div>
             <div className='QuestionImg'>
-              <img src={item.content?.thumb} alt=""  /> 
+              <img src={item.content?.thumb} alt="" />
             </div>
           </Link>
         ))}
       </div>
     } else {
       return <div className='myPageMain'>
-        <Link className='writeBtn' href='./QnA/write'>글 쓰기</Link>
+         <div className='writeBtnBox'><Link className='writeBtn' href='./QnA/write'>글 쓰기</Link></div>
         <div className='MyPageContainer'>
           <div className='noWrite'>
-            <div className='noWriteImg'></div>
+            <div className='commuEmpty'>
+              <Image src={empty} alt='empty'></Image>
+            </div>
             <h3>아직 질문글이 없군요!</h3>
             <Link href='./QnA/write'>새로운 질문 쓰기!</Link>
           </div>
@@ -91,8 +95,7 @@ export default function myPage() {
 
   return (
     <div id="QnAMain" className='myPageMain'>
-      <p>로그인 해주세요</p>
-      <Link href="../login">Login</Link>
+
     </div>
   );
 }

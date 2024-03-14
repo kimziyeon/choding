@@ -42,9 +42,9 @@ export default function MyProjectBest() {
 
   const handleClickBestFigure = useCallback(() => {
     // 컴포넌트가 리렌더링될 때마다 같은 함수를 재사용하도록!(최적화 ㅇㅅㅇb)
-  if(projects.length > 0) {
-    router.push(`/community/myProject/${sortedProjects[0].postId}`);
-  }
+    if (projects.length > 0) {
+      router.push(`/community/myProject/${sortedProjects[0].postId}`);
+    }
   }, [sortedProjects, router]);
 
 
@@ -53,20 +53,20 @@ export default function MyProjectBest() {
       <div className="communityContHeader">
         <h2 className="containerTitle">최근 핫한 <span>프로젝트</span></h2>
         <div>
-        <Link href='/community/myProject' className='more'>더보기
-          <Image
-            src={ArrowRight}
-            alt='arrow image'
-            width={20} height={20}
-          />
-        </Link>
+          <Link href='/community/myProject' className='more'>더보기
+            <Image
+              src={ArrowRight}
+              alt='arrow image'
+              width={20} height={20}
+            />
+          </Link>
         </div>
       </div>
       <section className="containerContents">
-        { projects.length > 0 && 
+        {projects.length > 0 &&
           <figure className='ccitem best1'
-          onClick={handleClickBestFigure}>
-            <img src={projects[0].image} alt="" />
+            onClick={handleClickBestFigure}>
+            {projects[0].image.length !== 0 ? <img src={projects[0].image} alt="" /> : <div className='noImage' />}
             <figcaption>
               <h3>{projects[0].title}</h3>
               <div className='bottom'>

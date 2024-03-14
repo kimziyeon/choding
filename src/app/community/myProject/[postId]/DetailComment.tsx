@@ -53,7 +53,7 @@ export default function DetailComment({ result, fetchData }) {
 
     const res = await detailStore('put', 'myProject', data, result.postId);
 
-    console.log(res?.status, 'test')
+    // console.log(res?.status, 'test')
 
     if (res && res.status === 200) {
       await fetchData();
@@ -64,11 +64,12 @@ export default function DetailComment({ result, fetchData }) {
     setValue('value.comment', '');
   }
 
+  
 
   // --------------- 삭제, 수정 --------------------
   const commentsOnClick = async (keyword: string, i: number) => {
     const deleteItem = result.comments;
-
+    console.log(deleteItem)
     if (keyword === 'delete') {
       await deleteItem.splice(i, 1);
     } else if (keyword === 'update') {

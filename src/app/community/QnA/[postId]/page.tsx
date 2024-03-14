@@ -8,12 +8,16 @@ import { useSession } from 'next-auth/react';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
 import DetailComment from './detailComment';
+import empty from '@/essets/empty.svg';
+import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
     const [data, setData] = useState();
     const [comments, setComments] = useState<any[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
+    const [isOnUpdate, setUpdate] = useState(false);
     const { data: session, status } = useSession();
+    const [textareaValue, setTAValue] = useState('');
     const id = params.postId;
     const name = session?.user?.name;
     const email = session?.user?.email;
@@ -24,11 +28,10 @@ export default function QnADetail({ params }: any) {
     const day: number = today.getDate();
     const thisDay = (month + '월' + day + '일')
 
-    console.log(postId)
-
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm();
 
@@ -44,13 +47,19 @@ export default function QnADetail({ params }: any) {
         }
 
 
-        // if (status !== 'authenticated') {
-        //     swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
+        if (status !== 'authenticated') {
+            swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
+            return
+        }
+        // if (data?.value.comment.length < 3) {
+        //     swal("2글자 이상 작성해주세요", "정성 가득한 댓글 부탁드립니다 :)", "warning")
         //     return
-        // }
+        //   }
 
         const res = await detailStore('put', 'qna', comment, postId)
         await fetchData();
+
+        reset();
     }
 
     const fetchData = async () => {
@@ -74,10 +83,10 @@ export default function QnADetail({ params }: any) {
 
     const likedAlready = data?.[0]?.like.some(obj => obj.email === session?.user?.email)
     const onClicklikeHandler = async () => {
-        // if (!session?.user?.email) {
-        //     swal('잠깐!', '로그인 후 이용해주세요', 'warning');
-        //     return;
-        // }
+        if (!session?.user?.email) {
+            swal('잠깐!', '로그인 후 이용해주세요', 'warning');
+            return;
+        }
 
         const filtered = data?.[0].like.filter((value) => {
             return value.email !== email
@@ -101,6 +110,31 @@ export default function QnADetail({ params }: any) {
             console.error('myProject like error', res);
         }
     }
+
+
+    const deleteBtn = async(keyword: string, i: number)=>{
+        const updatedComments = comments.filter((_, index) => index !== i);
+        setComments(updatedComments); // 새로운 배열을 상태로 설정
+
+        const setUpdateResult = {
+            field: "comment",
+            updateKey: "postId",
+            updateValue: postId,
+            updateType: "set",
+            value: updatedComments
+          }
+
+        const res = await detailStore('put', 'qna', setUpdateResult, postId);
+        if (res && res.status === 200) {
+            await fetchData();
+            if (keyword === 'update') {
+              setUpdate(!isOnUpdate)
+            }
+          } else {
+            console.error('--------------삭제 실패!!!', res);
+          }
+    }
+    
 
     return (
         <>
@@ -141,12 +175,20 @@ export default function QnADetail({ params }: any) {
                     comments.map((comment, index) => (
                         <article key={index} className='commentbox'>
                             <div className='commentinfo'>
-                                <p>{comment.img}</p>
+                                <img src={comment.img} alt="" />
                                 <p>{comment.name}</p>
                             </div>
                             <div className='textbox'>
                                 <p className='commentText'>{comment.commentText}</p>
                                 <p>{comment.thisDay}</p>
+                            </div>
+                            <div className='commentsDeleteBtn'
+                                style={{display:session?.user?.email === comment.email ? 'flex' : 'none'}}
+                            >
+                                <button
+                                    type='button'
+                                    onClick={() => { deleteBtn('delete', index) }}
+                                >삭제</button>
                             </div>
                         </article>
                     ))
