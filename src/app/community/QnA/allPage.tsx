@@ -9,6 +9,21 @@ import "./QnA.scss";
 export default async function allPage() {
     const [data, setData] = useState([]);
 
+    const findMaxPostId = (data:any) => {
+      // 초기값으로 postId 값을 -Infinity로 설정
+      const maxPostId = data.reduce((max:any, item:any) => {
+          // 현재 요소의 postId가 현재 최대값보다 크다면 해당 postId를 최대값으로 설정
+          return item.postId > max ? item.postId : max;
+      }, -Infinity);
+  
+      return maxPostId;
+  };
+  
+  // data 배열에서 제일 큰 postId 값을 찾기
+  const maxPostId = findMaxPostId(data);
+  
+  console.log("제일 큰 postId:", maxPostId);
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -46,8 +61,6 @@ export default async function allPage() {
         fetchData();
       }, []);
 
-      console.log(data)
-
       //좋아요 좋아요 중소기업
 
     return (
@@ -61,9 +74,9 @@ export default async function allPage() {
                     <p>{item.content.text?.textContent}</p>
                 </div>
                 <div className='QnAInfo'>
-                    <p>이름 : {item.userName}</p>
-                    <p>댓글 수 {item.comment.length}</p>
-                    <p>좋아요 <span>{item.like.length}</span></p>
+                    <p>by {item.userName}</p>
+                    <p>💬 {item.comment.length}</p>
+                    <p>♥ <span>{item.like.length}</span></p>
                 </div>
             </div>
             

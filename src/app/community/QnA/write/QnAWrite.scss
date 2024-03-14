@@ -3,6 +3,7 @@
 .QnAWriteMain{
     padding-top: 6rem;
     margin: 0 $b;
+    min-height: calc(100vh - 3rem);
     >form{
         .writebox{
             margin-top: $b;
@@ -43,7 +44,7 @@
             // margin-top: $b !important;
             margin-bottom: $b !important;
             .ql-container{
-                height: 92% !important;
+                height: 88% !important;
             }
         }
     }
