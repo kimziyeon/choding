@@ -136,19 +136,24 @@
     }
 }
 
-.commuThumb,
 .commuContents {
 
     figure {
         @include flexbox(s, c);
         gap: 10px;
+        cursor: pointer;
 
         >div {
+            @include flexbox(c, c);
             width: 90px;
             height: 76px;
-            background: $grayLight;
             margin: 0.5rem 0;
             border-radius: 9px;
+            overflow: hidden;
+
+            img {
+                border-radius: 9px;
+            }
         }
 
         figcaption {
@@ -178,7 +183,9 @@
             @include flexbox(sb, c);
             gap: 2px;
 
-            span {}
+            span {
+                margin: 0 2px;
+            }
         }
     }
 }
