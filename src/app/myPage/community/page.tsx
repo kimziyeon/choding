@@ -1,5 +1,6 @@
 "use client";
 
+{/* 마이페이지 / 커뮤니티 */ }
 import '../mypage.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,16 +12,14 @@ export default function MyCommunity() {
     return (
 
         <section className='commuPage'>
-            {/* 마이페이지 / 커뮤니티 */}
-
             <div className='commuTitle'>
                 <p>
                     <Image src={arrowLeftGrayDark} alt='arrowRight' />
                 </p>
                 <h3>커뮤니티</h3>
             </div>
-            <MyCommunityEmpty />
-            {/* <MyCommunityContents /> */}
+            {/* <MyCommunityEmpty /> */}
+            <MyCommunityContents />
         </section>
 
     );
