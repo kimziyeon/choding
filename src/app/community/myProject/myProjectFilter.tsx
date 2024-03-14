@@ -38,21 +38,21 @@ export default function MyProjectFilter() {
 
 
   // --------------- 필터 시작 ----------------
-  function filterData(dataset: myProjectPostType[], filters: string[]) {
-    if (!filters.length) {
-      return dataset;
+  useEffect(() => {
+    function filterData(dataset: myProjectPostType[], filters: string[]) {
+      if (!filters.length) {
+        return dataset;
+      }
+
+      const filteredData = dataset.filter((item) => {
+        const memberFilters = filters.some(filter => item.member.includes(filter));
+        const stackFilters = filters.some(filter => item.stack.includes(filter));
+        return memberFilters || stackFilters;
+      });
+
+      return filteredData;
     }
 
-    const filteredData = dataset.filter((item) => {
-      const memberFilters = filters.some(filter => item.member.includes(filter));
-      const stackFilters = filters.some(filter => item.stack.includes(filter));
-      return memberFilters || stackFilters;
-    });
-
-    return filteredData;
-  }
-
-  useEffect(() => {
     setFilteredData(filterData(result, activeOptions));
   }, [activeOptions, result]);
 
@@ -68,7 +68,7 @@ export default function MyProjectFilter() {
     setKeyword(e.currentTarget.value);
   }
 
-  const handleEnterKey = (e) => {
+  const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const filterData = result.filter((item) => {
         for (const value of Object.values(item)) {
