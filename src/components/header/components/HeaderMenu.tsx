@@ -38,7 +38,7 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
                         ></Image>
                     </button>
                     <div className='loginCont'>
-                        {status === 'authenticated' ? <p style={loginContStyle}><span className='userName'>{session.user.name}</span>님 어서오세요!</p> : <Link href="/login" onClick={onClickMenu}>
+                        {status === 'authenticated' ? <p style={loginContStyle}><span className='userName'>{session.user.name}</span>님<br />어서오세요!</p> : <Link href="/login" onClick={onClickMenu}>
                             <b>로그인 해주세요</b>
                             <Image
                                 src={ArrowRight}
