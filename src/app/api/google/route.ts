@@ -4,8 +4,8 @@ import type { NextRequest } from 'next/server';
 import { googleSearch } from '@/lib/googleSearch';
 
 export async function GET(req: NextRequest) {
-  console.log('---------------------');
-  console.log(req.nextUrl.searchParams);
+  // console.log('---------------------');
+  // console.log(req.nextUrl.searchParams);
 
   const query = req.nextUrl.searchParams.get('q');
 

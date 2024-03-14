@@ -1,7 +1,6 @@
 // src/app/search/components/Google.tsx
 "use client";
 
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { googleSearchItem } from '@/types/datatype';
@@ -29,13 +28,13 @@ export default function Google({ query }: googleSearchType) {
         setResult(response.data.items);
       })
       .catch(error => {
-        console.error('Error fetching data', error);
+        // console.error('Error fetching data', error);
       })
   };
 
-  useEffect(() => { //검색결과 콘솔
-    console.log(result);
-  }, [result]);
+  // useEffect(() => { //검색결과 콘솔
+  //   console.log(result);
+  // }, [result]);
 
   return (
     <section id="totalSearchGoogleSection" className='innerResults'>

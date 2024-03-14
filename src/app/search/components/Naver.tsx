@@ -1,7 +1,7 @@
 // src/app/search/components/Naver.tsx
 "use client";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { naverSearchItem } from '@/types/datatype';
 import ContentsFigure from '@/app/components/ContentsFigure';
@@ -39,9 +39,9 @@ export default function Naver({ query }: naverSearchType) {
         }
     };
 
-    useEffect(() => { //검색결과 콘솔
-        console.log(blog);
-    }, [blog]);
+    // useEffect(() => { //검색결과 콘솔
+    //     console.log(blog);
+    // }, [blog]);
 
 
     return (// className="innerResults" == 공통 스타일(search.scss)

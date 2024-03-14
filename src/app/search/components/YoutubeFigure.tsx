@@ -1,3 +1,5 @@
+"use client"
+
 import { youtubeSnippet } from '@/types/datatype';
 import Image from 'next/image';
 import './YoutubeFigure.scss'

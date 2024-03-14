@@ -1,5 +1,4 @@
 "use client"
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
@@ -11,7 +10,6 @@ import './signUp.scss';
 
 export default function SignUp() {
     const router = useRouter();
-    const [isOnComplete, setComplete] = useState(false);
     const [nameCheck, setNameCheck] = useState(false);
     const [emailCheck, setEmailCheck] = useState(false);
 
@@ -53,7 +51,7 @@ export default function SignUp() {
         } else if (nameCheck && emailCheck) {
             // 닉네임, 이메일 중복체크 성공 후
             await delete data.passwordCheck;
-            console.log(data)
+            // console.log(data)
             // 이제 post
             await serverStore('post', 'LoginData', data, null);
             swal("회원 가입에 성공했습니다!", "로그인 페이지로 이동하시겠습니까?", "success")
@@ -63,11 +61,6 @@ export default function SignUp() {
         }
 
     }
-
-    // if (nameCheck && emailCheck && !errors.[id]) {
-    //     // 가입 버튼 활성화 스타일, 추후 진행
-    //     setComplete(true)
-    // }
 
     return (
         <article id='signUp'>

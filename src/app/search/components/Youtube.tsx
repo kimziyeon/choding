@@ -1,9 +1,7 @@
 // src/app/search/components/Youtube.tsx
 "use client";
 
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { youtubeSearch, youtubeSearchItem, youtubeSnippet } from '@/types/datatype';
 import YoutubeFigure from '@/app/search/components/YoutubeFigure';
 import youtubeData from '@/data/youtubeSearch.json';
@@ -42,9 +40,9 @@ export default function Google({ query }: youtubeSearchType) {
         youtubeData.forEach((item) => { onlyItems.push(...item.items.map((i) => i.snippet)); });
     }
 
-    useEffect(() => {
-        console.log(result)
-    }, [result])
+    // useEffect(() => {
+    //     // console.log(result)
+    // }, [result])
 
 
     return (
