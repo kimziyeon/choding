@@ -115,8 +115,7 @@ export default function MyPage() {
 
 
     const combinedData = [...project, ...qna]; //project + qna 결과값 합침
-    console.log(combinedData)
-
+    // console.log(combinedData)
 
 
     const renderData = (data) => {
