@@ -92,8 +92,7 @@ export default function MyCommunityContents() {
 
 
     return (
-        <div >
-
+        <div className='' >
             {combinedData.map((data, index) => (
                 <div className='commuContents' key={index} >
 
@@ -134,7 +133,7 @@ export default function MyCommunityContents() {
                 </div>
             ))}
 
-            {combinedData.length < 1 ? <div className='myProjectNoData'><MyCommunityEmpty /></div> : <></>}
+            {combinedData.length < 1 ? <div><MyCommunityEmpty /></div> : <></>}
         </div>
     )
 }
