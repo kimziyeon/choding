@@ -72,7 +72,6 @@ export type googleSearchItem = {
     }
 };
 
-
 export type naverSearchItem = {
     "title": string,
     "link": string,
@@ -131,3 +130,28 @@ export type youtubeThumbObject = {
     "width": number,
     "height": number
 }
+
+// 레벨별 데이터
+
+export type levelDataType = {
+    "youtube": levelDataYoutube[],
+    "google": googleSearchItem[],
+    "naver": naverSearchItem[],
+}
+
+export type levelDataYoutube = {
+    "title": string,
+    "link": string
+    "displayLink": string,
+    "snippet": string,
+    "pagemap": {
+        "cse_thumbnail": [
+            {
+                "src": string,
+                "width": string,
+                "height": string
+            }
+        ]
+    }
+};
+
