@@ -7,7 +7,11 @@ import MainCharactor from '@/essets/mainCharactor.png';
 import SearchIconSVG from '@/essets/searchSub.svg'
 import './mainBanner.scss';
 
-export default function MainBanner({ title }) {
+interface MainBannerType {
+    title: string
+}
+
+export default function MainBanner({ title }: MainBannerType) {
     // console.log('---------------------title')
     // console.log(title)
     // console.log('---------------------title')
@@ -47,7 +51,7 @@ export default function MainBanner({ title }) {
                 </div>
                 <div className='text authenticated' style={authenticatedStyle}>
                     <p>
-                        <span className='mainColor'>{status === 'authenticated' ? session.user.name : '비회원'}</span>님&nbsp;어서오세요!
+                        <span className='mainColor'>{status === 'authenticated' ? session?.user?.name : '비회원'}</span>님&nbsp;어서오세요!
                     </p>
                     <p className='textMain'>오늘은&nbsp;
                         <span className='mainColor box'>{title[2]}</span>
