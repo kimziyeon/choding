@@ -7,7 +7,7 @@ import { googleSearchItem } from '@/types/datatype';
 import ContentsFigure from '@/app/components/ContentsFigure';
 
 interface googleSearchType {
-  query: string
+  query: string | null
 }
 
 export default function Google({ query }: googleSearchType) {

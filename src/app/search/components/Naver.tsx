@@ -9,7 +9,7 @@ import { error } from 'console';
 
 
 interface naverSearchType {
-    query: string
+    query: string | null
 }
 
 export default function Naver({ query }: naverSearchType) {
