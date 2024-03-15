@@ -256,16 +256,17 @@
     margin: 2rem auto;
     padding: 2rem;
     text-align: center;
-    // border: 1px solid gray;
+
 
     .month {
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $grayLight;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
         thead {
             color: $gray;

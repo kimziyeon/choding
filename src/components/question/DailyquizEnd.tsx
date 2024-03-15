@@ -6,6 +6,7 @@ import chocho from '@/essets/charactor/CHO.svg';
 import { useRouter } from 'next/navigation';
 import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
+import { userPointType } from '@/types/user';
 import axios from 'axios';
 
 
@@ -16,7 +17,7 @@ export default function DailyquizEnd({ isCorrect }: any) {
     const router = useRouter();
     const { data: session, status } = useSession();
     const { isOpenFunc } = useQuestion();
-    const [mypageData, setMypageData] = useState([]);
+    const [mypageData, setMypageData] = useState<userPointType>();
 
     function quizEndSearch() {
         isOpenFunc({ isOpen: false, isTest: false })

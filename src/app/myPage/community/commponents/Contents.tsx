@@ -10,7 +10,7 @@ import Image from 'next/image';
 import heart from '@/essets/heart.svg';
 import noImage from '@/essets/noImage2.png';
 import MyCommunityEmpty from './Empty';
-import { myProjectPostType } from '@/types/datatype';
+import { myProjectPostType, myQnAType } from '@/types/datatype';
 import { userPointType } from '@/types/user';
 
 
@@ -30,7 +30,7 @@ export default function MyCommunityContents() {
         router.push(`/community/myProject/${postId}`);
     };
 
-    const qnaGO = (_id: any) => {
+    const qnaGO = (_id: myQnAType) => {
         router.push(`/community/QnA/${_id}`);
     };
 
@@ -60,7 +60,7 @@ export default function MyCommunityContents() {
         try {
             const response = await serverStore('get', 'qna', null, null);
             if (response) {
-                const getqna = response.data.filter(objj => objj.Email === session?.user?.email);
+                const getqna = response.data.filter((objj: myQnAType) => objj.Email === session?.user?.email);
                 // console.log("-------------------")
                 // console.log(getqna)
                 // console.log("-------------------")

@@ -7,10 +7,11 @@ import chocho from '@/essets/charactor/CHO.svg';
 import { useRouter } from 'next/navigation'
 import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
+import { userPointType } from '@/types/user';
 import axios from 'axios';
 
 
-export default function LevelTestEnd({ score }) {
+export default function LevelTestEnd({ score }: any) {
 
     const router = useRouter();
     const { data: session, status } = useSession();
@@ -74,7 +75,7 @@ export default function LevelTestEnd({ score }) {
                         {status === 'authenticated' ?
 
                             <div className='scoreBox'>
-                                <span>{session.user.name}</span>님의<br></br>총 점수는 <span>{score}</span>점 입니다.</div> :
+                                <span>{session?.user?.name}</span>님의<br></br>총 점수는 <span>{score}</span>점 입니다.</div> :
 
                             <div className='noNameTitle'>로그인 시<br></br>다양한 강의 정보를 추천해드립니다.</div>}
 
