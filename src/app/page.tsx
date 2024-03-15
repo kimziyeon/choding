@@ -37,10 +37,6 @@ export default function Home() {
     }
   }, [status])
 
-  function isLevelDataType(object: any): object is levelDataType {
-    return 'google' in object && 'youtube' in object && 'naver' in object;
-  }
-
   useEffect(() => {
     if (status === 'authenticated') {
       console.log('-----------------session')

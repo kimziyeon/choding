@@ -7,7 +7,7 @@ const YoutubeFigure = dynamic(() => import('@/app/search/components/YoutubeFigur
 import youtubeData from '@/data/youtubeSearch.json';
 
 interface youtubeSearchType {
-    query: string
+    query: string | null
 }
 
 export default function Google({ query }: youtubeSearchType) {
@@ -31,19 +31,16 @@ export default function Google({ query }: youtubeSearchType) {
 
     const search = () => {
         getData(); // 데이터를 가져오는 함수
-        const searchResults = onlyItems.filter(item => matchesQuery(item, query));
-        setResult(searchResults);
+        if (query !== null) {
+            const searchResults = onlyItems.filter(item => matchesQuery(item, query));
+            setResult(searchResults);
+        }
     };
 
 
     const getData = () => {
-        youtubeData.forEach((item) => { onlyItems.push(...item.items.map((i) => i.snippet)); });
+        youtubeData.forEach((item) => { onlyItems.push(...item.items.map((i) => i.snippet as youtubeSnippet)); });
     }
-
-    // useEffect(() => {
-    //     // console.log(result)
-    // }, [result])
-
 
     return (
         <section id="totalSearchGoogleSection" className='innerResults'>

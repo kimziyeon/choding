@@ -43,11 +43,11 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
 
     const bookMarkIdCounter = () => {
         const bookMarkId = maxBookMarkId + 1;
-        toggleStudyState(bookMarkId);
+        toggleStudyState(bookMarkId, null);
     }
 
 
-    const toggleStudyState = (videoId: string, bookMarkId: number) => {
+    const toggleStudyState = (videoId: string, bookMarkId: number | null) => {
         setStudyStates(prev => ({ ...prev, [videoId]: !prev[videoId] }));
 
         if (!session?.user?.email) {

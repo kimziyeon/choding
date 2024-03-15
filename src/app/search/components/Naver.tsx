@@ -9,7 +9,7 @@ import { error } from 'console';
 
 
 interface naverSearchType {
-    query: string
+    query: string | null
 }
 
 export default function Naver({ query }: naverSearchType) {
@@ -28,7 +28,7 @@ export default function Naver({ query }: naverSearchType) {
     const search = async () => {
         try {
             const response = await axios.get('/api/naver', { params: { q: query } });
-            const items = response.data.items.map(item => ({
+            const items = response.data.items.map((item: any) => ({
                 ...item,
                 title: item.title.replace(/(<([^>]+)>)/ig, ""),
                 description: item.description.replace(/(<([^>]+)>)/ig, "")
@@ -47,7 +47,7 @@ export default function Naver({ query }: naverSearchType) {
     return (// className="innerResults" == 공통 스타일(search.scss)
         <section id="totalSearchNaverSection" className="innerResults">
             <ContentsFigure
-                result={blog}
+                result={blog as naverSearchItem[]}
                 option={2}
             />
         </section>
