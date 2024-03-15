@@ -3,17 +3,17 @@ import { myProjectPostType } from '@/types/datatype';
 
 interface MyProjectStore {
     result: myProjectPostType[];
-    setResult: (item: object) => void;
+    setResult: (item: myProjectPostType[]) => void;
     originalData: myProjectPostType[];
-    setOriginalData: (item: object) => void;
+    setOriginalData: (item: myProjectPostType[]) => void;
     totalPostId: number;
     setTotalPostId: (item: number) => void;
 }
 export const myProjectStore = create<MyProjectStore>(set => ({
     result: [],
-    setResult: (result) => set({ result }),
+    setResult: (result) => set({result}),
     originalData: [],
-    setOriginalData: (originalData) => set({ originalData }),
+    setOriginalData: (originalData) => set({originalData}),
     totalPostId: 6,
     setTotalPostId: (totalPostId) => set({totalPostId})
 }));

@@ -46,6 +46,8 @@ export default function Home() {
 
   useEffect(() => {
     if (status === 'authenticated') {
+      console.log('-----------------session')
+      console.log(session.user)
       loadData()
     }
 
@@ -92,9 +94,9 @@ export default function Home() {
       return;
     };
 
-    // console.log('-----------------nowUser')
-    // console.log(nowUser)
-    // console.log('------------------------')
+    console.log('-----------------nowUser')
+    console.log(nowUser)
+    console.log('------------------------')
 
     switch (nowUser.level) {
       case '초딩':

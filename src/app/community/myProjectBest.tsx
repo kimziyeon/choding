@@ -8,10 +8,11 @@ import ArrowRight from '@/essets/arrowRight.svg';
 import './myProjectBest.scss';
 import MyProjectSlide from '../components/MyProjectSlide';
 import serverStore from '@/lib/server/serverStore';
+import {myProjectPostType} from '@/types/datatype';
 
 export default function MyProjectBest() {
   const router = useRouter();
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<myProjectPostType[]>([]);
 
   useEffect(() => {
     fetchProjects();
@@ -29,7 +30,7 @@ export default function MyProjectBest() {
     }
   };
 
-  const sortProjectsByLikesAndComments = (projects) => {
+  const sortProjectsByLikesAndComments = (projects : myProjectPostType[]) => {
     return projects.sort((a, b) => {
       if (a.like.length === b.like.length) {
         return b.comments.length - a.comments.length;
@@ -66,7 +67,11 @@ export default function MyProjectBest() {
         {projects.length > 0 &&
           <figure className='ccitem best1'
             onClick={handleClickBestFigure}>
-            {projects[0].image.length !== 0 ? <img src={projects[0].image} alt="" /> : <div className='noImage' />}
+            {
+              projects[0].image.length !== 0
+              ? <Image src={projects[0].image} alt="이미지" width={100} height={100} />
+              : <div className='noImage' />
+            }
             <figcaption>
               <h3>{projects[0].title}</h3>
               <div className='bottom'>

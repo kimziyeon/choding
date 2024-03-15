@@ -58,9 +58,20 @@ export default function InputSection({ num, classname, titleGuide, title, regist
         }
       }
 
-
-
     const validationRules = getValidationRules(classname);
+
+    function isKeyOfMyProjectPostType(key: any): key is keyof myProjectPostType {
+    const validKeys = ['date','overview','position','postId','title','goal','link','member','stack','image','like','comments','name','email'];
+      return validKeys.includes(key);
+    }
+
+    let classnameKey = isKeyOfMyProjectPostType(classname) ? classname : undefined;
+
+    if (!classnameKey) {
+      console.error('Invalid classname provided');
+      return null;
+    }
+
     return (
         <section className={classname}>
             <div className='top'>
@@ -71,13 +82,17 @@ export default function InputSection({ num, classname, titleGuide, title, regist
             </div>
             {classname === 'link' ? <button type="button" className="mainBold">+ 링크 추가</button> : null}
             <input
-              {...register(classname, {
+              {...register(classnameKey, {
                 required: '*필수 입력 사항입니다!',
                 ...validationRules 
               })}
               type="text"
               placeholder={placetext} />
-            {errors[classname] ? <p className='errorMsg On'>{errors[classname].message}</p> : <p className='errorMsg Off'>*필수 입력사항입니다.</p>}
+            {
+              errors[classnameKey] ?
+                <p className='errorMsg On'>{errors[classnameKey]?.message}</p> :
+                <p className='errorMsg Off'>*필수 입력사항입니다.</p>
+            }
         </section>
     )
 }

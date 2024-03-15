@@ -1,22 +1,25 @@
-/*
-uploadBytes(ref(storage, '파일명'), file)
-getDownloadURL(ref(storage, '파일명'), file)
-deleteObject(ref(storage, '파일명'), file)
-listAll(ref(storage, '폴더이름'))
-*/
 "use client";
 
 import { storage } from '@/firebase/firebase-sdk';
 import {ref, uploadBytes, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
 import { useEffect, useState } from 'react';
 
-export default function ImageInput() {
-  const [imgList, setImgList] = useState([]);
+type ImgListItem = {
+  url: string;
+  fullPath: string;
+};
 
-  function upload(e){
-    e.preventDefault();
-    const formdata = new FormData(e.target);
+type SetImgListFunction = React.Dispatch<React.SetStateAction<ImgListItem[]>>;
+
+export default function ImageInput() {
+  const [imgList, setImgList] = useState<ImgListItem[]>([]);
+
+  function upload(e: React.ChangeEvent<HTMLFormElement>, setImgList: SetImgListFunction) {
+  e.preventDefault();
+  const formdata = new FormData(e.target as HTMLFormElement);
     const file = formdata.get('photo');
+    if (!(file instanceof File)) return;
+    
     const storageRef = ref(storage, 'myProject_' + file.name);
 
     uploadBytes(storageRef, file)
@@ -25,23 +28,6 @@ export default function ImageInput() {
       setImgList([...imgList, {url, fullPath: snapshot.metadata.fullPath}])
     })
   }
-
-//   async function getImages(){
-//     const storageRef = ref(storage, 'test-gom/');
-//     listAll(storageRef)
-//     .then(async (res)=>{
-//       let imgArr = [];
-//       for(let value of res.items){
-//         const url = await getDownloadURL(value);
-//         imgArr.push({url, fullPath: value.fullPath})
-//       }
-//       setImgList(imgArr);
-//     }) 
-//   }
-
-//   useEffect(()=>{
-//     getImages();
-//   }, [])
 
   return (
     <section id="myProjectWriteImage">

@@ -24,13 +24,15 @@ export type myProjectCommentType = {
     updateValue: number,
     updateType: string,
     field: string,
-    value: {
-        name: string | null | undefined,
-        email: string | null | undefined,
-        image: string | null | undefined,
-        comment: string,
-        date: string
-    }
+    value: myProjectCommentValue
+}
+
+export type myProjectCommentValue = {
+    name: string | null | undefined,
+    email: string | null | undefined,
+    image: string | null | undefined,
+    comment: string,
+    date: string
 }
 
 export type FilterComponentType = {
@@ -40,10 +42,7 @@ export type FilterComponentType = {
     options: string[],
     handleOptionClick: (option: string, title: string) => void,
     activeOptions: string[],
-    setValue: (name: keyof myProjectPostType | string, value: any, options?: Partial<{ shouldValidate: boolean; shouldDirty: boolean }>) => void,
-    num: number,
-    classname: "title" | "overview" | "goal" | "link" | "date" | "position" | "postId" | "userId" | "member" | "stack" | "imgSrc" | "comments",
-    titleGuide: string
+    setValue: any
 };
 
 export type ButtonComponentType = {

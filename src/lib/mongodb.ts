@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const uri = process.env.NEXT_APP_MONGO_URI;
 const client = new MongoClient(uri);
 
-export const connectToDB = async (type: string, body: any, colName: string | null, idx: number | null) => {
+export const connectToDB = async (type: string, body: any, colName: string | null, idx: any) => {
     let db, collection, data;
 
 

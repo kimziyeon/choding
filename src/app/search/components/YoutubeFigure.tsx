@@ -24,11 +24,11 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
     if (result.length < 1) {
         return <div>검색 결과가 없습니다!</div>
     }
-    
+
     console.log(data)
 
-    const findeBookMarkId = (data:any) =>{
-        const maxBookMarkId = data.reduce((max:any, item:any) =>{
+    const findeBookMarkId = (data: any) => {
+        const maxBookMarkId = data.reduce((max: any, item: any) => {
             return item.bookMarkId > max ? item.bookMarkId : max;
         }, Infinity);
 
@@ -37,27 +37,27 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
 
     const maxBookMarkId = findeBookMarkId(data);
 
-    const fetchData = async () =>{
+    const fetchData = async () => {
         const aaa = await axios.get('/api/bookmark?colName=myStudy')
         setData(aaa.data);
         return;
     }
 
-    useEffect(()=>{       
-        
-        fetchData();        
-       
-    },[])
+    useEffect(() => {
 
-    const bookMarkIdCounter = () =>{
+        fetchData();
+
+    }, [])
+
+    const bookMarkIdCounter = () => {
         const bookMarkId = maxBookMarkId + 1;
         toggleStudyState(bookMarkId);
     }
-    
 
-    const toggleStudyState = (videoId: string, bookMarkId:number) => {
+
+    const toggleStudyState = (videoId: string, bookMarkId: number) => {
         setStudyStates(prev => ({ ...prev, [videoId]: !prev[videoId] }));
-        
+
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
             return;
@@ -68,9 +68,9 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
         const email = session.user.email;
         setStudyData(prevData => [...prevData, study])
 
-        const data = {email, study, bookMarkId}
+        const data = { email, study, bookMarkId }
 
-        axios.post('/api/bookmark' , data)
+        axios.post('/api/bookmark', data)
     }
 
     return (

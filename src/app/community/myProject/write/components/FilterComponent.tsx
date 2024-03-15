@@ -3,19 +3,12 @@ import { useForm, UseFormRegister } from 'react-hook-form';
 import { myProjectPostType, FilterComponentType } from '@/types/datatype';
 import ButtonComponent from './ButtonComponent';
 
-type ButtonComponentType = {
-  label: string;
-  onClick: () => void;
-  isActive: boolean;
-  register: UseFormRegister<myProjectPostType>;
-};
-
 export default function FilterComponent({ setValue, watch, type, title, options, handleOptionClick, activeOptions }: FilterComponentType) {
   const handleClick = (option: string, type: string) => {
     handleOptionClick(option, type);
     const currentValues = watch(type) || [];
 
-    const newValues = {}; // 새로운 값들을 저장할 객체를 초기화합니다.
+    const newValues: Record<string, any> = {};
 
     if (currentValues.includes(option)) {
       newValues[type] = currentValues.filter(item => item !== option);
@@ -24,7 +17,7 @@ export default function FilterComponent({ setValue, watch, type, title, options,
     }
 
     Object.keys(newValues).forEach(key => {
-      setValue(key, newValues[key], { shouldValidate: true });
+      setValue(key as keyof myProjectPostType, newValues[key] as string, { shouldValidate: true });
     });
   };
 
