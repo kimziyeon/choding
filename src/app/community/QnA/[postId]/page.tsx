@@ -8,26 +8,27 @@ import { useSession } from 'next-auth/react';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
 import Image from 'next/image';
+import { myQnAType} from '@/types/datatype';
 import DetailComment from './detailComment';
 import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
-    const [data, setData] = useState();
+    const [data, setData] = useState<any[]>([]);
     const [comments, setComments] = useState<any[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
     const [isOnUpdate, setUpdate] = useState(false);
     const { data: session, status } = useSession();
     const [textareaValue, setTAValue] = useState('');
-    const id = params.postId;
-    const name = session?.user?.name;
-    const email = session?.user?.email;
-    const postId = data?.[0]?.postId;
-    const img = session?.user?.image;
-    const today = new Date();
+    const id:number = params.postId;
+    const name:any = session?.user?.name;
+    const email:any = session?.user?.email;
+    const postId:number = data?.[0]?.postId;
+    const img:any = session?.user?.image;
+    const today:any = new Date();
     const month: number = today.getMonth() + 1;
     const day: number = today.getDate();
-    const thisDay = (month + '월' + day + '일')
+    const thisDay:number|string = (month + '월' + day + '일')
 
     const {
         register,
@@ -142,17 +143,17 @@ export default function QnADetail({ params }: any) {
             {
                 data && (<div className="postMain">
                     <div className="postContainer">
-                        <h2>{data[0].title}</h2>
-                        <p>{data[0].userName}</p>
+                        <h2>{data[0]?.title}</h2>
+                        <p>{data[0]?.userName}</p>
                         <div className="postDetail">
-                            <p dangerouslySetInnerHTML={{ __html: data[0].content }}></p>
+                            <p dangerouslySetInnerHTML={{ __html: data[0]?.content }}></p>
                         </div>
                     </div>
                     <button
                         type='button'
                         onClick={() => { onClicklikeHandler(data.postId) }}
                         className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
-                        <p>♥ <span>{data?.[0].like.length}</span></p>
+                        <p>♥ <span>{data?.[0]?.like.length}</span></p>
                     </button>
                     <form action="" className='postForm' onSubmit={handleSubmit(onSubmit)}>
                         {

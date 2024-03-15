@@ -1,6 +1,7 @@
 @use '../../styles/main' as *;
 
 .containerContentsQnA {
+    margin:2rem 0 ;
     display: grid;
     padding: 0 2rem;
     grid-gap: 2rem;
@@ -98,7 +99,7 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             .contentBox{
-                padding-bottom: $l;
+                padding-bottom: $s;
                 overflow: hidden;
                 .title {
                     font-weight: bold;

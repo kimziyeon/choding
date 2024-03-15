@@ -15,6 +15,32 @@ export type myProjectPostType = {
     email: string | null | undefined
 }
 
+export type myQnAType = {
+    _id : number,
+    title : string,
+    content : string,
+    Emali : string | null | undefined,
+    userName : string | null | undefined,
+    like : LikeUserEmail[],
+    comment : myQnACommenttype[],
+    postId : number
+}
+
+export type myQnACommenttype = {
+    updateKey: string,
+    updateValue: number,
+    updateType: string,
+    field: string,
+    value: myQnACommentValue
+}
+
+export type myQnACommentValue = {
+    commentText : string | null | undefined,
+    name : string | null | undefined,
+    email : string | null | undefined,
+    thisDay : string
+}
+
 export type LikeUserEmail = {
     email: string
 }
