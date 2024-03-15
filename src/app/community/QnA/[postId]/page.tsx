@@ -8,27 +8,27 @@ import { useSession } from 'next-auth/react';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
 import Image from 'next/image';
-import { myQnAType} from '@/types/datatype';
+import { myQnAType, myQnACommenttype } from '@/types/datatype';
 import DetailComment from './detailComment';
 import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
-    const [data, setData] = useState<any[]>([]);
+    const [data, setData] = useState<myQnAType[]>([]);
     const [comments, setComments] = useState<any[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
     const [isOnUpdate, setUpdate] = useState(false);
     const { data: session, status } = useSession();
     const [textareaValue, setTAValue] = useState('');
-    const id:number = params.postId;
-    const name:any = session?.user?.name;
-    const email:any = session?.user?.email;
-    const postId:number = data?.[0]?.postId;
-    const img:any = session?.user?.image;
-    const today:any = new Date();
-    const month: number = today.getMonth() + 1;
-    const day: number = today.getDate();
-    const thisDay:number|string = (month + '월' + day + '일')
+    const id= params.postId;
+    const name = session?.user?.name;
+    const email = session?.user?.email;
+    const postId = data?.[0]?.postId;
+    const img = session?.user?.image;
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const day = today.getDate();
+    const thisDay = (month + '월' + day + '일')
 
     const {
         register,
@@ -83,14 +83,14 @@ export default function QnADetail({ params }: any) {
         fetchData();
     }, []);
 
-    const likedAlready = data?.[0]?.like.some(obj => obj.email === session?.user?.email)
-    const onClicklikeHandler = async () => {
+    const likedAlready = data?.[0]?.like.some((obj:any) => obj.email === session?.user?.email)
+    const onClicklikeHandler = async ( data:any) => {
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
             return;
         }
 
-        const filtered = data?.[0].like.filter((value) => {
+        const filtered = data?.[0].like.filter((value:any) => {
             return value.email !== email
         })
 
