@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
+import { myQnAType} from '@/types/datatype'
 import Link from 'next/link';
 import axios from 'axios';
 import "./QnA.scss";
@@ -8,7 +9,7 @@ import Image from 'next/image';
 
 
 export default function AllPage() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<myQnAType[]>([]);
 
   const findMaxPostId = (data: any) => {
     // 초기값으로 postId 값을 -Infinity로 설정
@@ -31,13 +32,13 @@ export default function AllPage() {
         // let resObj = [];
         response.data.forEach((obj: any) => {
 
-          const tag: any = document.createElement('div');
+          const tag = document.createElement('div');
           tag.innerHTML = obj.content;
 
           const tumb = tag.querySelector('img');
 
 
-          const text = [];
+          const text:string[] = [];
           tag.childNodes.forEach((node: any) => {
             node.childNodes.forEach((child: any) => {
               if (child.tagName == undefined) {
