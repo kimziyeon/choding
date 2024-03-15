@@ -1,19 +1,22 @@
-import { UseFormRegister, FieldErrors, useForm } from 'react-hook-form';
+import { UseFormRegister, RegisterOptions, FieldErrors, useForm } from 'react-hook-form';
 import { signUpType } from '@/types/user';
+import { userDataType } from '@/types/user';
 import swal from 'sweetalert';
 
 type InputSectionType = {
-    type: string;
-    id: "name" | "password" | "email" | "imgSrc" | "passwordCheck";
-    title: string;
-    placeholder: string;
-    register: UseFormRegister<signUpType>;
-    errors: FieldErrors<signUpType>;
-    watch: (type: string) => string;
-    LoginData: [];
-    setNameCheck: React.Dispatch<React.SetStateAction<boolean>>;
-    setEmailCheck: React.Dispatch<React.SetStateAction<boolean>>;
+    type: string,
+    id: Extract<keyof signUpType, string>,
+    title: string,
+    placeholder: string,
+    register: UseFormRegister<signUpType>,
+    errors: FieldErrors<signUpType>,
+    watch: (type: string) => string,
+    LoginData: userDataType[],
+    setNameCheck: React.Dispatch<React.SetStateAction<boolean>>,
+    setEmailCheck: React.Dispatch<React.SetStateAction<boolean>>
 };
+
+type ValidateFunction = (id: string) => RegisterOptions;
 
 export default function InputComp({ type, id, title, placeholder, register, errors, watch, LoginData, setNameCheck, setEmailCheck }: InputSectionType) {
 
@@ -22,7 +25,7 @@ export default function InputComp({ type, id, title, placeholder, register, erro
     const watchPassword = watch('password');
     const watchName = watch('name');
     const watchEmail = watch('email');
-    const getValidationRules = (id: string) => {
+    const getValidationRules: ValidateFunction = (id): RegisterOptions => {
         switch (id) {
             case 'name':
                 return {
@@ -44,7 +47,7 @@ export default function InputComp({ type, id, title, placeholder, register, erro
                 };
             case 'passwordCheck':
                 return {
-                    validate: value => value === watchPassword || '비밀번호가 일치하지 않습니다.'
+                    validate: (value: string) => value === watchPassword || '비밀번호가 일치하지 않습니다.'
                 };
             case 'email':
                 return {
@@ -62,9 +65,14 @@ export default function InputComp({ type, id, title, placeholder, register, erro
 
 
     // 중복 확인
-    const duplicateCheck = () => {
+    const duplicateCheck = (id: string) => {
+        console.log('id : ', id)
+        console.log('watchName :', watchName)
         if (id === 'name') { // 닉네임 중복 확인
             const includeCheck = LoginData && LoginData.map((item) => item.name).includes(watchName);
+            console.log('LoginData', LoginData)
+            console.log('includeCheck', includeCheck)
+
             if (includeCheck) {
                 swal("오류", "이미 존재하는 닉네임입니다!", "warning")
                 setNameCheck(false)
@@ -103,14 +111,14 @@ export default function InputComp({ type, id, title, placeholder, register, erro
                     type={type}
                     placeholder={placeholder}
                     {...register(id, {
-                        required: '필수 입력 사항입니다!',
+                        required: true,
                         ...validationRules
                     })}
                     onChange={returnfalse}
                 />
-                {id == "name" || id == "email" ? <button type="button" onClick={duplicateCheck}>중복 확인</button> : null}
+                {id == "name" || id == "email" ? <button type="button" onClick={() => { duplicateCheck(id) }}>중복 확인</button> : null}
             </div>
-            {errors[id] ? <p className='errorMsg On'>{errors[id].message}</p> : null}
+            {errors[id] ? <p className='errorMsg On'>{errors[id]?.message}</p> : null}
         </div>
     )
 }
