@@ -1,9 +1,9 @@
-// src/app/search/components/Youtube.tsx
 "use client";
 
+import dynamic from 'next/dynamic';
 import React, { useEffect, useState } from 'react';
 import { youtubeSearch, youtubeSearchItem, youtubeSnippet } from '@/types/datatype';
-import YoutubeFigure from '@/app/search/components/YoutubeFigure';
+const YoutubeFigure = dynamic(() => import('@/app/search/components/YoutubeFigure'), { ssr: false });
 import youtubeData from '@/data/youtubeSearch.json';
 
 interface youtubeSearchType {

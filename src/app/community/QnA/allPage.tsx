@@ -4,9 +4,10 @@ import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import "./QnA.scss";
+import Image from 'next/image';
 
 
-export default function allPage() {
+export default function AllPage() {
     const [data, setData] = useState([]);
 
     const findMaxPostId = (data:any) => {
@@ -79,7 +80,8 @@ export default function allPage() {
             </div>
             
             <div className='QuestionImg'>
-                <img src={item.content?.thumb} alt=""  />                
+                {/* <img src={item.content?.thumb} alt=""  /> */}
+                <Image src={item.content?.thumb} alt='' width={90} height={50}/>
                 
             </div>
         </Link>

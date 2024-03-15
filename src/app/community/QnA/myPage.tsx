@@ -10,9 +10,9 @@ import { AnyPtrRecord } from 'dns';
 import Image from 'next/image';
 import empty from '@/essets/empty.svg';
 
-export default function myPage() {
+export default function MyPage() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
   const { data: session, status } = useSession();
   const LoginCheck = session?.user?.email; // 현재 로그인한 이메일 확인
   let MyQnAList = data.filter(item => item.Email === LoginCheck); //현재 로그인한 이메일과 동일한 값의 글 뽑기
@@ -71,7 +71,7 @@ export default function myPage() {
               </div>
             </div>
             <div className='QuestionImg'>
-              <img src={item.content?.thumb} alt="" />
+              <Image src={item.content?.thumb} alt='' width={90} height={50}/>
             </div>
           </Link>
         ))}

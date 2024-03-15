@@ -17,15 +17,45 @@ interface youtubeFigureType {
 export default function YoutubeFigure({ result }: youtubeFigureType) {
     const [studyStates, setStudyStates] = useState<Record<string, boolean>>({});
     const [studyData, setStudyData] = useState<any[]>([]);
+    const [data, setData] = useState([])
     const { data: session, status } = useSession();
+    const [bookMarkId, setBookMarkId] = useState(0);
 
     if (result.length < 1) {
         return <div>검색 결과가 없습니다!</div>
     }
+    
+    console.log(data)
 
+    const findeBookMarkId = (data:any) =>{
+        const maxBookMarkId = data.reduce((max:any, item:any) =>{
+            return item.bookMarkId > max ? item.bookMarkId : max;
+        }, Infinity);
+
+        return maxBookMarkId;
+    };
+
+    const maxBookMarkId = findeBookMarkId(data);
+
+    const fetchData = async () =>{
+        const aaa = await axios.get('/api/bookmark?colName=myStudy')
+        setData(aaa.data);
+        return;
+    }
+
+    useEffect(()=>{       
+        
+        fetchData();        
+       
+    },[])
+
+    const bookMarkIdCounter = () =>{
+        const bookMarkId = maxBookMarkId + 1;
+        toggleStudyState(bookMarkId);
+    }
     
 
-    const toggleStudyState = (videoId: string) => {
+    const toggleStudyState = (videoId: string, bookMarkId:number) => {
         setStudyStates(prev => ({ ...prev, [videoId]: !prev[videoId] }));
         
         if (!session?.user?.email) {
@@ -38,7 +68,7 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
         const email = session.user.email;
         setStudyData(prevData => [...prevData, study])
 
-        const data = {email, study}
+        const data = {email, study, bookMarkId}
 
         axios.post('/api/bookmark' , data)
     }
