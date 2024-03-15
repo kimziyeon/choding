@@ -6,6 +6,11 @@ const client = new MongoClient(uri);
 export const connectToDB = async (type: string, body: any, colName: string | null, idx: any) => {
     let db, collection, data;
 
+    interface UpdateOperation {
+        $push?: { [key: string]: any };
+        $set?: { [key: string]: any };
+    }
+
 
     await client.connect(); // 접속
     db = client.db('choding');
@@ -49,7 +54,7 @@ export const connectToDB = async (type: string, body: any, colName: string | nul
 
         case 'put':
             const updateQuery = { [body.updateKey]: body.updateValue };
-            let updateOperation = {};
+            let updateOperation: UpdateOperation = {};
 
             if (body.updateType === 'push') {
                 updateOperation.$push = { [body.field]: body.value };
