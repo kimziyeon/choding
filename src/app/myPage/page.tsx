@@ -192,7 +192,7 @@ export default function MyPage() {
                         </Image>
                     </span>
                 </div>
-                <div className='studyThumb'>
+                <div className='studyContents'>
                     <figure>
                         <div></div>
                         <figcaption>컨텐츠 타이틀을 ..</figcaption>
