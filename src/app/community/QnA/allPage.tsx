@@ -30,7 +30,7 @@ export default function AllPage() {
         const response = await axios.get('/api/post?colName=qna');
 
         // let resObj = [];
-        response.data.forEach((obj: any) => {
+        response.data.forEach((obj:any) => {
 
           const tag = document.createElement('div');
           tag.innerHTML = obj.content;

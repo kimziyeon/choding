@@ -14,7 +14,7 @@ import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
-    const [data, setData] = useState<myQnAType[]>([]);
+    const [data, setData] = useState<myQnAType>();
     const [comments, setComments] = useState<any[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
     const [isOnUpdate, setUpdate] = useState(false);
@@ -23,7 +23,7 @@ export default function QnADetail({ params }: any) {
     const id= params.postId;
     const name = session?.user?.name;
     const email = session?.user?.email;
-    const postId = data?.[0]?.postId;
+    const postIds = data?.postId;
     const img = session?.user?.image;
     const today = new Date();
     const month = today.getMonth() + 1;
@@ -43,7 +43,7 @@ export default function QnADetail({ params }: any) {
         const comment = {
             field: "comment",
             updateKey: "postId",
-            updateValue: postId,
+            updateValue: postIds,
             updateType: "push",
             value: { commentText, name, email, img, thisDay }
         }
@@ -58,7 +58,7 @@ export default function QnADetail({ params }: any) {
         //     return
         //   }
 
-        const res = await detailStore('put', 'qna', comment, postId)
+        const res = await detailStore('put', 'qna', comment, postIds)
         await fetchData();
 
         reset();
@@ -67,7 +67,7 @@ export default function QnADetail({ params }: any) {
     const fetchData = async () => {
         try {
             const response = await axios.get(`/api/post?colName=qna`);
-            const d = response.data.filter((obj: any) => obj._id == id)
+            const d = response.data.filter((obj:myQnAType) => obj._id == id)
             const e = d[0].comment
 
             // console.log(e)
@@ -83,7 +83,7 @@ export default function QnADetail({ params }: any) {
         fetchData();
     }, []);
 
-    const likedAlready = data?.[0]?.like.some((obj:any) => obj.email === session?.user?.email)
+    const likedAlready = data?.like.some((obj:any) => obj.email === session?.user?.email)
     const onClicklikeHandler = async ( data:any) => {
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
@@ -99,12 +99,12 @@ export default function QnADetail({ params }: any) {
         const updateResult = {
             field: "like",
             updateKey: "postId",
-            updateValue: postId,
+            updateValue: postIds,
             updateType: likedAlready ? 'set' : 'push',
             value: likedAlready ? filtered : { email: email }
         };
 
-        const res = await detailStore('put', 'qna', updateResult, postId);
+        const res = await detailStore('put', 'qna', updateResult, postIds);
         if (res && res.status === 200) {
             await fetchData();
             setOnLike(!isOnLikeClick);
@@ -121,12 +121,12 @@ export default function QnADetail({ params }: any) {
         const setUpdateResult = {
             field: "comment",
             updateKey: "postId",
-            updateValue: postId,
+            updateValue: postIds,
             updateType: "set",
             value: updatedComments
           }
 
-        const res = await detailStore('put', 'qna', setUpdateResult, postId);
+        const res = await detailStore('put', 'qna', setUpdateResult, postIds);
         if (res && res.status === 200) {
             await fetchData();
             if (keyword === 'update') {
@@ -143,17 +143,17 @@ export default function QnADetail({ params }: any) {
             {
                 data && (<div className="postMain">
                     <div className="postContainer">
-                        <h2>{data[0]?.title}</h2>
-                        <p>{data[0]?.userName}</p>
+                        <h2>{data?.title}</h2>
+                        <p>{data?.userName}</p>
                         <div className="postDetail">
-                            <p dangerouslySetInnerHTML={{ __html: data[0]?.content }}></p>
+                            <p dangerouslySetInnerHTML={{ __html: data?.content }}></p>
                         </div>
                     </div>
                     <button
                         type='button'
                         onClick={() => { onClicklikeHandler(data.postId) }}
                         className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
-                        <p>♥ <span>{data?.[0]?.like.length}</span></p>
+                        <p>♥ <span>{data?.like.length}</span></p>
                     </button>
                     <form action="" className='postForm' onSubmit={handleSubmit(onSubmit)}>
                         {
