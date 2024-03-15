@@ -10,7 +10,7 @@ import MyStudyEmpty from './commponents/Empty';
 import MyStudyContents from './commponents/Contents';
 
 
-export default function studyPage() {
+export default function StudyPage() {
 
     const router = useRouter();
 
@@ -18,6 +18,7 @@ export default function studyPage() {
     const onClickBackHandler = () => {
         router.back();
     }
+
     return (
 
         <section className="studyPage">
