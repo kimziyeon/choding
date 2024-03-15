@@ -1,5 +1,6 @@
 @use '../../styles/main' as *;
 
+
 .myPageMain {
     padding-top: 4rem;
     color: $grayDark;
@@ -219,7 +220,7 @@
         }
     }
 
-    .commuContents .studyContents {
+    .commuContents {
         max-width: calc(480px - 2rem);
         margin: 2rem auto;
         justify-content: center;
@@ -246,6 +247,80 @@
 }
 
 
+.studyContentsBack {
+    padding: 2rem;
+
+    .studyContents {
+        @include flexbox();
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .contentsFigure {
+            width: calc((100% - 2rem)/3);
+            padding-bottom: 1rem;
+            position: relative;
+
+            .study {
+                // 스크랩 버튼
+                position: absolute;
+                right: 0.5rem;
+                top: -0.5rem;
+
+                width: 25px;
+                height: 30px;
+
+                >img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0;
+                }
+            }
+
+            a {
+                width: 100%;
+            }
+
+
+            figcaption {
+                width: 100%;
+                padding-top: 0.5rem;
+                @include column-flexbox(sb, s);
+
+                .figcaption {
+                    width: 100%;
+                }
+
+                .top {
+                    height: 4rem;
+
+                    * {
+                        width: 100%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        line-height: 140%;
+                    }
+
+                    .title {
+                        height: 1.2rem;
+                    }
+
+                    .description {
+                        margin: 0.5rem 0;
+                        color: $gray;
+                        font-size: $s;
+                    }
+                }
+            }
+
+            .author {
+                font-size: $s;
+            }
+        }
+    }
+}
 
 
 //마이페이지 / 출석체크 - 달력
