@@ -10,6 +10,8 @@ import Image from 'next/image';
 import heart from '@/essets/heart.svg';
 import noImage from '@/essets/noImage2.png';
 import MyCommunityEmpty from './Empty';
+import { myProjectPostType } from '@/types/datatype';
+import { userPointType } from '@/types/user';
 
 
 
@@ -24,11 +26,11 @@ export default function MyCommunityContents() {
 
 
 
-    const projectGO = (postId) => {
+    const projectGO = (postId: myProjectPostType) => {
         router.push(`/community/myProject/${postId}`);
     };
 
-    const qnaGO = (_id) => {
+    const qnaGO = (_id: any) => {
         router.push(`/community/QnA/${_id}`);
     };
 
@@ -41,9 +43,9 @@ export default function MyCommunityContents() {
 
     const fetchProject = async () => { //내 프로젝트 불러오기
         try {
-            const response = await serverStore('get', 'myProject');
+            const response = await serverStore('get', 'myProject', null, null);
             if (response) {
-                const getproject = response.data.filter(obj => obj.email === session?.user?.email);
+                const getproject = response.data.filter((obj: myProjectPostType) => obj.email === session?.user?.email);
                 // console.log("====================")
                 // console.log(getproject)
                 // console.log("====================")
@@ -56,7 +58,7 @@ export default function MyCommunityContents() {
 
     const fetchQnA = async () => { //내 qna 불러오기
         try {
-            const response = await serverStore('get', 'qna');
+            const response = await serverStore('get', 'qna', null, null);
             if (response) {
                 const getqna = response.data.filter(objj => objj.Email === session?.user?.email);
                 // console.log("-------------------")
@@ -70,12 +72,12 @@ export default function MyCommunityContents() {
     };
 
 
-    const combinedData = [...project, ...qna]; //project + qna 결과값 합침
+    const combinedData: any[] = [...project, ...qna]; //project + qna 결과값 합침
     // console.log(combinedData)
 
 
 
-    const renderData = (data) => {
+    const renderData = (data: myProjectPostType[]) => {
         if ('date' in data) {
             return (
                 <span className='myP'>내 프로젝트</span>

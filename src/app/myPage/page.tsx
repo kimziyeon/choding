@@ -2,7 +2,7 @@
 
 import serverStore from '@/lib/server/serverStore';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import './mypage.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,6 +12,8 @@ import arrowRight from '@/essets/arrowRight.svg';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useQuestion } from '@/context/questionStore';
+import { myProjectPostType } from '@/types/datatype';
+import { userPointType } from '@/types/user';
 import MyCommunityContents from './community/commponents/Contents';
 
 
@@ -20,7 +22,7 @@ export default function MyPage() {
     const { data: session, status } = useSession();
     const myImgStyle = status === 'authenticated' ? { backgroundImage: `url(${session?.user?.image})` } : {}; //유저이미지
     const [randomTitle, setRandomTitle] = useState('');
-    const [mypageData, setMypageData] = useState([]);
+    const [mypageData, setMypageData] = useState<userPointType>();
     const { isOpenFunc } = useQuestion();
     const router = useRouter();
     const [project, setProject] = useState([]);
@@ -68,11 +70,11 @@ export default function MyPage() {
 
 
 
-    const projectGO = (postId) => {
+    const projectGO = (postId: myProjectPostType[]) => {
         router.push(`/community/myProject/${postId}`);
     };
 
-    const qnaGO = (_id) => {
+    const qnaGO = (_id: any) => {
         router.push(`/community/QnA/${_id}`);
     };
 
@@ -85,9 +87,9 @@ export default function MyPage() {
 
     const fetchProject = async () => { //내 프로젝트 불러오기
         try {
-            const response = await serverStore('get', 'myProject');
+            const response = await serverStore('get', 'myProject', null, null);
             if (response) {
-                const getproject = response.data.filter(obj => obj.email === session?.user?.email);
+                const getproject = response.data.filter((obj: myProjectPostType) => obj.email === session?.user?.email);
                 // console.log("====================")
                 // console.log(getproject)
                 // console.log("====================")
@@ -100,7 +102,7 @@ export default function MyPage() {
 
     const fetchQnA = async () => { //내 qna 불러오기
         try {
-            const response = await serverStore('get', 'qna');
+            const response = await serverStore('get', 'qna', null, null);
             if (response) {
                 const getqna = response.data.filter(objj => objj.Email === session?.user?.email);
                 // console.log("-------------------")
@@ -114,11 +116,11 @@ export default function MyPage() {
     };
 
 
-    const combinedData = [...project, ...qna]; //project + qna 결과값 합침
+    const combinedData: any[] = [...project, ...qna]; //project + qna 결과값 합침
     // console.log(combinedData)
 
 
-    const renderData = (data) => {
+    const renderData = (data: myProjectPostType[]) => {
         if ('date' in data) {
             return (
                 <span className='myP'>내 프로젝트</span>
@@ -159,7 +161,7 @@ export default function MyPage() {
                             <p>레벨</p>
 
                             {mypageData?.level ?
-                                <b>{mypageData?.level}</b>
+                                <b>{mypageData.level}</b>
                                 :
                                 <b>?</b>}
                         </div>
