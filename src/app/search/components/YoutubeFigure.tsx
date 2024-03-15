@@ -37,12 +37,16 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
 
     const maxBookMarkId = findeBookMarkId(data);
 
-    useEffect(()=>{
-        const fetchData = async () =>{
-            const aaa = await axios.get('/api/bookmark?colName=myStudy')
-            setData(aaa.data);
-        }
-        fetchData();
+    const fetchData = async () =>{
+        const aaa = await axios.get('/api/bookmark?colName=myStudy')
+        setData(aaa.data);
+        return;
+    }
+
+    useEffect(()=>{       
+        
+        fetchData();        
+       
     },[])
 
     const bookMarkIdCounter = () =>{
