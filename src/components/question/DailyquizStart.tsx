@@ -4,12 +4,12 @@ import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { userPointType } from '@/types/user';
 import axios from 'axios';
-import LevelTestStart from './LevelTestStart';
 
 
 
-export default function DailyquizStart({ startTest }) {
+export default function DailyquizStart({ startTest }: any) {
 
     const { quiz, isOpenFunc } = useQuestion();
 
@@ -20,7 +20,7 @@ export default function DailyquizStart({ startTest }) {
     }
 
     const { data: session, status } = useSession();
-    const [mypageData, setMypageData] = useState([]);
+    const [mypageData, setMypageData] = useState<userPointType>();
 
     useEffect(() => {
         axios.get(`/api/mypoint?email=${session?.user?.email}`)

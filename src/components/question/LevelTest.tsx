@@ -31,7 +31,7 @@ export default function LevelTest() {
     }, [timer, testState]);
 
 
-    const formatTime = (time) => {
+    const formatTime = (time: any) => {
         return time < 10 ? '0' + time : time;
     };
 
@@ -47,7 +47,7 @@ export default function LevelTest() {
     }, [ingId, ques, testState]);
 
 
-    const btnHandler = (res) => {
+    const btnHandler = (res: any) => {
         setUservalue(res);
     };
 

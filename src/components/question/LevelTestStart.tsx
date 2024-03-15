@@ -4,13 +4,14 @@ import { useQuestion } from '@/context/questionStore';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { userPointType } from '@/types/user';
 import axios from 'axios';
 
 
-export default function LevelTestStart({ startTest }) {
+export default function LevelTestStart({ startTest }: any) {
 
     const { data: session, status } = useSession();
-    const [mypageData, setMypageData] = useState([]);
+    const [mypageData, setMypageData] = useState<userPointType>();
     const { quiz, isOpenFunc } = useQuestion();
 
 

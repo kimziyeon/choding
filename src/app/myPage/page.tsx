@@ -12,7 +12,7 @@ import arrowRight from '@/essets/arrowRight.svg';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { useQuestion } from '@/context/questionStore';
-import { myProjectPostType } from '@/types/datatype';
+import { myProjectPostType, myQnAType } from '@/types/datatype';
 import { userPointType } from '@/types/user';
 import MyCommunityContents from './community/commponents/Contents';
 
@@ -74,7 +74,7 @@ export default function MyPage() {
         router.push(`/community/myProject/${postId}`);
     };
 
-    const qnaGO = (_id: any) => {
+    const qnaGO = (_id: myQnAType) => {
         router.push(`/community/QnA/${_id}`);
     };
 
@@ -104,7 +104,7 @@ export default function MyPage() {
         try {
             const response = await serverStore('get', 'qna', null, null);
             if (response) {
-                const getqna = response.data.filter(objj => objj.Email === session?.user?.email);
+                const getqna = response.data.filter((objj: myQnAType) => objj.Email === session?.user?.email);
                 // console.log("-------------------")
                 // console.log(getqna)
                 // console.log("-------------------")
