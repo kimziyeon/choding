@@ -2,19 +2,26 @@
 
 {/* 마이페이지 / 커뮤니티 */ }
 import '../mypage.scss';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import arrowLeftGrayDark from '@/essets/arrowLeftGrayDark.svg';
-import MyCommunityEmpty from './commponents/Empty';
 import MyCommunityContents from './commponents/Contents';
 
 export default function MyCommunity() {
+
+    const router = useRouter();
+
+    // 뒤로가기
+    const onClickBackHandler = () => {
+        router.back();
+    }
+
     return (
 
         <section className='commuPage'>
             <div className='commuTitle'>
-                <p>
-                    <Image src={arrowLeftGrayDark} alt='arrowRight' />
+                <p className='backIcon' onClick={onClickBackHandler}>
+                    <Image src={arrowLeftGrayDark} alt='arrowLeft' />
                 </p>
                 <h3>커뮤니티</h3>
             </div>

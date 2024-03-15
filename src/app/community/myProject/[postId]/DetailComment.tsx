@@ -8,12 +8,12 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
 import Image from 'next/image';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
-import { myProjectCommentType, myProjectPostType } from '@/types/datatype';
+import { myProjectCommentType, myProjectCommentValue } from '@/types/datatype';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
 import './DetailComment.scss'
 
-export default function DetailComment({ result, fetchData }) {
+export default function DetailComment({ result, fetchData }:any) {
   const { data: session, status } = useSession();
   const [isOnUpdate, setUpdate] = useState(false);
   const [textareaValue, setTAValue] = useState('');
@@ -121,7 +121,7 @@ export default function DetailComment({ result, fetchData }) {
 
     <section id="DetailComment">
       {
-        result.comments.map((item: myProjectPostType, i: number) => {
+        result.comments.map((item: myProjectCommentValue, i: number) => {
           const itemCreatedDate = dayjs(item.date, 'YYYY년 MM월 DD일');
           if (!itemCreatedDate.isValid()) {
             console.error(`Invalid date format for comment at index ${i}:`, item.date);

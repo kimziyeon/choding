@@ -1,7 +1,7 @@
 //src/app/community/myProject/MyProjectFilter.tsx
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './myProjectFilter.scss'
 import FilterComponent from './components/FilterComponent';
 import { myProjectStore } from "./context/myProject";
@@ -38,21 +38,21 @@ export default function MyProjectFilter() {
 
 
   // --------------- 필터 시작 ----------------
-  useEffect(() => {
-    function filterData(dataset: myProjectPostType[], filters: string[]) {
-      if (!filters.length) {
-        return dataset;
-      }
-
-      const filteredData = dataset.filter((item) => {
-        const memberFilters = filters.some(filter => item.member.includes(filter));
-        const stackFilters = filters.some(filter => item.stack.includes(filter));
-        return memberFilters || stackFilters;
-      });
-
-      return filteredData;
+  function filterData(dataset: myProjectPostType[], filters: string[]) {
+    if (!filters.length) {
+      return dataset;
     }
 
+    const filteredData = dataset.filter((item) => {
+      const memberFilters = filters.some(filter => item.member.includes(filter));
+      const stackFilters = filters.some(filter => item.stack.includes(filter));
+      return memberFilters || stackFilters;
+    });
+
+    return filteredData;
+  }
+
+  useEffect(() => {
     setFilteredData(filterData(result, activeOptions));
   }, [activeOptions, result]);
 
@@ -64,11 +64,11 @@ export default function MyProjectFilter() {
 
 
   // ---------------- 검색 ------------------
-  const inputSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const inputSearch = (e : React.ChangeEvent<HTMLInputElement>) => {
     setKeyword(e.currentTarget.value);
   }
 
-  const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleEnterKey = (e : React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const filterData = result.filter((item) => {
         for (const value of Object.values(item)) {

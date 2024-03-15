@@ -3,17 +3,18 @@ import { useRouter } from 'next/navigation';
 import { storage } from '@/firebase/firebase-sdk';
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ref, uploadBytes, getStorage, listAll, getDownloadURL, deleteObject } from 'firebase/storage'
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { myProjectPostType } from '@/types/datatype';
 import './MyProjectWrite.scss';
 import FilterComponent from './components/FilterComponent';
 import InputSection from './components/InputSection';
 import serverStore from '@/lib/server/serverStore';
-import { myProjectStore } from '@/app/community/myProject/context/myProject';
 import { useSession } from 'next-auth/react';
 import swal from 'sweetalert';
 import dayjs from 'dayjs';
 import 'dayjs/locale/ko';
+
+type FieldName = keyof myProjectPostType;
 
 export default function MyProjectWrite() {
     const { data: session, status } = useSession();
@@ -77,7 +78,7 @@ export default function MyProjectWrite() {
 
 
     // 이미지 주소 저장
-    const imageSubmit = async (event) => {
+    const imageSubmit = async (event:any) => {
         event.preventDefault();
         setImgText('파일 선택')
 
@@ -163,7 +164,6 @@ export default function MyProjectWrite() {
                     <FilterComponent
                         setValue={setValue}
                         watch={watch}
-                        register={register}
                         title={'개발 인원'}
                         type={'member'}
                         options={['개인', '팀']}
@@ -173,7 +173,6 @@ export default function MyProjectWrite() {
                     <FilterComponent
                         setValue={setValue}
                         watch={watch}
-                        register={register}
                         title={'내 포지션'}
                         type={'position'}
                         options={['리드 개발자', '서브 개발자']}
@@ -193,7 +192,6 @@ export default function MyProjectWrite() {
                     <FilterComponent
                         setValue={setValue}
                         watch={watch}
-                        register={register}
                         title={'사용 기술'}
                         type={'stack'}
                         options={['HTML', 'CSS', 'JS', 'TS', 'React', 'Vue', 'Nextjs', 'GIT']}
