@@ -5,6 +5,7 @@ import Link from 'next/link';
 import "./QnA.scss";
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
+import { myQnAType} from '@/types/datatype'
 import Login from '@/app/login/page';
 import { AnyPtrRecord } from 'dns';
 import Image from 'next/image';
@@ -12,7 +13,7 @@ import empty from '@/essets/empty.svg';
 
 export default function MyPage() {
 
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<myQnAType[]>([]);
   const { data: session, status } = useSession();
   const LoginCheck = session?.user?.email; // 현재 로그인한 이메일 확인
   let MyQnAList = data.filter(item => item.Email === LoginCheck); //현재 로그인한 이메일과 동일한 값의 글 뽑기
@@ -30,7 +31,7 @@ export default function MyPage() {
           const tumb = tag.querySelector('img');
 
 
-          const text = [];
+          const text:string[] = [];
           tag.childNodes.forEach((node: any) => {
             node.childNodes.forEach((child: any) => {
               if (child.tagName == undefined) {

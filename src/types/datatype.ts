@@ -16,14 +16,14 @@ export type myProjectPostType = {
 }
 
 export type myQnAType = {
-    _id: number,
-    title: string,
-    content: string,
-    Email: string | null | undefined,
-    userName: string | null | undefined,
-    like: LikeUserEmail[],
-    comment: myQnACommenttype[],
-    postId: number
+    _id : number,
+    title : string,
+    content : string,
+    Email : string | null | undefined,
+    userName : string | null | undefined,
+    like : LikeUserEmail[],
+    comment : myQnACommenttype[],
+    postId : number | undefined,
 }
 
 export type myQnACommenttype = {
@@ -31,7 +31,9 @@ export type myQnACommenttype = {
     updateValue: number,
     updateType: string,
     field: string,
-    value: myQnACommentValue
+    value: myQnACommentValue,
+    // text : string ,
+    // thumb : string | null
 }
 
 export type myQnACommentValue = {
