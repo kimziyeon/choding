@@ -37,10 +37,10 @@ export type myQnACommenttype = {
 }
 
 export type myQnACommentValue = {
-    commentText : string | null | undefined,
-    name : string | null | undefined,
-    email : string | null | undefined,
-    thisDay : string
+    commentText: string | null | undefined,
+    name: string | null | undefined,
+    email: string | null | undefined,
+    thisDay: string
 }
 
 export type LikeUserEmail = {

@@ -9,7 +9,8 @@ import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
 import MainSlide from './components/MainSlide';
 import { useState, useEffect } from 'react';
-import { levelDataType } from '@/types/datatype'
+import { levelDataType, levelDataYoutube } from '@/types/datatype'
+import { userPointType, userDataType } from '@/types/user'
 import levelKeyword from '@/data/levelKeyword.json';
 import cdData from '@/data/mainContents/cd.json';
 import jdData from '@/data/mainContents/jd.json';
@@ -22,21 +23,23 @@ import community from '@/data/community.json';
 export default function Home() {
   const { quiz, isOpenFunc } = useQuestion();
   const { data: session, status } = useSession();
-  const [loginData, setLoginData] = useState([0]);
-  const [result, setResult] = useState<levelDataType | object>();
+  const [loginData, setLoginData] = useState<userPointType[] | undefined>();
+  const [result, setResult] = useState<levelDataType>();
   const [title, setTitle] = useState<string[]>([]);
 
   useEffect(() => {
     dataCrl('get');
     if (status !== 'authenticated') {
       setTitle(levelKeyword[0].cd)
-      setResult(cdData);
+      setResult(cdData as levelDataType);
       isOpenFunc({ isOpen: true, isTest: true }); //테스트팝업on
 
     }
   }, [status])
 
-
+  function isLevelDataType(object: any): object is levelDataType {
+    return 'google' in object && 'youtube' in object && 'naver' in object;
+  }
 
   useEffect(() => {
     if (status === 'authenticated') {
@@ -55,12 +58,12 @@ export default function Home() {
   }
 
   const loadData = async () => {
-    let nowUser = await loginData.find(obj => obj.email === session.user?.email);
+    let nowUser = await loginData?.find(obj => obj.email === session?.user?.email);
     isOpenFunc({ isOpen: false, isTest: false });//테스트팝업off (따닥........)
 
     if (!nowUser) {
       setTitle(levelKeyword[0].cd)
-      setResult(cdData)
+      setResult(cdData as levelDataType)
 
       isOpenFunc({ isOpen: true, isTest: true });
       return;
@@ -73,36 +76,31 @@ export default function Home() {
     switch (nowUser.level) {
       case '초딩':
         setTitle(levelKeyword[0].cd)
-        setResult(cdData)
+        setResult(cdData as levelDataType)
         break;
       case '중딩':
         setTitle(levelKeyword[0].jd)
-        setResult(jdData)
+        setResult(jdData as levelDataType)
         break;
       case '고딩':
         setTitle(levelKeyword[0].gd)
-        setResult(gdData)
+        setResult(gdData as levelDataType)
         break;
       case '대딩':
         setTitle(levelKeyword[0].dd)
-        setResult(ddData)
+        setResult(ddData as levelDataType)
         break;
       case '직딩':
         setTitle(levelKeyword[0].zd)
-        setResult(zdData)
+        setResult(zdData as levelDataType)
         break;
       default:
         setTitle(levelKeyword[0].cd)
-        setResult(cdData)
+        setResult(cdData as levelDataType)
         break;
     }
   }
 
-
-
-
-  // console.log('---------------result')
-  // console.log(result)
 
   return (
     <main className="mainContainer">
@@ -114,24 +112,21 @@ export default function Home() {
         option={0}
         subtext={'동영상으로 차근차근'}
         title={title[0]}
-        loginData={loginData}
-        result={result.youtube}
+        result={result?.youtube}
       />
 
       <MainContentsSection
         option={1}
         subtext={'기본부터 쌓아가요'}
         title={title[1]}
-        loginData={loginData}
-        result={result.google}
+        result={result?.google}
       />
 
       <MainContentsSection
         option={2}
         subtext={'자세히 알아봐요'}
         title={title[2]}
-        loginData={loginData}
-        result={result.naver}
+        result={result?.naver}
       />
 
       <section className="bottomContents">
@@ -139,8 +134,7 @@ export default function Home() {
           option={4}
           subtext={'모두와 공유해요'}
           title={'커뮤니티'}
-          loginData={loginData}
-          result={community}
+          result={community as levelDataYoutube[]}
         />
         <section id="mainTodayQuiz" className="num5">
           <div className='contLeft'>
