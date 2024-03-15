@@ -18,6 +18,7 @@ export default function StudyPage() {
     const onClickBackHandler = () => {
         router.back();
     }
+
     return (
 
         <section className="studyPage">
