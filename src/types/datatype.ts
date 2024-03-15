@@ -16,14 +16,16 @@ export type myProjectPostType = {
 }
 
 export type myQnAType = {
-    _id: number,
-    title: string,
-    content: string,
-    Email: string | null | undefined,
-    userName: string | null | undefined,
-    like: LikeUserEmail[],
-    comment: myQnACommenttype[],
-    postId: number | undefined,
+
+    _id : number,
+    title : string,
+    content : {thumb : string, text : any},
+    Email : string | null | undefined,
+    userName : string | null | undefined,
+    like : LikeUserEmail[],
+    comment : myQnACommenttype[],
+    postIds : number | undefined,
+    postId : number,
 }
 
 export type myQnACommenttype = {
@@ -32,15 +34,14 @@ export type myQnACommenttype = {
     updateType: string,
     field: string,
     value: myQnACommentValue,
-    // text : string ,
-    // thumb : string | null
 }
 
 export type myQnACommentValue = {
     commentText: string | null | undefined,
     name: string | null | undefined,
     email: string | null | undefined,
-    thisDay: string
+    thisDay: string,
+    img : any
 }
 
 export type myStudyType = {
@@ -51,7 +52,8 @@ export type myStudyType = {
 
 
 export type LikeUserEmail = {
-    email: string
+    email: string,
+    some : any
 }
 
 export type myProjectCommentType = {

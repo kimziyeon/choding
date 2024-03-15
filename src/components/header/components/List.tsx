@@ -4,7 +4,7 @@ import Link from "next/link"
 type ListComponentType = {
     options: string[],
     href: string[],
-    onClickMenu: (value: boolean) => void
+    onClickMenu: React.MouseEventHandler
 }
 
 export default function List({ options, onClickMenu, href }: ListComponentType) {

@@ -13,10 +13,15 @@ import empty from '@/essets/empty.svg';
 
 export default function MyPage() {
 
+  
+
+  
+
   const [data, setData] = useState<myQnAType[]>([]);
   const { data: session, status } = useSession();
   const LoginCheck = session?.user?.email; // 현재 로그인한 이메일 확인
   let MyQnAList = data.filter(item => item.Email === LoginCheck); //현재 로그인한 이메일과 동일한 값의 글 뽑기
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,10 +56,9 @@ export default function MyPage() {
 
     fetchData();
   }, []);
+  
 
-
-
-  if (status === 'authenticated') {
+  if (status !== 'authenticated') {
     if (MyQnAList.length !== 0) {
       return <div className='myPageMain'>
         <div className='writeBtnBox'><Link className='writeBtn' href='./QnA/write'>글 쓰기</Link></div>

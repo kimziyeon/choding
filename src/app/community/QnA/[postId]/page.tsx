@@ -8,22 +8,22 @@ import { useSession } from 'next-auth/react';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
 import Image from 'next/image';
-import { myQnAType, myQnACommenttype } from '@/types/datatype';
+import { myQnAType, myQnACommenttype, myQnACommentValue } from '@/types/datatype';
 import DetailComment from './detailComment';
 import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
-    const [data, setData] = useState<myQnAType[]>([]);
-    const [comments, setComments] = useState<any[]>([]);
+    const [data, setData] = useState<myQnAType>();
+    const [comments, setComments] = useState<myQnACommentValue[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
     const [isOnUpdate, setUpdate] = useState(false);
     const { data: session, status } = useSession();
     const [textareaValue, setTAValue] = useState('');
-    const id= params.postId;
+    const id = params.postId;
     const name = session?.user?.name;
     const email = session?.user?.email;
-    const postId = data?.[0]?.postId;
+    const postIds = data?.postId;
     const img = session?.user?.image;
     const today = new Date();
     const month = today.getMonth() + 1;
@@ -43,7 +43,7 @@ export default function QnADetail({ params }: any) {
         const comment = {
             field: "comment",
             updateKey: "postId",
-            updateValue: postId,
+            updateValue: postIds,
             updateType: "push",
             value: { commentText, name, email, img, thisDay }
         }
@@ -53,12 +53,7 @@ export default function QnADetail({ params }: any) {
             swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
             return
         }
-        // if (data?.value.comment.length < 3) {
-        //     swal("2글자 이상 작성해주세요", "정성 가득한 댓글 부탁드립니다 :)", "warning")
-        //     return
-        //   }
-
-        const res = await detailStore('put', 'qna', comment, postId)
+        const res = await detailStore('put', 'qna', comment, postIds)
         await fetchData();
 
         reset();
@@ -67,10 +62,8 @@ export default function QnADetail({ params }: any) {
     const fetchData = async () => {
         try {
             const response = await axios.get(`/api/post?colName=qna`);
-            const d = response.data.filter((obj: any) => obj._id == id)
+            const d = response.data.filter((obj: myQnAType) => obj._id == id)
             const e = d[0].comment
-
-            // console.log(e)
 
             setData(d);
             setComments(e);
@@ -83,14 +76,14 @@ export default function QnADetail({ params }: any) {
         fetchData();
     }, []);
 
-    const likedAlready = data?.[0]?.like.some((obj:any) => obj.email === session?.user?.email)
-    const onClicklikeHandler = async ( data:any) => {
+    const likedAlready = data?.like?.some(obj => obj.email === session?.user?.email)
+    const onClicklikeHandler = async (data: any) => {
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
             return;
         }
 
-        const filtered = data?.[0].like.filter((value:any) => {
+        const filtered = data?.[0].like.filter((value: any) => {
             return value.email !== email
         })
 
@@ -99,12 +92,12 @@ export default function QnADetail({ params }: any) {
         const updateResult = {
             field: "like",
             updateKey: "postId",
-            updateValue: postId,
+            updateValue: postIds,
             updateType: likedAlready ? 'set' : 'push',
             value: likedAlready ? filtered : { email: email }
         };
 
-        const res = await detailStore('put', 'qna', updateResult, postId);
+        const res = await detailStore('put', 'qna', updateResult, postIds);
         if (res && res.status === 200) {
             await fetchData();
             setOnLike(!isOnLikeClick);
@@ -114,46 +107,44 @@ export default function QnADetail({ params }: any) {
     }
 
 
-    const deleteBtn = async(keyword: string, i: number)=>{
+    const deleteBtn = async (keyword: string, i: number) => {
         const updatedComments = comments.filter((_, index) => index !== i);
         setComments(updatedComments); // 새로운 배열을 상태로 설정
 
         const setUpdateResult = {
             field: "comment",
             updateKey: "postId",
-            updateValue: postId,
+            updateValue: postIds,
             updateType: "set",
             value: updatedComments
-          }
+        }
 
-        const res = await detailStore('put', 'qna', setUpdateResult, postId);
+        const res = await detailStore('put', 'qna', setUpdateResult, postIds);
         if (res && res.status === 200) {
             await fetchData();
             if (keyword === 'update') {
-              setUpdate(!isOnUpdate)
+                setUpdate(!isOnUpdate)
             }
-          } else {
+        } else {
             console.error('--------------삭제 실패!!!', res);
-          }
+        }
     }
-    
 
     return (
         <>
             {
                 data && (<div className="postMain">
                     <div className="postContainer">
-                        <h2>{data[0]?.title}</h2>
-                        <p>{data[0]?.userName}</p>
+                        <p>{data.userName}</p>
                         <div className="postDetail">
-                            <p dangerouslySetInnerHTML={{ __html: data[0]?.content }}></p>
+                            <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
                         </div>
                     </div>
                     <button
                         type='button'
                         onClick={() => { onClicklikeHandler(data.postId) }}
                         className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
-                        <p>♥ <span>{data?.[0]?.like.length}</span></p>
+                        <p>♥ <span>{data?.like?.length}</span></p>
                     </button>
                     <form action="" className='postForm' onSubmit={handleSubmit(onSubmit)}>
                         {
@@ -163,7 +154,6 @@ export default function QnADetail({ params }: any) {
                                 </>
                             )
                         }
-
                         <textarea {...register('comment', { required: true })} placeholder='여러분들의 소중한 의견을 부탁드립니다!' />
                         <div className='qnapostBtn'>
                             <button type='submit'>댓글 작성</button>
@@ -177,7 +167,7 @@ export default function QnADetail({ params }: any) {
                     comments.map((comment, index) => (
                         <article key={index} className='commentbox'>
                             <div className='commentinfo'>
-                                <Image src={comment.img} alt='' width={90} height={50}/>
+                                <Image src={comment.img || dumi} alt='' width={90} height={50} />
                                 <p>{comment.name}</p>
                             </div>
                             <div className='textbox'>
@@ -185,7 +175,7 @@ export default function QnADetail({ params }: any) {
                                 <p>{comment.thisDay}</p>
                             </div>
                             <div className='commentsDeleteBtn'
-                                style={{display:session?.user?.email === comment.email ? 'flex' : 'none'}}
+                                style={{ display: session?.user?.email === comment.email ? 'flex' : 'none' }}
                             >
                                 <button
                                     type='button'

@@ -6,7 +6,7 @@ import Link from 'next/link';
 import axios from 'axios';
 import "./QnA.scss";
 import Image from 'next/image';
-
+import dumi from '@/essets/charactor/CHO.svg'
 
 export default function AllPage() {
   const [data, setData] = useState<myQnAType[]>([]);
@@ -30,13 +30,12 @@ export default function AllPage() {
         const response = await axios.get('/api/post?colName=qna');
 
         // let resObj = [];
-        response.data.forEach((obj: any) => {
+        response.data.forEach((obj:any) => {
 
           const tag = document.createElement('div');
           tag.innerHTML = obj.content;
 
           const tumb = tag.querySelector('img');
-
 
           const text:string[] = [];
           tag.childNodes.forEach((node: any) => {
@@ -49,9 +48,6 @@ export default function AllPage() {
           // resObj.push({tumb, text:text[0]});
           obj.content = { thumb: tumb?.src, text: text[0] }
         })
-
-
-
 
         setData(response.data);
       } catch (error) {
@@ -82,7 +78,11 @@ export default function AllPage() {
 
             <div className='QuestionImg'>
               {/* <img src={item.content?.thumb} alt=""  /> */}
-              <Image src={item.content?.thumb} alt='' width={90} height={50} />
+              <Image 
+              src={item.content?.thumb || dumi} 
+              alt='' 
+              width={90} height={50} 
+              />
 
             </div>
           </Link>

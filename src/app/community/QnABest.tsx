@@ -3,14 +3,15 @@
 
 import Image from 'next/image';
 import "./QnABest.scss"
-import ArrowRight from '@/essets/arrowRight.svg';
+import { myQnAType} from '@/types/datatype'
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import ArrowRight from '@/essets/arrowRight.svg';
 
 export default function QnABest() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<myQnAType[]>([]);
   useEffect(() => {
       const fetchData = async () => {
         try {
@@ -24,7 +25,7 @@ export default function QnABest() {
             const tumb = tag.querySelector('img');
             
             
-            const text = [];  
+            const text:string[] = [];  
             tag.childNodes.forEach((node:any)=>{
                 node.childNodes.forEach((child:any)=>{
                   if(child.tagName == undefined){
@@ -32,7 +33,6 @@ export default function QnABest() {
                   }
                 });
             })
-            // resObj.push({tumb, text:text[0]});
             obj.content = {thumb:tumb?.src, text:text[0]}
           })
 
@@ -45,12 +45,6 @@ export default function QnABest() {
     }, []);
 
     const sortedData:any = data.slice().sort((a, b) => b.like.length - a.like.length);
-
-    console.log(sortedData)
-
-    const handleQnABtn = () =>{
-      console.log('click')
-    }
 
     return (
       <section id="communityQnAContainer" className="communityContainer">
@@ -68,7 +62,7 @@ export default function QnABest() {
         </div>
         <div className="containerContentsQnA">
           {
-            sortedData.slice(0, 3).map((item, index) => (
+            sortedData.slice(0, 3).map((item:any, index:number) => (
               <Link href={`./community/QnA/${item._id}`} key={index} className='QnABsetContainer'>
                   <img src={item.content?.thumb} alt=""  />
                 <div className='BestContent'>

@@ -7,6 +7,7 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { SessionProvider } from 'next-auth/react';
 import UserQuestion from "@/components/question/Question";
+import { Suspense } from 'react';
 
 // export const metadata: Metadata = {
 //   title: "초딩 - 초보들의 코딩공부",
@@ -15,14 +16,16 @@ import UserQuestion from "@/components/question/Question";
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body>
-        <SessionProvider>
-          <Header />
-          <UserQuestion />
-          {children}
-          <Footer />
-        </SessionProvider>
+        <Suspense>
+          <SessionProvider>
+            <Header />
+            <UserQuestion />
+            {children}
+            <Footer />
+          </SessionProvider>
+        </Suspense>
       </body>
     </html>
   );
