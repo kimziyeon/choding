@@ -21,12 +21,6 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
     const { data: session, status } = useSession();
     const [bookMarkId, setBookMarkId] = useState(0);
 
-    if (result.length < 1) {
-        return <div>검색 결과가 없습니다!</div>
-    }
-
-    console.log(data)
-
     const findeBookMarkId = (data: any) => {
         const maxBookMarkId = data.reduce((max: any, item: any) => {
             return item.bookMarkId > max ? item.bookMarkId : max;
@@ -37,16 +31,14 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
 
     const maxBookMarkId = findeBookMarkId(data);
 
-    const fetchData = async () => {
-        const aaa = await axios.get('/api/bookmark?colName=myStudy')
-        setData(aaa.data);
-        return;
-    }
-
     useEffect(() => {
+        const fetchData = async () => {
+            const aaa = await axios.get('/api/bookmark?colName=myStudy')
+            setData(aaa.data);
+            return;
+        }
 
         fetchData();
-
     }, [])
 
     const bookMarkIdCounter = () => {
@@ -72,6 +64,11 @@ export default function YoutubeFigure({ result }: youtubeFigureType) {
 
         axios.post('/api/bookmark', data)
     }
+
+    if (result.length < 1) {
+        return <div>검색 결과가 없습니다!</div>
+    }
+
 
     return (
         result && result.filter((item, i) => i < 6).map((item, i) => ( // 최대 6개까지만 출력!!!
