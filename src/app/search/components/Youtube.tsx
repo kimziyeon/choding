@@ -37,13 +37,8 @@ export default function Google({ query }: youtubeSearchType) {
 
 
     const getData = () => {
-        youtubeData.forEach((item) => { onlyItems.push(...item.items.map((i) => i.snippet)); });
+        youtubeData.forEach((item) => { onlyItems.push(...item.items.map((i) => i.snippet as youtubeSnippet)); });
     }
-
-    // useEffect(() => {
-    //     // console.log(result)
-    // }, [result])
-
 
     return (
         <section id="totalSearchGoogleSection" className='innerResults'>
