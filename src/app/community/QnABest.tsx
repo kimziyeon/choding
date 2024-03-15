@@ -44,7 +44,13 @@ export default function QnABest() {
       fetchData();
     }, []);
 
-    const sortedData = data.slice().sort((a, b) => b.like.length - a.like.length);
+    const sortedData:any = data.slice().sort((a, b) => b.like.length - a.like.length);
+
+    console.log(sortedData)
+
+    const handleQnABtn = () =>{
+      console.log('click')
+    }
 
     return (
       <section id="communityQnAContainer" className="communityContainer">
@@ -63,8 +69,8 @@ export default function QnABest() {
         <div className="containerContentsQnA">
           {
             sortedData.slice(0, 3).map((item, index) => (
-              <div key={index} className='QnABsetContainer'>
-                  <img src={item.content?.thumb} alt=""  />             
+              <Link href={`./community/QnA/${item._id}`} key={index} className='QnABsetContainer'>
+                  <img src={item.content?.thumb} alt=""  />
                 <div className='BestContent'>
                   <div className='contentBox'>
                     <h2 className='title'>{item.title}</h2>
@@ -72,7 +78,7 @@ export default function QnABest() {
                   </div>
                   <p className='Name'>{item.userName}</p>
                 </div>
-              </div>
+              </Link>
             ))
           }
         </div>
