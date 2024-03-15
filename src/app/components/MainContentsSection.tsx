@@ -4,25 +4,19 @@ import './mainContentsSection.scss'
 import Image from 'next/image';
 import ArrowRight from '@/essets/arrowRight.svg';
 import ContentsFigure from './ContentsFigure';
-import { useEffect, useState } from 'react';
-import { userDataType } from '@/types/user'
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { levelDataYoutube, googleSearchItem, naverSearchItem } from '@/types/datatype';
 
 type HomeType = {
     subtext: string,
     title: string,
     option: number,
-    loginData: userDataType[],
-    result: []
+    result: levelDataYoutube[] | googleSearchItem[] | naverSearchItem[] | undefined;
 }
 
-export default function Home({ subtext, title, option, loginData, result }: HomeType) {
+export default function Home({ subtext, title, option, result }: HomeType) {
     const router = useRouter();
-
-    const { data: session, status } = useSession();
-    // const [result, setResult] = useState([]);
-    const [subtitle, setSubtitle] = useState([]);
-
     const classname = `num${option}`;
 
     const clickMore = (t: string) => {

@@ -1,8 +1,8 @@
-import { googleSearchItem, naverSearchItem } from '@/types/datatype';
+import { levelDataYoutube, googleSearchItem, naverSearchItem } from '@/types/datatype';
 import './contentsFigure.scss';
 
 interface contentsFigureType {
-    result: googleSearchItem[] | naverSearchItem[] | null;
+    result: levelDataYoutube[] | googleSearchItem[] | naverSearchItem[] | undefined,
     option: number;
 }
 
@@ -12,9 +12,31 @@ export default function ContentsFigure({ result, option }: contentsFigureType) {
     }
 
     return (
-        result.map((item, i) => {
-            // Google 검색 결과
-            if (option === 1 && 'pagemap' in item) {
+        result && result.map((item, i) => {
+            if (option === 0) {
+                const youtubeItem = item as levelDataYoutube;
+                return (
+                    <figure className='contentsFigure' key={youtubeItem.title + i}>
+                        <a href={youtubeItem.link} target='_blank'>
+                            {
+                                !youtubeItem.pagemap || !youtubeItem.pagemap.cse_thumbnail || !youtubeItem.pagemap.cse_thumbnail[0]
+                                    ? <div className='noImage'></div>
+                                    : <img src={youtubeItem.pagemap.cse_thumbnail[0].src} alt={youtubeItem.title} />
+                            }
+                            <figcaption>
+                                <div className='figcaption'>
+                                    <div className='top'>
+                                        <p className='title'>{youtubeItem.title}</p>
+                                        <p className='description'>{youtubeItem.snippet}</p>
+                                    </div>
+                                    <span className='author'>{null}</span>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                );
+            }
+            else if (option === 1 && 'pagemap' in item) {
                 const googleItem = item as googleSearchItem;
                 return (
                     <figure className='contentsFigure' key={googleItem.title + i}>
@@ -37,7 +59,6 @@ export default function ContentsFigure({ result, option }: contentsFigureType) {
                     </figure>
                 );
             }
-            // Naver 검색 결과
             else if (option === 2) {
                 const naverItem = item as naverSearchItem;
                 return (
@@ -50,6 +71,29 @@ export default function ContentsFigure({ result, option }: contentsFigureType) {
                                         <p className='description'>{naverItem.description}</p>
                                     </div>
                                     <span className='author'>{naverItem.bloggername}</span>
+                                </div>
+                            </figcaption>
+                        </a>
+                    </figure>
+                );
+            }
+            else if (option === 4) {
+                const community = item as levelDataYoutube;
+                return (
+                    <figure className='contentsFigure' key={community.title + i}>
+                        <a href={community.link} target='_blank'>
+                            {
+                                !community.pagemap || !community.pagemap.cse_thumbnail || !community.pagemap.cse_thumbnail[0]
+                                    ? <div className='noImage'></div>
+                                    : <img src={community.pagemap.cse_thumbnail[0].src} alt={community.title} />
+                            }
+                            <figcaption>
+                                <div className='figcaption'>
+                                    <div className='top'>
+                                        <p className='title'>{community.title}</p>
+                                        <p className='description'>{community.snippet}</p>
+                                    </div>
+                                    <span className='author'>{null}</span>
                                 </div>
                             </figcaption>
                         </a>
