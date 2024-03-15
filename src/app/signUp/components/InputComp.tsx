@@ -66,8 +66,8 @@ export default function InputComp({ type, id, title, placeholder, register, erro
 
     // 중복 확인
     const duplicateCheck = (id: string) => {
-        console.log('id : ', id)
-        console.log('watchName :', watchName)
+        // console.log('id : ', id)
+        // console.log('watchName :', watchName)
         if (id === 'name') { // 닉네임 중복 확인
             const includeCheck = LoginData && LoginData.map((item) => item.name).includes(watchName);
             console.log('LoginData', LoginData)
