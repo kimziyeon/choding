@@ -28,6 +28,7 @@ export default function LevelTestEnd({ score }) {
 
 
     useEffect(() => {
+        if (!session) return; //비회원이면 데이터저장X
         async function updateLevel() {
             const myPointInfo: any = await axios.get(`/api/mypoint?email=${session?.user?.email}`);
             if (score) {
@@ -50,8 +51,6 @@ export default function LevelTestEnd({ score }) {
                 // else {
                 //     await axios.put('/api/mypoint', { email: session?.user?.email, level: level, point: score })
                 // }
-
-
 
             }
         }

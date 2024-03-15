@@ -208,7 +208,7 @@
     .checkTitle {
         position: relative;
 
-        p {
+        .backIcon {
             position: absolute;
             top: 0;
             left: 2rem;
@@ -240,6 +240,56 @@
             border: 1px solid $grayLight;
             border-radius: 2rem;
             margin: 1.5em;
+            cursor: pointer;
         }
+    }
+}
+
+
+
+
+//마이페이지 / 출석체크 - 달력
+
+.monthCover {
+    color: $grayDark;
+    max-width: 430px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    // border: 1px solid gray;
+
+    .month {
+        padding-bottom: 1rem;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1rem;
+
+        thead {
+            color: $gray;
+        }
+
+        th,
+        td {
+            padding: 1rem 0.5rem;
+            font-weight: normal;
+        }
+
+        tbody {
+            td {
+                color: $grayLight;
+            }
+        }
+    }
+
+    .iceCreamBtn {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 1rem 3rem;
+        border-radius: 3rem;
+        background-color: $main;
+        color: #fff;
     }
 }

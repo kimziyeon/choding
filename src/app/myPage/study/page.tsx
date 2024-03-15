@@ -1,6 +1,8 @@
 "use client";
 
+{/* 마이페이지 / 책갈피 */ }
 import '../mypage.scss';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import arrowLeftGrayDark from '@/essets/arrowLeftGrayDark.svg';
@@ -9,17 +11,22 @@ import MyStudyContents from './commponents/Contents';
 
 
 export default function studyPage() {
+
+    const router = useRouter();
+
+    // 뒤로가기
+    const onClickBackHandler = () => {
+        router.back();
+    }
     return (
 
         <section className="studyPage">
-            {/* 마이페이지 / 책갈피 */}
             <div className='studyTitle'>
-                <p>
+                <p className='backIcon' onClick={onClickBackHandler}>
                     <Image src={arrowLeftGrayDark} alt='arrowRight' />
                 </p>
                 <h3>내 책갈피</h3>
             </div>
-
             <MyStudyContents />
         </section>
     );
