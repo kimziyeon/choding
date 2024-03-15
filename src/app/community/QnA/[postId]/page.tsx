@@ -8,14 +8,14 @@ import { useSession } from 'next-auth/react';
 import detailStore from '@/lib/server/detailStore';
 import swal from 'sweetalert';
 import Image from 'next/image';
-import { myQnAType, myQnACommenttype } from '@/types/datatype';
+import { myQnAType, myQnACommenttype, myQnACommentValue } from '@/types/datatype';
 import DetailComment from './detailComment';
 import empty from '@/essets/empty.svg';
 import dumi from '@/essets/charactor/CHO.svg'
 
 export default function QnADetail({ params }: any) {
     const [data, setData] = useState<myQnAType>();
-    const [comments, setComments] = useState<any[]>([]);
+    const [comments, setComments] = useState<myQnACommentValue[]>([]);
     const [isOnLikeClick, setOnLike] = useState(true);
     const [isOnUpdate, setUpdate] = useState(false);
     const { data: session, status } = useSession();
@@ -53,11 +53,6 @@ export default function QnADetail({ params }: any) {
             swal("비회원이시군요?", "로그인 후 댓글을 작성하실 수 있습니다 :)", "warning")
             return
         }
-        // if (data?.value.comment.length < 3) {
-        //     swal("2글자 이상 작성해주세요", "정성 가득한 댓글 부탁드립니다 :)", "warning")
-        //     return
-        //   }
-
         const res = await detailStore('put', 'qna', comment, postIds)
         await fetchData();
 
@@ -70,8 +65,6 @@ export default function QnADetail({ params }: any) {
             const d = response.data.filter((obj:myQnAType) => obj._id == id)
             const e = d[0].comment
 
-            // console.log(e)
-
             setData(d);
             setComments(e);
         } catch (error) {
@@ -83,7 +76,7 @@ export default function QnADetail({ params }: any) {
         fetchData();
     }, []);
 
-    const likedAlready = data?.like.some((obj:any) => obj.email === session?.user?.email)
+    const likedAlready = data?.like?.some(obj => obj.email === session?.user?.email)
     const onClicklikeHandler = async ( data:any) => {
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
@@ -137,6 +130,7 @@ export default function QnADetail({ params }: any) {
           }
     }
     
+    console.log(data)
 
     return (
         <>
@@ -153,7 +147,7 @@ export default function QnADetail({ params }: any) {
                         type='button'
                         onClick={() => { onClicklikeHandler(data.postId) }}
                         className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
-                        <p>♥ <span>{data?.like.length}</span></p>
+                        <p>♥ <span>{data?.like?.length}</span></p>
                     </button>
                     <form action="" className='postForm' onSubmit={handleSubmit(onSubmit)}>
                         {
@@ -163,7 +157,6 @@ export default function QnADetail({ params }: any) {
                                 </>
                             )
                         }
-
                         <textarea {...register('comment', { required: true })} placeholder='여러분들의 소중한 의견을 부탁드립니다!' />
                         <div className='qnapostBtn'>
                             <button type='submit'>댓글 작성</button>
@@ -177,7 +170,7 @@ export default function QnADetail({ params }: any) {
                     comments.map((comment, index) => (
                         <article key={index} className='commentbox'>
                             <div className='commentinfo'>
-                                <Image src={comment.img} alt='' width={90} height={50}/>
+                                <Image src={comment.img || dumi} alt='' width={90} height={50}/>
                                 <p>{comment.name}</p>
                             </div>
                             <div className='textbox'>

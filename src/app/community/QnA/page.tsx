@@ -34,9 +34,8 @@ export default function QnA() {
                 <button className={selectedPage === 'all' ? 'active' : ''} onClick={handleAllPageClick}>전체 질문</button>
                 <button className={selectedPage === 'my' ? 'active' : ''} onClick={handleMyPageClick}>내 질문</button>
             </div>
-            {/* {selectedPage === 'all' && <AllPage />} */}
-            {/* {selectedPage === 'my' && <MyPage />} */}
-            <MyPage />
+            {selectedPage === 'all' && <AllPage />}
+            {selectedPage === 'my' && <MyPage />}
         </section>
     );
 }
