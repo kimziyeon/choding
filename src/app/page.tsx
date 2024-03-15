@@ -8,10 +8,8 @@ import { useSession } from 'next-auth/react';
 import MainBanner from './components/MainBanner';
 import MainContentsSection from './components/MainContentsSection';
 import MainSlide from './components/MainSlide';
-import serverStore from '@/lib/server/serverStore';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import levelTestBtn from '@/essets/levelTestBtn.svg';
+import { levelDataType } from '@/types/datatype'
 import levelKeyword from '@/data/levelKeyword.json';
 import cdData from '@/data/mainContents/cd.json';
 import jdData from '@/data/mainContents/jd.json';
@@ -25,12 +23,8 @@ export default function Home() {
   const { quiz, isOpenFunc } = useQuestion();
   const { data: session, status } = useSession();
   const [loginData, setLoginData] = useState([0]);
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState<levelDataType | object>();
   const [title, setTitle] = useState<string[]>([]);
-
-
-
-
 
   useEffect(() => {
     dataCrl('get');
@@ -54,33 +48,12 @@ export default function Home() {
   }, [loginData])
 
 
-
-  // useEffect(() => {
-
-  //   if (status === 'unauthenticated') {
-  //     isOpenFunc({ isOpen: true, isTest: true }); console.log('ㅜ.ㅜ');
-  //   } else {
-  //     isOpenFunc({ isOpen: false, isTest: false }); console.log('n.n');
-  //   }
-
-
-  //   console.log(status)
-  // }, [session])
-
-
-
-
-
   // 데이터 가져오기  
-
   async function dataCrl(type: string) {
-    // console.log(session?.user?.email)
     const res = await axios.get(`/api/mongodb?colName=myPoint&email=${session?.user?.email}`);
-
-    if (res !== null) {
-      setLoginData(res.data)
-    }
+    if (res !== null) { setLoginData(res.data) }
   }
+
   const loadData = async () => {
     let nowUser = await loginData.find(obj => obj.email === session.user?.email);
     isOpenFunc({ isOpen: false, isTest: false });//테스트팝업off (따닥........)
@@ -89,8 +62,7 @@ export default function Home() {
       setTitle(levelKeyword[0].cd)
       setResult(cdData)
 
-      // console.log('레벨 테스트를 해야하는 유저')
-      isOpenFunc({ isOpen: true, isTest: true }); //테스트팝업on
+      isOpenFunc({ isOpen: true, isTest: true });
       return;
     };
 

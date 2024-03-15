@@ -25,7 +25,7 @@ export default function Home({ subtext, title, option, loginData, result }: Home
 
     const classname = `num${option}`;
 
-    const clickMore = (t) => {
+    const clickMore = (t: string) => {
         router.push(`http://localhost:3000/search?key=${t}`)
     }
 
