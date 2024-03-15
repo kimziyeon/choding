@@ -48,19 +48,19 @@ export default function Dailyquiz() {
 
 
 
-    const formatTime = (time) => {
+    const formatTime = (time: any) => {
         return time < 10 ? '0' + time : time;
     };
 
 
 
-    const handleAnswer = (index) => {
+    const handleAnswer = (index: any) => {
         // console.log(index);
         setUserValue(index);
     };
 
 
-    function randomArray(array) {
+    function randomArray(array: any) {
         const randomQues = [...array];
         for (let i = randomQues.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));

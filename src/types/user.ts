@@ -13,3 +13,9 @@ export type userDataType = {
     name: string | null,
     level: string | undefined | null
 }
+
+export type userPointType = {
+    email: string,
+    level: string | null,
+    point: string | null
+}
