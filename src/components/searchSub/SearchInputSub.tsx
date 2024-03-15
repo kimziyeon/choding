@@ -5,17 +5,18 @@ import './searchIconSVG.scss'
 import { useCallback, ChangeEvent, FormEvent, useState, useEffect } from "react";
 
 interface SearchInputSubType {
-    totalSearchFunc: (query:string)=>void;
+    totalSearchFunc: (query: string) => void,
+    query: string | null
 }
 
-export default function SearchInputSub({totalSearchFunc}: SearchInputSubType) {
+export default function SearchInputSub({ totalSearchFunc, query }: SearchInputSubType) {
     const [keyword, setKeyword] = useState('');
 
-    const handleSearchChange = useCallback((event:ChangeEvent<HTMLInputElement>) => {
+    const handleSearchChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         setKeyword(event.target.value);
     }, []);
 
-    const handleSubmit = useCallback((event : FormEvent<HTMLFormElement>) => {
+    const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const trimmedQuery = keyword.trim();
         if (trimmedQuery.length < 3) {

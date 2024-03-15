@@ -8,7 +8,7 @@ import SearchIconSVG from '@/essets/searchSub.svg'
 import './mainBanner.scss';
 
 interface MainBannerType {
-    title: string
+    title: string[]
 }
 
 export default function MainBanner({ title }: MainBannerType) {

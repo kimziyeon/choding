@@ -1,8 +1,9 @@
 'use client';
 import { useRouter } from "next/router";
 import serverStore from '@/lib/server/serverStore';
-import { useEffect, useState } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import { signIn, useSession, signOut } from 'next-auth/react';
+import { userDataType } from '@/types/user';
 import swal from 'sweetalert';
 import './login.scss'
 
@@ -37,7 +38,7 @@ export default function Login() {
     //         callbackUrl: "/login",
     //     });
     // }
-    async function loginLocal(bodyData) {
+    async function loginLocal(bodyData: any) {
         await signIn("credentials", {
             redirect: true,
             body: JSON.stringify(bodyData),
@@ -66,15 +67,15 @@ export default function Login() {
 
 
     // -------------------------------------------------- 로컬 로그인 검사
-    const inputEmailChange = (e) => { // input email 값 저장
+    const inputEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => { // input email 값 저장
         setEmail(e.currentTarget.value);
     }
 
-    const inputPasswordChange = (e) => { // input password 값 저장
+    const inputPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => { // input password 값 저장
         setPassword(e.currentTarget.value);
     }
 
-    const submitLogin = async (e) => {
+    const submitLogin = async (e: FormEvent<HTMLFormElement>) => {
         {/*
             >> 해야할 일
             db에서 LoginData를 get해와서 전체 데이터중에 localUserInputEmail이 있는지 체크한다.
@@ -88,7 +89,7 @@ export default function Login() {
         let getDB = [];
         const res = await serverStore('get', 'LoginData');
         if (res !== null) { getDB = res.data; }
-        const includeCheck = getDB && getDB.find((item) => item.email === localUserInputEmail);
+        const includeCheck = getDB && getDB.find((item: userDataType) => item.email === localUserInputEmail);
         // console.log('이메일을 체크합시다', includeCheck)
         if (includeCheck) {
             if (includeCheck.password == localUserInputPassword) {

@@ -5,6 +5,7 @@ import { signUpType } from '@/types/user';
 import InputComp from './components/InputComp';
 import serverStore from '@/lib/server/serverStore';
 import { useRouter } from 'next/navigation';
+import { userDataType } from '@/types/user';
 import swal from 'sweetalert';
 import './signUp.scss';
 
@@ -13,14 +14,14 @@ export default function SignUp() {
     const [nameCheck, setNameCheck] = useState(false);
     const [emailCheck, setEmailCheck] = useState(false);
 
-    const [LoginData, setLoginData] = useState();
+    const [LoginData, setLoginData] = useState<userDataType[]>([]);
 
 
 
 
     // 데이터 가져오기
     async function dataCrl(type: string) {
-        const res = await serverStore(type, 'LoginData');
+        const res = await serverStore(type, 'LoginData', null, null);
         if (res !== null) {
             setLoginData(res.data)
         }
