@@ -11,7 +11,7 @@ interface googleSearchType {
 }
 
 export default function Google({ query }: googleSearchType) {
-  const [result, setResult] = useState<googleSearchItem[] | null>(null);
+  const [result, setResult] = useState<googleSearchItem[]>();
 
   useEffect(() => {
     if (query !== null) {
