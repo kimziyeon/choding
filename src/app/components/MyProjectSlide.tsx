@@ -9,12 +9,12 @@ import 'swiper/css/autoplay';
 import './MyProjectSlide.scss';
 import { useCallback } from 'react';
 
-export default function MyProjectSlide({ slidePost }) {
-  const router = useRouter();
+export default function MyProjectSlide({ slidePost }: any) {
+    const router = useRouter();
 
-  const handleClickBestFigure = (i:number) => {
-    router.push(`/community/myProject/${i}`);
-  }
+    const handleClickBestFigure = (i: number) => {
+        router.push(`/community/myProject/${i}`);
+    }
 
     return (
         <Swiper
@@ -34,11 +34,11 @@ export default function MyProjectSlide({ slidePost }) {
             id="mainSlide"
         >
             {
-                slidePost && slidePost.map((item, i) => {
+                slidePost && slidePost.map((item: any, i: any) => {
                     return <SwiperSlide
                         className='contentsFigure'
                         key={item.postId}
-                        onClick={()=>{handleClickBestFigure(item.postId)}}>
+                        onClick={() => { handleClickBestFigure(item.postId) }}>
                         <figure className='innerContents'>
                             {item.image !== null ? <img src={item.image}></img> : <div className='noImage'>이미지가 없습니다</div>}
                             <figcaption>

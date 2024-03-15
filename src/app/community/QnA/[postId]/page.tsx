@@ -20,7 +20,7 @@ export default function QnADetail({ params }: any) {
     const [isOnUpdate, setUpdate] = useState(false);
     const { data: session, status } = useSession();
     const [textareaValue, setTAValue] = useState('');
-    const id= params.postId;
+    const id = params.postId;
     const name = session?.user?.name;
     const email = session?.user?.email;
     const postIds = data?.postId;
@@ -62,7 +62,7 @@ export default function QnADetail({ params }: any) {
     const fetchData = async () => {
         try {
             const response = await axios.get(`/api/post?colName=qna`);
-            const d = response.data.filter((obj:myQnAType) => obj._id == id)
+            const d = response.data.filter((obj: myQnAType) => obj._id == id)
             const e = d[0].comment
 
             setData(d);
@@ -77,13 +77,13 @@ export default function QnADetail({ params }: any) {
     }, []);
 
     const likedAlready = data?.like?.some(obj => obj.email === session?.user?.email)
-    const onClicklikeHandler = async ( data:any) => {
+    const onClicklikeHandler = async (data: any) => {
         if (!session?.user?.email) {
             swal('잠깐!', '로그인 후 이용해주세요', 'warning');
             return;
         }
 
-        const filtered = data?.[0].like.filter((value:any) => {
+        const filtered = data?.[0].like.filter((value: any) => {
             return value.email !== email
         })
 
@@ -107,7 +107,7 @@ export default function QnADetail({ params }: any) {
     }
 
 
-    const deleteBtn = async(keyword: string, i: number)=>{
+    const deleteBtn = async (keyword: string, i: number) => {
         const updatedComments = comments.filter((_, index) => index !== i);
         setComments(updatedComments); // 새로운 배열을 상태로 설정
 
@@ -117,17 +117,17 @@ export default function QnADetail({ params }: any) {
             updateValue: postIds,
             updateType: "set",
             value: updatedComments
-          }
+        }
 
         const res = await detailStore('put', 'qna', setUpdateResult, postIds);
         if (res && res.status === 200) {
             await fetchData();
             if (keyword === 'update') {
-              setUpdate(!isOnUpdate)
+                setUpdate(!isOnUpdate)
             }
-          } else {
+        } else {
             console.error('--------------삭제 실패!!!', res);
-          }
+        }
     }
 
     return (
@@ -135,7 +135,6 @@ export default function QnADetail({ params }: any) {
             {
                 data && (<div className="postMain">
                     <div className="postContainer">
-                        <h2>{data[0].title}</h2>
                         <p>{data.userName}</p>
                         <div className="postDetail">
                             <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
@@ -168,7 +167,7 @@ export default function QnADetail({ params }: any) {
                     comments.map((comment, index) => (
                         <article key={index} className='commentbox'>
                             <div className='commentinfo'>
-                                <Image src={comment.img || dumi} alt='' width={90} height={50}/>
+                                <Image src={comment.img || dumi} alt='' width={90} height={50} />
                                 <p>{comment.name}</p>
                             </div>
                             <div className='textbox'>
@@ -176,7 +175,7 @@ export default function QnADetail({ params }: any) {
                                 <p>{comment.thisDay}</p>
                             </div>
                             <div className='commentsDeleteBtn'
-                                style={{display:session?.user?.email === comment.email ? 'flex' : 'none'}}
+                                style={{ display: session?.user?.email === comment.email ? 'flex' : 'none' }}
                             >
                                 <button
                                     type='button'
