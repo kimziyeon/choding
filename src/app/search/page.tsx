@@ -8,7 +8,7 @@ import SearchInputSub from '@/components/searchSub/SearchInputSub';
 import './search.scss';
 
 export default function Search() {
-    const [query, setQuery] = useState<string>('');
+    const [query, setQuery] = useState<string | null>('');
 
     const router = useRouter();
     const pathname = usePathname();

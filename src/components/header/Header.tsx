@@ -15,7 +15,7 @@ export default function Header() {
     const [active, setActive] = useState(false);
     const { data: session, status } = useSession();
 
-    const onClickMenu: React.MouseEventHandler<HTMLImageElement> | undefined = () => {
+    const onClickMenu: React.MouseEventHandler<HTMLImageElement> = () => {
         setActive(!active);
     }
 
