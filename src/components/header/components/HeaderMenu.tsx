@@ -12,7 +12,13 @@ import ListComponent from './List';
 import { useSession, signOut } from 'next-auth/react';
 import './headerMenu.scss';
 
-export default function HeaderMenu({ active, setActive, onClickMenu }: { active: boolean; setActive: (value: boolean) => void, onClickMenu: (value: boolean) => void }) {
+interface headerMenuType {
+    active: boolean,
+    setActive: (value: boolean) => void,
+    onClickMenu: React.MouseEventHandler
+}
+
+export default function HeaderMenu({ active, setActive, onClickMenu }: headerMenuType) {
     const [activeLogin, setActiveLogin] = useState(false);
 
     const { data: session, status } = useSession();
@@ -26,7 +32,7 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
     }
 
     return (
-        <div id="HeaderMenu" className={active ? 'active' : null}>
+        <div id="HeaderMenu" className={active ? 'active' : ''}>
             <div className='headerBG'>
                 <div className='headerTop'>
                     <button>
@@ -38,7 +44,7 @@ export default function HeaderMenu({ active, setActive, onClickMenu }: { active:
                         ></Image>
                     </button>
                     <div className='loginCont'>
-                        {status === 'authenticated' ? <p style={loginContStyle}><span className='userName'>{session.user.name}</span>님<br />어서오세요!</p> : <Link href="/login" onClick={onClickMenu}>
+                        {status === 'authenticated' ? <p style={loginContStyle}><span className='userName'>{session?.user?.name}</span>님<br />어서오세요!</p> : <Link href="/login" onClick={onClickMenu}>
                             <b>로그인 해주세요</b>
                             <Image
                                 src={ArrowRight}
