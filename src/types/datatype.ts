@@ -18,7 +18,7 @@ export type myProjectPostType = {
 export type myQnAType = {
     _id : number,
     title : string,
-    content : string | {thumb : string, text : any},
+    content : {thumb : string, text : any},
     Email : string | null | undefined,
     userName : string | null | undefined,
     like : LikeUserEmail[],

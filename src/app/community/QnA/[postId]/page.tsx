@@ -129,18 +129,16 @@ export default function QnADetail({ params }: any) {
             console.error('--------------삭제 실패!!!', res);
           }
     }
-    
-    console.log(data)
 
     return (
         <>
             {
                 data && (<div className="postMain">
                     <div className="postContainer">
-                        <h2>{data?.title}</h2>
-                        <p>{data?.userName}</p>
+                        <h2>{data[0].title}</h2>
+                        <p>{data.userName}</p>
                         <div className="postDetail">
-                            <p dangerouslySetInnerHTML={{ __html: data?.content }}></p>
+                            <p dangerouslySetInnerHTML={{ __html: data.content }}></p>
                         </div>
                     </div>
                     <button
