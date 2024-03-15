@@ -69,8 +69,7 @@ export default function MyStudyContents() {
         <div className='studyContents'>
             {studyData.map((data, i) => (
                 <figure className='contentsFigure' key={data.study.resourceId.videoId}>
-                    <button className='study'>
-                        {/* <button className='study' onClick={() => toggleStudyState(data.study.resourceId.videoId)}> */}
+                    <button className='study' onClick={() => toggleStudyState(data.study.resourceId.videoId)}>
                         <Image src={studyStates[data.study.resourceId.videoId] ? studyChecked : study} alt='강의 책갈피 버튼' width="20" height="25" />
                     </button>
                     <a href={`https://www.youtube.com/watch?v=${data.study.resourceId.videoId}`} target='_blank'>
