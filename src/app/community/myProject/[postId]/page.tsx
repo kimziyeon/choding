@@ -106,6 +106,10 @@ export default function MyProjectDetail({ params }: any) {
     }
   }
 
+  const onClickUpdateHandler = () => {
+    router.push(`/community/myProject/write?postId=${result?.postId}`)
+  }
+
   return (
     <>
       {
@@ -134,7 +138,7 @@ export default function MyProjectDetail({ params }: any) {
                 <span className='postDate'>{result.date}</span>
               </div>
               <div className='hearderBottomRight'>
-                <button>수정</button>
+                <button onClick={onClickUpdateHandler}>수정</button>
                 <button onClick={onClickDeleteHandler}>삭제</button>
               </div>
             </div>
