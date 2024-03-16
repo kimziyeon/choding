@@ -80,6 +80,7 @@ export default function MyProjectWrite() {
             .catch((error) => {
                 console.error('Error fetching data:', error);
             });
+            return
         }
 
         async function fetchData() {
@@ -153,10 +154,12 @@ export default function MyProjectWrite() {
 
     // 폼 전송
     const onSubmit = async (data: myProjectPostType) => {
-        // console.log('------------data------------')
-        // console.log(data)
-        await serverStore('post', 'myProject', data);
-        router.push('/community/myProject');
+        if(isOnUpdate){
+            await serverStore('put', 'myProject', data, data.postId);
+        } else{
+            await serverStore('post', 'myProject', data);
+        }
+        router.push(`/community/myProject/${data.postId}`);
     };
 
     return (
@@ -168,7 +171,7 @@ export default function MyProjectWrite() {
                 <input type="hidden" {...register('email')} />
                 <input type="hidden" {...register('name')} />
                 <section id="writeHeader">
-                    <h4>새 프로젝트 작성</h4>
+                    <h4>{isOnUpdate ? '프로젝트를 수정합니다' : '새 프로젝트 작성'}</h4>
                     <input
                         {...register('title', {
                             required: '*필수 입력 사항입니다!',
