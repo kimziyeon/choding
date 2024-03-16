@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { myProjectStore } from '@/app/community/myProject/context/myProject';
@@ -8,13 +10,13 @@ import { myProjectPostType } from '@/types/datatype';
 import DetailComment from './DetailComment';
 import Share from '@/essets/share.svg';
 import Heart from '@/essets/heart.svg';
-import { useSession } from 'next-auth/react';
 import './MyProjectDetail.scss'
 import swal from 'sweetalert';
 
 export default function MyProjectDetail({ params }: any) {
   const [result, setResult] = useState<myProjectPostType>();
   const { data: session, status } = useSession();
+  const router = useRouter();
 
   // useEffect(() => {
   //   console.log(result);
@@ -94,8 +96,14 @@ export default function MyProjectDetail({ params }: any) {
       });
   }
 
-  const detailDelete = () => {
-    console.log('진짜 삭제함111')
+  const detailDelete = async () => {
+    // type, colName, data, idx
+    const res = await detailStore('delete', 'myProject', null, result?.postId);
+    if (res && res.status === 200) {
+      router.push('/community/myProject')
+    } else {
+      console.error('내 프로젝트 > 게시글 : 삭제 에러', res);
+    }
   }
 
   return (
