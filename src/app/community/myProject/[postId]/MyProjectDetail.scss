@@ -48,13 +48,29 @@
         .mpdhBottom {
             padding-top: 0.5rem;
             font-size: $s;
+            color: $gray;
+            @include flexbox(sb, c);
 
-            .postDate {
-                color: $gray;
-
-                &::before {
+            .hearderBottomLeft>span:first-child {
+                &::after {
                     content: '|';
                     margin: 0 0.5rem;
+                }
+            }
+
+            .hearderBottomRight {
+                button {
+                    color: $gray;
+                    transition: 0.2s ease;
+                }
+
+                button:first-child {
+                    margin-right: 0.5rem;
+                }
+
+                button:hover {
+                    color: $grayDark;
+                    font-weight: 700;
                 }
             }
         }

@@ -69,6 +69,35 @@ export default function MyProjectDetail({ params }: any) {
     }
   }
 
+    // --------------------------------- 게시글 삭제
+  const onClickDeleteHandler = () => {
+      swal({
+        title: "게시글 삭제",
+        text: "정말로 게시글을 삭제하시겠습니까?",
+        icon: "warning",
+        buttons: {
+          cancel: {
+            text: '취소',
+            visible: true,
+            closeModal: true
+          },
+          confirm: {
+            text: '삭제',
+            visible: true,
+            closeModal: true
+          },
+        }
+      }).then((result) => {
+        if (result) {
+          detailDelete();
+        }
+      });
+  }
+
+  const detailDelete = () => {
+    console.log('진짜 삭제함111')
+  }
+
   return (
     <>
       {
@@ -92,8 +121,14 @@ export default function MyProjectDetail({ params }: any) {
               </div>
             </div>
             <div className='mpdhBottom'>
-              <span className='userId'>{result.name}</span>
-              <span className='postDate'>{result.date}</span>
+              <div className='hearderBottomLeft'>
+                <span className='userId'>{result.name}</span>
+                <span className='postDate'>{result.date}</span>
+              </div>
+              <div className='hearderBottomRight'>
+                <button>수정</button>
+                <button onClick={onClickDeleteHandler}>삭제</button>
+              </div>
             </div>
           </section>
           <section className='bodyText'>
