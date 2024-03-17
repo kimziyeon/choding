@@ -61,7 +61,8 @@ export default function MyProjectWrite() {
             setIsOnUpdate(true)
             console.log('게시글을 수정합니다.')
             detailStore('get', 'myProject', null, Number(urlPostId))
-            .then((res) => {
+                .then((res) => {
+                console.log(res)
                 setValue('date', res?.data.date)
                 setValue('overview', res?.data.overview)
                 setValue('position', res?.data.position)
@@ -76,6 +77,11 @@ export default function MyProjectWrite() {
                 setValue('comments', res?.data.comments)
                 setValue('name', res?.data.name)
                 setValue('email', res?.data.email)
+                setImgText('이미지 업로드 완료')
+                    
+                const activeArray = [];
+                activeArray.push(...res?.data.position, ...res?.data.member, ...res?.data.stack)
+                setActiveOptions(activeArray)
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -171,7 +177,7 @@ export default function MyProjectWrite() {
                 <input type="hidden" {...register('email')} />
                 <input type="hidden" {...register('name')} />
                 <section id="writeHeader">
-                    <h4>{isOnUpdate ? '프로젝트를 수정합니다' : '새 프로젝트 작성'}</h4>
+                    <h4>{isOnUpdate ? '게시글을 수정합니다' : '새 프로젝트 작성'}</h4>
                     <input
                         {...register('title', {
                             required: '*필수 입력 사항입니다!',
