@@ -10,33 +10,17 @@ import study from '@/essets/study.png';
 import studyChecked from '@/essets/studychecked.png';
 import axios from 'axios';
 import swal from 'sweetalert';
+import MyStudyEmpty from './Empty';
 
 
 
 export default function MyStudyContents() {
 
     const { data: session, status } = useSession();
-    const [studyData, setStudyData] = useState<myStudyType[]>([]);
+    const [studyData, setStudyData] = useState<any[]>([]);
     const [studyStates, setStudyStates] = useState<Record<string, boolean>>({});
+    const [bookMarkId, setBookMarkId] = useState(0);
 
-
-    const toggleStudyState = (videoId: string, bookMarkId: number) => {
-        setStudyStates(prev => ({ ...prev, [videoId]: !prev[videoId] }));
-
-        if (!session?.user?.email) {
-            swal('잠깐!', '로그인 후 이용해주세요', 'warning');
-            return;
-        }
-
-        const desiredVideo = videoId;
-        const study = result.find(item => item.resourceId.videoId === desiredVideo)
-        const email = session.user.email;
-        setStudyData(prevData => [...prevData, study])
-
-        const data = { email, study, bookMarkId }
-
-        axios.post('/api/bookmark', data)
-    }
 
 
 
@@ -50,42 +34,65 @@ export default function MyStudyContents() {
             const res = await serverStore('get', 'myStudy', null, null);
             if (res) {
                 const getstudy = res.data.filter((obj: myStudyType) => obj.email === session?.user?.email);
-                console.log("====================")
-                console.log(getstudy)
-                console.log("====================")
+                // console.log("====================")
+                // console.log(getstudy)
+                // console.log("====================")
                 setStudyData(getstudy);
             }
         } catch (error) {
             console.error('Error fetching data:', error);
         }
     };
-    studyData.map((data, i) => (
-        console.log(data.study)
-    )
 
-    )
+
+    const toggleStudyState = async (videoId: string, bookMarkId: number) => {
+        const updatedStudyData = studyData.filter(item => item.resourceId.videoId !== videoId);
+        setStudyData(updatedStudyData);
+
+        try {
+            await axios.delete(`/api/bookmark?colName=myStudy/${bookMarkId}`);
+            // 강의 삭제 요청!아 어떻게한는거야
+            swal("강의가 즐겨찾기에서 삭제되었습니다.", "", "success");
+        } catch (error) {
+            console.error('Error deleting study:', error);
+            swal("강의 삭제 중 오류가 발생했습니다.", "", "error");
+        }
+    }
+
+
+
+
+    // data.study 데이터 확인 console
+    // studyData.map((data, i) => (
+    //     console.log(data.study)
+    // )
+
+    // )
 
     return (
-        <div className='studyContents'>
-            {studyData.map((data, i) => (
-                <figure className='contentsFigure' key={data.study.resourceId.videoId}>
-                    <button className='study' onClick={() => toggleStudyState(data.study.resourceId.videoId)}>
-                        <Image src={studyStates[data.study.resourceId.videoId] ? studyChecked : study} alt='강의 책갈피 버튼' width="20" height="25" />
-                    </button>
-                    <a href={`https://www.youtube.com/watch?v=${data.study.resourceId.videoId}`} target='_blank'>
-                        <img src={data.study.thumbnails.medium ? data.study.thumbnails.medium?.url : data.study.thumbnails.default.url} alt="썸네일 이미지" />
-                        <figcaption>
-                            <div className='figcaption'>
-                                <div className='top'>
-                                    <p className='title'>{data.study.title}</p>
-                                    <p className='description'>{data.study.description}</p>
+        <div>
+            <div className='studyContents'>
+                {studyData.map((data, i) => (
+                    <figure className='contentsFigure' key={data.study.resourceId.videoId + i}>
+                        <button className='study' onClick={() => toggleStudyState(data.study.resourceId.videoId, bookMarkId)}>
+                            <Image src={studyStates[data.study.resourceId.videoId] ? study : studyChecked} alt='강의 책갈피 버튼' width="20" height="25" />
+                        </button>
+                        <a href={`https://www.youtube.com/watch?v=${data.study.resourceId.videoId}`} target='_blank'>
+                            <img src={data.study.thumbnails.medium ? data.study.thumbnails.medium?.url : data.study.thumbnails.default.url} alt="썸네일 이미지" />
+                            <figcaption>
+                                <div className='figcaption'>
+                                    <div className='top'>
+                                        <p className='title'>{data.study.title}</p>
+                                        <p className='description'>{data.study.description}</p>
+                                    </div>
+                                    <span className='author'>{data.study.videoOwnerChannelTitle}</span>
                                 </div>
-                                <span className='author'>{data.study.videoOwnerChannelTitle}</span>
-                            </div>
-                        </figcaption>
-                    </a>
-                </figure>
-            ))}
+                            </figcaption>
+                        </a>
+                    </figure>
+                ))}
+            </div>
+            {studyData.length < 1 ? <div><MyStudyEmpty /></div> : <></>}
         </div>
     )
 }
