@@ -33,6 +33,11 @@ export default function MyProjectDetail({ params }: any) {
     fetchData();
   }, []);
 
+  // --------------------------------- 수정, 삭제 활성화
+  let hearderBottomRight = {
+    display: session?.user?.email === result?.email ? 'block' : 'none'
+  }
+
   // --------------------------------- 공유 클릭
   const shareHandler = () => {
     if (result) {
@@ -137,7 +142,7 @@ export default function MyProjectDetail({ params }: any) {
                 <span className='userId'>{result.name}</span>
                 <span className='postDate'>{result.date}</span>
               </div>
-              <div className='hearderBottomRight'>
+              <div className='hearderBottomRight' style={hearderBottomRight}>
                 <button onClick={onClickUpdateHandler}>수정</button>
                 <button onClick={onClickDeleteHandler}>삭제</button>
               </div>
