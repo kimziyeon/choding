@@ -2,7 +2,7 @@
 
 
 .myPageMain {
-    height: calc(100svh - 52px);
+    min-height: calc(100svh - 52px);
     padding-top: 4rem;
     color: $grayDark;
 
@@ -96,7 +96,7 @@
     .myPageContents {
         max-width: calc(430px);
         margin: 0 auto;
-        margin-top: 2rem;
+        margin-top: 3rem;
 
         .myTitleFlex {
             @include flexbox(sb, c);
