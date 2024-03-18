@@ -2,6 +2,7 @@
 
 
 .myPageMain {
+    height: calc(100svh - 52px);
     padding-top: 4rem;
     color: $grayDark;
 
@@ -205,6 +206,7 @@
 .studyPage,
 .commuPage,
 .checkPage {
+    height: calc(100svh - 52px);
     padding-top: 6rem;
     color: $grayDark;
 

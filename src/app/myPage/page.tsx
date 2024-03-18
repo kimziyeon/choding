@@ -239,7 +239,7 @@ export default function MyPage() {
                         className="mySwiper"
                     >
                         {studyData.map((data, i) => (
-                            <SwiperSlide>
+                            <SwiperSlide key={i}>
                                 <figure className='contentsFigure' key={data.study.resourceId.videoId}>
                                     <a href={`https://www.youtube.com/watch?v=${data.study.resourceId.videoId}`} target='_blank'>
                                         <img src={data.study.thumbnails.medium ? data.study.thumbnails.medium?.url : data.study.thumbnails.default.url} alt="썸네일 이미지" />
