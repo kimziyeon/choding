@@ -53,39 +53,39 @@ export default function MyProjectWrite() {
             swal("로그인해주세요!", "비회원은 글을 작성할 수 없습니다.", "warning")
             router.push('/login');
         }
-    
+
         const urlParams = new URLSearchParams(window.location.search);
         const urlPostId = urlParams.get('postId');
 
-        if(urlPostId){ // 게시글 수정이면
+        if (urlPostId) { // 게시글 수정이면
             setIsOnUpdate(true)
-            console.log('게시글을 수정합니다.')
+            // console.log('게시글을 수정합니다.')
             detailStore('get', 'myProject', null, Number(urlPostId))
                 .then((res) => {
-                console.log(res)
-                setValue('date', res?.data.date)
-                setValue('overview', res?.data.overview)
-                setValue('position', res?.data.position)
-                setValue('postId', res?.data.postId)
-                setValue('title', res?.data.title)
-                setValue('goal', res?.data.goal)
-                setValue('link', res?.data.link)
-                setValue('member', res?.data.member)
-                setValue('stack', res?.data.stack)
-                setValue('image', res?.data.image)
-                setValue('like', res?.data.like)
-                setValue('comments', res?.data.comments)
-                setValue('name', res?.data.name)
-                setValue('email', res?.data.email)
-                setImgText('이미지 업로드 완료')
-                    
-                const activeArray = [];
-                activeArray.push(...res?.data.position, ...res?.data.member, ...res?.data.stack)
-                setActiveOptions(activeArray)
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
+                    // console.log(res)
+                    setValue('date', res?.data.date)
+                    setValue('overview', res?.data.overview)
+                    setValue('position', res?.data.position)
+                    setValue('postId', res?.data.postId)
+                    setValue('title', res?.data.title)
+                    setValue('goal', res?.data.goal)
+                    setValue('link', res?.data.link)
+                    setValue('member', res?.data.member)
+                    setValue('stack', res?.data.stack)
+                    setValue('image', res?.data.image)
+                    setValue('like', res?.data.like)
+                    setValue('comments', res?.data.comments)
+                    setValue('name', res?.data.name)
+                    setValue('email', res?.data.email)
+                    setImgText('이미지 업로드 완료')
+
+                    const activeArray = [];
+                    activeArray.push(...res?.data.position, ...res?.data.member, ...res?.data.stack)
+                    setActiveOptions(activeArray)
+                })
+                .catch((error) => {
+                    console.error('Error fetching data:', error);
+                });
             return
         }
 
@@ -117,7 +117,7 @@ export default function MyProjectWrite() {
 
 
     // 이미지 주소 저장
-    const imageSubmit = async (event:any) => {
+    const imageSubmit = async (event: any) => {
         event.preventDefault();
         setImgText('파일 선택')
 
@@ -160,9 +160,9 @@ export default function MyProjectWrite() {
 
     // 폼 전송
     const onSubmit = async (data: myProjectPostType) => {
-        if(isOnUpdate){
+        if (isOnUpdate) {
             await serverStore('put', 'myProject', data, data.postId);
-        } else{
+        } else {
             await serverStore('post', 'myProject', data);
         }
         router.push(`/community/myProject/${data.postId}`);
