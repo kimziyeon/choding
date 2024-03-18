@@ -26,8 +26,6 @@ export default function MainSlide() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    console.log(popularJsonData)
-
     const moveLink = (link: string) => {
         router.push(`https://www.youtube.com/watch?v=${link}`)
     }
