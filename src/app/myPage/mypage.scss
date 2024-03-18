@@ -119,12 +119,11 @@
 
     .studyThumb {
         @include flexbox();
+        gap: 1rem;
         overflow: hidden;
 
         figure {
-            width: 160px;
             margin-top: 10px;
-            margin-right: 10px;
             flex-shrink: 0;
         }
 
