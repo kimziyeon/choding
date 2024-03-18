@@ -19,7 +19,7 @@ export default function MyStudyContents() {
     const { data: session, status } = useSession();
     const [studyData, setStudyData] = useState<any[]>([]);
     const [studyStates, setStudyStates] = useState<Record<string, boolean>>({});
-    const [bookMarkId, setBookMarkId] = useState(0);
+    // const [bookMarkId, setBookMarkId] = useState(0);
 
 
 
@@ -45,21 +45,22 @@ export default function MyStudyContents() {
     };
 
 
-    const toggleStudyState = async (videoId: string, bookMarkId: number) => {
-        const updatedStudyData = studyData.filter(item => item.resourceId.videoId !== videoId);
-        setStudyData(updatedStudyData);
+    // const toggleStudyState = async (videoId: string, bookMarkId: number) => {
+    //     const updatedStudyData = studyData.filter(item => item.resourceId.videoId !== videoId);
+    //     setStudyData(updatedStudyData);
 
-        try {
-            await axios.delete(`/api/bookmark?colName=myStudy/${bookMarkId}`);
-            // 강의 삭제 요청!아 어떻게한는거야
-            swal("강의가 즐겨찾기에서 삭제되었습니다.", "", "success");
-        } catch (error) {
-            console.error('Error deleting study:', error);
-            swal("강의 삭제 중 오류가 발생했습니다.", "", "error");
-        }
-    }
+    //     try {
+    //         await axios.delete(`/api/bookmark?colName=myStudy/${bookMarkId}`);
+    //         // 강의 삭제 요청!아 어떻게한는거야
+    //         swal("강의가 즐겨찾기에서 삭제되었습니다.", "", "success");
+    //     } catch (error) {
+    //         console.error('Error deleting study:', error);
+    //         swal("강의 삭제 중 오류가 발생했습니다.", "", "error");
+    //     }
+    // }
 
 
+    // onClick={() => toggleStudyState(data.study.resourceId.videoId, bookMarkId)}
 
 
     // data.study 데이터 확인 console
@@ -74,7 +75,7 @@ export default function MyStudyContents() {
             <div className='studyContents'>
                 {studyData.map((data, i) => (
                     <figure className='contentsFigure' key={data.study.resourceId.videoId + i}>
-                        <button className='study' onClick={() => toggleStudyState(data.study.resourceId.videoId, bookMarkId)}>
+                        <button className='study'>
                             <Image src={studyStates[data.study.resourceId.videoId] ? study : studyChecked} alt='강의 책갈피 버튼' width="20" height="25" />
                         </button>
                         <a href={`https://www.youtube.com/watch?v=${data.study.resourceId.videoId}`} target='_blank'>
