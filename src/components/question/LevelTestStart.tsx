@@ -13,7 +13,6 @@ export default function LevelTestStart({ startTest }: any) {
     const { data: session, status } = useSession();
     const [mypageData, setMypageData] = useState<userPointType>();
     const { quiz, isOpenFunc } = useQuestion();
-    const [isOpen, setIsOpen] = useState(true);
 
 
 
@@ -23,11 +22,6 @@ export default function LevelTestStart({ startTest }: any) {
         router.push('/myPage');
     }
 
-
-    function handleClose() {
-        setIsOpen(false);
-        localStorage.setItem('popupClosedTime', String(new Date().getTime()));
-    }
 
 
     useEffect(() => {
@@ -45,60 +39,41 @@ export default function LevelTestStart({ startTest }: any) {
 
 
 
-    useEffect(() => {
-        const lastClosedTime = localStorage.getItem('popupClosedTime');
-        if (lastClosedTime) {
-            const oneDay = 24 * 60 * 60 * 1000; // milliseconds
-            const currentTime = new Date().getTime();
-            const timeDifference = currentTime - Number(lastClosedTime);
-            if (timeDifference < oneDay) {
-                setIsOpen(false);
-            } else {
-                setIsOpen(true);
-            }
-        } else {
-            setIsOpen(true);
-        }
-    }, []);
-
-
 
     return (
-        <>
-            <div>
-                <div className='popUp01'>
-                    <div className='popUpContents'>
-                        <h3>레벨 테스트</h3>
-                        <div className='popUpSubTitle'>
+        <div>
+            <div className='popUp01'>
+                <div className='popUpContents'>
+                    <h3>레벨 테스트</h3>
+                    <div className='popUpSubTitle'>
 
-                            {status === 'authenticated' ? (
-                                <>
-                                    {mypageData?.level ?
-                                        (<div className='nameTitle'><span>{session?.user?.name}</span>님은 레벨테스트가<br></br>완료 되었어요</div>)
-                                        :
-                                        (<div className='nameTitle'><span>{session?.user?.name}</span>님에게 더 잘 맞는<br></br>강의를 추천해 드릴께요</div>)
-                                    }
-                                </>
+                        {status === 'authenticated' ? (
+                            <>
+                                {mypageData?.level ?
+                                    (<div className='nameTitle'><span>{session?.user?.name}</span>님은 레벨테스트가<br></br>완료 되었어요</div>)
+                                    :
+                                    (<div className='nameTitle'><span>{session?.user?.name}</span>님에게 더 잘 맞는<br></br>강의를 추천해 드릴께요</div>)
+                                }
+                            </>
 
-                            ) : (
-                                <div className='noNameTitle'>회원가입하면<br></br>맞춤 강의를 추천해드려요!</div>
-                            )}
+                        ) : (
+                            <div className='noNameTitle'>회원가입하면<br></br>맞춤 강의를 추천해드려요!</div>
+                        )}
 
-                            <div className='tagBox'>
-                                <span>#10초</span>
-                                <span>#OX퀴즈</span>
-                            </div>
+                        <div className='tagBox'>
+                            <span>#10초</span>
+                            <span>#OX퀴즈</span>
                         </div>
-
-                        {mypageData?.level ?
-                            <button className='popUpBtn' onClick={mypageGoGo}>내 레벨 확인하기</button>
-                            :
-                            <button className='popUpBtn' onClick={() => { startTest(2) }}>테스트 시작하기</button>
-                        }
-
                     </div>
+
+                    {mypageData?.level ?
+                        <button className='popUpBtn' onClick={mypageGoGo}>내 레벨 확인하기</button>
+                        :
+                        <button className='popUpBtn' onClick={() => { startTest(2) }}>테스트 시작하기</button>
+                    }
+
                 </div>
             </div>
-        </>
+        </div>
     )
 }
