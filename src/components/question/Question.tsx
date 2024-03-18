@@ -27,25 +27,21 @@ export default function UserQuestion() {
 
     return (
         <section className={`question ${quiz.isOpen ? 'active' : ''}`}>
+            <div className='popUpBg'>
+                <button className='popUpX'
+                    onClick={handleClose}>
+                    <Image
+                        className='close'
+                        src={Close}
+                        alt='close Image'
+                        width={25} height={25}
+                    ></Image>
+                </button>
 
-            <div className='popUpQues'>
-                <div className='popUpBg'>
-                    <button className='popUpX'
-                        onClick={handleClose}>
-                        <Image
-                            className='close'
-                            src={Close}
-                            alt='close Image'
-                            width={25} height={25}
-                        ></Image>
-                    </button>
+                {
+                    quiz.isTest ? <LevelTest /> : <Dailyquiz />
+                }
 
-                    {
-                        quiz.isTest ? <LevelTest /> : <Dailyquiz />
-                    }
-
-
-                </div>
             </div>
 
 
