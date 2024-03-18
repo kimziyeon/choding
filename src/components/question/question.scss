@@ -110,6 +110,7 @@
                 }
             }
 
+
             .popUpBtn {
                 // margin-top: 36px;
                 width: 100%;
@@ -228,4 +229,10 @@
             margin: 0 0.5rem;
         }
     }
+}
+
+.popUpCloseBtn {
+    color: #fff;
+    font-size: $s;
+    @include flexbox(c, c);
 }
