@@ -37,19 +37,25 @@ export const authOptions: NextAuthOptions = {
             },
         })
 
-
-    ], callbacks: {
-        async jwt({ token, user }: any) {
-            // MongoDB에 사용자 정보 저장
-            await saveUserToMongoDB(user);
-            return { ...token, ...user };
-        },
-        async session({ session, token }: any) {
-            session.user = token;
-            return session;
-        },
+    ], 
+    session: {
+        strategy: 'jwt',
+        maxAge: 30 * 24 * 60 * 60 //30일
     },
     pages: {
         signIn: "/login",
     },
+    callbacks: {
+        async signIn({ user }) {
+            const checkUser =  await saveUserToMongoDB(user);
+            return true;
+        },
+        async jwt({ token, user }: any) {
+            return {...token, ...user};
+        },
+        async session({ session, token }: any) {            
+            session.user = token;
+            return session;
+        },
+    }
 }
