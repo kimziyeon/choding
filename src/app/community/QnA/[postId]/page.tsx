@@ -138,11 +138,13 @@ export default function QnADetail({ params }: any) {
                     <div className="postContainer">
                         <p>{data[0]?.userName}</p>
                         <div className="postDetail">
+                            <p dangerouslySetInnerHTML={{ __html: data[0].content }}></p>
                             <p dangerouslySetInnerHTML={{ __html: data[0]?.content }}></p>
                         </div>
                     </div>
                     <button
                         type='button'
+                        onClick={() => { onClicklikeHandler(data[0].postId) }}
                         onClick={() => { onClicklikeHandler(data[0].postId) }}
                         className={isOnLikeClick && likedAlready ? 'active like' : 'like'}>
                         <p>좋아요 <span>{data[0]?.like?.length}</span></p>
