@@ -37,6 +37,7 @@ export default function LevelTestStart({ startTest }: any) {
     }, [session])
 
 
+
     function handleClose() { //로컬스토리지 하루동안 안열림
         isOpenFunc({ isOpen: false, isTest: false })
         localStorage.setItem('popupClosedTime', String(new Date().getTime()));
