@@ -5,7 +5,7 @@ import Link from 'next/link';
 import "./QnA.scss";
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import { myQnAType} from '@/types/datatype'
+import { myQnAType } from '@/types/datatype'
 import Login from '@/app/login/page';
 import { AnyPtrRecord } from 'dns';
 import Image from 'next/image';
@@ -13,9 +13,8 @@ import empty from '@/essets/empty.svg';
 
 export default function MyPage() {
 
-  
 
-  
+
 
   const [data, setData] = useState<myQnAType[]>([]);
   const { data: session, status } = useSession();
@@ -36,7 +35,7 @@ export default function MyPage() {
           const tumb = tag.querySelector('img');
 
 
-          const text:string[] = [];
+          const text: string[] = [];
           tag.childNodes.forEach((node: any) => {
             node.childNodes.forEach((child: any) => {
               if (child.tagName == undefined) {
@@ -56,7 +55,7 @@ export default function MyPage() {
 
     fetchData();
   }, []);
-  
+
 
   if (status == 'authenticated') {
     if (MyQnAList.length !== 0) {
@@ -76,14 +75,14 @@ export default function MyPage() {
               </div>
             </div>
             <div className='QuestionImg'>
-              <Image src={item.content?.thumb} alt='' width={90} height={50}/>
+              <Image src={item.content?.thumb} alt='' width={90} height={50} />
             </div>
           </Link>
         ))}
       </div>
     } else {
       return <div className='myPageMain'>
-         <div className='writeBtnBox'><Link className='writeBtn' href='./QnA/write'>글 쓰기</Link></div>
+        <div className='writeBtnBox'><Link className='writeBtn' href='./QnA/write'>글 쓰기</Link></div>
         <div className='MyPageContainer'>
           <div className='noWrite'>
             <div className='commuEmpty'>

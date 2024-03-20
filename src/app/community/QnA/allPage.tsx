@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from 'react';
-import { myQnAType} from '@/types/datatype'
+import { myQnAType } from '@/types/datatype'
 import Link from 'next/link';
 import axios from 'axios';
 import "./QnA.scss";
@@ -30,14 +30,14 @@ export default function AllPage() {
         const response = await axios.get('/api/post?colName=qna');
 
         // let resObj = [];
-        response.data.forEach((obj:any) => {
+        response.data.forEach((obj: any) => {
 
           const tag = document.createElement('div');
           tag.innerHTML = obj.content;
 
           const tumb = tag.querySelector('img');
 
-          const text:string[] = [];
+          const text: string[] = [];
           tag.childNodes.forEach((node: any) => {
             node.childNodes.forEach((child: any) => {
               if (child.tagName == undefined) {
@@ -78,10 +78,10 @@ export default function AllPage() {
 
             <div className='QuestionImg'>
               {/* <img src={item.content?.thumb} alt=""  /> */}
-              <Image 
-              src={item.content?.thumb || dumi} 
-              alt='' 
-              width={90} height={50} 
+              <Image
+                src={item.content?.thumb || dumi}
+                alt=''
+                width={90} height={50}
               />
 
             </div>
