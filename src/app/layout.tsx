@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import '@/styles/global.scss';
-import '@/styles/base/reset.scss';
+import '@/styles/base/reset.css';
 import { Suspense } from 'react';
 import Empty from "@/components/empty/Empty";
 
