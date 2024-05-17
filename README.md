@@ -11,6 +11,19 @@
 STORE로 분리해 회원 데이터에 맞는 레벨 데이터를 출력하고, PWA를 적용해 사용자가 필요로 하고 서로 공유할 수 있는 서비스입니다.
 </p>
 
+<h4>📍 담당 주요기능</h4>
+  <li>
+    <b>검색 API</b> - 검색결과에 따른 네이버 블로그 검색 API 컨텐츠 노출
+  </li>
+  <li>
+    <b>마이페이지</b> - 회원에 맞는 닉네임, 레벨 등 정보 출력
+  </li>
+  <li>
+    <b>레벨테스트 팝업</b> - 회원/비회원 구분해 노출하기 위해 Zustand store 라이브러리 생성해 퀴즈로직 정의
+  </li>
+  <li>
+    <b>오늘의퀴즈 팝업</b> - 회원 레벨업을 위한 하루 한번 퀴즈변경
+  </li>
 
 <h4> 🛠️ Technology Stack<h4>
 <img src="https://img.shields.io/badge/next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/>
