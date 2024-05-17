@@ -32,3 +32,6 @@ STORE로 분리해 회원 데이터에 맞는 레벨 데이터를 출력하고, 
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/>
 <img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=Vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/>
+
+<h4> 🔥 트러블슈팅</h4>
+<h4> 💬 후기</h4>
