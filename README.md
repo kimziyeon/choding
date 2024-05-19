@@ -2,7 +2,7 @@
 <p> 👥 Team Project ㅣ 3 person</p>
 <p> 🗓️ 2024.02 ~ 2024.03</p>
 <p>
-  🔗 <a href="https://choding-jiyeon.vercel.app/" target="_blank"> https://choding-jiyeon.vercel.app/</a>
+  🔗 <a href="https://choding-jiyeon.vercel.app/" target="_blank">배포 링크 바로가기</a>
 </p>
 
 <p>
