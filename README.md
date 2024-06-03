@@ -4,6 +4,10 @@
 <p>
   🔗 <a href="https://choding-jiyeon.vercel.app/" target="_blank">배포 링크 바로가기</a>
 </p>
+<p>
+  <img src="https://github.com/kimziyeon/choding/assets/149509089/fce64284-f5ab-4cfe-9ffd-fe4cd2fe88fd"/>
+</p>
+
 
 <p>
 <b>누구나 쉽고 편하게 코딩 공부를 할 수 있는 서비스 프로젝트</b> <br/>
